@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.People;
 
 namespace UI
 {
@@ -14,7 +15,6 @@ namespace UI
     {
         private void LoadForm(Form frm)
         {
-
             pnlMain.Controls.Clear();
 
             frm.TopLevel = false;
@@ -29,12 +29,17 @@ namespace UI
             InitializeComponent();
 
         }
-
+        
         private void _ShowNotImplementedFeatureMessage(object sender, EventArgs e)
         {
             MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
                   MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
+        }
+
+        private void btnPeople_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmPeopleManagement());
         }
     }
 }
