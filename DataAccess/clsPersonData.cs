@@ -66,8 +66,8 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO People (FirstName, SecondName, ThirdName, LastName, NationalID, BirthDate, Gender, Address, Phone, Email, CountryID, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt)
-                            VALUES (@FirstName, @SecondName, @ThirdName, @LastName, @NationalID, @BirthDate, @Gender, @Address, @Phone, @Email, @CountryID, @CreatedByUserID, @CreatedAt, @UpdatedByUserID, @UpdatedAt)
+                    string query = @"INSERT INTO People (FirstName, SecondName, ThirdName, LastName, NationalID, BirthDate, Gender, Address, Phone, Email, CountryID, CreatedByUserID, UpdatedByUserID, UpdatedAt)
+                            VALUES (@FirstName, @SecondName, @ThirdName, @LastName, @NationalID, @BirthDate, @Gender, @Address, @Phone, @Email, @CountryID, @CreatedByUserID, @UpdatedByUserID, @UpdatedAt)
                             SELECT SCOPE_IDENTITY();";
 
                     using(SqlCommand command = new SqlCommand(query, connection))
@@ -85,7 +85,6 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@Email", Email);
                         command.Parameters.AddWithValue("@CountryID", CountryID);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
-                        command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
                         command.Parameters.AddWithValue("@UpdatedByUserID", (object)UpdatedByUserID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@UpdatedAt", (object)UpdatedAt ?? DBNull.Value);
 

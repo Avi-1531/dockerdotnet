@@ -118,10 +118,9 @@ namespace UI.People
             dt.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", "Gender", cbGender.Text);
             lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
         }
-
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            Form frm = new frmAddOrUpdatePerson();
+            Form frm = new frmAddEditPerson();
             frm.ShowDialog();
         }
     }

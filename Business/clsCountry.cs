@@ -43,6 +43,18 @@ namespace ClinicManagementDB_Business
             else
                 return null;
         }
+        public static clsCountry Find(string CountryName)
+        {
+            byte? CountryID = null;
+
+            bool IsFound = clsCountryData.GetCountryByName(ref CountryID, CountryName);
+
+            if(IsFound)
+                return new clsCountry(CountryID, CountryName);
+            else
+                return null;
+        }
+
         public bool Save()
         {
             switch(Mode)

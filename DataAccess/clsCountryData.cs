@@ -12,19 +12,19 @@ namespace ClinicManagementDB_DataAccess
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     string query = "SELECT * FROM Countries WHERE CountryID = @CountryID";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CountryID", (object)CountryID ?? DBNull.Value);
 
                         connection.Open();
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using(SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (reader.Read())
+                            if(reader.Read())
                             {
                                 isFound = true;
 
@@ -37,7 +37,45 @@ namespace ClinicManagementDB_DataAccess
                     }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static bool GetCountryByName(ref byte? CountryID, string CountryName)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM Countries WHERE CountryName = @CountryName";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CountryName", CountryName);
+
+                        connection.Open();
+
+                        using(SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                isFound = true;
+
+
+                                CountryID = (byte?)reader["CountryID"];
+                            }
+                            else
+                                isFound = false;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
             {
                 isFound = false;
             }
@@ -148,7 +186,7 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@CountryID", (object)CountryID  ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@CountryID", (object)CountryID ?? DBNull.Value);
 
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();

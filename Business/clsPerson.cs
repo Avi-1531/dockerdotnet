@@ -21,10 +21,11 @@ namespace ClinicManagementDB_Business
         public string Email { set; get; }
         public byte CountryID { set; get; }
         public short CreatedByUserID { set; get; }
-        public DateTime CreatedAt { set; get; }
+        public DateTime CreatedAt { get; set; }
         public short? UpdatedByUserID { set; get; }
         public DateTime? UpdatedAt { set; get; }
-
+        public string CountryName
+            => clsCountry.Find(this.CountryID).CountryName ?? string.Empty;
         public clsPerson()
         {
             this.PersonID = null;
@@ -33,14 +34,14 @@ namespace ClinicManagementDB_Business
             this.ThirdName = null;
             this.LastName = "";
             this.NationalID = "";
-            this.BirthDate = DateTime.MinValue;
+            this.BirthDate = DateTime.Now;
             this.Gender = false;
             this.Address = null;
             this.Phone = "";
             this.Email = "";
             this.CountryID = 0;
             this.CreatedByUserID = -1;
-            this.CreatedAt = DateTime.MinValue;
+            this.CreatedAt = DateTime.Now;
             this.UpdatedByUserID = null;
             this.UpdatedAt = null;
             Mode = enMode.AddNew;
@@ -82,14 +83,14 @@ namespace ClinicManagementDB_Business
             string? ThirdName = null;
             string LastName = "";
             string NationalID = "";
-            DateTime BirthDate = DateTime.MinValue;
+            DateTime BirthDate = DateTime.Now;
             bool Gender = false;
             string? Address = null;
             string Phone = "";
             string Email = "";
             byte CountryID = 0;
             short CreatedByUserID = -1;
-            DateTime CreatedAt = DateTime.MinValue;
+            DateTime CreatedAt = DateTime.Now;
             short? UpdatedByUserID = null;
             DateTime? UpdatedAt = null;
 
