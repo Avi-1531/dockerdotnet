@@ -123,5 +123,11 @@ namespace UI.People
             Form frm = new frmAddEditPerson();
             frm.ShowDialog();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmPersonInfo frmPersonInfo = new frmPersonInfo((int)dgvPeople.CurrentRow.Cells[0].Value);
+            frmPersonInfo.ShowDialog();
+        }
     }
 }

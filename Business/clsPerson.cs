@@ -24,8 +24,31 @@ namespace ClinicManagementDB_Business
         public DateTime CreatedAt { get; set; }
         public short? UpdatedByUserID { set; get; }
         public DateTime? UpdatedAt { set; get; }
+        public string FullName
+        {
+            get
+            {
+                string FullName = "";
+                FullName = FirstName + " ";
+                FullName += SecondName + " ";
+                if(ThirdName != null)
+                    FullName += ThirdName + " ";
+                FullName += LastName + " ";
+                return FullName;
+            }
+        }
         public string CountryName
             => clsCountry.Find(this.CountryID).CountryName ?? string.Empty;
+        public string StringGender
+        {
+            get
+            {
+                if(this.Gender == false)
+                    return "Male";
+                else
+                    return "Female";
+            }
+        }
         public clsPerson()
         {
             this.PersonID = null;
