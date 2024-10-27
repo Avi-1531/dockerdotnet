@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Departments;
 using UI.People;
 
 namespace UI
@@ -40,6 +41,12 @@ namespace UI
         private void btnPeople_Click(object sender, EventArgs e)
         {
             LoadForm(new frmPeopleManagement());
+        }
+
+        private void btnDepartments_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmDepartmentsManagement());
+
         }
     }
 }

@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Departments\frmDepartmentsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departments\frmDepartmentsManagement.Designer.cs">
+      <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Departments\frmDepartmentsManagement.resx">
+      <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

@@ -100,7 +100,7 @@
             this.btnDepartments.TabIndex = 7;
             this.btnDepartments.Text = "Departments";
             this.btnDepartments.UseVisualStyleBackColor = false;
-            this.btnDepartments.Click += new System.EventHandler(this._ShowNotImplementedFeatureMessage);
+            this.btnDepartments.Click += new System.EventHandler(this.btnDepartments_Click);
             // 
             // btnReceptionists
             // 

@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHeader = new System.Windows.Forms.Label();
             this.dgvPeople = new System.Windows.Forms.DataGridView();
+            this.cmsPerson = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,11 +45,9 @@
             this.lblRecords = new System.Windows.Forms.Label();
             this.lblRecordsValue = new System.Windows.Forms.Label();
             this.cbGender = new System.Windows.Forms.ComboBox();
-            this.cmsPerson = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cmsPerson.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -110,6 +110,25 @@
             this.dgvPeople.ShowRowErrors = false;
             this.dgvPeople.Size = new System.Drawing.Size(1281, 560);
             this.dgvPeople.TabIndex = 2;
+            // 
+            // cmsPerson
+            // 
+            this.cmsPerson.BackColor = System.Drawing.SystemColors.Control;
+            this.cmsPerson.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.cmsPerson.Name = "cmsPerson";
+            this.cmsPerson.Size = new System.Drawing.Size(256, 34);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 30);
+            this.toolStripMenuItem1.Text = "Personal Information";
+            this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // lblFilterBy
             // 
@@ -202,9 +221,9 @@
             this.lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecordsValue.Location = new System.Drawing.Point(92, 831);
             this.lblRecordsValue.Name = "lblRecordsValue";
-            this.lblRecordsValue.Size = new System.Drawing.Size(38, 21);
+            this.lblRecordsValue.Size = new System.Drawing.Size(48, 21);
             this.lblRecordsValue.TabIndex = 0;
-            this.lblRecordsValue.Text = "N/A";
+            this.lblRecordsValue.Text = "[????]";
             // 
             // cbGender
             // 
@@ -224,25 +243,6 @@
             this.cbGender.Size = new System.Drawing.Size(245, 33);
             this.cbGender.TabIndex = 3;
             this.cbGender.SelectedIndexChanged += new System.EventHandler(this.cbGender_SelectedIndexChanged);
-            // 
-            // cmsPerson
-            // 
-            this.cmsPerson.BackColor = System.Drawing.SystemColors.Control;
-            this.cmsPerson.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.cmsPerson.Name = "cmsPerson";
-            this.cmsPerson.Size = new System.Drawing.Size(256, 56);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 30);
-            this.toolStripMenuItem1.Text = "Personal Information";
-            this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // frmPeopleManagement
             // 
@@ -271,8 +271,8 @@
             this.Load += new System.EventHandler(this.frmPeopleManagement_Load);
             this.Shown += new System.EventHandler(this.frmPeopleManagement_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cmsPerson.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
