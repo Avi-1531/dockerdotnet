@@ -52,6 +52,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotalRevenueValue = new System.Windows.Forms.Label();
             this.lblTotalRevenueOfDepartment = new System.Windows.Forms.Label();
+            this.btnAddPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.cmsDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,6 +85,7 @@
             this.dgvDepartments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDepartments.ColumnHeadersHeight = 40;
             this.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDepartments.ContextMenuStrip = this.cmsDepartments;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,7 +120,7 @@
             this.cmsDepartments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.cmsDepartments.Name = "cmsPerson";
-            this.cmsDepartments.Size = new System.Drawing.Size(256, 34);
+            this.cmsDepartments.Size = new System.Drawing.Size(217, 34);
             // 
             // toolStripMenuItem1
             // 
@@ -126,9 +128,10 @@
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 30);
-            this.toolStripMenuItem1.Text = "Personal Information";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(216, 30);
+            this.toolStripMenuItem1.Text = "Edit Department";
             this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // lblHeader
             // 
@@ -290,12 +293,29 @@
             this.lblTotalRevenueOfDepartment.TabIndex = 16;
             this.lblTotalRevenueOfDepartment.Text = "Total Revenue of [????] Department";
             // 
+            // btnAddPerson
+            // 
+            this.btnAddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddPerson.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddPerson.FlatAppearance.BorderSize = 0;
+            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPerson.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPerson.Location = new System.Drawing.Point(42, 167);
+            this.btnAddPerson.Name = "btnAddPerson";
+            this.btnAddPerson.Size = new System.Drawing.Size(57, 50);
+            this.btnAddPerson.TabIndex = 16;
+            this.btnAddPerson.UseVisualStyleBackColor = false;
+            this.btnAddPerson.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            // 
             // frmDepartmentsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1329, 861);
+            this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -350,5 +370,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTotalRevenueValue;
         private System.Windows.Forms.Label lblTotalRevenueOfDepartment;
+        private System.Windows.Forms.Button btnAddPerson;
     }
 }

@@ -36,7 +36,8 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.dgvPeople = new System.Windows.Forms.DataGridView();
             this.cmsPerson = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEditPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -115,20 +116,32 @@
             // 
             this.cmsPerson.BackColor = System.Drawing.SystemColors.Control;
             this.cmsPerson.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.tsmPersonalInformation,
+            this.tsmEditPersonalInformation});
             this.cmsPerson.Name = "cmsPerson";
-            this.cmsPerson.Size = new System.Drawing.Size(256, 34);
+            this.cmsPerson.Size = new System.Drawing.Size(293, 86);
             // 
-            // toolStripMenuItem1
+            // tsmPersonalInformation
             // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 30);
-            this.toolStripMenuItem1.Text = "Personal Information";
-            this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.tsmPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmPersonalInformation.Name = "tsmPersonalInformation";
+            this.tsmPersonalInformation.Size = new System.Drawing.Size(292, 30);
+            this.tsmPersonalInformation.Text = "Personal Information";
+            this.tsmPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmPersonalInformation.Click += new System.EventHandler(this.tsmPersonalInformation_Click);
+            // 
+            // tsmEditPersonalInformation
+            // 
+            this.tsmEditPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmEditPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmEditPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmEditPersonalInformation.Name = "tsmEditPersonalInformation";
+            this.tsmEditPersonalInformation.Size = new System.Drawing.Size(292, 30);
+            this.tsmEditPersonalInformation.Text = "Edit Personal Information";
+            this.tsmEditPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmEditPersonalInformation.Click += new System.EventHandler(this.tsmEditPersonalInformation_Click);
             // 
             // lblFilterBy
             // 
@@ -291,6 +304,7 @@
         private System.Windows.Forms.Label lblRecordsValue;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.ContextMenuStrip cmsPerson;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmEditPersonalInformation;
+        private System.Windows.Forms.ToolStripMenuItem tsmPersonalInformation;
     }
 }

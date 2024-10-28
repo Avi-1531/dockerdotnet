@@ -65,5 +65,19 @@ namespace UI.Departments
             string DepartmentName = (string)dgvDepartments.CurrentRow.Cells[1].Value;
             _LoadStatistics(DepartmentID, DepartmentName);
         }
+
+        private void btnAddDepartment_Click(object sender, EventArgs e)
+        {
+            frmAddEditDepartment frmAdd = new frmAddEditDepartment();
+            frmAdd.ShowDialog();
+            _LoadData();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAddEditDepartment frmAdd = new frmAddEditDepartment(Convert.ToByte(dgvDepartments.CurrentRow.Cells[0].Value));
+            frmAdd.ShowDialog();
+            _LoadData();
+        }
     }
 }

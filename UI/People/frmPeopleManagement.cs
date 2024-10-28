@@ -120,13 +120,20 @@ namespace UI.People
         }
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            Form frm = new frmAddEditPerson();
+            frmAddEditPerson frm = new frmAddEditPerson();
             frm.ShowDialog();
+            _LoadData();
         }
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsmPersonalInformation_Click(object sender, EventArgs e)
         {
             frmPersonInfo frmPersonInfo = new frmPersonInfo((int)dgvPeople.CurrentRow.Cells[0].Value);
             frmPersonInfo.ShowDialog();
+        }
+        private void tsmEditPersonalInformation_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frmAddEditPerson = new frmAddEditPerson((int)dgvPeople.CurrentRow.Cells[0].Value);
+            frmAddEditPerson.ShowDialog();
+            _LoadData();
         }
     }
 }

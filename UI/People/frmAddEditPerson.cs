@@ -74,7 +74,7 @@ namespace UI.People
 
             _Person.FirstName = txtFirstName.Text.Trim();
             _Person.SecondName = txtSecondName.Text.Trim();
-            _Person.ThirdName = txtThirdName.Text.Trim() == "" ? null : txtThirdName.Text.Trim();
+            _Person.ThirdName = string.IsNullOrWhiteSpace(txtThirdName.Text.Trim()) ? null : txtThirdName.Text.Trim();
             _Person.LastName = txtLastName.Text.Trim();
             _Person.NationalID = txtNationalID.Text.Trim();
             _Person.BirthDate = dtpBirthDate.Value;
@@ -82,7 +82,7 @@ namespace UI.People
             _Person.CountryID = (byte)clsCountry.Find(cbCountry.Text).CountryID;
             _Person.Phone = txtPhone.Text.Trim();
             _Person.Email = txtEmail.Text.Trim();
-            _Person.Address = txtAddress.Text.Trim() == "" ? null : txtThirdName.Text.Trim();
+            _Person.Address = string.IsNullOrWhiteSpace(txtAddress.Text.Trim()) ? null : txtThirdName.Text.Trim();
 
             if(_FormMode == enMode.Add)
             {
@@ -147,11 +147,7 @@ namespace UI.People
         {
             TextBox textbox = (TextBox)sender;
 
-            if(textbox.Text.Length >= 22 && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-            }
-            else if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if((textbox.Text.Length >= 22 || !(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))))
             {
                 e.Handled = true;
             }
