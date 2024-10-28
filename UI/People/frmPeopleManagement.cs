@@ -16,15 +16,15 @@ namespace UI.People
 {
     public partial class frmPeopleManagement : Form
     {
-        DataTable dt = null;
+        DataTable dtPeople = null;
         public frmPeopleManagement()
         {
             InitializeComponent();
         }
         private void _LoadData()
         {
-            dt = clsPerson.GetPeople();
-            dgvPeople.DataSource = dt;
+            dtPeople = clsPerson.GetPeople();
+            dgvPeople.DataSource = dtPeople;
 
             if(dgvPeople.Rows.Count > 0)
             {
@@ -71,7 +71,7 @@ namespace UI.People
         }
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dt.DefaultView.RowFilter = "";
+            dtPeople.DefaultView.RowFilter = "";
             lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
 
             txtSearch.Visible = (cbFilter.Text != "None") && (cbFilter.Text != "Gender");
@@ -87,7 +87,7 @@ namespace UI.People
         {
             if(txtSearch.Text == "")
             {
-                dt.DefaultView.RowFilter = "";
+                dtPeople.DefaultView.RowFilter = "";
                 lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
                 return;
             }
@@ -96,11 +96,11 @@ namespace UI.People
 
             if(cbFilter.Text == "Person ID")
             {
-                dt.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
+                dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
             }
             else
             {
-                dt.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
+                dtPeople.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
             }
 
             lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
@@ -115,7 +115,7 @@ namespace UI.People
         }
         private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dt.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", "Gender", cbGender.Text);
+            dtPeople.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", "Gender", cbGender.Text);
             lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
         }
         private void btnAddPerson_Click(object sender, EventArgs e)

@@ -72,7 +72,7 @@
             this.btnUsers.TabIndex = 9;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
-            this.btnUsers.Click += new System.EventHandler(this._ShowNotImplementedFeatureMessage);
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnPayments
             // 

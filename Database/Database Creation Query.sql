@@ -264,7 +264,7 @@ CREATE TABLE Users (
 	PersonID INT NOT NULL,
 	Username VARCHAR(20) CHECK (Username NOT LIKE '%[^a-zA-Z0-9]%') NOT NULL UNIQUE,
 	Password VARCHAR(64) NOT NULL,
-	Role TINYINT CHECK(Role IN (1,2,3)) NOT NULL, -- (1 = Admin, 2 = Receptionist, 3 = Doctor)
+	Role TINYINT CHECK(Role IN (1,2,3)) NOT NULL, -- (1 = Admin, 2 = Doctor, 3 = Receptionist )
 	IsActive BIT NOT NULL,
 	LastLoginAt DATETIME NULL, 
 	CreatedByUserID SMALLINT NOT NULL,

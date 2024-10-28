@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Departments;
 using UI.People;
+using UI.Users;
 
 namespace UI
 {
@@ -47,6 +48,11 @@ namespace UI
         {
             LoadForm(new frmDepartmentsManagement());
 
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmUsersManagement());
         }
     }
 }

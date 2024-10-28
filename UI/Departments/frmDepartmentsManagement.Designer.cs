@@ -52,7 +52,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotalRevenueValue = new System.Windows.Forms.Label();
             this.lblTotalRevenueOfDepartment = new System.Windows.Forms.Label();
-            this.btnAddPerson = new System.Windows.Forms.Button();
+            this.btnAddDepartment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.cmsDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -293,21 +293,21 @@
             this.lblTotalRevenueOfDepartment.TabIndex = 16;
             this.lblTotalRevenueOfDepartment.Text = "Total Revenue of [????] Department";
             // 
-            // btnAddPerson
+            // btnAddDepartment
             // 
-            this.btnAddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.add_person;
-            this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddPerson.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPerson.FlatAppearance.BorderSize = 0;
-            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPerson.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPerson.Location = new System.Drawing.Point(42, 167);
-            this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(57, 50);
-            this.btnAddPerson.TabIndex = 16;
-            this.btnAddPerson.UseVisualStyleBackColor = false;
-            this.btnAddPerson.Click += new System.EventHandler(this.btnAddDepartment_Click);
+            this.btnAddDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAddDepartment.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddDepartment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddDepartment.FlatAppearance.BorderSize = 0;
+            this.btnAddDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDepartment.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDepartment.Location = new System.Drawing.Point(42, 167);
+            this.btnAddDepartment.Name = "btnAddDepartment";
+            this.btnAddDepartment.Size = new System.Drawing.Size(57, 50);
+            this.btnAddDepartment.TabIndex = 16;
+            this.btnAddDepartment.UseVisualStyleBackColor = false;
+            this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
             // frmDepartmentsManagement
             // 
@@ -315,7 +315,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.btnAddPerson);
+            this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -370,6 +370,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTotalRevenueValue;
         private System.Windows.Forms.Label lblTotalRevenueOfDepartment;
-        private System.Windows.Forms.Button btnAddPerson;
+        private System.Windows.Forms.Button btnAddDepartment;
     }
 }
