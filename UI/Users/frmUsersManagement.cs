@@ -106,6 +106,7 @@ namespace UI.Users
         }
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
         {
+            if(dgvUsers.Rows.Count == 0) { return; }
             clsUser User = clsUser.Find((short?)dgvUsers.CurrentRow.Cells[0].Value);
             lblUserID.Text = User.UserID.ToString();
             lblUserName.Text = User.Username;
