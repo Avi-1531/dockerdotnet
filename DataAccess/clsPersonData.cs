@@ -12,19 +12,19 @@ namespace ClinicManagementDB_DataAccess
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     string query = "SELECT * FROM People WHERE PersonID = @PersonID";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using(SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (reader.Read())
+                            if(reader.Read())
                             {
                                 isFound = true;
 
@@ -51,7 +51,7 @@ namespace ClinicManagementDB_DataAccess
                     }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 isFound = false;
             }
@@ -203,7 +203,35 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@PersonID", (object)PersonID  ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static bool DoesPersonHasUser(int? PersonID)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found = 1 FROM Users WHERE PersonID = @PersonID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();

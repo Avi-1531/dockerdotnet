@@ -49,6 +49,10 @@ namespace ClinicManagementDB_Business
                     return "Female";
             }
         }
+        public bool HasUser
+        {
+            get => clsPersonData.DoesPersonHasUser(this.PersonID);
+        }
         public clsPerson()
         {
             this.PersonID = null;
@@ -148,6 +152,7 @@ namespace ClinicManagementDB_Business
         => clsPersonData.DeletePerson(PersonID);
         public static bool DoesPersonExist(int? PersonID)
         => clsPersonData.DoesPersonExist(PersonID);
+
         public static DataTable GetPeople()
         => clsPersonData.GetAllPeople();
     }

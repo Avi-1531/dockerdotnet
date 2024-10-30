@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using Business;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -84,7 +85,8 @@ namespace ClinicManagementDB_Business
         }
         private bool _AddNewUser()
         {
-            this.UserID = (short?)clsUserData.AddNewUser(this.PersonID, this.Username, this.Password, this.Role, this.IsActive, this.LastLoginAt, this.CreatedByUserID, this.CreatedAt, this.UpdatedByUserID, this.UpdatedAt);
+            string HashedPassword = clsSecurityHelper.ComputeHash(this.Password);
+            this.UserID = (short?)clsUserData.AddNewUser(this.PersonID, this.Username, HashedPassword, this.Role, this.IsActive, this.LastLoginAt, this.CreatedByUserID, this.CreatedAt, this.UpdatedByUserID, this.UpdatedAt);
             return (this.UserID != -1);
         }
         private bool _UpdateUser()
@@ -131,12 +133,14 @@ namespace ClinicManagementDB_Business
             }
             return false;
         }
-        public static string? GetUsernameByID(short? UserID) 
+        public static string GetUsernameByID(short? UserID) 
             => clsUserData.GetUsernameByID(UserID);
         public static bool DeleteUser(short? UserID)
         => clsUserData.DeleteUser(UserID);
         public static bool DoesUserExist(short? UserID)
-        => clsUserData.DoesUserExist(UserID);
+        => clsUserData.DoesUserExistByUserID(UserID);
+        public static bool DoesUserExist(string Username)
+            => clsUserData.DoesUserExistByUsername(Username);
         public static DataTable GetUsers()
         => clsUserData.GetAllUsers();
     }

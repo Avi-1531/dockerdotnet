@@ -106,24 +106,17 @@ namespace UI.Users
         }
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvUsers.Rows.Count == 0) { return; }
-            clsUser User = clsUser.Find((short?)dgvUsers.CurrentRow.Cells[0].Value);
-            lblUserID.Text = User.UserID.ToString();
-            lblUserName.Text = User.Username;
-            lblUserStatus.Text = User.IsActiveString;
-            lblFullName.Text = User.Person.FullName;
-            lblRole.Text = User.RoleString;
-            lblPhone.Text = User.Person.Phone;
-            lblEmail.Text = User.Person.Email;
-            lblLastLogin.Text = User.LastLoginAt.HasValue
-                ? User.LastLoginAt.Value.ToString()
-                : "Never Logged In"; lblCreatedByAt.Text = $"Created By {clsUser.GetUsernameByID(User.CreatedByUserID)} At {User.CreatedAt.ToString()}";
-            if(User.UpdatedByUserID.HasValue)
+            if(dgvUsers.Rows.Count == 0)
             {
-                lblUpdatedByAt.Visible = true;
-                lblCreatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(User.UpdatedByUserID)} At {User.UpdatedAt.ToString()} ";
+                ctrlUserInfoVertical1.ResetValues();
+                return;
             }
-
+            ctrlUserInfoVertical1.SetUserID((short)dgvUsers.CurrentRow.Cells[0].Value);
+        }
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            frmAddNewUser frmAddEditUser = new frmAddNewUser();
+            frmAddEditUser.ShowDialog();
         }
     }
 }

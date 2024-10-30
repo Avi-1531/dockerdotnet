@@ -204,7 +204,7 @@ namespace ClinicManagementDB_DataAccess
 
             return (rowsAffected > 0);
         }
-        public static bool DoesUserExist(short? UserID)
+        public static bool DoesUserExistByUserID(short? UserID)
         {
             bool isFound = false;
 
@@ -232,6 +232,35 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static bool DoesUserExistByUsername(string Username)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found = 1 FROM Users WHERE Username = @Username";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", (object)Username ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+
         public static DataTable GetAllUsers()
         {
             DataTable dt = new DataTable();
