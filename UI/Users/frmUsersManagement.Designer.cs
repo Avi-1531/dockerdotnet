@@ -47,6 +47,7 @@
             this.cbIsActive = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.tsmiActivateOrDeactivate = new System.Windows.Forms.ToolStripMenuItem();
             this.ctrlUserInfoVertical1 = new UI.Users.Controls.ctrlUserInfoVertical();
             this.cmsUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -79,7 +80,7 @@
             this.tsmiDeleteUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiDeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiDeleteUser.Name = "tsmiDeleteUser";
-            this.tsmiDeleteUser.Size = new System.Drawing.Size(180, 30);
+            this.tsmiDeleteUser.Size = new System.Drawing.Size(189, 30);
             this.tsmiDeleteUser.Text = "Delete User";
             this.tsmiDeleteUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiDeleteUser.Click += new System.EventHandler(this.tsmiDeleteUser_Click);
@@ -89,9 +90,10 @@
             this.cmsUsers.BackColor = System.Drawing.SystemColors.Control;
             this.cmsUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
-            this.tsmiDeleteUser});
+            this.tsmiDeleteUser,
+            this.tsmiActivateOrDeactivate});
             this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(181, 86);
+            this.cmsUsers.Size = new System.Drawing.Size(190, 116);
             // 
             // toolStripMenuItem2
             // 
@@ -99,7 +101,7 @@
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 30);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 30);
             this.toolStripMenuItem2.Text = "Edit User";
             this.toolStripMenuItem2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripMenuItem2.Click += new System.EventHandler(this.tsmiEditUser_Click);
@@ -281,6 +283,17 @@
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
+            // tsmiActivateOrDeactivate
+            // 
+            this.tsmiActivateOrDeactivate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiActivateOrDeactivate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiActivateOrDeactivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiActivateOrDeactivate.Name = "tsmiActivateOrDeactivate";
+            this.tsmiActivateOrDeactivate.Size = new System.Drawing.Size(189, 30);
+            this.tsmiActivateOrDeactivate.Text = "Activate User";
+            this.tsmiActivateOrDeactivate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiActivateOrDeactivate.Click += new System.EventHandler(this.tsmiActivateOrDeactivate_Click);
+            // 
             // ctrlUserInfoVertical1
             // 
             this.ctrlUserInfoVertical1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -343,5 +356,6 @@
         private System.Windows.Forms.ComboBox cbIsActive;
         private Controls.ctrlUserInfoVertical ctrlUserInfoVertical1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsmiActivateOrDeactivate;
     }
 }

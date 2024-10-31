@@ -204,6 +204,62 @@ namespace ClinicManagementDB_DataAccess
 
             return (rowsAffected > 0);
         }
+        public static bool ActiviateUser(short? UserID)
+        {
+            int rowsAffected = 0;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Update Users 
+                                SET IsActive = 1 WHERE UserID = @UserID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
+
+                        connection.Open();
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return (rowsAffected > 0);
+        }
+        public static bool DeactiviateUser(short? UserID)
+        {
+            int rowsAffected = 0;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Update Users 
+                                SET IsActive = 0 WHERE UserID = @UserID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
+
+                        connection.Open();
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return (rowsAffected > 0);
+        }
         public static bool DoesUserExistByUserID(short? UserID)
         {
             bool isFound = false;

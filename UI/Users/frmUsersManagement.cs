@@ -106,12 +106,26 @@ namespace UI.Users
         }
         private void dgvUsers_SelectionChanged(object sender, EventArgs e)
         {
+
             if(dgvUsers.Rows.Count == 0)
             {
                 ctrlUserInfoVertical1.ResetValues();
                 return;
             }
+
             ctrlUserInfoVertical1.SetUserID((short)dgvUsers.CurrentRow.Cells[0].Value);
+
+            string isSelectedUserActive = (string)dgvUsers.CurrentRow.Cells[3].Value;
+
+            if(isSelectedUserActive == "Yes")
+            {
+                tsmiActivateOrDeactivate.Text = "Deactivate";
+            }
+            else
+            {
+                tsmiActivateOrDeactivate.Text = "Activate";
+            }
+
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -128,20 +142,40 @@ namespace UI.Users
 
         private void tsmiDeleteUser_Click(object sender, EventArgs e)
         {
-            short UserToDelete = (short)dgvUsers.CurrentRow.Cells[0].Value;
-            var result = MessageBox.Show($"Are you sure you want to delete user (User ID:{UserToDelete})?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            short UserIDToDelete = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            var result = MessageBox.Show($"Are you sure you want to delete user (User ID:{UserIDToDelete})?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if(result == DialogResult.Yes)
             {
-                if(clsUser.DeleteUser(UserToDelete))
+                if(clsUser.DeleteUser(UserIDToDelete))
                 {
-                    MessageBox.Show($"User (User ID:{UserToDelete}) deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"User (User ID:{UserIDToDelete}) deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _LoadData();
                 }
                 else
                 {
                     MessageBox.Show("Failed to delete the user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+
+        }
+
+        private void tsmiActivateOrDeactivate_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            clsUser User = clsUser.Find(UserID);
+
+            if(User.IsActive)
+            {
+                tsmiActivateOrDeactivate.Text = "Deactivate";
+                User.DeactiviateUser(UserID);
+                _LoadData();
+            }
+            else
+            {
+                tsmiActivateOrDeactivate.Text = "Activate";
+                User.ActiviateUser(UserID);
+                _LoadData();
             }
 
         }

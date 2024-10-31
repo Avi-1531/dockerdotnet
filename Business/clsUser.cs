@@ -133,8 +133,12 @@ namespace ClinicManagementDB_Business
             }
             return false;
         }
-        public static string GetUsernameByID(short? UserID) 
+        public static string GetUsernameByID(short? UserID)
             => clsUserData.GetUsernameByID(UserID);
+        public bool ActiviateUser(short? UserID)
+            => clsUserData.ActiviateUser(UserID);
+        public bool DeactiviateUser(short? UserID)
+            => clsUserData.DeactiviateUser(UserID);
         public static bool DeleteUser(short? UserID)
         => clsUserData.DeleteUser(UserID);
         public static bool DoesUserExist(short? UserID)
