@@ -119,11 +119,31 @@ namespace UI.Users
             frmAddNewUser.ShowDialog();
             _LoadData();
         }
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsmiEditUser_Click(object sender, EventArgs e)
         {
             frmEditUser frmEditUser = new frmEditUser((short)dgvUsers.CurrentRow.Cells[0].Value);
             frmEditUser.ShowDialog();
             _LoadData();
+        }
+
+        private void tsmiDeleteUser_Click(object sender, EventArgs e)
+        {
+            short UserToDelete = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            var result = MessageBox.Show($"Are you sure you want to delete user (User ID:{UserToDelete})?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(result == DialogResult.Yes)
+            {
+                if(clsUser.DeleteUser(UserToDelete))
+                {
+                    MessageBox.Show($"User (User ID:{UserToDelete}) deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete the user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
     }
 }

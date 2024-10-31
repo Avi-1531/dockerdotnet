@@ -35,8 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRecordsValue = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteUser = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblFilterBy = new System.Windows.Forms.Label();
@@ -72,24 +73,36 @@
             this.lblRecords.TabIndex = 19;
             this.lblRecords.Text = "Records:";
             // 
-            // toolStripMenuItem1
+            // tsmiDeleteUser
             // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 30);
-            this.toolStripMenuItem1.Text = "Edit User";
-            this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.tsmiDeleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiDeleteUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiDeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiDeleteUser.Name = "tsmiDeleteUser";
+            this.tsmiDeleteUser.Size = new System.Drawing.Size(180, 30);
+            this.tsmiDeleteUser.Text = "Delete User";
+            this.tsmiDeleteUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiDeleteUser.Click += new System.EventHandler(this.tsmiDeleteUser_Click);
             // 
             // cmsUsers
             // 
             this.cmsUsers.BackColor = System.Drawing.SystemColors.Control;
             this.cmsUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem2,
+            this.tsmiDeleteUser});
             this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(181, 56);
+            this.cmsUsers.Size = new System.Drawing.Size(181, 86);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 30);
+            this.toolStripMenuItem2.Text = "Edit User";
+            this.toolStripMenuItem2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.tsmiEditUser_Click);
             // 
             // dgvUsers
             // 
@@ -318,7 +331,7 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Label lblRecordsValue;
         private System.Windows.Forms.Label lblRecords;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteUser;
         private System.Windows.Forms.ContextMenuStrip cmsUsers;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.ComboBox cbFilter;
@@ -329,5 +342,6 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.ComboBox cbIsActive;
         private Controls.ctrlUserInfoVertical ctrlUserInfoVertical1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
