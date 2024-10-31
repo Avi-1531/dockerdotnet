@@ -179,5 +179,12 @@ namespace UI.Users
             }
 
         }
+
+        private void tsmiChangePassword_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            frmChangeUserPassword frmChangeUserPassword = new frmChangeUserPassword(UserID);
+            frmChangeUserPassword.ShowDialog();
+        }
     }
 }

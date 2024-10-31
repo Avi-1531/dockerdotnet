@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    internal class clsSecurityHelper
+    public class clsSecurityHelper
     {
-        internal static string ComputeHash(string input)
+        public static string ComputeHash(string input)
         {
             using(SHA256 sha256 = SHA256.Create())
             {
