@@ -115,8 +115,15 @@ namespace UI.Users
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            frmAddNewUser frmAddEditUser = new frmAddNewUser();
-            frmAddEditUser.ShowDialog();
+            frmAddNewUser frmAddNewUser = new frmAddNewUser();
+            frmAddNewUser.ShowDialog();
+            _LoadData();
+        }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEditUser frmEditUser = new frmEditUser((short)dgvUsers.CurrentRow.Cells[0].Value);
+            frmEditUser.ShowDialog();
+            _LoadData();
         }
     }
 }
