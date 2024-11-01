@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Departments;
+using UI.Global;
 using UI.People;
 using UI.Users;
 
@@ -15,6 +16,8 @@ namespace UI
 {
     public partial class frmMain : Form
     {
+        public delegate void FormClose();
+        public event FormClose OnFormClose;
         private void LoadForm(Form frm)
         {
             pnlMain.Controls.Clear();
@@ -31,7 +34,7 @@ namespace UI
             InitializeComponent();
 
         }
-        
+
         private void _ShowNotImplementedFeatureMessage(object sender, EventArgs e)
         {
             MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
@@ -53,6 +56,12 @@ namespace UI
         private void btnUsers_Click(object sender, EventArgs e)
         {
             LoadForm(new frmUsersManagement());
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            OnFormClose?.Invoke();
+            clsGlobal.CurrentUser = null;
         }
     }
 }

@@ -135,6 +135,26 @@ namespace ClinicManagementDB_Business
         }
         public static string GetUsernameByID(short? UserID)
             => clsUserData.GetUsernameByID(UserID);
+        public static clsUser GetUserByUsernameAndPassword(string Username, string Password)
+        {
+            short? UserID = null;
+            int PersonID = -1;
+            byte Role = 0;
+            bool IsActive = false;
+            DateTime? LastLoginAt = null;
+            short CreatedByUserID = -1;
+            DateTime CreatedAt = DateTime.MinValue;
+            short? UpdatedByUserID = null;
+            DateTime? UpdatedAt = null;
+
+            string HashedPassword = clsSecurityHelper.ComputeHash(Password);
+            bool IsFound = clsUserData.GetUserByUsernameAndPassword(ref UserID, ref PersonID, Username, HashedPassword, ref Role, ref IsActive, ref LastLoginAt, ref CreatedByUserID, ref CreatedAt, ref UpdatedByUserID, ref UpdatedAt);
+
+            if(IsFound)
+                return new clsUser(UserID, PersonID, Username, Password, Role, IsActive, LastLoginAt, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt);
+            else
+                return null;
+        }
         public bool ActiviateUser(short? UserID)
             => clsUserData.ActiviateUser(UserID);
         public bool DeactiviateUser(short? UserID)

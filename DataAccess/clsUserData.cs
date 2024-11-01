@@ -13,19 +13,19 @@ namespace ClinicManagementDB_DataAccess
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     string query = "SELECT * FROM Users WHERE UserID = @UserID";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using(SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (reader.Read())
+                            if(reader.Read())
                             {
                                 isFound = true;
 
@@ -47,7 +47,54 @@ namespace ClinicManagementDB_DataAccess
                     }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static bool GetUserByUsernameAndPassword(ref short? UserID, ref int PersonID, string Username, string Password, ref byte Role, ref bool IsActive, ref DateTime? LastLoginAt, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", Username);
+                        command.Parameters.AddWithValue("@Password", Password);
+
+                        connection.Open();
+
+                        using(SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                isFound = true;
+
+
+                                UserID = (short?)reader["UserID"];
+                                PersonID = (int)reader["PersonID"];
+                                Role = (byte)reader["Role"];
+                                IsActive = (bool)reader["IsActive"];
+                                LastLoginAt = (reader["LastLoginAt"] != DBNull.Value) ? (DateTime?)reader["LastLoginAt"] : null;
+                                CreatedByUserID = (short)reader["CreatedByUserID"];
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+                                UpdatedByUserID = (reader["UpdatedByUserID"] != DBNull.Value) ? (short?)reader["UpdatedByUserID"] : null;
+                                UpdatedAt = (reader["UpdatedAt"] != DBNull.Value) ? (DateTime?)reader["UpdatedAt"] : null;
+                            }
+                            else
+                                isFound = false;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
             {
                 isFound = false;
             }
@@ -96,9 +143,9 @@ namespace ClinicManagementDB_DataAccess
 
             return UserID;
         }
-        public static string? GetUsernameByID(short? UserID)
+        public static string GetUsernameByID(short? UserID)
         {
-            string? Username = string.Empty;
+            string Username = string.Empty;
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -272,7 +319,7 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@UserID", (object)UserID  ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
