@@ -1,13 +1,14 @@
-using System;
-using System.Data;
 using Business;
 using ClinicManagementDB_DataAccess;
+using System;
+using System.Data;
 
 namespace ClinicManagementDB_Business
 {
     public class clsUser
     {
         public enum enMode { AddNew = 0, Update = 1 };
+        public enum enRole { Admin = 1, Doctor = 2, Receptionist = 3 };
         public enMode Mode = enMode.AddNew;
         public short? UserID { set; get; }
         public int PersonID { set; get; }
@@ -155,10 +156,12 @@ namespace ClinicManagementDB_Business
             else
                 return null;
         }
-        public bool ActiviateUser(short? UserID)
-            => clsUserData.ActiviateUser(UserID);
-        public bool DeactiviateUser(short? UserID)
-            => clsUserData.DeactiviateUser(UserID);
+        public bool ActiviateUser()
+            => clsUserData.ActiviateUser(this.UserID);
+        public bool DeactiviateUser()
+            => clsUserData.DeactiviateUser(this.UserID);
+        public static bool ChangeRole(short UserID, enRole Role)
+            => clsUserData.ChangeRole(UserID, (byte)Role);
         public static bool DeleteUser(short? UserID)
         => clsUserData.DeleteUser(UserID);
         public static bool DoesUserExist(short? UserID)

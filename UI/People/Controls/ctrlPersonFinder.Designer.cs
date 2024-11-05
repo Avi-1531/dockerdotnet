@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gbPersonFinder = new System.Windows.Forms.GroupBox();
+            this.txtPersonID = new System.Windows.Forms.TextBox();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.btnFindPerson = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ctrlPersonInfo1 = new UI.People.Controls.ctrlPersonInfo();
-            this.txtPersonID = new System.Windows.Forms.TextBox();
             this.gbPersonFinder.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,18 @@
             this.gbPersonFinder.TabIndex = 3;
             this.gbPersonFinder.TabStop = false;
             this.gbPersonFinder.Text = "Find Person";
+            // 
+            // txtPersonID
+            // 
+            this.txtPersonID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPersonID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPersonID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtPersonID.Location = new System.Drawing.Point(204, 44);
+            this.txtPersonID.Name = "txtPersonID";
+            this.txtPersonID.Size = new System.Drawing.Size(246, 33);
+            this.txtPersonID.TabIndex = 32;
+            this.txtPersonID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreventNonDigitInput);
             // 
             // btnAddPerson
             // 
@@ -103,17 +115,6 @@
             this.ctrlPersonInfo1.Name = "ctrlPersonInfo1";
             this.ctrlPersonInfo1.Size = new System.Drawing.Size(873, 359);
             this.ctrlPersonInfo1.TabIndex = 0;
-            // 
-            // txtPersonID
-            // 
-            this.txtPersonID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtPersonID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPersonID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtPersonID.Location = new System.Drawing.Point(204, 44);
-            this.txtPersonID.Name = "txtPersonID";
-            this.txtPersonID.Size = new System.Drawing.Size(246, 33);
-            this.txtPersonID.TabIndex = 32;
             // 
             // ctrlPersonFinder
             // 

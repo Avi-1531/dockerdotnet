@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.People;
 
 namespace UI.Users
 {
@@ -126,6 +127,7 @@ namespace UI.Users
                 tsmiActivateOrDeactivate.Text = "Activate";
             }
 
+
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -168,13 +170,13 @@ namespace UI.Users
             if(User.IsActive)
             {
                 tsmiActivateOrDeactivate.Text = "Deactivate";
-                User.DeactiviateUser(UserID);
+                User.DeactiviateUser();
                 _LoadData();
             }
             else
             {
                 tsmiActivateOrDeactivate.Text = "Activate";
-                User.ActiviateUser(UserID);
+                User.ActiviateUser();
                 _LoadData();
             }
 
@@ -185,6 +187,73 @@ namespace UI.Users
             short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
             frmChangeUserPassword frmChangeUserPassword = new frmChangeUserPassword(UserID);
             frmChangeUserPassword.ShowDialog();
+        }
+
+        private void tsmiAddNewUser_Click(object sender, EventArgs e)
+        {
+            frmAddNewUser frmAddNewUser = new frmAddNewUser();
+            frmAddNewUser.ShowDialog();
+        }
+
+        private void tsmiShowUserInfo_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            frmUserInfo frmUserInfo = new frmUserInfo(UserID);
+            frmUserInfo.ShowDialog();
+        }
+
+        private void tsmiShowPersonInfo_Click(object sender, EventArgs e)
+        {
+            int PersonID = (int)dgvUsers.CurrentRow.Cells[1].Value;
+            frmPersonInfo frmPersonInfo = new frmPersonInfo(PersonID);
+            frmPersonInfo.ShowDialog();
+        }
+
+        private void tsmiChangeToAdmin_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            clsUser.ChangeRole(UserID, clsUser.enRole.Admin);
+            _LoadData();
+
+        }
+
+        private void tsmiChangeToDoctor_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            clsUser.ChangeRole(UserID, clsUser.enRole.Doctor);
+            _LoadData();
+        }
+
+        private void tsmiChangeToReceptionist_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            clsUser.ChangeRole(UserID, clsUser.enRole.Receptionist);
+            _LoadData();
+        }
+
+        private void tsmiChangeUserRole_Click(object sender, EventArgs e)
+        {
+
+            string Role = (string)dgvUsers.CurrentRow.Cells[4].Value;
+            switch(Role)
+            {
+                case "Admin":
+                    tsmiChangeToAdmin.Enabled = false;
+                    tsmiChangeToDoctor.Enabled = true;
+                    tsmiChangeToReceptionist.Enabled = true;
+                    break;
+                case "Doctor":
+                    tsmiChangeToAdmin.Enabled = true;
+                    tsmiChangeToDoctor.Enabled = false;
+                    tsmiChangeToReceptionist.Enabled = true;
+                    
+                    break;
+                case "Receptionist":
+                    tsmiChangeToAdmin.Enabled = true;
+                    tsmiChangeToDoctor.Enabled = true;
+                    tsmiChangeToReceptionist.Enabled = false;
+                    break;
+            }
         }
     }
 }

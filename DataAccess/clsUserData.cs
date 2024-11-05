@@ -279,6 +279,35 @@ namespace ClinicManagementDB_DataAccess
 
             return (rowsAffected > 0);
         }
+        public static bool ChangeRole(short? UserID, byte Role)
+        {
+            int rowsAffected = 0;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"Update Users 
+                                SET Role = @Role WHERE UserID = @UserID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@Role", Role);
+
+                        connection.Open();
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return (rowsAffected > 0);
+        }
         public static bool DeactiviateUser(short? UserID)
         {
             int rowsAffected = 0;

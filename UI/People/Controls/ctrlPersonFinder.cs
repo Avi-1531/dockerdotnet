@@ -49,6 +49,7 @@ namespace UI.People.Controls
             ctrlPersonInfo1.SetPersonID(PersonID);
             OnPersonSelected?.Invoke(_Person);
         }
+
     }
 }
 

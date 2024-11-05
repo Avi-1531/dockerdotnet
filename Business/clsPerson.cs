@@ -29,7 +29,7 @@ namespace ClinicManagementDB_Business
             get
             {
                 string FullName = "";
-                FullName = FirstName + " ";
+                FullName = FirstName + " "; 
                 FullName += SecondName + " ";
                 if(ThirdName != null)
                     FullName += ThirdName + " ";
@@ -37,6 +37,15 @@ namespace ClinicManagementDB_Business
                 return FullName;
             }
         }
+        public string PartialFullName
+        {
+            get
+            {
+                string PartialFullName = $"{FirstName} {SecondName} {LastName}";
+                return PartialFullName;
+            }
+        }
+
         public string CountryName
             => clsCountry.Find(this.CountryID).CountryName ?? string.Empty;
         public string StringGender

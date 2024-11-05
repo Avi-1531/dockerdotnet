@@ -50,7 +50,7 @@ namespace UI.Users.Controls
             lblUserID.Text = _User.UserID.ToString();
             lblUserName.Text = _User.Username;
             lblUserStatus.Text = _User.IsActive == true ? "Active" : "Inactive" ;
-            lblFullName.Text = _User.Person.FullName;
+            lblFullName.Text = _User.Person.PartialFullName;
             lblRole.Text = _User.RoleString;
             lblPhone.Text = _User.Person.Phone;
             lblEmail.Text = _User.Person.Email;
