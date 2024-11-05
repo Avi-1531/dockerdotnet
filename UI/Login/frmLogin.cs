@@ -1,4 +1,5 @@
-﻿using ClinicManagementDB_Business;
+﻿using Business;
+using ClinicManagementDB_Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,6 +73,11 @@ namespace UI.Login
             }
             else
             {
+                if(chkRememberMe.Checked)
+                    clsGlobal.SaveLoginCredentials(txtUsername.Text.Trim(), txtPassword.Text.Trim());
+                else
+                    clsGlobal.DeleteLoginCredentials();
+
                 clsGlobal.CurrentUser = LoggedUser;
                 frmMain frmMain = new frmMain();
                 frmMain.OnFormClose += ShowNewLoginForm;
@@ -85,9 +91,30 @@ namespace UI.Login
         }
         private void ShowNewLoginForm()
         {
-            txtUsername.Text = string.Empty;
-            txtPassword.Text = string.Empty;
+            _HandleLoginCredentials();
             this.Show();
+        }
+        private void _HandleLoginCredentials()
+        {
+            string Username = string.Empty;
+            string Password = string.Empty;
+
+            if(clsGlobal.GetLoginCredentials(ref Username, ref Password))
+            {
+                txtUsername.Text = Username;
+                txtPassword.Text = Password;
+                chkRememberMe.Checked = true;
+            }
+            else
+            {
+                txtUsername.Text = string.Empty;
+                txtPassword.Text = string.Empty;
+                chkRememberMe.Checked = false;
+            }
+        }
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            _HandleLoginCredentials();
         }
     }
 }

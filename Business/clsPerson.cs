@@ -149,9 +149,9 @@ namespace ClinicManagementDB_Business
             return false;
         }
         public static bool DeletePerson(int? PersonID)
-        => clsPersonData.DeletePerson(PersonID);
+            => clsPersonData.DeletePerson(PersonID);
         public static bool DoesPersonExist(int? PersonID)
-        => clsPersonData.DoesPersonExist(PersonID);
+            => clsPersonData.DoesPersonExist(PersonID);
 
         public static DataTable GetPeople()
         => clsPersonData.GetAllPeople();
