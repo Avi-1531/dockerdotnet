@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Departments;
 using UI.Global;
+using UI.Patient;
 using UI.People;
 using UI.Users;
 
@@ -65,6 +66,11 @@ namespace UI
             clsGlobal.CurrentLoginHistory.LogoutTime = DateTime.Now;
             clsGlobal.CurrentLoginHistory.Save();
             clsGlobal.CurrentLoginHistory = null;
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmPatientsManagement());
         }
     }
 }

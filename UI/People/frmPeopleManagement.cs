@@ -71,7 +71,8 @@ namespace UI.People
         }
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtPeople.DefaultView.RowFilter = "";
+            if(dtPeople != null)
+                dtPeople.DefaultView.RowFilter = "";
             lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
 
             txtSearch.Visible = (cbFilter.Text != "None") && (cbFilter.Text != "Gender");

@@ -55,7 +55,9 @@ namespace UI.Users
         }
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtUsers.DefaultView.RowFilter = "";
+            if(dtUsers != null)
+                dtUsers.DefaultView.RowFilter = "";
+
             lblRecordsValue.Text = dgvUsers.Rows.Count.ToString();
 
             txtSearch.Visible = (cbFilter.Text != "None") && (cbFilter.Text != "Role") && (cbFilter.Text != "Is Active");

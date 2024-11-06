@@ -156,7 +156,7 @@
             this.btnPatients.TabIndex = 3;
             this.btnPatients.Text = "Patients";
             this.btnPatients.UseVisualStyleBackColor = false;
-            this.btnPatients.Click += new System.EventHandler(this._ShowNotImplementedFeatureMessage);
+            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
             // btnPeople
             // 
