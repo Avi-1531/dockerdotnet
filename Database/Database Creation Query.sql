@@ -215,9 +215,9 @@ CREATE TABLE Departments(
 CREATE TABLE People (
     PersonID INT PRIMARY KEY IDENTITY(1,1),
 	FirstName NVARCHAR(30) CHECK(LEN(FirstName) >= 3 AND FirstName NOT LIKE '%[0-9]%') NOT NULL,
-	SecondName NVARCHAR(30) CHECK(LEN(FirstName) >= 3 AND SecondName NOT LIKE '%[0-9]%') NOT NULL,
+	SecondName NVARCHAR(30) CHECK(LEN(SecondName) >= 3 AND SecondName NOT LIKE '%[0-9]%') NOT NULL,
 	ThirdName NVARCHAR(30) CHECK(ThirdName NOT LIKE '%[0-9]%') NULL,
-	LastName NVARCHAR(30) CHECK(LEN(FirstName) >= 3 AND LastName NOT LIKE '%[0-9]%') NOT NULL,
+	LastName NVARCHAR(30) CHECK(LEN(LastName) >= 3 AND LastName NOT LIKE '%[0-9]%') NOT NULL,
 	NationalID NVARCHAR(30) CHECK(LEN(NationalID) = 10) UNIQUE NOT NULL,
 	BirthDate DATE CHECK(BirthDate > '1900-01-01') NOT NULL,
 	Gender BIT NOT NULL,
@@ -243,7 +243,8 @@ INSERT INTO People (
     Phone, 
     Email, 
     CountryID, 
-    CreatedByUserID
+    CreatedByUserID,
+	CreatedAt
 ) VALUES (
     'System',
     'Administrator',
@@ -256,7 +257,8 @@ INSERT INTO People (
     '0000000000',
     'admin@admin.sa',
     150,
-    1
+    1,
+	GETDATE()
 );
 GO
 CREATE TABLE Users (
@@ -279,14 +281,16 @@ INSERT INTO Users (
     Password, 
     Role, 
     IsActive, 
-    CreatedByUserID
+    CreatedByUserID,
+	CreatedAt
 ) VALUES (
 	1,
     'admin',
-    'admin',
+    '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4',
     1,
     1,
-    1
+    1,
+	GETDATE()
 );
 GO
 
@@ -309,6 +313,13 @@ FOREIGN KEY (UpdatedByUserID) REFERENCES Users(UserID);
 ALTER TABLE Users
 ADD CONSTRAINT FK_Users_PersonID
 FOREIGN KEY (PersonID) REFERENCES People(PersonID);
+
+CREATE TABLE LoginHistory (
+    LoginHistoryID INT PRIMARY KEY IDENTITY(1,1),
+	UserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NOT NULL,
+	LoginTime DATETIME NOT NULL, 
+	LogoutTime DATETIME NULL
+);
 
 CREATE TABLE Patients (
     PatientID INT PRIMARY KEY IDENTITY(1,1),

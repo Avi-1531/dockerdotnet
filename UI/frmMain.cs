@@ -62,6 +62,9 @@ namespace UI
         {
             OnFormClose?.Invoke();
             clsGlobal.CurrentUser = null;
+            clsGlobal.CurrentLoginHistory.LogoutTime = DateTime.Now;
+            clsGlobal.CurrentLoginHistory.Save();
+            clsGlobal.CurrentLoginHistory = null;
         }
     }
 }

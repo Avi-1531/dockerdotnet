@@ -79,6 +79,12 @@ namespace UI.Login
                     clsGlobal.DeleteLoginCredentials();
 
                 clsGlobal.CurrentUser = LoggedUser;
+
+                clsGlobal.CurrentLoginHistory = new clsLoginHistory();
+                clsGlobal.CurrentLoginHistory.UserID = (short)clsGlobal.CurrentUser.UserID;
+                clsGlobal.CurrentLoginHistory.LoginTime = DateTime.Now;
+                clsGlobal.CurrentLoginHistory.Save();
+
                 frmMain frmMain = new frmMain();
                 frmMain.OnFormClose += ShowNewLoginForm;
                 frmMain.Show();

@@ -12,6 +12,7 @@ namespace UI.Global
     public static class clsGlobal
     {
         public static clsUser CurrentUser = null;
+        public static clsLoginHistory CurrentLoginHistory = null;
 
         public static bool SaveLoginCredentials(string Username, string Password)
         {
