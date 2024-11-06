@@ -73,7 +73,10 @@ namespace ClinicManagementDB_Business
             => clsLoginHistoryData.DeleteLoginHistory(LoginHistoryID);
         public static bool DoesLoginHistoryExist(int? LoginHistoryID)
             => clsLoginHistoryData.DoesLoginHistoryExist(LoginHistoryID);
+        public static DataTable GetUserLoginHistory(short UserID)
+            => clsLoginHistoryData.GetUserLoginHistory(UserID);
         public static DataTable GetLoginHistory()
             => clsLoginHistoryData.GetAllLoginHistory();
+
     }
 }

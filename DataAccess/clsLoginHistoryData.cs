@@ -172,6 +172,35 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static DataTable GetUserLoginHistory(short UserID)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM LoginHistory WHERE UserID = @UserID ORDER BY LoginTime DESC";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserID", UserID);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
         public static DataTable GetAllLoginHistory()
         {
             DataTable dt = new DataTable();

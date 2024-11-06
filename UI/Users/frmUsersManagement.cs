@@ -246,7 +246,7 @@ namespace UI.Users
                     tsmiChangeToAdmin.Enabled = true;
                     tsmiChangeToDoctor.Enabled = false;
                     tsmiChangeToReceptionist.Enabled = true;
-                    
+
                     break;
                 case "Receptionist":
                     tsmiChangeToAdmin.Enabled = true;
@@ -254,6 +254,13 @@ namespace UI.Users
                     tsmiChangeToReceptionist.Enabled = false;
                     break;
             }
+        }
+
+        private void tsmiShowLoginHistory_Click(object sender, EventArgs e)
+        {
+            short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;
+            frmUserLoginHistory frmUserLoginHistory = new frmUserLoginHistory(UserID);
+            frmUserLoginHistory.ShowDialog();
         }
     }
 }
