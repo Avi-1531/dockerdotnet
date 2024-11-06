@@ -44,7 +44,7 @@ namespace UI.Users
                 dgvUsers.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvUsers.Columns[4].HeaderText = "Role";
-                dgvUsers.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvUsers.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvUsers.Columns[5].HeaderText = "Last Login At";
                 dgvUsers.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

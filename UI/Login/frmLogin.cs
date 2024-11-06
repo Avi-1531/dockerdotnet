@@ -79,6 +79,8 @@ namespace UI.Login
                     clsGlobal.DeleteLoginCredentials();
 
                 clsGlobal.CurrentUser = LoggedUser;
+                clsGlobal.CurrentUser.LastLoginAt = DateTime.Now;
+                clsGlobal.CurrentUser.Save();
 
                 clsGlobal.CurrentLoginHistory = new clsLoginHistory();
                 clsGlobal.CurrentLoginHistory.UserID = (short)clsGlobal.CurrentUser.UserID;

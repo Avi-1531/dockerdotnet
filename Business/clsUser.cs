@@ -152,7 +152,7 @@ namespace ClinicManagementDB_Business
             bool IsFound = clsUserData.GetUserByUsernameAndPassword(ref UserID, ref PersonID, Username, HashedPassword, ref Role, ref IsActive, ref LastLoginAt, ref CreatedByUserID, ref CreatedAt, ref UpdatedByUserID, ref UpdatedAt);
 
             if(IsFound)
-                return new clsUser(UserID, PersonID, Username, Password, Role, IsActive, LastLoginAt, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt);
+                return new clsUser(UserID, PersonID, Username, HashedPassword, Role, IsActive, LastLoginAt, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt);
             else
                 return null;
         }
