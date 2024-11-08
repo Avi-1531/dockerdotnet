@@ -10,8 +10,8 @@ namespace ClinicManagementDB_Business
         public enMode Mode = enMode.AddNew;
         public byte? DepartmentID { set; get; }
         public string DepartmentName { set; get; }
-        public string? DepartmentDescription { set; get; }
-        public string? DepartmentLocation { set; get; }
+        public string DepartmentDescription { set; get; }
+        public string DepartmentLocation { set; get; }
 
         public clsDepartment()
         {
@@ -21,7 +21,7 @@ namespace ClinicManagementDB_Business
             this.DepartmentLocation = null;
             Mode = enMode.AddNew;
         }
-        private clsDepartment(byte? DepartmentID, string DepartmentName, string? DepartmentDescription, string? DepartmentLocation)
+        private clsDepartment(byte? DepartmentID, string DepartmentName, string DepartmentDescription, string DepartmentLocation)
         {
             this.DepartmentID = DepartmentID;
             this.DepartmentName = DepartmentName;
@@ -41,8 +41,8 @@ namespace ClinicManagementDB_Business
         public static clsDepartment Find(byte? DepartmentID)
         {
             string DepartmentName = "";
-            string? DepartmentDescription = null;
-            string? DepartmentLocation = null;
+            string DepartmentDescription = null;
+            string DepartmentLocation = null;
 
             bool IsFound = clsDepartmentData.GetDepartmentByID(DepartmentID, ref DepartmentName, ref DepartmentDescription, ref DepartmentLocation);
 

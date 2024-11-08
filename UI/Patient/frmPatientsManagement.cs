@@ -22,36 +22,36 @@ namespace UI.Patient
         DataTable dtPatients = null;
         private void _LoadData()
         {
-            dtPatients = clsPerson.GetPeople();
+            dtPatients = clsPatient.GetPatients();
             dgvPatients.DataSource = dtPatients;
 
             if(dgvPatients.Rows.Count > 0)
             {
-                dgvPatients.Columns[0].HeaderText = "Person ID";
-                dgvPatients.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[0].HeaderText = "Patient ID";
+                dgvPatients.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvPatients.Columns[1].HeaderText = "Full Name";
-                dgvPatients.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvPatients.Columns[1].HeaderText = "Person ID";
+                dgvPatients.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvPatients.Columns[2].HeaderText = "National ID";
-                dgvPatients.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[2].HeaderText = "Full Name";
+                dgvPatients.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-                dgvPatients.Columns[3].HeaderText = "Birth Date";
-                dgvPatients.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[3].HeaderText = "National ID";
+                dgvPatients.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvPatients.Columns[4].HeaderText = "Gender";
-                dgvPatients.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[4].HeaderText = "Blood Type";
+                dgvPatients.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvPatients.Columns[5].HeaderText = "Phone";
-                dgvPatients.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[5].HeaderText = "Allergies";
+                dgvPatients.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvPatients.Columns[6].HeaderText = "Email";
+                dgvPatients.Columns[6].HeaderText = "Medical History";
                 dgvPatients.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-                dgvPatients.Columns[7].HeaderText = "Country Name";
+                dgvPatients.Columns[7].HeaderText = "E. Contact Name";
                 dgvPatients.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-                dgvPatients.Columns[8].HeaderText = "Created By";
+                dgvPatients.Columns[8].HeaderText = "E. Contact Phone";
                 dgvPatients.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             }
@@ -107,10 +107,19 @@ namespace UI.Patient
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
-        private void btnAddPerson_Click(object sender, EventArgs e)
+
+        private void btnAddPatient_Click(object sender, EventArgs e)
         {
-            frmAddEditPerson frm = new frmAddEditPerson();
-            frm.ShowDialog();
+            frmAddEditPatient frmAddEditPatient = new frmAddEditPatient();
+            frmAddEditPatient.ShowDialog();
+            _LoadData();
+        }
+
+        private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
+        {
+            int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
+            frmAddEditPatient frmAddEditPatient = new frmAddEditPatient(PatientID);
+            frmAddEditPatient.ShowDialog();
             _LoadData();
         }
     }

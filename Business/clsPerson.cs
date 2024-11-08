@@ -11,12 +11,12 @@ namespace ClinicManagementDB_Business
         public int? PersonID { set; get; }
         public string FirstName { set; get; }
         public string SecondName { set; get; }
-        public string? ThirdName { set; get; }
+        public string ThirdName { set; get; }
         public string LastName { set; get; }
         public string NationalID { set; get; }
         public DateTime BirthDate { set; get; }
         public bool Gender { set; get; }
-        public string? Address { set; get; }
+        public string Address { set; get; }
         public string Phone { set; get; }
         public string Email { set; get; }
         public byte CountryID { set; get; }
@@ -82,7 +82,7 @@ namespace ClinicManagementDB_Business
             this.UpdatedAt = null;
             Mode = enMode.AddNew;
         }
-        private clsPerson(int? PersonID, string FirstName, string SecondName, string? ThirdName, string LastName, string NationalID, DateTime BirthDate, bool Gender, string? Address, string Phone, string Email, byte CountryID, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
+        private clsPerson(int? PersonID, string FirstName, string SecondName, string ThirdName, string LastName, string NationalID, DateTime BirthDate, bool Gender, string Address, string Phone, string Email, byte CountryID, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
         {
             this.PersonID = PersonID;
             this.FirstName = FirstName;
@@ -116,12 +116,12 @@ namespace ClinicManagementDB_Business
         {
             string FirstName = "";
             string SecondName = "";
-            string? ThirdName = null;
+            string ThirdName = null;
             string LastName = "";
             string NationalID = "";
             DateTime BirthDate = DateTime.Now;
             bool Gender = false;
-            string? Address = null;
+            string Address = null;
             string Phone = "";
             string Email = "";
             byte CountryID = 0;

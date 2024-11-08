@@ -15,9 +15,25 @@ namespace UI.People.Controls
     {
         public Action<clsPerson> OnPersonSelected;
         clsPerson _Person;
+        public bool SearchEnabled
+        {
+            get
+            {
+                return txtPersonID.Enabled;
+            }
+            set
+            {
+                txtPersonID.Enabled = value;
+            }
+        }
         public ctrlPersonFinder()
         {
             InitializeComponent();
+        }
+        public void SetPersonID(int PersonID)
+        {
+            ctrlPersonInfo1.SetPersonID(PersonID);
+            txtPersonID.Text = PersonID.ToString();
         }
         private void PreventNonDigitInput(object sender, KeyPressEventArgs e)
         {
@@ -49,6 +65,7 @@ namespace UI.People.Controls
             ctrlPersonInfo1.SetPersonID(PersonID);
             OnPersonSelected?.Invoke(_Person);
         }
+
 
     }
 }

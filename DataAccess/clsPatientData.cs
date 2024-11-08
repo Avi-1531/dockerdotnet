@@ -6,7 +6,7 @@ namespace ClinicManagementDB_DataAccess
 {
     public class clsPatientData
     {
-        public static bool GetPatientByID(int? PatientID, ref int PersonID, ref string? BloodType, ref string? Allergies, ref string? MedicalHistory, ref string? EmergencyContactName, ref string? EmergencyContactPhone, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
+        public static bool GetPatientByID(int? PatientID, ref int PersonID, ref string BloodType, ref string Allergies, ref string MedicalHistory, ref string EmergencyContactName, ref string EmergencyContactPhone, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
         {
             bool isFound = false;
 
@@ -30,11 +30,11 @@ namespace ClinicManagementDB_DataAccess
 
 
                                 PersonID = (int)reader["PersonID"];
-                                BloodType = (reader["BloodType"] != DBNull.Value) ? (string?)reader["BloodType"] : null;
-                                Allergies = (reader["Allergies"] != DBNull.Value) ? (string?)reader["Allergies"] : null;
-                                MedicalHistory = (reader["MedicalHistory"] != DBNull.Value) ? (string?)reader["MedicalHistory"] : null;
-                                EmergencyContactName = (reader["EmergencyContactName"] != DBNull.Value) ? (string?)reader["EmergencyContactName"] : null;
-                                EmergencyContactPhone = (reader["EmergencyContactPhone"] != DBNull.Value) ? (string?)reader["EmergencyContactPhone"] : null;
+                                BloodType = (reader["BloodType"] != DBNull.Value) ? (string)reader["BloodType"] : null;
+                                Allergies = (reader["Allergies"] != DBNull.Value) ? (string)reader["Allergies"] : null;
+                                MedicalHistory = (reader["MedicalHistory"] != DBNull.Value) ? (string)reader["MedicalHistory"] : null;
+                                EmergencyContactName = (reader["EmergencyContactName"] != DBNull.Value) ? (string)reader["EmergencyContactName"] : null;
+                                EmergencyContactPhone = (reader["EmergencyContactPhone"] != DBNull.Value) ? (string)reader["EmergencyContactPhone"] : null;
                                 CreatedByUserID = (short)reader["CreatedByUserID"];
                                 CreatedAt = (DateTime)reader["CreatedAt"];
                                 UpdatedByUserID = (reader["UpdatedByUserID"] != DBNull.Value) ? (short?)reader["UpdatedByUserID"] : null;
@@ -53,7 +53,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static int AddNewPatient(int PersonID, string? BloodType, string? Allergies, string? MedicalHistory, string? EmergencyContactName, string? EmergencyContactPhone, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
+        public static int AddNewPatient(int PersonID, string BloodType, string Allergies, string MedicalHistory, string EmergencyContactName, string EmergencyContactPhone, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
         {
             int PatientID = -1;
 
@@ -95,7 +95,7 @@ namespace ClinicManagementDB_DataAccess
 
             return PatientID;
         }
-        public static bool UpdatePatient(int? PatientID, int PersonID, string? BloodType, string? Allergies, string? MedicalHistory, string? EmergencyContactName, string? EmergencyContactPhone, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
+        public static bool UpdatePatient(int? PatientID, int PersonID, string BloodType, string Allergies, string MedicalHistory, string EmergencyContactName, string EmergencyContactPhone, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
         {
             int rowsAffected = 0;
 
@@ -200,6 +200,35 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static bool DoesPatientExistByPersonID(int PersonID)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found = 1 FROM Patients WHERE PersonID = @PersonID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+
         public static DataTable GetAllPatients()
         {
             DataTable dt = new DataTable();
@@ -208,7 +237,29 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Patients";
+                    string query = @"SELECT PatientID, Patients.PersonID, 
+CONCAT(People.FirstName,' ', People.SecondName,' ', .People.LastName) AS FullName,
+People.NationalID, 
+BloodType, 
+CASE 
+WHEN Allergies is NULL THEN 'No Known Allergies'
+ELSE Allergies
+END AS Allergies,
+CASE 
+WHEN MedicalHistory is NULL THEN 'No Known Medical History'
+ELSE MedicalHistory
+END AS MedicalHistory,
+CASE
+WHEN EmergencyContactName IS NULL THEN 'Not Available'
+ELSE EmergencyContactName
+END AS EmergencyContactName,
+CASE
+WHEN EmergencyContactPhone IS NULL THEN 'Not Available'
+ELSE EmergencyContactPhone
+END AS EmergencyContactPhone
+FROM Patients
+INNER JOIN People ON People.PersonID = Patients.PersonID
+ORDER BY Patients.CreatedAt DESC";
 
                     using(SqlCommand command = new SqlCommand(query, connection))
                     {

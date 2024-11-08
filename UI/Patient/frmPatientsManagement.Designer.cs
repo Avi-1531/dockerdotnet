@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             this.cmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEditPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnAddPerson = new System.Windows.Forms.Button();
+            this.btnAddPatient = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblRecordsValue = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
@@ -55,33 +54,33 @@
             this.dgvPatients.AllowUserToAddRows = false;
             this.dgvPatients.AllowUserToDeleteRows = false;
             this.dgvPatients.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.dgvPatients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.dgvPatients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatients.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.dgvPatients.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPatients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPatients.ColumnHeadersHeight = 40;
             this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPatients.ContextMenuStrip = this.cmsPatient;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatients.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatients.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPatients.EnableHeadersVisualStyles = false;
             this.dgvPatients.Location = new System.Drawing.Point(24, 254);
             this.dgvPatients.MultiSelect = false;
@@ -90,8 +89,8 @@
             this.dgvPatients.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPatients.RowHeadersVisible = false;
             this.dgvPatients.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatients.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatients.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPatients.RowTemplate.Height = 35;
             this.dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPatients.ShowCellErrors = false;
@@ -105,30 +104,20 @@
             // 
             this.cmsPatient.BackColor = System.Drawing.SystemColors.Control;
             this.cmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmPersonalInformation,
-            this.tsmEditPersonalInformation});
+            this.tsmiEditPatientInfo});
             this.cmsPatient.Name = "cmsPerson";
-            this.cmsPatient.Size = new System.Drawing.Size(293, 64);
+            this.cmsPatient.Size = new System.Drawing.Size(213, 56);
             // 
-            // tsmPersonalInformation
+            // tsmiEditPatientInfo
             // 
-            this.tsmPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmPersonalInformation.Name = "tsmPersonalInformation";
-            this.tsmPersonalInformation.Size = new System.Drawing.Size(292, 30);
-            this.tsmPersonalInformation.Text = "Personal Information";
-            this.tsmPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tsmEditPersonalInformation
-            // 
-            this.tsmEditPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmEditPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmEditPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmEditPersonalInformation.Name = "tsmEditPersonalInformation";
-            this.tsmEditPersonalInformation.Size = new System.Drawing.Size(292, 30);
-            this.tsmEditPersonalInformation.Text = "Edit Personal Information";
-            this.tsmEditPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiEditPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(212, 30);
+            this.tsmiEditPatientInfo.Text = "Edit Patient Info";
+            this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
             // 
             // lblHeader
             // 
@@ -140,21 +129,21 @@
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = "PATIENTS MANAGEMENT";
             // 
-            // btnAddPerson
+            // btnAddPatient
             // 
-            this.btnAddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.add_person;
-            this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddPerson.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddPerson.FlatAppearance.BorderSize = 0;
-            this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPerson.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPerson.Location = new System.Drawing.Point(1248, 200);
-            this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(57, 50);
-            this.btnAddPerson.TabIndex = 14;
-            this.btnAddPerson.UseVisualStyleBackColor = false;
-            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
+            this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnAddPatient.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddPatient.FlatAppearance.BorderSize = 0;
+            this.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPatient.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPatient.Location = new System.Drawing.Point(1248, 200);
+            this.btnAddPatient.Name = "btnAddPatient";
+            this.btnAddPatient.Size = new System.Drawing.Size(57, 50);
+            this.btnAddPatient.TabIndex = 14;
+            this.btnAddPatient.UseVisualStyleBackColor = false;
+            this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
             // cbFilter
             // 
@@ -243,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(1329, 861);
             this.Controls.Add(this.dgvPatients);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.btnAddPerson);
+            this.Controls.Add(this.btnAddPatient);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblRecordsValue);
             this.Controls.Add(this.lblRecords);
@@ -256,6 +245,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPatientsManagement";
             this.Text = "frmPatientsManagement";
+            this.Load += new System.EventHandler(this.frmPatientsManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
             this.cmsPatient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -268,10 +258,9 @@
 
         private System.Windows.Forms.DataGridView dgvPatients;
         private System.Windows.Forms.ContextMenuStrip cmsPatient;
-        private System.Windows.Forms.ToolStripMenuItem tsmPersonalInformation;
-        private System.Windows.Forms.ToolStripMenuItem tsmEditPersonalInformation;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditPatientInfo;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Button btnAddPerson;
+        private System.Windows.Forms.Button btnAddPatient;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label lblRecordsValue;
         private System.Windows.Forms.Label lblRecords;

@@ -6,7 +6,7 @@ namespace ClinicManagementDB_DataAccess
 {
     public class clsPersonData
     {
-        public static bool GetPersonByID(int? PersonID, ref string FirstName, ref string SecondName, ref string? ThirdName, ref string LastName, ref string NationalID, ref DateTime BirthDate, ref bool Gender, ref string? Address, ref string Phone, ref string Email, ref byte CountryID, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
+        public static bool GetPersonByID(int? PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, ref string NationalID, ref DateTime BirthDate, ref bool Gender, ref string Address, ref string Phone, ref string Email, ref byte CountryID, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
         {
             bool isFound = false;
 
@@ -31,12 +31,12 @@ namespace ClinicManagementDB_DataAccess
 
                                 FirstName = (string)reader["FirstName"];
                                 SecondName = (string)reader["SecondName"];
-                                ThirdName = (reader["ThirdName"] != DBNull.Value) ? (string?)reader["ThirdName"] : null;
+                                ThirdName = (reader["ThirdName"] != DBNull.Value) ? (string)reader["ThirdName"] : null;
                                 LastName = (string)reader["LastName"];
                                 NationalID = (string)reader["NationalID"];
                                 BirthDate = (DateTime)reader["BirthDate"];
                                 Gender = (bool)reader["Gender"];
-                                Address = (reader["Address"] != DBNull.Value) ? (string?)reader["Address"] : null;
+                                Address = (reader["Address"] != DBNull.Value) ? (string)reader["Address"] : null;
                                 Phone = (string)reader["Phone"];
                                 Email = (string)reader["Email"];
                                 CountryID = (byte)reader["CountryID"];
@@ -58,7 +58,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static int AddNewPerson(string FirstName, string SecondName, string? ThirdName, string LastName, string NationalID, DateTime BirthDate, bool Gender, string? Address, string Phone, string Email, byte CountryID, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
+        public static int AddNewPerson(string FirstName, string SecondName, string ThirdName, string LastName, string NationalID, DateTime BirthDate, bool Gender, string Address, string Phone, string Email, byte CountryID, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
         {
             int PersonID = -1;
 
@@ -104,7 +104,7 @@ namespace ClinicManagementDB_DataAccess
 
             return PersonID;
         }
-        public static bool UpdatePerson(int? PersonID, string FirstName, string SecondName, string? ThirdName, string LastName, string NationalID, DateTime BirthDate, bool Gender, string? Address, string Phone, string Email, byte CountryID, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
+        public static bool UpdatePerson(int? PersonID, string FirstName, string SecondName, string ThirdName, string LastName, string NationalID, DateTime BirthDate, bool Gender, string Address, string Phone, string Email, byte CountryID, short CreatedByUserID, DateTime CreatedAt, short? UpdatedByUserID, DateTime? UpdatedAt)
         {
             int rowsAffected = 0;
 

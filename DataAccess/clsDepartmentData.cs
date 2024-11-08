@@ -6,7 +6,7 @@ namespace ClinicManagementDB_DataAccess
 {
     public class clsDepartmentData
     {
-        public static bool GetDepartmentByID(byte? DepartmentID, ref string DepartmentName, ref string? DepartmentDescription, ref string? DepartmentLocation)
+        public static bool GetDepartmentByID(byte? DepartmentID, ref string DepartmentName, ref string DepartmentDescription, ref string DepartmentLocation)
         {
             bool isFound = false;
 
@@ -30,8 +30,8 @@ namespace ClinicManagementDB_DataAccess
 
 
                                 DepartmentName = (string)reader["DepartmentName"];
-                                DepartmentDescription = (reader["DepartmentDescription"] != DBNull.Value) ? (string?)reader["DepartmentDescription"] : null;
-                                DepartmentLocation = (reader["DepartmentLocation"] != DBNull.Value) ? (string?)reader["DepartmentLocation"] : null;
+                                DepartmentDescription = (reader["DepartmentDescription"] != DBNull.Value) ? (string)reader["DepartmentDescription"] : null;
+                                DepartmentLocation = (reader["DepartmentLocation"] != DBNull.Value) ? (string)reader["DepartmentLocation"] : null;
                             }
                             else
                                 isFound = false;
@@ -46,7 +46,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static int AddNewDepartment(string DepartmentName, string? DepartmentDescription, string? DepartmentLocation)
+        public static int AddNewDepartment(string DepartmentName, string DepartmentDescription, string DepartmentLocation)
         {
             int DepartmentID = -1;
 
@@ -81,7 +81,7 @@ namespace ClinicManagementDB_DataAccess
 
             return DepartmentID;
         }
-        public static bool UpdateDepartment(byte? DepartmentID, string DepartmentName, string? DepartmentDescription, string? DepartmentLocation)
+        public static bool UpdateDepartment(byte? DepartmentID, string DepartmentName, string DepartmentDescription, string DepartmentLocation)
         {
             int rowsAffected = 0;
 
