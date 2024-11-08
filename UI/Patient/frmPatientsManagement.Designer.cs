@@ -44,6 +44,7 @@
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.tsmiShowPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
             this.cmsPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,9 +105,10 @@
             // 
             this.cmsPatient.BackColor = System.Drawing.SystemColors.Control;
             this.cmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEditPatientInfo});
+            this.tsmiEditPatientInfo,
+            this.tsmiShowPatientInfo});
             this.cmsPatient.Name = "cmsPerson";
-            this.cmsPatient.Size = new System.Drawing.Size(213, 56);
+            this.cmsPatient.Size = new System.Drawing.Size(227, 86);
             // 
             // tsmiEditPatientInfo
             // 
@@ -114,8 +116,8 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(212, 30);
-            this.tsmiEditPatientInfo.Text = "Edit Patient Info";
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiEditPatientInfo.Text = "Edit Patient";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
             // 
@@ -224,6 +226,17 @@
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
+            // tsmiShowPatientInfo
+            // 
+            this.tsmiShowPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiShowPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiShowPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiShowPatientInfo.Name = "tsmiShowPatientInfo";
+            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiShowPatientInfo.Text = "Show Patient Info";
+            this.tsmiShowPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiShowPatientInfo.Click += new System.EventHandler(this.tsmiShowPatientInfo_Click);
+            // 
             // frmPatientsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -267,5 +280,6 @@
         private System.Windows.Forms.Label lblFilterBy;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowPatientInfo;
     }
 }

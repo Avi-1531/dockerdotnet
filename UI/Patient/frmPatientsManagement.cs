@@ -122,5 +122,12 @@ namespace UI.Patient
             frmAddEditPatient.ShowDialog();
             _LoadData();
         }
+
+        private void tsmiShowPatientInfo_Click(object sender, EventArgs e)
+        {
+            int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
+            frmPatientInfo frmPatientInfo = new frmPatientInfo(PatientID);
+            frmPatientInfo.ShowDialog();
+        }
     }
 }

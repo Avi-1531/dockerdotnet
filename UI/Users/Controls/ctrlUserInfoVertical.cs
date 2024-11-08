@@ -15,7 +15,7 @@ namespace UI.Users.Controls
     {
         short? _UserID;
         clsUser _User;
-        public clsUser CurrentUser { get { return _User; } }
+        public clsUser SelectedUser { get { return _User; } }
         public ctrlUserInfoVertical()
         {
             InitializeComponent();

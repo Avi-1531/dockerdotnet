@@ -73,11 +73,23 @@
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient\Controls\ctrlPatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient\Controls\ctrlPatientInfo.Designer.cs">
+      <DependentUpon>ctrlPatientInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient\frmAddEditPatient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Patient\frmAddEditPatient.Designer.cs">
       <DependentUpon>frmAddEditPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\frmPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\frmPatientInfo.Designer.cs">
+      <DependentUpon>frmPatientInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Patient\frmPatientsManagement.cs">
       <SubType>Form</SubType>
@@ -171,8 +183,14 @@
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Patient\Controls\ctrlPatientInfo.resx">
+      <DependentUpon>ctrlPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Patient\frmAddEditPatient.resx">
       <DependentUpon>frmAddEditPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\frmPatientInfo.resx">
+      <DependentUpon>frmPatientInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\frmPatientsManagement.resx">
       <DependentUpon>frmPatientsManagement.cs</DependentUpon>
