@@ -52,7 +52,7 @@ namespace UI.Patient
             if(_Patient == null)
                 return;
 
-            ctrlPersonFinder1.SetPersonID((int)_Patient.PatientID);
+            ctrlPersonFinder1.SetPersonID((int)_Patient.PersonID);
             lblPatientID.Text = _Patient.PatientID.ToString();
             txtAllergies.Text = _Patient.Allergies ?? string.Empty;
             txtMedicalHistory.Text = _Patient.MedicalHistory ?? string.Empty;

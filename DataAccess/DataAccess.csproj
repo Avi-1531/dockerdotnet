@@ -46,6 +46,7 @@
     <Compile Include="clsCountryData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsDepartmentData.cs" />
+    <Compile Include="clsDoctorData.cs" />
     <Compile Include="clsLoginHistoryData.cs" />
     <Compile Include="clsPatientData.cs" />
     <Compile Include="clsPersonData.cs" />

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Departments;
+using UI.Doctor;
 using UI.Global;
 using UI.Patient;
 using UI.People;
@@ -71,6 +72,11 @@ namespace UI
         private void btnPatients_Click(object sender, EventArgs e)
         {
             LoadForm(new frmPatientsManagement());
+        }
+
+        private void btnDoctors_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmDoctorsManagement());
         }
     }
 }

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="clsCountry.cs" />
     <Compile Include="clsDepartment.cs" />
+    <Compile Include="clsDoctor.cs" />
     <Compile Include="clsLoginHistory.cs" />
     <Compile Include="clsPatient.cs" />
     <Compile Include="clsPerson.cs" />

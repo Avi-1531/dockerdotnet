@@ -14,12 +14,11 @@ namespace UI.Patient
 {
     public partial class frmPatientsManagement : Form
     {
+        DataTable dtPatients = null;
         public frmPatientsManagement()
         {
             InitializeComponent();
         }
-
-        DataTable dtPatients = null;
         private void _LoadData()
         {
             dtPatients = clsPatient.GetPatients();
@@ -102,19 +101,17 @@ namespace UI.Patient
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(cbFilter.Text == "Person ID" || cbFilter.Text == "National ID"
-              || cbFilter.Text == "Patient ID" || cbFilter.Text == "Phone")
+              || cbFilter.Text == "Patient ID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
-
         private void btnAddPatient_Click(object sender, EventArgs e)
         {
             frmAddEditPatient frmAddEditPatient = new frmAddEditPatient();
             frmAddEditPatient.ShowDialog();
             _LoadData();
         }
-
         private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
         {
             int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
@@ -122,7 +119,6 @@ namespace UI.Patient
             frmAddEditPatient.ShowDialog();
             _LoadData();
         }
-
         private void tsmiShowPatientInfo_Click(object sender, EventArgs e)
         {
             int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;

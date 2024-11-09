@@ -128,7 +128,7 @@
             this.btnDoctors.TabIndex = 5;
             this.btnDoctors.Text = "Doctors";
             this.btnDoctors.UseVisualStyleBackColor = false;
-            this.btnDoctors.Click += new System.EventHandler(this._ShowNotImplementedFeatureMessage);
+            this.btnDoctors.Click += new System.EventHandler(this.btnDoctors_Click);
             // 
             // btnAppointments
             // 
