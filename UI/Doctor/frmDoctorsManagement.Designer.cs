@@ -109,7 +109,7 @@
             this.tsmiEditPatientInfo,
             this.tsmiShowPatientInfo});
             this.cmsDoctor.Name = "cmsPerson";
-            this.cmsDoctor.Size = new System.Drawing.Size(227, 64);
+            this.cmsDoctor.Size = new System.Drawing.Size(227, 86);
             // 
             // tsmiEditPatientInfo
             // 
@@ -118,8 +118,9 @@
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
             this.tsmiEditPatientInfo.Size = new System.Drawing.Size(226, 30);
-            this.tsmiEditPatientInfo.Text = "Edit Patient";
+            this.tsmiEditPatientInfo.Text = "Edit Doctor";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
             // 
             // tsmiShowPatientInfo
             // 
@@ -155,6 +156,7 @@
             this.btnAddDoctor.Size = new System.Drawing.Size(57, 50);
             this.btnAddDoctor.TabIndex = 23;
             this.btnAddDoctor.UseVisualStyleBackColor = false;
+            this.btnAddDoctor.Click += new System.EventHandler(this.btnAddDoctor_Click);
             // 
             // cbFilter
             // 

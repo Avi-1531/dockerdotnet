@@ -10,6 +10,7 @@ namespace ClinicManagementDB_Business
         public new enMode Mode = enMode.AddNew;
         public short? DoctorID { set; get; }
         public byte DepartmentID { set; get; }
+        public clsDepartment Department { set; get; }
         public string LicenseNumber { set; get; }
         public string Specialization { set; get; }
         public byte YearsOfExperience { set; get; }
@@ -18,6 +19,7 @@ namespace ClinicManagementDB_Business
         public byte DoctorStatus { set; get; }
         public decimal? ConsultationFee { set; get; }
         public short DoctorUserID { set; get; }
+        public clsUser DoctorUser { set; get; }
         public new short CreatedByUserID { set; get; }
         public new DateTime CreatedAt { set; get; }
         public new short? UpdatedByUserID { set; get; }
@@ -54,6 +56,7 @@ namespace ClinicManagementDB_Business
         {
             this.DoctorID = DoctorID;
             this.DepartmentID = DepartmentID;
+            this.Department = clsDepartment.Find(this.DepartmentID);
             this.LicenseNumber = LicenseNumber;
             this.Specialization = Specialization;
             this.YearsOfExperience = YearsOfExperience;
@@ -62,6 +65,7 @@ namespace ClinicManagementDB_Business
             this.DoctorStatus = DoctorStatus;
             this.ConsultationFee = ConsultationFee;
             this.DoctorUserID = DoctorUserID;
+            this.DoctorUser = clsUser.Find(this.DoctorUserID);
             this.CreatedByUserID = DoctorCreatedByUserID;
             this.CreatedAt = DoctorCreatedAt;
             this.UpdatedByUserID = DoctorUpdatedByUserID;
@@ -143,8 +147,14 @@ namespace ClinicManagementDB_Business
         }
         public static bool DeleteDoctor(short? DoctorID)
             => clsDoctorData.DeleteDoctor(DoctorID);
-        public static bool DoesDoctorExist(short? DoctorID)
-            => clsDoctorData.DoesDoctorExist(DoctorID);
+        public static bool DoesDoctorExistByDoctorID(short? DoctorID)
+            => clsDoctorData.DoesDoctorExistByDoctorID(DoctorID);
+        public static bool DoesDoctorExistByPersonID(int? PersonID)
+            => clsDoctorData.DoesDoctorExistByPersonID(PersonID);
+        public static bool DoesUsernameUsedByAnotherDoctor(short? DoctorID, string Username)
+            => clsDoctorData.DoesUsernameUsedByAnotherDoctor(DoctorID, Username);
+        public static int? GetPersonID(short DoctorID) 
+            => clsDoctorData.GetPersonID(DoctorID);
         public static DataTable GetDoctors()
             => clsDoctorData.GetAllDoctors();
     }

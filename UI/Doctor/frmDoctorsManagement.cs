@@ -128,5 +128,19 @@ namespace UI.Doctor
             dtDoctors.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", "Status", cbStatus.Text);
             lblRecordsValue.Text = dgvDoctors.Rows.Count.ToString();
         }
+        private void btnAddDoctor_Click(object sender, EventArgs e)
+        {
+            frmAddEditDoctor frmAddEditDoctor = new frmAddEditDoctor();
+            frmAddEditDoctor.ShowDialog();
+            _LoadData();
+        }
+
+        private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
+        {
+            short DoctorID = (short)dgvDoctors.CurrentRow.Cells[0].Value;
+            frmAddEditDoctor frmAddEditDoctor = new frmAddEditDoctor(DoctorID);
+            frmAddEditDoctor.ShowDialog();
+            _LoadData();
+        }
     }
 }

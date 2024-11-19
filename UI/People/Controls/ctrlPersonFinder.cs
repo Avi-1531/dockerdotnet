@@ -32,8 +32,12 @@ namespace UI.People.Controls
         }
         public void SetPersonID(int PersonID)
         {
+            if(!clsPerson.DoesPersonExist(PersonID))
+                return;
+
             ctrlPersonInfo1.SetPersonID(PersonID);
             txtPersonID.Text = PersonID.ToString();
+
         }
         private void PreventNonDigitInput(object sender, KeyPressEventArgs e)
         {
@@ -64,6 +68,7 @@ namespace UI.People.Controls
 
             ctrlPersonInfo1.SetPersonID(PersonID);
             OnPersonSelected?.Invoke(_Person);
+
         }
 
 

@@ -46,6 +46,46 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static bool GetDepartmentByDepartmentName(ref byte? DepartmentID, string DepartmentName, ref string DepartmentDescription, ref string DepartmentLocation)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM Departments WHERE DepartmentName = @DepartmentName";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DepartmentName", (object)DepartmentName ?? DBNull.Value);
+
+                        connection.Open();
+
+                        using(SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                isFound = true;
+
+
+                                DepartmentID = (byte?)reader["DepartmentID"];
+                                DepartmentDescription = (reader["DepartmentDescription"] != DBNull.Value) ? (string)reader["DepartmentDescription"] : null;
+                                DepartmentLocation = (reader["DepartmentLocation"] != DBNull.Value) ? (string)reader["DepartmentLocation"] : null;
+                            }
+                            else
+                                isFound = false;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
         public static int AddNewDepartment(string DepartmentName, string DepartmentDescription, string DepartmentLocation)
         {
             int DepartmentID = -1;

@@ -188,7 +188,7 @@ namespace ClinicManagementDB_DataAccess
 
             return (rowsAffected > 0);
         }
-        public static bool DoesDoctorExist(short? DoctorID)
+        public static bool DoesDoctorExistByDoctorID(short? DoctorID)
         {
             bool isFound = false;
 
@@ -201,6 +201,107 @@ namespace ClinicManagementDB_DataAccess
                     using(SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static bool DoesDoctorExistByPersonID(int? PersonID)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found = 1 FROM Doctors WHERE PersonID = @PersonID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static int? GetPersonID(short? DoctorID)
+        {
+            int? PersonID = null;
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT PersonID FROM Doctors WHERE DoctorID = @DoctorID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        if(reader.Read())
+                        {
+                            PersonID = (int?)reader["PersonID"];
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+
+            return PersonID;
+        }
+
+        public static bool DoesUsernameUsedByAnotherDoctor(short? DoctorID, string Username)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"    
+    DECLARE @TempDoctorID INT;
+    SET @TempDoctorID = @DoctorID;
+	IF (@TempDoctorID IS NULL)
+	BEGIN
+		SELECT Found = 1 FROM Doctors 
+		INNER JOIN Users ON Users.UserID = Doctors.DoctorUserID
+		WHERE Username = @Username
+	END
+	ELSE 
+	BEGIN
+		SELECT Found = 1 
+		FROM Doctors 
+		INNER JOIN Users ON Users.UserID = Doctors.DoctorUserID
+		WHERE DoctorID <> @TempDoctorID AND Username = @Username;
+	END";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@Username", Username);
 
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();

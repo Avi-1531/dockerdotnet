@@ -114,6 +114,46 @@ namespace ClinicManagementDB_Business
             else
                 return null;
         }
+        public static clsUser FindByPersonID(int PersonID)
+        {
+            short? UserID = null;
+            string Username = "";
+            string Password = "";
+            byte Role = 0;
+            bool IsActive = false;
+            DateTime? LastLoginAt = null;
+            short CreatedByUserID = -1;
+            DateTime CreatedAt = DateTime.MinValue;
+            short? UpdatedByUserID = null;
+            DateTime? UpdatedAt = null;
+
+            bool IsFound = clsUserData.GetUserByPersonID(ref UserID, PersonID, ref Username, ref Password, ref Role, ref IsActive, ref LastLoginAt, ref CreatedByUserID, ref CreatedAt, ref UpdatedByUserID, ref UpdatedAt);
+
+            if(IsFound)
+                return new clsUser(UserID, PersonID, Username, Password, Role, IsActive, LastLoginAt, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt);
+            else
+                return null;
+        }
+        public static clsUser Find(string Username)
+        {
+            int PersonID = -1;
+            short? UserID = null;
+            string Password = "";
+            byte Role = 0;
+            bool IsActive = false;
+            DateTime? LastLoginAt = null;
+            short CreatedByUserID = -1;
+            DateTime CreatedAt = DateTime.MinValue;
+            short? UpdatedByUserID = null;
+            DateTime? UpdatedAt = null;
+
+            bool IsFound = clsUserData.GetUserByUsername(ref UserID, ref PersonID, Username, ref Password, ref Role, ref IsActive, ref LastLoginAt, ref CreatedByUserID, ref CreatedAt, ref UpdatedByUserID, ref UpdatedAt);
+
+            if(IsFound)
+                return new clsUser(UserID, PersonID, Username, Password, Role, IsActive, LastLoginAt, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt);
+            else
+                return null;
+        }
         public bool Save()
         {
             switch(Mode)

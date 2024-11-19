@@ -54,6 +54,101 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static bool GetUserByPersonID(ref short? UserID, int PersonID, ref string Username, ref string Password, ref byte Role, ref bool IsActive, ref DateTime? LastLoginAt, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM Users WHERE PersonID = @PersonID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        connection.Open();
+
+                        using(SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                isFound = true;
+
+
+                                UserID = (short)reader["UserID"];
+                                Username = (string)reader["Username"];
+                                Password = (string)reader["Password"];
+                                Role = (byte)reader["Role"];
+                                IsActive = (bool)reader["IsActive"];
+                                LastLoginAt = (reader["LastLoginAt"] != DBNull.Value) ? (DateTime?)reader["LastLoginAt"] : null;
+                                CreatedByUserID = (short)reader["CreatedByUserID"];
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+                                UpdatedByUserID = (reader["UpdatedByUserID"] != DBNull.Value) ? (short?)reader["UpdatedByUserID"] : null;
+                                UpdatedAt = (reader["UpdatedAt"] != DBNull.Value) ? (DateTime?)reader["UpdatedAt"] : null;
+                            }
+                            else
+                                isFound = false;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+
+        public static bool GetUserByUsername(ref short? UserID, ref int PersonID, string Username, ref string Password, ref byte Role, ref bool IsActive, ref DateTime? LastLoginAt, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT * FROM Users WHERE Username = @Username";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", (object)Username ?? DBNull.Value);
+
+                        connection.Open();
+
+                        using(SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if(reader.Read())
+                            {
+                                isFound = true;
+
+
+                                UserID = (short?)reader["UserID"];
+                                PersonID = (int)reader["PersonID"];
+                                Password = (string)reader["Password"];
+                                Role = (byte)reader["Role"];
+                                IsActive = (bool)reader["IsActive"];
+                                LastLoginAt = (reader["LastLoginAt"] != DBNull.Value) ? (DateTime?)reader["LastLoginAt"] : null;
+                                CreatedByUserID = (short)reader["CreatedByUserID"];
+                                CreatedAt = (DateTime)reader["CreatedAt"];
+                                UpdatedByUserID = (reader["UpdatedByUserID"] != DBNull.Value) ? (short?)reader["UpdatedByUserID"] : null;
+                                UpdatedAt = (reader["UpdatedAt"] != DBNull.Value) ? (DateTime?)reader["UpdatedAt"] : null;
+                            }
+                            else
+                                isFound = false;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
         public static bool GetUserByUsernameAndPassword(ref short? UserID, ref int PersonID, string Username, string Password, ref byte Role, ref bool IsActive, ref DateTime? LastLoginAt, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
         {
             bool isFound = false;

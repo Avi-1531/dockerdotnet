@@ -51,6 +51,20 @@ namespace ClinicManagementDB_Business
             else
                 return null;
         }
+        public static clsDepartment Find(string DepartmentName)
+        {
+            byte? DepartmentID = null;
+            string DepartmentDescription = null;
+            string DepartmentLocation = null;
+
+            bool IsFound = clsDepartmentData.GetDepartmentByDepartmentName(ref DepartmentID, DepartmentName, ref DepartmentDescription, ref DepartmentLocation);
+
+            if(IsFound)
+                return new clsDepartment(DepartmentID, DepartmentName, DepartmentDescription, DepartmentLocation);
+            else
+                return null;
+        }
+
         public bool Save()
         {
             switch(Mode)

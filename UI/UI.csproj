@@ -59,6 +59,12 @@
     <Compile Include="Departments\frmDepartmentsManagement.Designer.cs">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\frmAddEditDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\frmAddEditDoctor.Designer.cs">
+      <DependentUpon>frmAddEditDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmDoctorsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Departments\frmDepartmentsManagement.resx">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\frmAddEditDoctor.resx">
+      <DependentUpon>frmAddEditDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorsManagement.resx">
       <DependentUpon>frmDoctorsManagement.cs</DependentUpon>

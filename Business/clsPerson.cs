@@ -112,7 +112,7 @@ namespace ClinicManagementDB_Business
         {
             return clsPersonData.UpdatePerson(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalID, this.BirthDate, this.Gender, this.Address, this.Phone, this.Email, this.CountryID, this.CreatedByUserID, this.CreatedAt, this.UpdatedByUserID, this.UpdatedAt);
         }
-        public static clsPerson Find(int? PersonID)
+        public static  clsPerson Find(int? PersonID)
         {
             string FirstName = "";
             string SecondName = "";
