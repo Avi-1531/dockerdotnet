@@ -59,6 +59,12 @@
     <Compile Include="Departments\frmDepartmentsManagement.Designer.cs">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\Controls\ctrlDoctorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\Controls\ctrlDoctorInfo.Designer.cs">
+      <DependentUpon>ctrlDoctorInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\frmAddEditDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="Doctor\frmDoctorsManagement.Designer.cs">
       <DependentUpon>frmDoctorsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\frmDoctorInfo.Designer.cs">
+      <DependentUpon>frmDoctorInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -189,11 +201,17 @@
     <EmbeddedResource Include="Departments\frmDepartmentsManagement.resx">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Controls\ctrlDoctorInfo.resx">
+      <DependentUpon>ctrlDoctorInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmAddEditDoctor.resx">
       <DependentUpon>frmAddEditDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmDoctorsManagement.resx">
       <DependentUpon>frmDoctorsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\frmDoctorInfo.resx">
+      <DependentUpon>frmDoctorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

@@ -142,5 +142,12 @@ namespace UI.Doctor
             frmAddEditDoctor.ShowDialog();
             _LoadData();
         }
+
+        private void tsmiShowDoctorInfo_Click(object sender, EventArgs e)
+        {
+            short DoctorID = (short)dgvDoctors.CurrentRow.Cells[0].Value;
+            frmDoctorInfo frmDoctorInfo = new frmDoctorInfo(DoctorID);
+            frmDoctorInfo.ShowDialog();
+        }
     }
 }

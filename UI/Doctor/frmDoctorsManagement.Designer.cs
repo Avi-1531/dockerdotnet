@@ -36,7 +36,7 @@
             this.dgvDoctors = new System.Windows.Forms.DataGridView();
             this.cmsDoctor = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddDoctor = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -107,9 +107,9 @@
             this.cmsDoctor.BackColor = System.Drawing.SystemColors.Control;
             this.cmsDoctor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEditPatientInfo,
-            this.tsmiShowPatientInfo});
+            this.tsmiShowDoctorInfo});
             this.cmsDoctor.Name = "cmsPerson";
-            this.cmsDoctor.Size = new System.Drawing.Size(227, 86);
+            this.cmsDoctor.Size = new System.Drawing.Size(226, 86);
             // 
             // tsmiEditPatientInfo
             // 
@@ -117,20 +117,21 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(225, 30);
             this.tsmiEditPatientInfo.Text = "Edit Doctor";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
             // 
-            // tsmiShowPatientInfo
+            // tsmiShowDoctorInfo
             // 
-            this.tsmiShowPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiShowPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiShowPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiShowPatientInfo.Name = "tsmiShowPatientInfo";
-            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(226, 30);
-            this.tsmiShowPatientInfo.Text = "Show Patient Info";
-            this.tsmiShowPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiShowDoctorInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
+            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(225, 30);
+            this.tsmiShowDoctorInfo.Text = "Show Doctor Info";
+            this.tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiShowDoctorInfo.Click += new System.EventHandler(this.tsmiShowDoctorInfo_Click);
             // 
             // lblHeader
             // 
@@ -297,7 +298,7 @@
         private System.Windows.Forms.DataGridView dgvDoctors;
         private System.Windows.Forms.ContextMenuStrip cmsDoctor;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditPatientInfo;
-        private System.Windows.Forms.ToolStripMenuItem tsmiShowPatientInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowDoctorInfo;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnAddDoctor;
         private System.Windows.Forms.ComboBox cbFilter;

@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Net.NetworkInformation;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -24,7 +25,28 @@ namespace ClinicManagementDB_Business
         public new DateTime CreatedAt { set; get; }
         public new short? UpdatedByUserID { set; get; }
         public new DateTime? UpdatedAt { set; get; }
+        public string DoctorStatusString
+        {
+            get
+            {
+                switch(this.DoctorStatus)
+                {
+                    case 1:
+                        return "Active";
+                    case 2:
+                        return "On Leave";
+                    case 3:
+                        return "Resigned";
+                    case 4:
+                        return "Retired";
+                    case 5:
+                        return "Terminated";
 
+                    default:
+                        return "Not Known";
+                }
+            }
+        }
         public clsDoctor()
         {
             this.DoctorID = null;
@@ -153,7 +175,7 @@ namespace ClinicManagementDB_Business
             => clsDoctorData.DoesDoctorExistByPersonID(PersonID);
         public static bool DoesUsernameUsedByAnotherDoctor(short? DoctorID, string Username)
             => clsDoctorData.DoesUsernameUsedByAnotherDoctor(DoctorID, Username);
-        public static int? GetPersonID(short DoctorID) 
+        public static int? GetPersonID(short DoctorID)
             => clsDoctorData.GetPersonID(DoctorID);
         public static DataTable GetDoctors()
             => clsDoctorData.GetAllDoctors();
