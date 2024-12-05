@@ -12,6 +12,7 @@ using UI.Doctor;
 using UI.Global;
 using UI.Patient;
 using UI.People;
+using UI.Receptionist;
 using UI.Users;
 
 namespace UI
@@ -77,6 +78,11 @@ namespace UI
         private void btnDoctors_Click(object sender, EventArgs e)
         {
             LoadForm(new frmDoctorsManagement());
+        }
+
+        private void btnReceptionists_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmReceptionistManagement());
         }
     }
 }

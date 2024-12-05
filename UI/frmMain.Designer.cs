@@ -114,7 +114,7 @@
             this.btnReceptionists.TabIndex = 6;
             this.btnReceptionists.Text = "Receptionists";
             this.btnReceptionists.UseVisualStyleBackColor = false;
-            this.btnReceptionists.Click += new System.EventHandler(this._ShowNotImplementedFeatureMessage);
+            this.btnReceptionists.Click += new System.EventHandler(this.btnReceptionists_Click);
             // 
             // btnDoctors
             // 

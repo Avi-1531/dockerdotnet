@@ -48,6 +48,7 @@
     <Compile Include="clsLoginHistory.cs" />
     <Compile Include="clsPatient.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsReceptionist.cs" />
     <Compile Include="clsSecurityHelper.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
