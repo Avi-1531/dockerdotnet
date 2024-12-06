@@ -109,6 +109,19 @@ namespace UI.Receptionist
             lblRecordsValue.Text = dgvReceptionists.Rows.Count.ToString();
         }
 
-     
+        private void btnAddReceptionist_Click(object sender, EventArgs e)
+        {
+            frmAddEditReceptionist frmAddEditReceptionist = new frmAddEditReceptionist();
+            frmAddEditReceptionist.ShowDialog();
+            _LoadData();
+        }
+
+        private void tsmPersonalInformation_Click(object sender, EventArgs e)
+        {
+            short ReceptionistID = (short)dgvReceptionists.CurrentRow.Cells[0].Value;
+            frmAddEditReceptionist frmAddEditReceptionist = new frmAddEditReceptionist(ReceptionistID);
+            frmAddEditReceptionist.ShowDialog();
+            _LoadData();
+        }
     }
 }

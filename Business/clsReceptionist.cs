@@ -14,11 +14,11 @@ namespace ClinicManagementDB_Business
         public DateTime? EndDate { set; get; }
         public byte ReceptionistStatus { set; get; }
         public short ReceptionistUserID { set; get; }
+        public clsUser ReceptionistUser { set; get; }
         public short CreatedByUserID { set; get; }
         public DateTime CreatedAt { set; get; }
         public short? UpdatedByUserID { set; get; }
         public DateTime? UpdatedAt { set; get; }
-
         public clsReceptionist()
         {
             this.ReceptionistID = null;
@@ -45,6 +45,7 @@ namespace ClinicManagementDB_Business
             this.CreatedAt = CreatedAt;
             this.UpdatedByUserID = UpdatedByUserID;
             this.UpdatedAt = UpdatedAt;
+            this.ReceptionistUser = clsUser.Find(ReceptionistUserID);
             Mode = enMode.Update;
         }
         private bool _AddNewReceptionist()
@@ -99,5 +100,14 @@ namespace ClinicManagementDB_Business
             => clsReceptionistData.DoesReceptionistExist(ReceptionistID);
         public static DataTable GetReceptionists()
             => clsReceptionistData.GetAllReceptionists();
+        
+        public static int? GetPersonID(short? ReceptionistID) 
+            => clsReceptionistData.GetPersonID(ReceptionistID);
+
+        public static bool DoesReceptionistExistsByPersonID(int? PersonID) 
+            => clsReceptionistData.DoesReceptionistExistByPersonID(PersonID);
+
+        public static bool DoesUsernameUsedByAnotherReceptionist(short? ReceptionistID, string Username)
+            => clsReceptionistData.DoesUsernameUsedByAnotherReceptionist(ReceptionistID, Username);
     }
 }

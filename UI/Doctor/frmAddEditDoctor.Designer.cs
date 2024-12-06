@@ -125,7 +125,7 @@
             this.gbDoctorInfo.Size = new System.Drawing.Size(866, 453);
             this.gbDoctorInfo.TabIndex = 27;
             this.gbDoctorInfo.TabStop = false;
-            this.gbDoctorInfo.Text = "Patient Info";
+            this.gbDoctorInfo.Text = "Doctor Info";
             // 
             // chkSetEndDate
             // 

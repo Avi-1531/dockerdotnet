@@ -196,6 +196,106 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static int? GetPersonID(short? ReceptionistID)
+        {
+            int? PersonID = null;
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT PersonID FROM Receptionists WHERE ReceptionistID = @ReceptionistID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        if(reader.Read())
+                        {
+                            PersonID = (int?)reader["PersonID"];
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+
+            return PersonID;
+        }
+        public static bool DoesReceptionistExistByPersonID(int? PersonID)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found = 1 FROM Receptionist WHERE PersonID = @PersonID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static bool DoesUsernameUsedByAnotherReceptionist(short? ReceptionistID, string Username)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"      DECLARE @TempReceptionistID INT;
+    SET @TempReceptionistID = @ReceptionistID;
+	IF (@TempReceptionistID IS NULL)
+	BEGIN
+		SELECT Found = 1 FROM Receptionists 
+		INNER JOIN Users ON Users.UserID = Receptionists.ReceptionistUserID
+		WHERE Username = @Username
+	END
+	ELSE 
+	BEGIN
+		SELECT Found = 1 
+		FROM Receptionists 
+		INNER JOIN Users ON Users.UserID = Receptionists.ReceptionistUserID
+		WHERE ReceptionistID <> @TempReceptionistID AND Username = @Username;
+	END";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@Username", Username);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+
         public static DataTable GetAllReceptionists()
         {
             DataTable dt = new DataTable();
@@ -239,5 +339,6 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+
     }
 }
