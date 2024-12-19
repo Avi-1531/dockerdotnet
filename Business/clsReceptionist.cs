@@ -19,6 +19,27 @@ namespace ClinicManagementDB_Business
         public DateTime CreatedAt { set; get; }
         public short? UpdatedByUserID { set; get; }
         public DateTime? UpdatedAt { set; get; }
+        public string ReceptionistStatusString
+        {
+            get
+            {
+                switch(this.ReceptionistStatus)
+                {
+                    case 1:
+                        return "Active";
+                    case 2:
+                        return "On Leave";
+                    case 3:
+                        return "Resigned";
+                    case 4:
+                        return "Terminated";
+
+                    default:
+                        return "Not Known";
+                }
+            }
+        }
+
         public clsReceptionist()
         {
             this.ReceptionistID = null;

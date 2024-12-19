@@ -36,7 +36,7 @@
             this.dgvReceptionists = new System.Windows.Forms.DataGridView();
             this.cmsReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEditPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmShowReceptionistInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddReceptionist = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -107,9 +107,9 @@
             this.cmsReceptionist.BackColor = System.Drawing.SystemColors.Control;
             this.cmsReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmPersonalInformation,
-            this.tsmEditPersonalInformation});
+            this.tsmShowReceptionistInfo});
             this.cmsReceptionist.Name = "cmsPerson";
-            this.cmsReceptionist.Size = new System.Drawing.Size(293, 86);
+            this.cmsReceptionist.Size = new System.Drawing.Size(271, 86);
             // 
             // tsmPersonalInformation
             // 
@@ -117,20 +117,21 @@
             this.tsmPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmPersonalInformation.Name = "tsmPersonalInformation";
-            this.tsmPersonalInformation.Size = new System.Drawing.Size(292, 30);
+            this.tsmPersonalInformation.Size = new System.Drawing.Size(270, 30);
             this.tsmPersonalInformation.Text = "Edit Receptionist";
             this.tsmPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmPersonalInformation.Click += new System.EventHandler(this.tsmPersonalInformation_Click);
             // 
-            // tsmEditPersonalInformation
+            // tsmShowReceptionistInfo
             // 
-            this.tsmEditPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmEditPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmEditPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmEditPersonalInformation.Name = "tsmEditPersonalInformation";
-            this.tsmEditPersonalInformation.Size = new System.Drawing.Size(292, 30);
-            this.tsmEditPersonalInformation.Text = "Edit Personal Information";
-            this.tsmEditPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmShowReceptionistInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmShowReceptionistInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmShowReceptionistInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmShowReceptionistInfo.Name = "tsmShowReceptionistInfo";
+            this.tsmShowReceptionistInfo.Size = new System.Drawing.Size(270, 30);
+            this.tsmShowReceptionistInfo.Text = "Show Receptionist Info";
+            this.tsmShowReceptionistInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmShowReceptionistInfo.Click += new System.EventHandler(this.tsmShowReceptionistInfo_Click);
             // 
             // lblHeader
             // 
@@ -294,7 +295,7 @@
         private System.Windows.Forms.DataGridView dgvReceptionists;
         private System.Windows.Forms.ContextMenuStrip cmsReceptionist;
         private System.Windows.Forms.ToolStripMenuItem tsmPersonalInformation;
-        private System.Windows.Forms.ToolStripMenuItem tsmEditPersonalInformation;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowReceptionistInfo;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnAddReceptionist;
         private System.Windows.Forms.ComboBox cbFilter;

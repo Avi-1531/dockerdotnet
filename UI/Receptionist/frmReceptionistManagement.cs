@@ -123,5 +123,12 @@ namespace UI.Receptionist
             frmAddEditReceptionist.ShowDialog();
             _LoadData();
         }
+
+        private void tsmShowReceptionistInfo_Click(object sender, EventArgs e)
+        {
+            short ReceptionistID = (short)dgvReceptionists.CurrentRow.Cells[0].Value;
+            frmReceptionistInfo frmReceptionistInfo = new frmReceptionistInfo(ReceptionistID);
+            frmReceptionistInfo.ShowDialog();
+        }
     }
 }
