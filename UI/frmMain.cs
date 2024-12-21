@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Appointments;
 using UI.Departments;
 using UI.Doctor;
 using UI.Global;
@@ -83,6 +84,12 @@ namespace UI
         private void btnReceptionists_Click(object sender, EventArgs e)
         {
             LoadForm(new frmReceptionistManagement());
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmAppointmentsManagement());
+
         }
     }
 }
