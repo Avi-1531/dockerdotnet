@@ -13,6 +13,25 @@ namespace ClinicManagementDB_Business
         public short DoctorID { set; get; }
         public DateTime AppointmentDate { set; get; }
         public byte AppointmentStatus { set; get; }
+        public string AppointmentStatusString
+        {
+            get
+            {
+                switch(AppointmentStatus)
+                {
+                    case 1:
+                        return "Scheduled";
+                    case 2:
+                        return "Completed";
+                    case 3:
+                        return "Cancelled";
+                    case 4:
+                        return "No-Show";
+                    default:
+                        return "Now Known";
+                }
+            }
+        }
         public bool IsPaid { set; get; }
         public int? PaymentID { set; get; }
         public short CreatedByUserID { set; get; }
@@ -103,5 +122,10 @@ namespace ClinicManagementDB_Business
             => clsAppointmentData.DoesAppointmentExist(AppointmentID);
         public static DataTable GetAppointments()
             => clsAppointmentData.GetAllAppointments();
+        public bool HasMedicalRecord()
+            => clsAppointmentData.HasMedicalRecord(this.AppointmentID);
+        public int? GetMedicalRecordID()
+            => clsAppointmentData.GetMedicalRecordID(this.AppointmentID);
+
     }
 }

@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointments\frmAddEditAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointments\frmAddEditAppointment.Designer.cs">
+      <DependentUpon>frmAddEditAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointments\frmAppointmentsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +71,23 @@
     <Compile Include="Departments\frmDepartmentsManagement.Designer.cs">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctor\Controls\ctrlctrlSmallDoctorFinder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\Controls\ctrlctrlSmallDoctorFinder.Designer.cs">
+      <DependentUpon>ctrlctrlSmallDoctorFinder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\Controls\ctrlDoctorInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Doctor\Controls\ctrlDoctorInfo.Designer.cs">
       <DependentUpon>ctrlDoctorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Controls\ctrlSmallDoctorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctor\Controls\ctrlSmallDoctorInfo.Designer.cs">
+      <DependentUpon>ctrlSmallDoctorInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctor\frmAddEditDoctor.cs">
       <SubType>Form</SubType>
@@ -108,6 +126,18 @@
     </Compile>
     <Compile Include="Patient\Controls\ctrlPatientInfo.Designer.cs">
       <DependentUpon>ctrlPatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Controls\ctrlSmallPatientFinder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient\Controls\ctrlSmallPatientFinder.Designer.cs">
+      <DependentUpon>ctrlSmallPatientFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Controls\ctrlSmallPatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patient\Controls\ctrlSmallPatientInfo.Designer.cs">
+      <DependentUpon>ctrlSmallPatientInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Patient\frmAddEditPatient.cs">
       <SubType>Form</SubType>
@@ -225,6 +255,9 @@
     <Compile Include="Users\frmUsersManagement.Designer.cs">
       <DependentUpon>frmUsersManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Appointments\frmAddEditAppointment.resx">
+      <DependentUpon>frmAddEditAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointments\frmAppointmentsManagement.resx">
       <DependentUpon>frmAppointmentsManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,8 +267,14 @@
     <EmbeddedResource Include="Departments\frmDepartmentsManagement.resx">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Controls\ctrlctrlSmallDoctorFinder.resx">
+      <DependentUpon>ctrlctrlSmallDoctorFinder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\Controls\ctrlDoctorInfo.resx">
       <DependentUpon>ctrlDoctorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Controls\ctrlSmallDoctorInfo.resx">
+      <DependentUpon>ctrlSmallDoctorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\frmAddEditDoctor.resx">
       <DependentUpon>frmAddEditDoctor.cs</DependentUpon>
@@ -254,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\Controls\ctrlPatientInfo.resx">
       <DependentUpon>ctrlPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\Controls\ctrlSmallPatientFinder.resx">
+      <DependentUpon>ctrlSmallPatientFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\Controls\ctrlSmallPatientInfo.resx">
+      <DependentUpon>ctrlSmallPatientInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\frmAddEditPatient.resx">
       <DependentUpon>frmAddEditPatient.cs</DependentUpon>

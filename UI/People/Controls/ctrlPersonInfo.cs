@@ -13,7 +13,6 @@ namespace UI.People.Controls
 {
     public partial class ctrlPersonInfo : UserControl
     {
-        int _PersonID;
         clsPerson _Person;
         public ctrlPersonInfo()
         {

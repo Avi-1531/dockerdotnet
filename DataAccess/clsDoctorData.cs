@@ -244,6 +244,41 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
+        public static bool IsDoctorAvailable(short? DoctorID, DateTime AppointmentDate)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = @"
+SELECT Found = 1 
+FROM Appointments
+WHERE DoctorID = @DoctorID 
+AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEADD(SECOND, -DATEPART(SECOND, @AppointmentDate), @AppointmentDate);
+";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+
         public static int? GetPersonID(short? DoctorID)
         {
             int? PersonID = null;
@@ -272,7 +307,6 @@ namespace ClinicManagementDB_DataAccess
 
             return PersonID;
         }
-
         public static bool DoesUsernameUsedByAnotherDoctor(short? DoctorID, string Username)
         {
             bool isFound = false;

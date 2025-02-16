@@ -414,6 +414,7 @@ CREATE TABLE Appointments (
 
 CREATE TABLE MedicalRecords(
 	MedicalRecordID INT PRIMARY KEY IDENTITY(1,1),
+	AppointmentID INT NOT NULL  FOREIGN KEY REFERENCES Appointments(AppointmentID)
 	Diagnosis NVARCHAR(600) NOT NULL,
 	Prescription NVARCHAR(600) NULL,
 	Notes NVARCHAR(600) NULL,

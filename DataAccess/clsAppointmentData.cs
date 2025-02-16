@@ -12,19 +12,19 @@ namespace ClinicManagementDB_DataAccess
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     string query = "SELECT * FROM Appointments WHERE AppointmentID = @AppointmentID";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using(SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (reader.Read())
+                            if(reader.Read())
                             {
                                 isFound = true;
 
@@ -46,7 +46,7 @@ namespace ClinicManagementDB_DataAccess
                     }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 isFound = false;
             }
@@ -184,7 +184,7 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID  ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
@@ -246,5 +246,63 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+        public static bool HasMedicalRecord(int? AppointmentID)
+        {
+            bool isFound = false;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT Found = 1 FROM MedicalRecords WHERE AppointmentID = @AppointmentID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        isFound = reader.HasRows;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                isFound = false;
+            }
+
+            return isFound;
+        }
+        public static int? GetMedicalRecordID(int? AppointmentID)
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    string query = "SELECT MedicalRecordID FROM Appointments WHERE AppointmentID = @AppointmentID";
+
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader["MedicalRecordID"] != DBNull.Value)
+                            return (int?)reader["MedicalRecordID"];
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+
+
     }
 }

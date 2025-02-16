@@ -15,7 +15,6 @@ namespace UI.Doctor.Controls
 {
     public partial class ctrlDoctorInfo : UserControl
     {
-        short _DoctorID;
         clsDoctor _Doctor;
         public ctrlDoctorInfo()
         {

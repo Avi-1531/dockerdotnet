@@ -179,5 +179,8 @@ namespace ClinicManagementDB_Business
             => clsDoctorData.GetPersonID(DoctorID);
         public static DataTable GetDoctors()
             => clsDoctorData.GetAllDoctors();
+        public bool IsDoctorAvailable(DateTime appointmentDate) 
+            => clsDoctorData.IsDoctorAvailable(this.DoctorID, appointmentDate);
+        
     }
 }

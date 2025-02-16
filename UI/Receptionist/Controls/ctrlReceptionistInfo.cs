@@ -20,7 +20,6 @@ namespace UI.Receptionist.Controls
             InitializeComponent();
         }
 
-        short _ReceptionistID;
         clsReceptionist _Receptionist;
         public void SetReceptionistID(short ReceptionistUD)
         {

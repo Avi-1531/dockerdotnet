@@ -127,7 +127,8 @@ namespace UI.Appointments
         }
         private void btnAddAppointment_Click(object sender, EventArgs e)
         {
-            //
+            frmAddEditAppointment frmAddEditAppointment = new frmAddEditAppointment();
+            frmAddEditAppointment.ShowDialog();
             _LoadData();
         }
 

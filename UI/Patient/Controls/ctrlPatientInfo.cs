@@ -20,7 +20,7 @@ namespace UI.Patient.Controls
 
         int? _PatientID;
         clsPatient _Patient;
-        public clsPatient CurrentUser { get { return _Patient; } }
+        public clsPatient SelectedPatient { get { return _Patient; } }
         public void SetPatientID(int PatientID)
         {
             _PatientID = PatientID;
