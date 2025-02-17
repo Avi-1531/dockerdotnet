@@ -24,6 +24,7 @@ namespace UI.Appointments
             this.Text = "Add New Appointment";
             lblHeader.Text = "ADD Appointment";
             _Appointment = new clsAppointment();
+            dtpAppointmentDate.MinDate = DateTime.Now;
         }
         public frmAddEditAppointment(int AppointmentID)
         {
@@ -42,6 +43,9 @@ namespace UI.Appointments
         {
             if(_Appointment.AppointmentID == null)
                 return;
+
+            ctrlctrlSmallDoctorFinder1.SetDoctorID(_Appointment.DoctorID);
+            ctrlSmallPatientFinder1.SetPatientID(_Appointment.PatientID);
 
             dtpAppointmentDate.Value = _Appointment.AppointmentDate;
             dtpAppointmentTime.Value = _Appointment.AppointmentDate;
@@ -126,13 +130,14 @@ namespace UI.Appointments
             TimeSpan StartTime = new TimeSpan(8, 0, 0);
             TimeSpan EndTime = new TimeSpan(16, 0, 0);
 
-            if(ctrlctrlSmallDoctorFinder1.SelectedDoctor.IsDoctorAvailable(AppointmentDate))
+            if(!ctrlctrlSmallDoctorFinder1.SelectedDoctor.IsDoctorAvailable(AppointmentDate)
+                && _Appointment.AppointmentDate != AppointmentDate)
             {
                 MessageBox.Show("The doctor is not available at the selected time.");
                 return false;
             }
 
-            if(!(TimePart <= EndTime && TimePart >= StartTime))
+            if(!(TimePart <= EndTime && TimePart >= StartTime) && _FormMode == enMode.Add)
             {
                 Console.WriteLine("Invalid appointment time! Must be between 8 AM and 4 PM.");
                 return false;
@@ -153,7 +158,6 @@ namespace UI.Appointments
         }
         private void _SetConstraints()
         {
-            dtpAppointmentDate.MinDate = DateTime.Now;
             dtpAppointmentDate.MaxDate = DateTime.Now.AddMonths(6);
         }
         private void btnSave_Click(object sender, EventArgs e)

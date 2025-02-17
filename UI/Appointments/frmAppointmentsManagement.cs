@@ -132,5 +132,12 @@ namespace UI.Appointments
             _LoadData();
         }
 
+        private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
+        {
+            int AppointmentId = (int)dgvAppointments.CurrentRow.Cells[0].Value;
+            frmAddEditAppointment frmAddEditAppointment = new frmAddEditAppointment(AppointmentId);
+            frmAddEditAppointment.ShowDialog();
+            _LoadData();
+        }
     }
 }

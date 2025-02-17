@@ -41,5 +41,10 @@ namespace UI.Patient.Controls
                 return;
             }
         }
+        public void SetPatientID(int PatientID)
+        {
+            ctrlSmallPatientInfo1.SetPatientID(PatientID);
+
+        }
     }
 }

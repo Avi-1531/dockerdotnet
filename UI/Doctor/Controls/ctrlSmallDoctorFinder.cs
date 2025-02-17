@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UI.Doctor.Controls
 {
-    public partial class ctrlctrlSmallDoctorFinder : UserControl
+    public partial class ctrlSmallDoctorFinder : UserControl
     {
-        public ctrlctrlSmallDoctorFinder()
+        public ctrlSmallDoctorFinder()
         {
             InitializeComponent();
         }
@@ -41,6 +41,11 @@ namespace UI.Doctor.Controls
                 ctrlSmallDoctorInfo1.ResetText();
                 return;
             }
+        }
+
+        public void SetDoctorID(short DoctorID)
+        {
+            ctrlSmallDoctorInfo1.SetDoctorID(DoctorID);
         }
 
     }

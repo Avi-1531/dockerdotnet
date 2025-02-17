@@ -181,6 +181,6 @@ namespace ClinicManagementDB_Business
             => clsDoctorData.GetAllDoctors();
         public bool IsDoctorAvailable(DateTime appointmentDate) 
             => clsDoctorData.IsDoctorAvailable(this.DoctorID, appointmentDate);
-        
+
     }
 }

@@ -44,7 +44,7 @@
             this.lblMedicalRecord = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.ctrlSmallPatientFinder1 = new UI.Patient.Controls.ctrlSmallPatientFinder();
-            this.ctrlctrlSmallDoctorFinder1 = new UI.Doctor.Controls.ctrlctrlSmallDoctorFinder();
+            this.ctrlctrlSmallDoctorFinder1 = new UI.Doctor.Controls.ctrlSmallDoctorFinder();
             this.gbAppointmentDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -283,7 +283,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private Doctor.Controls.ctrlctrlSmallDoctorFinder ctrlctrlSmallDoctorFinder1;
+        private Doctor.Controls.ctrlSmallDoctorFinder ctrlctrlSmallDoctorFinder1;
         private Patient.Controls.ctrlSmallPatientFinder ctrlSmallPatientFinder1;
         private System.Windows.Forms.DateTimePicker dtpAppointmentDate;
         private System.Windows.Forms.Label label9;

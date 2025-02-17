@@ -71,11 +71,11 @@
     <Compile Include="Departments\frmDepartmentsManagement.Designer.cs">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctor\Controls\ctrlctrlSmallDoctorFinder.cs">
+    <Compile Include="Doctor\Controls\ctrlSmallDoctorFinder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctor\Controls\ctrlctrlSmallDoctorFinder.Designer.cs">
-      <DependentUpon>ctrlctrlSmallDoctorFinder.cs</DependentUpon>
+    <Compile Include="Doctor\Controls\ctrlSmallDoctorFinder.Designer.cs">
+      <DependentUpon>ctrlSmallDoctorFinder.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctor\Controls\ctrlDoctorInfo.cs">
       <SubType>UserControl</SubType>
@@ -267,8 +267,8 @@
     <EmbeddedResource Include="Departments\frmDepartmentsManagement.resx">
       <DependentUpon>frmDepartmentsManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\Controls\ctrlctrlSmallDoctorFinder.resx">
-      <DependentUpon>ctrlctrlSmallDoctorFinder.cs</DependentUpon>
+    <EmbeddedResource Include="Doctor\Controls\ctrlSmallDoctorFinder.resx">
+      <DependentUpon>ctrlSmallDoctorFinder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\Controls\ctrlDoctorInfo.resx">
       <DependentUpon>ctrlDoctorInfo.cs</DependentUpon>

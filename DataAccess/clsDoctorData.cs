@@ -246,7 +246,7 @@ namespace ClinicManagementDB_DataAccess
         }
         public static bool IsDoctorAvailable(short? DoctorID, DateTime AppointmentDate)
         {
-            bool isFound = false;
+            bool IsAvailable = false;
 
             try
             {
@@ -267,16 +267,16 @@ AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEA
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 
-                        isFound = reader.HasRows;
+                        IsAvailable = !reader.HasRows;
                     }
                 }
             }
             catch(Exception ex)
             {
-                isFound = false;
+                IsAvailable = false;
             }
 
-            return isFound;
+            return IsAvailable;
         }
 
         public static int? GetPersonID(short? DoctorID)

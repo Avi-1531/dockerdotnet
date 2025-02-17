@@ -109,7 +109,7 @@
             this.tsmiEditPatientInfo,
             this.tsmiShowDoctorInfo});
             this.cmsAppointments.Name = "cmsPerson";
-            this.cmsAppointments.Size = new System.Drawing.Size(226, 64);
+            this.cmsAppointments.Size = new System.Drawing.Size(227, 86);
             // 
             // tsmiEditPatientInfo
             // 
@@ -117,9 +117,10 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(225, 30);
-            this.tsmiEditPatientInfo.Text = "Edit Doctor";
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiEditPatientInfo.Text = "Edit Appointment";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
             // 
             // tsmiShowDoctorInfo
             // 
@@ -127,7 +128,7 @@
             this.tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
-            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(225, 30);
+            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(226, 30);
             this.tsmiShowDoctorInfo.Text = "Show Doctor Info";
             this.tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

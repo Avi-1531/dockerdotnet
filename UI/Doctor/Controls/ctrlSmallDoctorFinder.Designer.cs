@@ -1,6 +1,6 @@
 ﻿namespace UI.Doctor.Controls
 {
-    partial class ctrlctrlSmallDoctorFinder
+    partial class ctrlSmallDoctorFinder
     {
         /// <summary> 
         /// Required designer variable.
