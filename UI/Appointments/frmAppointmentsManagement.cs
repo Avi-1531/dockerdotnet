@@ -139,5 +139,12 @@ namespace UI.Appointments
             frmAddEditAppointment.ShowDialog();
             _LoadData();
         }
+
+        private void tsmiShowDoctorInfo_Click(object sender, EventArgs e)
+        {
+            int AppointmentId = (int)dgvAppointments.CurrentRow.Cells[0].Value;
+            frmAppointmentInfo frmAppointmentInfo = new frmAppointmentInfo(AppointmentId);
+            frmAppointmentInfo.ShowDialog();
+        }
     }
 }
