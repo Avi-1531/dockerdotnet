@@ -128,7 +128,5 @@ namespace ClinicManagementDB_Business
         public static bool DoesReceptionistExistsByPersonID(int? PersonID) 
             => clsReceptionistData.DoesReceptionistExistByPersonID(PersonID);
 
-        public static bool DoesUsernameUsedByAnotherReceptionist(short? ReceptionistID, string Username)
-            => clsReceptionistData.DoesUsernameUsedByAnotherReceptionist(ReceptionistID, Username);
     }
 }

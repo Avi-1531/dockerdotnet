@@ -14,10 +14,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Countries WHERE CountryID = @CountryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetCountryByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@CountryID", (object)CountryID ?? DBNull.Value);
 
                         connection.Open();
@@ -52,10 +52,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Countries WHERE CountryName = @CountryName";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetCountryByName", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@CountryName", CountryName);
 
                         connection.Open();
@@ -90,12 +90,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Countries (CountryName)
-                            VALUES (@CountryName)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewCountry", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@CountryName", CountryName);
 
@@ -123,13 +121,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Countries  
-                            SET 
-                            CountryName = @CountryName
-                            WHERE CountryID = @CountryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateCountry", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@CountryID", CountryID);
                         command.Parameters.AddWithValue("@CountryName", CountryName);
@@ -154,11 +149,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Countries 
-                                where CountryID = @CountryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteCountry", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@CountryID", (object)CountryID ?? DBNull.Value);
 
                         connection.Open();
@@ -182,10 +177,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Countries WHERE CountryID = @CountryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesCountryExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@CountryID", (object)CountryID ?? DBNull.Value);
 
                         connection.Open();
@@ -210,10 +206,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Countries";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllCountries", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

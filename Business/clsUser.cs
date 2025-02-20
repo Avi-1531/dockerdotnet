@@ -197,13 +197,11 @@ namespace ClinicManagementDB_Business
                 return null;
         }
         public bool ActiviateUser()
-            => clsUserData.ActiviateUser(this.UserID);
+            => clsUserData.ActivateUser(this.UserID);
         public bool DeactiviateUser()
-            => clsUserData.DeactiviateUser(this.UserID);
+            => clsUserData.DeactivateUser(this.UserID);
         public static bool ChangeRole(short UserID, enRole Role)
             => clsUserData.ChangeRole(UserID, (byte)Role);
-        public static bool DeleteUser(short? UserID)
-        => clsUserData.DeleteUser(UserID);
         public static bool DoesUserExist(short? UserID)
         => clsUserData.DoesUserExistByUserID(UserID);
         public static bool DoesUserExist(string Username)

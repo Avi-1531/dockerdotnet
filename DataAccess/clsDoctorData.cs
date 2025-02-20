@@ -14,10 +14,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Doctors WHERE DoctorID = @DoctorID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetDoctorByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
 
                         connection.Open();
@@ -65,12 +64,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Doctors (PersonID, DepartmentID, LicenseNumber, Specialization, YearsOfExperience, HireDate, EndDate, DoctorStatus, ConsultationFee, DoctorUserID, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt)
-                            VALUES (@PersonID, @DepartmentID, @LicenseNumber, @Specialization, @YearsOfExperience, @HireDate, @EndDate, @DoctorStatus, @ConsultationFee, @DoctorUserID, @CreatedByUserID, @CreatedAt, @UpdatedByUserID, @UpdatedAt)
-                            SELECT SCOPE_IDENTITY();";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewDoctor", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@DepartmentID", DepartmentID);
@@ -111,26 +107,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Doctors  
-                            SET 
-                            PersonID = @PersonID, 
-                            DepartmentID = @DepartmentID, 
-                            LicenseNumber = @LicenseNumber, 
-                            Specialization = @Specialization, 
-                            YearsOfExperience = @YearsOfExperience, 
-                            HireDate = @HireDate, 
-                            EndDate = @EndDate, 
-                            DoctorStatus = @DoctorStatus, 
-                            ConsultationFee = @ConsultationFee, 
-                            DoctorUserID = @DoctorUserID, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt, 
-                            UpdatedByUserID = @UpdatedByUserID, 
-                            UpdatedAt = @UpdatedAt
-                            WHERE DoctorID = @DoctorID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateDoctor", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@DoctorID", DoctorID);
                         command.Parameters.AddWithValue("@PersonID", PersonID);
@@ -168,11 +148,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Doctors 
-                                where DoctorID = @DoctorID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteDoctor", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
 
                         connection.Open();
@@ -196,10 +176,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Doctors WHERE DoctorID = @DoctorID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesDoctorExistByDoctorID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
 
                         connection.Open();
@@ -224,10 +205,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Doctors WHERE PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesDoctorExistByPersonID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -252,15 +234,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"
-SELECT Found = 1 
-FROM Appointments
-WHERE DoctorID = @DoctorID 
-AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEADD(SECOND, -DATEPART(SECOND, @AppointmentDate), @AppointmentDate);
-";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("IsDoctorAvailable", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
 
@@ -278,7 +256,6 @@ AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEA
 
             return IsAvailable;
         }
-
         public static int? GetPersonID(short? DoctorID)
         {
             int? PersonID = null;
@@ -286,10 +263,11 @@ AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEA
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT PersonID FROM Doctors WHERE DoctorID = @DoctorID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetPersonID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
 
                         connection.Open();
@@ -315,25 +293,9 @@ AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEA
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"    
-    DECLARE @TempDoctorID INT;
-    SET @TempDoctorID = @DoctorID;
-	IF (@TempDoctorID IS NULL)
-	BEGIN
-		SELECT Found = 1 FROM Doctors 
-		INNER JOIN Users ON Users.UserID = Doctors.DoctorUserID
-		WHERE Username = @Username
-	END
-	ELSE 
-	BEGIN
-		SELECT Found = 1 
-		FROM Doctors 
-		INNER JOIN Users ON Users.UserID = Doctors.DoctorUserID
-		WHERE DoctorID <> @TempDoctorID AND Username = @Username;
-	END";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesUsernameUsedByAnotherDoctor", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@DoctorID", (object)DoctorID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Username", Username);
 
@@ -359,27 +321,10 @@ AND DATEADD(SECOND, -DATEPART(SECOND, AppointmentDate), AppointmentDate) = DATEA
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"SELECT DoctorID, CONCAT(People.FirstName, ' ', People.LastName) AS FullName,
-  Departments.DepartmentName, LicenseNumber, Specialization,
-  YearsOfExperience, HireDate, 
-CASE 
-    WHEN EndDate IS NULL THEN 'Ongoing'
-    ELSE CAST(EndDate AS VARCHAR)
-END AS EndDate,
-  CASE
-	WHEN DoctorStatus = 1 THEN 'Active'
-	WHEN DoctorStatus = 2 THEN 'On Leave'
-	WHEN DoctorStatus = 3 THEN 'Resigned'
-	WHEN DoctorStatus = 4 THEN 'Retired'
-	WHEN DoctorStatus = 5 THEN 'Terminated'
-  END AS Status,
-  FORMAT(ConsultationFee, 'C', 'en-US') AS ConsultationFees
-  FROM Doctors
-  INNER JOIN People ON People.PersonID = Doctors.PersonID
-  INNER JOIN Departments ON Departments.DepartmentID = Doctors.DepartmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllDoctors", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

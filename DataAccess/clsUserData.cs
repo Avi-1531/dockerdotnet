@@ -15,10 +15,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Users WHERE UserID = @UserID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetUserByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
@@ -29,7 +28,7 @@ namespace ClinicManagementDB_DataAccess
                             {
                                 isFound = true;
 
-
+                                PersonID = (int)reader["PersonID"];
                                 PersonID = (int)reader["PersonID"];
                                 Username = (string)reader["Username"];
                                 Password = (string)reader["Password"];
@@ -62,10 +61,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Users WHERE PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetUserByPersonID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PersonID", PersonID);
 
                         connection.Open();
@@ -101,7 +101,6 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-
         public static bool GetUserByUsername(ref short? UserID, ref int PersonID, string Username, ref string Password, ref byte Role, ref bool IsActive, ref DateTime? LastLoginAt, ref short CreatedByUserID, ref DateTime CreatedAt, ref short? UpdatedByUserID, ref DateTime? UpdatedAt)
         {
             bool isFound = false;
@@ -110,10 +109,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Users WHERE Username = @Username";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetUserByUsername", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@Username", (object)Username ?? DBNull.Value);
 
                         connection.Open();
@@ -157,10 +156,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetUserByUsernameAndPassword", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@Username", Username);
                         command.Parameters.AddWithValue("@Password", Password);
 
@@ -204,12 +203,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Users (PersonID, Username, Password, Role, IsActive, LastLoginAt, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt)
-                            VALUES (@PersonID, @Username, @Password, @Role, @IsActive, @LastLoginAt, @CreatedByUserID, @CreatedAt, @UpdatedByUserID, @UpdatedAt)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewUser", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@Username", Username);
@@ -245,10 +242,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Username FROM Users WHERE UserID = @UserID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetUsernameByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
@@ -277,22 +273,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Users  
-                            SET 
-                            PersonID = @PersonID, 
-                            Username = @Username, 
-                            Password = @Password, 
-                            Role = @Role, 
-                            IsActive = @IsActive, 
-                            LastLoginAt = @LastLoginAt, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt, 
-                            UpdatedByUserID = @UpdatedByUserID, 
-                            UpdatedAt = @UpdatedAt
-                            WHERE UserID = @UserID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateUser", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@UserID", UserID);
                         command.Parameters.AddWithValue("@PersonID", PersonID);
@@ -318,7 +302,7 @@ namespace ClinicManagementDB_DataAccess
 
             return (rowsAffected > 0);
         }
-        public static bool DeleteUser(short? UserID)
+        public static bool ActivateUser(short? UserID)
         {
             int rowsAffected = 0;
 
@@ -326,39 +310,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Users 
-                                where UserID = @UserID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("ActivateUser", connection))
                     {
-                        command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
-
-                        connection.Open();
-                        rowsAffected = command.ExecuteNonQuery();
-                    }
-                }
-
-            }
-            catch(Exception ex)
-            {
-
-            }
-
-            return (rowsAffected > 0);
-        }
-        public static bool ActiviateUser(short? UserID)
-        {
-            int rowsAffected = 0;
-
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-                    string query = @"Update Users 
-                                SET IsActive = 1 WHERE UserID = @UserID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
-                    {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
@@ -382,11 +336,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Update Users 
-                                SET Role = @Role WHERE UserID = @UserID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("ChangeRole", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Role", Role);
 
@@ -403,7 +356,7 @@ namespace ClinicManagementDB_DataAccess
 
             return (rowsAffected > 0);
         }
-        public static bool DeactiviateUser(short? UserID)
+        public static bool DeactivateUser(short? UserID)
         {
             int rowsAffected = 0;
 
@@ -411,11 +364,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Update Users 
-                                SET IsActive = 0 WHERE UserID = @UserID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeactivateUser", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
@@ -439,10 +391,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Users WHERE UserID = @UserID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesUserExistByUserID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@UserID", (object)UserID ?? DBNull.Value);
 
                         connection.Open();
@@ -467,10 +419,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Users WHERE Username = @Username";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesUserExistByUsername", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@Username", (object)Username ?? DBNull.Value);
 
                         connection.Open();
@@ -487,7 +439,6 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-
         public static DataTable GetAllUsers()
         {
             DataTable dt = new DataTable();
@@ -496,21 +447,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"SELECT UserID, PersonID, Username, 
-CASE IsActive
-WHEN 1 THEN 'Yes'
-WHEN 0 THEN 'No'
-END AS IsActive, 
-CASE Role 
-WHEN 1 THEN 'Admin'
-WHEN 2 THEN 'Doctor'
-WHEN 3 THEN 'Receptionist'
-END AS Role,
-ISNULL(CAST(LastLoginAt AS VARCHAR(20)),'Never Logged In') AS LastLoginAt
-FROM Users";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllUsers", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

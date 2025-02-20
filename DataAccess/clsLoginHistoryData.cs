@@ -14,10 +14,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM LoginHistory WHERE LoginHistoryID = @LoginHistoryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetLoginHistoryByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@LoginHistoryID", (object)LoginHistoryID ?? DBNull.Value);
 
                         connection.Open();
@@ -54,12 +54,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO LoginHistory (UserID, LoginTime, LogoutTime)
-                            VALUES (@UserID, @LoginTime, @LogoutTime)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewLoginHistory", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@UserID", UserID);
                         command.Parameters.AddWithValue("@LoginTime", LoginTime);
@@ -89,15 +87,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE LoginHistory  
-                            SET 
-                            UserID = @UserID, 
-                            LoginTime = @LoginTime, 
-                            LogoutTime = @LogoutTime
-                            WHERE LoginHistoryID = @LoginHistoryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateLoginHistory", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@LoginHistoryID", LoginHistoryID);
                         command.Parameters.AddWithValue("@UserID", UserID);
@@ -124,11 +117,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete LoginHistory 
-                                where LoginHistoryID = @LoginHistoryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteLoginHistory", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@LoginHistoryID", (object)LoginHistoryID ?? DBNull.Value);
 
                         connection.Open();
@@ -152,10 +145,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM LoginHistory WHERE LoginHistoryID = @LoginHistoryID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesLoginHistoryExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@LoginHistoryID", (object)LoginHistoryID ?? DBNull.Value);
 
                         connection.Open();
@@ -180,10 +174,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM LoginHistory WHERE UserID = @UserID ORDER BY LoginTime DESC";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetUserLoginHistory", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@UserID", UserID);
 
                         connection.Open();
@@ -209,10 +204,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM LoginHistory";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllLoginHistory", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

@@ -14,10 +14,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Receptionists WHERE ReceptionistID = @ReceptionistID";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("GetReceptionistByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);
 
                         connection.Open();
@@ -60,13 +60,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Receptionists (PersonID, HireDate, EndDate, ReceptionistStatus, ReceptionistUserID, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt)
-                            VALUES (@PersonID, @HireDate, @EndDate, @ReceptionistStatus, @ReceptionistUserID, @CreatedByUserID, @CreatedAt, @UpdatedByUserID, @UpdatedAt)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewReceptionist", connection))
                     {
-
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@HireDate", HireDate);
                         command.Parameters.AddWithValue("@EndDate", (object)EndDate ?? DBNull.Value);
@@ -101,22 +98,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Receptionists  
-                            SET 
-                            PersonID = @PersonID, 
-                            HireDate = @HireDate, 
-                            EndDate = @EndDate, 
-                            ReceptionistStatus = @ReceptionistStatus, 
-                            ReceptionistUserID = @ReceptionistUserID, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt, 
-                            UpdatedByUserID = @UpdatedByUserID, 
-                            UpdatedAt = @UpdatedAt
-                            WHERE ReceptionistID = @ReceptionistID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateReceptionist", connection))
                     {
-
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ReceptionistID", ReceptionistID);
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@HireDate", HireDate);
@@ -148,11 +133,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Receptionists 
-                                where ReceptionistID = @ReceptionistID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteReceptionist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);
 
                         connection.Open();
@@ -176,10 +160,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Receptionists WHERE ReceptionistID = @ReceptionistID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesReceptionistExist", connection))
                     {
+                        command.CommandType= CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID  ?? DBNull.Value);
 
                         connection.Open();
@@ -203,10 +186,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT PersonID FROM Receptionists WHERE ReceptionistID = @ReceptionistID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetPersonID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);
 
                         connection.Open();
@@ -232,10 +215,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Receptionist WHERE PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesReceptionistExistByPersonID", connection))
                     {
+                        command.CommandType=CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -252,50 +235,6 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static bool DoesUsernameUsedByAnotherReceptionist(short? ReceptionistID, string Username)
-        {
-            bool isFound = false;
-
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-                    string query = @"      DECLARE @TempReceptionistID INT;
-    SET @TempReceptionistID = @ReceptionistID;
-	IF (@TempReceptionistID IS NULL)
-	BEGIN
-		SELECT Found = 1 FROM Receptionists 
-		INNER JOIN Users ON Users.UserID = Receptionists.ReceptionistUserID
-		WHERE Username = @Username
-	END
-	ELSE 
-	BEGIN
-		SELECT Found = 1 
-		FROM Receptionists 
-		INNER JOIN Users ON Users.UserID = Receptionists.ReceptionistUserID
-		WHERE ReceptionistID <> @TempReceptionistID AND Username = @Username;
-	END";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@Username", Username);
-
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        isFound = reader.HasRows;
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                isFound = false;
-            }
-
-            return isFound;
-        }
-
         public static DataTable GetAllReceptionists()
         {
             DataTable dt = new DataTable();
@@ -304,26 +243,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"			
-            SELECT ReceptionistID, People.Firstname + ' ' + People.Lastname AS Fullname,
-			HireDate, CASE 
-			WHEN EndDate IS NULL THEN 'Ongoing'
-			ELSE CAST(EndDate AS VARCHAR)
-			END AS EndDate, 
-			CASE 
-			WHEN ReceptionistStatus = 1 THEN 'Active'
-			WHEN ReceptionistStatus = 2 THEN 'On Leave'
-			WHEN ReceptionistStatus = 3 THEN 'Resigned'
-			WHEN ReceptionistStatus = 4 THEN 'Terminated'
-			ELSE  'Not Known'
-			END AS Status, 
-			Users.Username AS ReceptionistUser
-			FROM Receptionists
-			INNER JOIN People ON People.PersonID = Receptionists.PersonID
-			INNER JOIN Users ON Users.UserID = Receptionists.ReceptionistUserID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllReceptionists", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

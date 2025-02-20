@@ -14,10 +14,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Appointments WHERE AppointmentID = @AppointmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAppointmentByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -61,12 +61,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Appointments (PatientID, DoctorID, AppointmentDate, AppointmentStatus, IsPaid, PaymentID, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt)
-                            VALUES (@PatientID, @DoctorID, @AppointmentDate, @AppointmentStatus, @IsPaid, @PaymentID, @CreatedByUserID, @CreatedAt, @UpdatedByUserID, @UpdatedAt)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewAppointment", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PatientID", PatientID);
                         command.Parameters.AddWithValue("@DoctorID", DoctorID);
@@ -103,22 +101,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Appointments  
-                            SET 
-                            PatientID = @PatientID, 
-                            DoctorID = @DoctorID, 
-                            AppointmentDate = @AppointmentDate, 
-                            AppointmentStatus = @AppointmentStatus, 
-                            IsPaid = @IsPaid, 
-                            PaymentID = @PaymentID, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt, 
-                            UpdatedByUserID = @UpdatedByUserID, 
-                            UpdatedAt = @UpdatedAt
-                            WHERE AppointmentID = @AppointmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateAppointment", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
                         command.Parameters.AddWithValue("@PatientID", PatientID);
@@ -152,11 +138,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Appointments 
-                                where AppointmentID = @AppointmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteAppointment", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -180,10 +166,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Appointments WHERE AppointmentID = @AppointmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesAppointmentExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -208,29 +195,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @" SELECT AppointmentID, Appointments.PatientID,
- CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
- DoctorID, AppointmentDate, 
- CASE 
-	WHEN AppointmentStatus = 1 THEN 'Scheduled'
-	WHEN AppointmentStatus = 2 THEN 'Completed'
-	WHEN AppointmentStatus = 3 THEN 'Cancelled'
-	WHEN AppointmentStatus = 4 THEN 'No-Show'
-	END AS Status,
-	CASE 
-	WHEN IsPaid = 1 THEN 'Yes'
-	WHEN IsPaid = 0 THEN 'No'
-	END AS IsPaid,
-	CASE 
-	WHEN PaymentID IS NULL THEN 'N/A'
-	WHEN PaymentID IS NOT NULL THEN CAST(PaymentID AS VARCHAR)
-	END AS PaymentID
-	FROM Appointments
-	INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
-	INNER JOIN People ON People.PersonID = Patients.PersonID;";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllAppointments", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 
@@ -254,10 +223,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM MedicalRecords WHERE AppointmentID = @AppointmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("HasMedicalRecord", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -281,10 +251,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT MedicalRecordID FROM Appointments WHERE AppointmentID = @AppointmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetMedicalRecordID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@AppointmentID", (object)AppointmentID ?? DBNull.Value);
 
                         connection.Open();

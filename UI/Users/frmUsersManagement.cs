@@ -144,26 +144,6 @@ namespace UI.Users
             _LoadData();
         }
 
-        private void tsmiDeleteUser_Click(object sender, EventArgs e)
-        {
-            short UserIDToDelete = (short)dgvUsers.CurrentRow.Cells[0].Value;
-            var result = MessageBox.Show($"Are you sure you want to delete user (User ID:{UserIDToDelete})?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if(result == DialogResult.Yes)
-            {
-                if(clsUser.DeleteUser(UserIDToDelete))
-                {
-                    MessageBox.Show($"User (User ID:{UserIDToDelete}) deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to delete the user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
-
         private void tsmiActivateOrDeactivate_Click(object sender, EventArgs e)
         {
             short UserID = (short)dgvUsers.CurrentRow.Cells[0].Value;

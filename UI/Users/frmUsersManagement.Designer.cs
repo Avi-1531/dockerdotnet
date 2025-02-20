@@ -35,12 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRecordsValue = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
-            this.tsmiDeleteUser = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiAddNewUser = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowUserInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowPersonInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowLoginHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiChangeUserRole = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiChangeToAdmin = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +57,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.ctrlUserInfoVertical1 = new UI.Users.Controls.ctrlUserInfoVertical();
-            this.tsmiShowLoginHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,24 +82,12 @@
             this.lblRecords.TabIndex = 19;
             this.lblRecords.Text = "Records:";
             // 
-            // tsmiDeleteUser
-            // 
-            this.tsmiDeleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiDeleteUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiDeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiDeleteUser.Name = "tsmiDeleteUser";
-            this.tsmiDeleteUser.Size = new System.Drawing.Size(241, 30);
-            this.tsmiDeleteUser.Text = "Delete User";
-            this.tsmiDeleteUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiDeleteUser.Click += new System.EventHandler(this.tsmiDeleteUser_Click);
-            // 
             // cmsUsers
             // 
             this.cmsUsers.BackColor = System.Drawing.SystemColors.Control;
             this.cmsUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiAddNewUser,
             this.toolStripMenuItem2,
-            this.tsmiDeleteUser,
             this.tsmiShowUserInfo,
             this.tsmiShowPersonInfo,
             this.tsmiShowLoginHistory,
@@ -108,7 +95,7 @@
             this.tsmiChangeUserRole,
             this.tsmiActivateOrDeactivate});
             this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(242, 296);
+            this.cmsUsers.Size = new System.Drawing.Size(242, 266);
             // 
             // tsmiAddNewUser
             // 
@@ -153,6 +140,17 @@
             this.tsmiShowPersonInfo.Text = "Show Person Info";
             this.tsmiShowPersonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowPersonInfo.Click += new System.EventHandler(this.tsmiShowPersonInfo_Click);
+            // 
+            // tsmiShowLoginHistory
+            // 
+            this.tsmiShowLoginHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiShowLoginHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiShowLoginHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiShowLoginHistory.Name = "tsmiShowLoginHistory";
+            this.tsmiShowLoginHistory.Size = new System.Drawing.Size(241, 30);
+            this.tsmiShowLoginHistory.Text = "Show Login History";
+            this.tsmiShowLoginHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiShowLoginHistory.Click += new System.EventHandler(this.tsmiShowLoginHistory_Click);
             // 
             // tsmiChangePassword
             // 
@@ -412,17 +410,6 @@
             this.ctrlUserInfoVertical1.Size = new System.Drawing.Size(471, 560);
             this.ctrlUserInfoVertical1.TabIndex = 34;
             // 
-            // tsmiShowLoginHistory
-            // 
-            this.tsmiShowLoginHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiShowLoginHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiShowLoginHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiShowLoginHistory.Name = "tsmiShowLoginHistory";
-            this.tsmiShowLoginHistory.Size = new System.Drawing.Size(241, 30);
-            this.tsmiShowLoginHistory.Text = "Show Login History";
-            this.tsmiShowLoginHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiShowLoginHistory.Click += new System.EventHandler(this.tsmiShowLoginHistory_Click);
-            // 
             // frmUsersManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -462,7 +449,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Label lblRecordsValue;
         private System.Windows.Forms.Label lblRecords;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteUser;
         private System.Windows.Forms.ContextMenuStrip cmsUsers;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.ComboBox cbFilter;

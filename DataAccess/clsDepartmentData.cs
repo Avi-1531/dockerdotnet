@@ -14,10 +14,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Departments WHERE DepartmentID = @DepartmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetDepartmentByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -54,10 +54,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Departments WHERE DepartmentName = @DepartmentName";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetDepartmentByDepartmentName", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DepartmentName", (object)DepartmentName ?? DBNull.Value);
 
                         connection.Open();
@@ -94,12 +95,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Departments (DepartmentName, DepartmentDescription, DepartmentLocation)
-                            VALUES (@DepartmentName, @DepartmentDescription, @DepartmentLocation)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewDepartment", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@DepartmentName", DepartmentName);
                         command.Parameters.AddWithValue("@DepartmentDescription", (object)DepartmentDescription ?? DBNull.Value);
@@ -129,16 +128,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Departments  
-                            SET 
-                            DepartmentName = @DepartmentName, 
-                            DepartmentDescription = @DepartmentDescription, 
-                            DepartmentLocation = @DepartmentLocation
-                            WHERE DepartmentID = @DepartmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateDepartment", connection))
                     {
-
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@DepartmentID", DepartmentID);
                         command.Parameters.AddWithValue("@DepartmentName", DepartmentName);
                         command.Parameters.AddWithValue("@DepartmentDescription", (object)DepartmentDescription ?? DBNull.Value);
@@ -164,11 +157,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Departments 
-                                where DepartmentID = @DepartmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteDepartment", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -192,10 +185,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Departments WHERE DepartmentID = @DepartmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesDepartmentExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -220,10 +214,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT COUNT(*) AS TotalDoctors FROM Doctors WHERE DepartmentID = @DepartmentID ";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("TotalDoctorsByDepartmentID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -254,12 +249,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"SELECT COUNT(*) AS TotalVisits FROM Appointments 
-INNER JOIN Doctors ON Appointments.DoctorID = Doctors.DoctorID
-WHERE AppointmentStatus = 2 AND Doctors.DepartmentID = @DepartmentID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("TotalVisitsByDepartmentID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -290,13 +284,11 @@ WHERE AppointmentStatus = 2 AND Doctors.DepartmentID = @DepartmentID";
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"SELECT ISNULL(SUM(Payments.Amount),0) AS TotalRevenue FROM Appointments
-INNER JOIN Payments ON Payments.PaymentID = Appointments.PaymentID
-INNER JOIN Doctors ON Appointments.DoctorID = Doctors.DoctorID
-WHERE Doctors.DepartmentID = @DepartmentID;";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("TotalRevenueByDepartmentID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
 
                         connection.Open();
@@ -327,10 +319,10 @@ WHERE Doctors.DepartmentID = @DepartmentID;";
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Departments";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllDepartments", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

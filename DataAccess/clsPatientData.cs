@@ -14,10 +14,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM Patients WHERE PatientID = @PatientID";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand("GetPatientByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PatientID", (object)PatientID ?? DBNull.Value);
 
                         connection.Open();
@@ -61,12 +62,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO Patients (PersonID, BloodType, Allergies, MedicalHistory, EmergencyContactName, EmergencyContactPhone, CreatedByUserID, CreatedAt, UpdatedByUserID, UpdatedAt)
-                            VALUES (@PersonID, @BloodType, @Allergies, @MedicalHistory, @EmergencyContactName, @EmergencyContactPhone, @CreatedByUserID, @CreatedAt, @UpdatedByUserID, @UpdatedAt)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewPatient", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@BloodType", (object)BloodType ?? DBNull.Value);
@@ -103,22 +102,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE Patients  
-                            SET 
-                            PersonID = @PersonID, 
-                            BloodType = @BloodType, 
-                            Allergies = @Allergies, 
-                            MedicalHistory = @MedicalHistory, 
-                            EmergencyContactName = @EmergencyContactName, 
-                            EmergencyContactPhone = @EmergencyContactPhone, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt, 
-                            UpdatedByUserID = @UpdatedByUserID, 
-                            UpdatedAt = @UpdatedAt
-                            WHERE PatientID = @PatientID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdatePatient", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PatientID", PatientID);
                         command.Parameters.AddWithValue("@PersonID", PersonID);
@@ -152,11 +139,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete Patients 
-                                where PatientID = @PatientID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeletePatient", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PatientID", (object)PatientID ?? DBNull.Value);
 
                         connection.Open();
@@ -180,10 +167,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Patients WHERE PatientID = @PatientID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesPatientExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PatientID", (object)PatientID  ?? DBNull.Value);
 
                         connection.Open();
@@ -208,10 +196,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Patients WHERE PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesPatientExistByPersonID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -228,7 +217,6 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-
         public static DataTable GetAllPatients()
         {
             DataTable dt = new DataTable();
@@ -237,32 +225,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"SELECT PatientID, Patients.PersonID, 
-CONCAT(People.FirstName,' ', People.SecondName,' ', .People.LastName) AS FullName,
-People.NationalID, 
-BloodType, 
-CASE 
-WHEN Allergies is NULL THEN 'No Known Allergies'
-ELSE Allergies
-END AS Allergies,
-CASE 
-WHEN MedicalHistory is NULL THEN 'No Known Medical History'
-ELSE MedicalHistory
-END AS MedicalHistory,
-CASE
-WHEN EmergencyContactName IS NULL THEN 'Not Available'
-ELSE EmergencyContactName
-END AS EmergencyContactName,
-CASE
-WHEN EmergencyContactPhone IS NULL THEN 'Not Available'
-ELSE EmergencyContactPhone
-END AS EmergencyContactPhone
-FROM Patients
-INNER JOIN People ON People.PersonID = Patients.PersonID
-ORDER BY Patients.CreatedAt DESC";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllPatients", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 

@@ -14,10 +14,9 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM People WHERE PersonID = @PersonID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetPersonByID", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -66,13 +65,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO People (FirstName, SecondName, ThirdName, LastName, NationalID, BirthDate, Gender, Address, Phone, Email, CountryID, CreatedByUserID, UpdatedByUserID, UpdatedAt)
-                            VALUES (@FirstName, @SecondName, @ThirdName, @LastName, @NationalID, @BirthDate, @Gender, @Address, @Phone, @Email, @CountryID, @CreatedByUserID, @UpdatedByUserID, @UpdatedAt)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewPerson", connection))
                     {
 
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@FirstName", FirstName);
                         command.Parameters.AddWithValue("@SecondName", SecondName);
                         command.Parameters.AddWithValue("@ThirdName", (object)ThirdName ?? DBNull.Value);
@@ -85,6 +82,7 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@Email", Email);
                         command.Parameters.AddWithValue("@CountryID", CountryID);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                        command.Parameters.AddWithValue("@CreatedAt", (object)CreatedAt ?? DBNull.Value);
                         command.Parameters.AddWithValue("@UpdatedByUserID", (object)UpdatedByUserID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@UpdatedAt", (object)UpdatedAt ?? DBNull.Value);
 
@@ -112,27 +110,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE People  
-                            SET 
-                            FirstName = @FirstName, 
-                            SecondName = @SecondName, 
-                            ThirdName = @ThirdName, 
-                            LastName = @LastName, 
-                            NationalID = @NationalID, 
-                            BirthDate = @BirthDate, 
-                            Gender = @Gender, 
-                            Address = @Address, 
-                            Phone = @Phone, 
-                            Email = @Email, 
-                            CountryID = @CountryID, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt, 
-                            UpdatedByUserID = @UpdatedByUserID, 
-                            UpdatedAt = @UpdatedAt
-                            WHERE PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdatePerson", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@FirstName", FirstName);
@@ -171,11 +152,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete People 
-                                where PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeletePerson", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -199,10 +180,11 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM People WHERE PersonID = @PersonID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesPersonExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -227,10 +209,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM Users WHERE PersonID = @PersonID";
-
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesPersonHasUser", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
+
                         command.Parameters.AddWithValue("@PersonID", (object)PersonID ?? DBNull.Value);
 
                         connection.Open();
@@ -255,27 +237,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"USE ClinicManagementDB;
-SELECT People.PersonID, 
-	  People.FirstName + ' ' + People.SecondName + ' ' + 
-	  CASE 
-	  WHEN People.ThirdName is NULL THEN ''
-	  WHEN People.ThirdName is NOT NULL THEN People.ThirdName + ' '
-	  END
-	  + People.LastName AS FullName, 
-	  People.NationalID, People.BirthDate, 
-	  CASE 
-	  WHEN People.Gender = 0 THEN 'Male'
-	  WHEN People.Gender = 1 THEN 'Female'
-	  END AS Gender,
-      People.Phone, People.Email, Countries.CountryName, Users.Username AS CreatedBy
-	  FROM People 
-  INNER JOIN Countries ON People.CountryID = Countries.CountryID
-  INNER JOIN Users ON People.CreatedByUserID = Users.UserID
-  ORDER BY People.CreatedAt DESC;";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetAllPeople", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 
