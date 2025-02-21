@@ -48,6 +48,8 @@
     <Compile Include="clsDoctor.cs" />
     <Compile Include="clsLoginHistory.cs" />
     <Compile Include="clsPatient.cs" />
+    <Compile Include="clsPayment.cs" />
+    <Compile Include="clsPaymentCard.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsReceptionist.cs" />
     <Compile Include="clsSecurityHelper.cs" />

@@ -1385,4 +1385,97 @@ BEGIN
 END;
 GO
 
+-- Get Payment By ID
+CREATE PROCEDURE GetPaymentByID
+    @PaymentID INT
+AS
+BEGIN
+    SELECT * FROM Payments WHERE PaymentID = @PaymentID;
+END
+GO
 
+-- Add New Payment
+CREATE PROCEDURE AddNewPayment
+    @Amount DECIMAL(18,2),
+    @PaymentMethod TINYINT,
+    @PaymentDate DATETIME,
+    @PaymentCardID INT = NULL,
+    @CreatedByUserID SMALLINT,
+    @CreatedAt DATETIME
+AS
+BEGIN
+    INSERT INTO Payments (Amount, PaymentMethod, PaymentDate, PaymentCardID, CreatedByUserID, CreatedAt)
+    VALUES (@Amount, @PaymentMethod, @PaymentDate, @PaymentCardID, @CreatedByUserID, @CreatedAt);
+
+    SELECT SCOPE_IDENTITY();
+END
+GO
+
+-- Check if Payment Exists
+CREATE PROCEDURE DoesPaymentExist
+    @PaymentID INT
+AS
+BEGIN
+    SELECT Found = 1 FROM Payments WHERE PaymentID = @PaymentID;
+END
+GO
+
+-- Get All Payments
+CREATE PROCEDURE GetAllPayments
+AS
+BEGIN
+      SELECT Payments.PaymentID, Patients.PatientID AS PatientID,
+	  People.FirstName + ' ' + People.LastName AS FullName,
+	  FORMAT(Amount, 'C', 'en-US') AS Amount,
+	  CASE
+	  WHEN PaymentMethod = 1 THEN 'Cash'
+	  WHEN PaymentMethod = 2 THEN 'Debit Card'
+	  WHEN PaymentMethod = 3 THEN 'Bank Transfer'
+	  WHEN PaymentMethod = 4 THEN 'Mobile Payment'
+	  ELSE 'Cash'
+	  END AS PaymentMethod,
+	  FORMAT(PaymentDate, 'yyyy-MM-dd HH:mm:ss') AS PaymentDate,
+	  Users.Username, Payments.CreatedAt FROM Payments
+	  INNER JOIN Users ON Payments.CreatedByUserID = Users.UserID
+	  INNER JOIN Appointments ON Appointments.PaymentID = Payments.PaymentID
+	  INNER JOIN Patients ON Appointments.PatientID = Patients.PatientID
+	  INNER JOIN People ON Patients.PersonID = People.PersonID
+END
+GO
+
+CREATE PROCEDURE GetTotalPaymentsAmount
+AS
+BEGIN
+	SELECT SUM(Amount) AS TotalPaymentsAmount FROM Payments;
+END
+GO
+
+
+CREATE PROCEDURE GetAverageAmountPerPayment
+AS
+BEGIN
+SELECT AVG(Amount) AS AverageAmountPerPayment FROM Payments;
+END
+GO
+
+CREATE PROCEDURE GetTotalPayments
+AS
+BEGIN
+SELECT Count(*) AS TotalPayments FROM Payments;
+END
+GO
+
+CREATE PROCEDURE GetMostUsedPaymentMethod
+AS
+BEGIN
+SELECT TOP 1 
+CASE 
+	WHEN PaymentMethod = 1 THEN 'Cash'
+	WHEN PaymentMethod = 2 THEN 'Debit Card'
+	WHEN PaymentMethod = 3 THEN 'Bank Transfer'
+	WHEN PaymentMethod = 4 THEN 'Mobile Payment'
+	END AS MostUsedPaymentMethod FROM Payments
+GROUP BY PaymentMethod 
+ORDER BY COUNT(*) DESC
+END
+GO

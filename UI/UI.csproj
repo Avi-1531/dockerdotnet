@@ -169,6 +169,12 @@
     <Compile Include="Patient\frmPatientsManagement.Designer.cs">
       <DependentUpon>frmPatientsManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\frmPaymentsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmPaymentsManagement.Designer.cs">
+      <DependentUpon>frmPaymentsManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\Controls\ctrlPersonFinder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\frmPatientsManagement.resx">
       <DependentUpon>frmPatientsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmPaymentsManagement.resx">
+      <DependentUpon>frmPaymentsManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\ctrlPersonFinder.resx">
       <DependentUpon>ctrlPersonFinder.cs</DependentUpon>

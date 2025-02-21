@@ -15,6 +15,7 @@ using UI.Patient;
 using UI.People;
 using UI.Receptionist;
 using UI.Users;
+using UI.Payment;
 
 namespace UI
 {
@@ -90,6 +91,11 @@ namespace UI
         {
             LoadForm(new frmAppointmentsManagement());
 
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmPaymentsManagement());
         }
     }
 }

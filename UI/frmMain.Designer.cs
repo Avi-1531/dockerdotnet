@@ -86,7 +86,7 @@
             this.btnPayments.TabIndex = 8;
             this.btnPayments.Text = "Payments";
             this.btnPayments.UseVisualStyleBackColor = false;
-            this.btnPayments.Click += new System.EventHandler(this._ShowNotImplementedFeatureMessage);
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
             // btnDepartments
             // 
