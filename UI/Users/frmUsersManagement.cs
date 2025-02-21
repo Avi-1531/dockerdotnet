@@ -86,8 +86,6 @@ namespace UI.Users
                 dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
 
 
-
-
             lblRecordsValue.Text = dgvUsers.Rows.Count.ToString();
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
