@@ -95,7 +95,7 @@
             this.tsmiChangeUserRole,
             this.tsmiActivateOrDeactivate});
             this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(242, 266);
+            this.cmsUsers.Size = new System.Drawing.Size(242, 244);
             // 
             // tsmiAddNewUser
             // 

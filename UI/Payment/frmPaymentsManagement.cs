@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ClinicManagementDB_Business.clsPayment;
 
 namespace UI.Payment
 {
@@ -17,11 +18,11 @@ namespace UI.Payment
         {
             InitializeComponent();
         }
-
+        DataTable dtPayments;
         private void _LoadData()
         {
-            DataTable dt = clsPayment.GetPayments();
-            dgvPayments.DataSource = dt;
+            dtPayments = clsPayment.GetPayments();
+            dgvPayments.DataSource = dtPayments;
 
             if(dgvPayments.Rows.Count > 0)
             {
@@ -67,6 +68,46 @@ namespace UI.Payment
         private void frmPaymentsManagement_Load(object sender, EventArgs e)
         {
             _LoadData();
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "")
+            {
+                dtPayments.DefaultView.RowFilter = "";
+                lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
+                return;
+            }
+
+            string Column = cbFilter.Text.Replace(" ", "");
+            if(cbFilter.Text == "Full Name")
+                dtPayments.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
+            else
+                dtPayments.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
+
+
+            lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
+        }
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cbFilter.Text == "Patient ID")
+            {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            }
+        }
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(dtPayments != null)
+                dtPayments.DefaultView.RowFilter = "";
+
+            lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
+
+            txtSearch.Visible = (cbFilter.Text != "None");
+
+            if(txtSearch.Visible)
+            {
+                txtSearch.Text = "";
+                txtSearch.Focus();
+            }
         }
 
     }

@@ -50,7 +50,6 @@
     <Compile Include="clsDoctorData.cs" />
     <Compile Include="clsLoginHistoryData.cs" />
     <Compile Include="clsPatientData.cs" />
-    <Compile Include="clsPaymentCardData.cs" />
     <Compile Include="clsPaymentData.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="clsReceptionistData.cs" />

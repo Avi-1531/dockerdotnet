@@ -379,21 +379,12 @@ CREATE TABLE Receptionists(
 	UpdatedAt DATETIME NULL
 );
 
-CREATE TABLE PaymentCards (
-	PaymentCardID INT PRIMARY KEY IDENTITY(1,1),
-	CardNumber VARCHAR(16) UNIQUE NOT NULL,
-	CardHolderName VARCHAR(100) NOT NULL,
-	ExpiryDate DATE NOT NULL,
-	CreatedByUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NOT NULL,
-	CreatedAt DATETIME NOT NULL,
-);
 
 CREATE TABLE Payments (
 	PaymentID INT PRIMARY KEY IDENTITY(1,1),
 	Amount DECIMAL(8,2) NOT NULL,
 	PaymentMethod TINYINT NOT NULL, -- (1 = Cash, 2 = Debit Card, 3 = Bank Transfer, 4 = Mobile Payment)
 	PaymentDate DATETIME NOT NULL,
-	PaymentCardID INT FOREIGN KEY REFERENCES PaymentCards(PaymentCardID) NULL,
 	CreatedByUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NOT NULL,
 	CreatedAt DATETIME DEFAULT GETDATE() NOT NULL
 );

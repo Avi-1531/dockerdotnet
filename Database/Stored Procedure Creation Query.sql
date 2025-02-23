@@ -1440,6 +1440,7 @@ BEGIN
 	  INNER JOIN Appointments ON Appointments.PaymentID = Payments.PaymentID
 	  INNER JOIN Patients ON Appointments.PatientID = Patients.PatientID
 	  INNER JOIN People ON Patients.PersonID = People.PersonID
+	  ORDER BY PaymentDate DESC
 END
 GO
 
