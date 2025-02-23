@@ -13,7 +13,6 @@ namespace ClinicManagementDB_Business
         public decimal Amount { set; get; }
         public byte PaymentMethod { set; get; }
         public DateTime PaymentDate { set; get; }
-        public int? PaymentCardID { set; get; }
         public short CreatedByUserID { set; get; }
         public DateTime CreatedAt { set; get; }
 
@@ -23,25 +22,23 @@ namespace ClinicManagementDB_Business
             this.Amount = -1;
             this.PaymentMethod = 0;
             this.PaymentDate = DateTime.Now;
-            this.PaymentCardID = null;
             this.CreatedByUserID = -1;
             this.CreatedAt = DateTime.Now;
             Mode = enMode.AddNew;
         }
-        private clsPayment(int? PaymentID, decimal Amount, byte PaymentMethod, DateTime PaymentDate, int? PaymentCardID, short CreatedByUserID, DateTime CreatedAt)
+        private clsPayment(int? PaymentID, decimal Amount, byte PaymentMethod, DateTime PaymentDate, short CreatedByUserID, DateTime CreatedAt)
         {
             this.PaymentID = PaymentID;
             this.Amount = Amount;
             this.PaymentMethod = PaymentMethod;
             this.PaymentDate = PaymentDate;
-            this.PaymentCardID = PaymentCardID;
             this.CreatedByUserID = CreatedByUserID;
             this.CreatedAt = CreatedAt;
             Mode = enMode.Update;
         }
         private bool _AddNewPayment()
         {
-            this.PaymentID = (int?)clsPaymentData.AddNewPayment(this.Amount, this.PaymentMethod, this.PaymentDate, this.PaymentCardID, this.CreatedByUserID, this.CreatedAt);
+            this.PaymentID = (int?)clsPaymentData.AddNewPayment(this.Amount, this.PaymentMethod, this.PaymentDate, this.CreatedByUserID, this.CreatedAt);
             return (this.PaymentID != -1);
         }
         public static clsPayment Find(int? PaymentID)
@@ -49,14 +46,13 @@ namespace ClinicManagementDB_Business
             decimal Amount = -1;
             byte PaymentMethod = 0;
             DateTime PaymentDate = DateTime.Now;
-            int? PaymentCardID = null;
             short CreatedByUserID = -1;
             DateTime CreatedAt = DateTime.Now;
 
-            bool IsFound = clsPaymentData.GetPaymentByID(PaymentID, ref Amount, ref PaymentMethod, ref PaymentDate, ref PaymentCardID, ref CreatedByUserID, ref CreatedAt);
+            bool IsFound = clsPaymentData.GetPaymentByID(PaymentID, ref Amount, ref PaymentMethod, ref PaymentDate, ref CreatedByUserID, ref CreatedAt);
 
             if(IsFound)
-                return new clsPayment(PaymentID, Amount, PaymentMethod, PaymentDate, PaymentCardID, CreatedByUserID, CreatedAt);
+                return new clsPayment(PaymentID, Amount, PaymentMethod, PaymentDate, CreatedByUserID, CreatedAt);
             else
                 return null;
         }

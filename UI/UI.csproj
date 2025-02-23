@@ -169,6 +169,12 @@
     <Compile Include="Patient\frmPatientsManagement.Designer.cs">
       <DependentUpon>frmPatientsManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment\frmPayfees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\frmPayfees.Designer.cs">
+      <DependentUpon>frmPayfees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment\frmPaymentsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\frmPatientsManagement.resx">
       <DependentUpon>frmPatientsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\frmPayfees.resx">
+      <DependentUpon>frmPayfees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment\frmPaymentsManagement.resx">
       <DependentUpon>frmPaymentsManagement.cs</DependentUpon>

@@ -1399,13 +1399,12 @@ CREATE PROCEDURE AddNewPayment
     @Amount DECIMAL(18,2),
     @PaymentMethod TINYINT,
     @PaymentDate DATETIME,
-    @PaymentCardID INT = NULL,
     @CreatedByUserID SMALLINT,
     @CreatedAt DATETIME
 AS
 BEGIN
-    INSERT INTO Payments (Amount, PaymentMethod, PaymentDate, PaymentCardID, CreatedByUserID, CreatedAt)
-    VALUES (@Amount, @PaymentMethod, @PaymentDate, @PaymentCardID, @CreatedByUserID, @CreatedAt);
+    INSERT INTO Payments (Amount, PaymentMethod, PaymentDate, CreatedByUserID, CreatedAt)
+    VALUES (@Amount, @PaymentMethod, @PaymentDate, @CreatedByUserID, @CreatedAt);
 
     SELECT SCOPE_IDENTITY();
 END

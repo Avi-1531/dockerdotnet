@@ -345,7 +345,7 @@ CREATE TABLE Doctors (
 	HireDate DATE NOT NULL,
 	EndDate DATE NULL,
 	DoctorStatus TINYINT CHECK(DoctorStatus BETWEEN 1 AND 5) NOT NULL, --(1 = Active, 2 = On Leave, 3 = Resigned, 4 = Retired, 5 = Terminated)
-	ConsultationFee DECIMAL(8,2) NULL,
+	ConsultationFee DECIMAL(8,2),
 	DoctorUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) UNIQUE NOT NULL,
 	CreatedByUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NOT NULL,
 	CreatedAt DATETIME NOT NULL,

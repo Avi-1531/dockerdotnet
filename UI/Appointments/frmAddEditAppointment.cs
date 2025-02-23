@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Global;
+using UI.Payment;
 
 namespace UI.Appointments
 {
@@ -126,7 +127,7 @@ namespace UI.Appointments
             TimeSpan TimePart = dtpAppointmentTime.Value.TimeOfDay;
             DateTime DatePart = dtpAppointmentDate.Value.Date;
             DateTime AppointmentDate = DatePart.Add(TimePart);
-                        
+
             TimeSpan StartTime = new TimeSpan(8, 0, 0);
             TimeSpan EndTime = new TimeSpan(16, 0, 0);
 
@@ -167,9 +168,9 @@ namespace UI.Appointments
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
-      MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
+            frmPayfees frm = new frmPayfees((int)_Appointment.AppointmentID);
+            frm.OnPayProcessed += OnPayProcessed;
+            frm.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -177,6 +178,12 @@ namespace UI.Appointments
             MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
       MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
+        }
+        private void OnPayProcessed(int PaymentID)
+        {
+            lblPaymentID.Text = PaymentID.ToString();
+            lblPaymentID.Visible = true;
+            btnPay.Visible = false;
         }
     }
 }

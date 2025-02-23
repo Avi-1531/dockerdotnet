@@ -6,7 +6,7 @@ namespace ClinicManagementDB_DataAccess
 {
     public class clsPaymentData
     {
-        public static bool GetPaymentByID(int? PaymentID, ref decimal Amount, ref byte PaymentMethod, ref DateTime PaymentDate, ref int? PaymentCardID, ref short CreatedByUserID, ref DateTime CreatedAt)
+        public static bool GetPaymentByID(int? PaymentID, ref decimal Amount, ref byte PaymentMethod, ref DateTime PaymentDate, ref short CreatedByUserID, ref DateTime CreatedAt)
         {
             bool isFound = false;
 
@@ -32,7 +32,6 @@ namespace ClinicManagementDB_DataAccess
                                 Amount = (decimal)reader["Amount"];
                                 PaymentMethod = (byte)reader["PaymentMethod"];
                                 PaymentDate = (DateTime)reader["PaymentDate"];
-                                PaymentCardID = (reader["PaymentCardID"] != DBNull.Value) ? (int?)reader["PaymentCardID"] : null;
                                 CreatedByUserID = (short)reader["CreatedByUserID"];
                                 CreatedAt = (DateTime)reader["CreatedAt"];
                             }
@@ -49,7 +48,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static int AddNewPayment(decimal Amount, byte PaymentMethod, DateTime PaymentDate, int? PaymentCardID, short CreatedByUserID, DateTime CreatedAt)
+        public static int AddNewPayment(decimal Amount, byte PaymentMethod, DateTime PaymentDate, short CreatedByUserID, DateTime CreatedAt)
         {
             int PaymentID = -1;
 
@@ -65,7 +64,6 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@Amount", Amount);
                         command.Parameters.AddWithValue("@PaymentMethod", PaymentMethod);
                         command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
-                        command.Parameters.AddWithValue("@PaymentCardID", (object)PaymentCardID ?? DBNull.Value);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
 
