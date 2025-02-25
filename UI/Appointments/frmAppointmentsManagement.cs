@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.MedicalRecord;
 
 namespace UI.Appointments
 {
@@ -28,7 +29,7 @@ namespace UI.Appointments
             {
                 dgvAppointments.Columns[0].HeaderText = "Appointment ID";
                 dgvAppointments.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-                
+
                 dgvAppointments.Columns[1].HeaderText = "Patient ID";
                 dgvAppointments.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
@@ -145,6 +146,13 @@ namespace UI.Appointments
             int AppointmentId = (int)dgvAppointments.CurrentRow.Cells[0].Value;
             frmAppointmentInfo frmAppointmentInfo = new frmAppointmentInfo(AppointmentId);
             frmAppointmentInfo.ShowDialog();
+        }
+
+        private void tsmiPatientMedicalRecords_Click(object sender, EventArgs e)
+        {
+            int PatientID = (int)dgvAppointments.CurrentRow.Cells[1].Value;
+            frmPatientMedicalRecords frm = new frmPatientMedicalRecords(PatientID);
+            frm.ShowDialog();
         }
     }
 }

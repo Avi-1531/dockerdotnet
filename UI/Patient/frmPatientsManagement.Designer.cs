@@ -36,6 +36,7 @@
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             this.cmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddPatient = new System.Windows.Forms.Button();
@@ -106,9 +107,10 @@
             this.cmsPatient.BackColor = System.Drawing.SystemColors.Control;
             this.cmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEditPatientInfo,
+            this.tsmiPatientMedicalRecords,
             this.tsmiShowPatientInfo});
             this.cmsPatient.Name = "cmsPerson";
-            this.cmsPatient.Size = new System.Drawing.Size(227, 64);
+            this.cmsPatient.Size = new System.Drawing.Size(281, 116);
             // 
             // tsmiEditPatientInfo
             // 
@@ -116,10 +118,21 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(280, 30);
             this.tsmiEditPatientInfo.Text = "Edit Patient";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
+            // 
+            // tsmiPatientMedicalRecords
+            // 
+            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
+            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(280, 30);
+            this.tsmiPatientMedicalRecords.Text = "Patient Medical Records";
+            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
             // 
             // tsmiShowPatientInfo
             // 
@@ -127,7 +140,7 @@
             this.tsmiShowPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowPatientInfo.Name = "tsmiShowPatientInfo";
-            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(280, 30);
             this.tsmiShowPatientInfo.Text = "Show Patient Info";
             this.tsmiShowPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowPatientInfo.Click += new System.EventHandler(this.tsmiShowPatientInfo_Click);
@@ -279,5 +292,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowPatientInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPatientMedicalRecords;
     }
 }

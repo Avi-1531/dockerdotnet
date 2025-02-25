@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.MedicalRecord;
 using UI.People;
 
 namespace UI.Patient
@@ -124,6 +125,13 @@ namespace UI.Patient
             int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
             frmPatientInfo frmPatientInfo = new frmPatientInfo(PatientID);
             frmPatientInfo.ShowDialog();
+        }
+
+        private void tsmiPatientMedicalRecords_Click(object sender, EventArgs e)
+        {
+            int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
+            frmPatientMedicalRecords frm = new frmPatientMedicalRecords(PatientID);
+            frm.ShowDialog();
         }
     }
 }

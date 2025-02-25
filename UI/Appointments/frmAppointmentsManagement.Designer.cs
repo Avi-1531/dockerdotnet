@@ -36,6 +36,7 @@
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.cmsAppointments = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddAppointment = new System.Windows.Forms.Button();
@@ -84,7 +85,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAppointments.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAppointments.EnableHeadersVisualStyles = false;
-            this.dgvAppointments.Location = new System.Drawing.Point(24, 254);
+            this.dgvAppointments.Location = new System.Drawing.Point(24, 252);
             this.dgvAppointments.MultiSelect = false;
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
@@ -107,9 +108,10 @@
             this.cmsAppointments.BackColor = System.Drawing.SystemColors.Control;
             this.cmsAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEditPatientInfo,
+            this.tsmiPatientMedicalRecords,
             this.tsmiShowDoctorInfo});
             this.cmsAppointments.Name = "cmsPerson";
-            this.cmsAppointments.Size = new System.Drawing.Size(228, 86);
+            this.cmsAppointments.Size = new System.Drawing.Size(281, 94);
             // 
             // tsmiEditPatientInfo
             // 
@@ -117,10 +119,21 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(227, 30);
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(280, 30);
             this.tsmiEditPatientInfo.Text = "Edit Appointment";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
+            // 
+            // tsmiPatientMedicalRecords
+            // 
+            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
+            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(280, 30);
+            this.tsmiPatientMedicalRecords.Text = "Patient Medical Records";
+            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
             // 
             // tsmiShowDoctorInfo
             // 
@@ -128,7 +141,7 @@
             this.tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
-            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(227, 30);
+            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(280, 30);
             this.tsmiShowDoctorInfo.Text = "Appointment Info";
             this.tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowDoctorInfo.Click += new System.EventHandler(this.tsmiShowDoctorInfo_Click);
@@ -307,5 +320,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPatientMedicalRecords;
     }
 }

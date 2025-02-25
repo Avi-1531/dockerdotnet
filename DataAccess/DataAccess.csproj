@@ -49,6 +49,7 @@
     <Compile Include="clsDepartmentData.cs" />
     <Compile Include="clsDoctorData.cs" />
     <Compile Include="clsLoginHistoryData.cs" />
+    <Compile Include="clsMedicalRecordData.cs" />
     <Compile Include="clsPatientData.cs" />
     <Compile Include="clsPaymentData.cs" />
     <Compile Include="clsPersonData.cs" />

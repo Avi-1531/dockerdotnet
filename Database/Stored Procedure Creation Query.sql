@@ -1479,3 +1479,18 @@ GROUP BY PaymentMethod
 ORDER BY COUNT(*) DESC
 END
 GO
+
+
+CREATE PROCEDURE GetPatientMedicalRecords
+    @PatientID INT
+AS
+BEGIN
+SELECT MedicalRecordID, MedicalRecords.AppointmentID ,Diagnosis,
+Prescription ,Notes, Users.Username, MedicalRecords.CreatedAt
+FROM MedicalRecords
+INNER JOIN Appointments ON Appointments.AppointmentID = MedicalRecords.AppointmentID
+INNER JOIN Users ON Users.UserID = MedicalRecords.CreatedByUserID
+WHERE Appointments.PatientID = @PatientID
+ORDER BY MedicalRecordID DESC
+END
+GO
