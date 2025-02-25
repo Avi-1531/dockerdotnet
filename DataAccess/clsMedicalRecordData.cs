@@ -6,7 +6,7 @@ namespace ClinicManagementDB_DataAccess
 {
     public class clsMedicalRecordData
     {
-        public static bool GetMedicalRecordByID(int? MedicalRecordID, ref string Diagnosis, ref string Prescription, ref string Notes, ref short CreatedByUserID, ref DateTime CreatedAt)
+        public static bool GetMedicalRecordByID(int? MedicalRecordID, ref string Diagnosis, ref string Prescription, ref string Notes, ref int AppointmentID, ref short CreatedByUserID, ref DateTime CreatedAt)
         {
             bool isFound = false;
 
@@ -32,6 +32,7 @@ namespace ClinicManagementDB_DataAccess
                                 Diagnosis = (string)reader["Diagnosis"];
                                 Prescription = (reader["Prescription"] != DBNull.Value) ? (string)reader["Prescription"] : null;
                                 Notes = (reader["Notes"] != DBNull.Value) ? (string)reader["Notes"] : null;
+                                AppointmentID = (int)reader["AppointmentID"];
                                 CreatedByUserID = (short)reader["CreatedByUserID"];
                                 CreatedAt = (DateTime)reader["CreatedAt"];
                             }
@@ -48,7 +49,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static int AddNewMedicalRecord(string Diagnosis, string Prescription, string Notes, short CreatedByUserID, DateTime CreatedAt)
+        public static int AddNewMedicalRecord(string Diagnosis, string Prescription, string Notes,int AppointmentID, short CreatedByUserID, DateTime CreatedAt)
         {
             int MedicalRecordID = -1;
 
@@ -66,6 +67,7 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
                         command.Parameters.AddWithValue("@Prescription", (object)Prescription ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Notes", (object)Notes ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
 
@@ -85,7 +87,7 @@ namespace ClinicManagementDB_DataAccess
 
             return MedicalRecordID;
         }
-        public static bool UpdateMedicalRecord(int? MedicalRecordID, string Diagnosis, string Prescription, string Notes, short CreatedByUserID, DateTime CreatedAt)
+        public static bool UpdateMedicalRecord(int? MedicalRecordID, string Diagnosis, string Prescription, string Notes, int AppointmentID, short CreatedByUserID, DateTime CreatedAt)
         {
             int rowsAffected = 0;
 
@@ -109,6 +111,7 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
                         command.Parameters.AddWithValue("@Prescription", (object)Prescription ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Notes", (object)Notes ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
 

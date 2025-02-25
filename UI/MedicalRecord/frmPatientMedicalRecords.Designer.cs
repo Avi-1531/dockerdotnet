@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmsMedicalRecords = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMedicalRecordInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecordsValue = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
@@ -50,20 +50,21 @@
             // 
             this.cmsMedicalRecords.BackColor = System.Drawing.SystemColors.Control;
             this.cmsMedicalRecords.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEditPatientInfo,
+            this.tsmiMedicalRecordInfo,
             this.tsmiShowPatientInfo});
             this.cmsMedicalRecords.Name = "cmsPerson";
-            this.cmsMedicalRecords.Size = new System.Drawing.Size(227, 64);
+            this.cmsMedicalRecords.Size = new System.Drawing.Size(248, 64);
             // 
-            // tsmiEditPatientInfo
+            // tsmiMedicalRecordInfo
             // 
-            this.tsmiEditPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(226, 30);
-            this.tsmiEditPatientInfo.Text = "Edit Patient";
-            this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiMedicalRecordInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiMedicalRecordInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiMedicalRecordInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiMedicalRecordInfo.Name = "tsmiMedicalRecordInfo";
+            this.tsmiMedicalRecordInfo.Size = new System.Drawing.Size(247, 30);
+            this.tsmiMedicalRecordInfo.Text = "Medical Record Info";
+            this.tsmiMedicalRecordInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiMedicalRecordInfo.Click += new System.EventHandler(this.tsmiMedicalRecordInfo_Click);
             // 
             // tsmiShowPatientInfo
             // 
@@ -71,7 +72,7 @@
             this.tsmiShowPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowPatientInfo.Name = "tsmiShowPatientInfo";
-            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(226, 30);
+            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(247, 30);
             this.tsmiShowPatientInfo.Text = "Show Patient Info";
             this.tsmiShowPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -118,6 +119,7 @@
             this.dgvMedicalRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMedicalRecords.ColumnHeadersHeight = 40;
             this.dgvMedicalRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMedicalRecords.ContextMenuStrip = this.cmsMedicalRecords;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,7 +204,7 @@
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip cmsMedicalRecords;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEditPatientInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMedicalRecordInfo;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowPatientInfo;
         private System.Windows.Forms.Label lblRecordsValue;
         private System.Windows.Forms.Label lblRecords;

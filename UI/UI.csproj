@@ -133,6 +133,18 @@
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedicalRecord\ctrlMedicalRecordInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MedicalRecord\ctrlMedicalRecordInfo.Designer.cs">
+      <DependentUpon>ctrlMedicalRecordInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecord\frmMedicalRecordInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalRecord\frmMedicalRecordInfo.Designer.cs">
+      <DependentUpon>frmMedicalRecordInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicalRecord\frmPatientMedicalRecords.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalRecord\ctrlMedicalRecordInfo.resx">
+      <DependentUpon>ctrlMedicalRecordInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalRecord\frmMedicalRecordInfo.resx">
+      <DependentUpon>frmMedicalRecordInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedicalRecord\frmPatientMedicalRecords.resx">
       <DependentUpon>frmPatientMedicalRecords.cs</DependentUpon>

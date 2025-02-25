@@ -59,5 +59,12 @@ namespace UI.MedicalRecord
         {
             _LoadData();
         }
+
+        private void tsmiMedicalRecordInfo_Click(object sender, EventArgs e)
+        {
+            int _MedicalRecordID = (int)dgvMedicalRecords.CurrentRow.Cells[0].Value;
+            frmMedicalRecordInfo frm = new frmMedicalRecordInfo(_MedicalRecordID);
+            frm.ShowDialog();
+        }
     }
 }
