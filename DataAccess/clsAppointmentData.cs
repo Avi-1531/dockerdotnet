@@ -261,8 +261,12 @@ namespace ClinicManagementDB_DataAccess
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 
-                        if(reader["MedicalRecordID"] != DBNull.Value)
-                            return (int?)reader["MedicalRecordID"];
+                        if(reader.Read())
+                        {
+                            int? MedicalRecordID = (int?)reader["MedicalRecordID"];
+                            return MedicalRecordID;
+                        }
+
                     }
                 }
             }

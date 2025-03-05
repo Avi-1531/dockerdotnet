@@ -41,7 +41,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbAppointmentDetails = new System.Windows.Forms.GroupBox();
             this.lblPaymentID = new System.Windows.Forms.Label();
-            this.lblMedicalRecord = new System.Windows.Forms.Label();
+            this.lblMedicalRecordID = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.ctrlSmallPatientFinder1 = new UI.Patient.Controls.ctrlSmallPatientFinder();
             this.ctrlctrlSmallDoctorFinder1 = new UI.Doctor.Controls.ctrlSmallDoctorFinder();
@@ -179,7 +179,7 @@
             // 
             this.gbAppointmentDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.gbAppointmentDetails.Controls.Add(this.lblPaymentID);
-            this.gbAppointmentDetails.Controls.Add(this.lblMedicalRecord);
+            this.gbAppointmentDetails.Controls.Add(this.lblMedicalRecordID);
             this.gbAppointmentDetails.Controls.Add(this.label9);
             this.gbAppointmentDetails.Controls.Add(this.btnAdd);
             this.gbAppointmentDetails.Controls.Add(this.dtpAppointmentDate);
@@ -209,16 +209,19 @@
             this.lblPaymentID.Text = "N/A";
             this.lblPaymentID.Visible = false;
             // 
-            // lblMedicalRecord
+            // lblMedicalRecordID
             // 
-            this.lblMedicalRecord.AutoSize = true;
-            this.lblMedicalRecord.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicalRecord.Location = new System.Drawing.Point(173, 346);
-            this.lblMedicalRecord.Name = "lblMedicalRecord";
-            this.lblMedicalRecord.Size = new System.Drawing.Size(45, 25);
-            this.lblMedicalRecord.TabIndex = 35;
-            this.lblMedicalRecord.Text = "N/A";
-            this.lblMedicalRecord.Visible = false;
+            this.lblMedicalRecordID.AutoSize = true;
+            this.lblMedicalRecordID.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMedicalRecordID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedicalRecordID.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblMedicalRecordID.Location = new System.Drawing.Point(173, 346);
+            this.lblMedicalRecordID.Name = "lblMedicalRecordID";
+            this.lblMedicalRecordID.Size = new System.Drawing.Size(45, 25);
+            this.lblMedicalRecordID.TabIndex = 35;
+            this.lblMedicalRecordID.Text = "N/A";
+            this.lblMedicalRecordID.Visible = false;
+            this.lblMedicalRecordID.Click += new System.EventHandler(this.lblMedicalRecordID_Click);
             // 
             // btnSave
             // 
@@ -271,6 +274,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAddEditAppointment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditAppointment";
             this.Load += new System.EventHandler(this.frmAddOrUpdateAppointment_Load);
             this.gbAppointmentDetails.ResumeLayout(false);
@@ -296,7 +300,7 @@
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbAppointmentDetails;
-        private System.Windows.Forms.Label lblMedicalRecord;
+        private System.Windows.Forms.Label lblMedicalRecordID;
         private System.Windows.Forms.Label lblPaymentID;
         private System.Windows.Forms.Button btnSave;
     }

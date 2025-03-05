@@ -139,6 +139,12 @@
     <Compile Include="MedicalRecord\ctrlMedicalRecordInfo.Designer.cs">
       <DependentUpon>ctrlMedicalRecordInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedicalRecord\frmAddMedicalRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalRecord\frmAddMedicalRecord.Designer.cs">
+      <DependentUpon>frmAddMedicalRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicalRecord\frmMedicalRecordInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MedicalRecord\ctrlMedicalRecordInfo.resx">
       <DependentUpon>ctrlMedicalRecordInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalRecord\frmAddMedicalRecord.resx">
+      <DependentUpon>frmAddMedicalRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedicalRecord\frmMedicalRecordInfo.resx">
       <DependentUpon>frmMedicalRecordInfo.cs</DependentUpon>

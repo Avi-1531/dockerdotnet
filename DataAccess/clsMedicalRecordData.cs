@@ -49,7 +49,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static int AddNewMedicalRecord(string Diagnosis, string Prescription, string Notes,int AppointmentID, short CreatedByUserID, DateTime CreatedAt)
+        public static int AddNewMedicalRecord(string Diagnosis, string Prescription, string Notes, int AppointmentID, short CreatedByUserID, DateTime CreatedAt)
         {
             int MedicalRecordID = -1;
 
@@ -57,8 +57,8 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO MedicalRecords (Diagnosis, Prescription, Notes, CreatedByUserID, CreatedAt)
-                            VALUES (@Diagnosis, @Prescription, @Notes, @CreatedByUserID, @CreatedAt)
+                    string query = @"INSERT INTO MedicalRecords (Diagnosis, Prescription, Notes, AppointmentID, CreatedByUserID, CreatedAt)
+                            VALUES (@Diagnosis, @Prescription, @Notes, @AppointmentID, @CreatedByUserID, @CreatedAt)
                             SELECT SCOPE_IDENTITY();";
 
                     using(SqlCommand command = new SqlCommand(query, connection))
@@ -67,9 +67,9 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
                         command.Parameters.AddWithValue("@Prescription", (object)Prescription ?? DBNull.Value);
                         command.Parameters.AddWithValue("@Notes", (object)Notes ?? DBNull.Value);
-                        command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                        command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
 
                         connection.Open();
 

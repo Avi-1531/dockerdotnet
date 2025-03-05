@@ -5,10 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Global;
+using UI.MedicalRecord;
 using UI.Payment;
 
 namespace UI.Appointments
@@ -67,13 +69,13 @@ namespace UI.Appointments
             if(_Appointment.HasMedicalRecord())
             {
                 btnAdd.Visible = false;
-                lblMedicalRecord.Visible = true;
-                lblMedicalRecord.Text = _Appointment.GetMedicalRecordID()?.ToString();
+                lblMedicalRecordID.Visible = true;
+                lblMedicalRecordID.Text = _Appointment.GetMedicalRecordID()?.ToString();
             }
             else
             {
                 btnAdd.Visible = true;
-                lblMedicalRecord.Visible = false;
+                lblMedicalRecordID.Visible = false;
             }
         }
         private void _Save()
@@ -173,17 +175,35 @@ namespace UI.Appointments
             frm.ShowDialog();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
-      MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
-        }
         private void OnPayProcessed(int PaymentID)
         {
             lblPaymentID.Text = PaymentID.ToString();
             lblPaymentID.Visible = true;
             btnPay.Visible = false;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddMedicalRecord frmAddMedicalRecord = new frmAddMedicalRecord((int)_Appointment.AppointmentID);
+            frmAddMedicalRecord.OnMedicalRecordAdded += OnMedicalRecordAdded;
+            frmAddMedicalRecord.ShowDialog();
+        }
+        private void OnMedicalRecordAdded(int MedicalRecordID)
+        {
+            btnAdd.Visible = false;
+            lblMedicalRecordID.Visible = true;
+            lblMedicalRecordID.Text = MedicalRecordID.ToString();
+        }
+
+        private void lblMedicalRecordID_Click(object sender, EventArgs e)
+        {
+
+            if(Int32.TryParse(lblMedicalRecordID.Text, out int MedicalRecordID))
+            {
+                frmMedicalRecordInfo frm = new frmMedicalRecordInfo(MedicalRecordID);
+                frm.ShowDialog();
+            }
+
         }
     }
 }
