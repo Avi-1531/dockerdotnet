@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Global;
 using UI.Users.Controls;
 
 namespace UI.Users
@@ -123,7 +124,7 @@ namespace UI.Users
                     break;
             }
 
-            _User.UpdatedByUserID = 1; // Change
+            _User.UpdatedByUserID = clsGlobal.CurrentUser.UserID;
             _User.UpdatedAt = DateTime.Now;
           
 

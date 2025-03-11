@@ -315,6 +315,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAddEditReceptionist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditReceptionist";
             this.Load += new System.EventHandler(this.frmAddEditReceptionist_Load);
             this.tabPage1.ResumeLayout(false);

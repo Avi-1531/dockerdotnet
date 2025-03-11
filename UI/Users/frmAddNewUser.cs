@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Global;
 
 namespace UI.Users
 {
@@ -39,7 +40,7 @@ namespace UI.Users
             btnNext.Enabled = true;
             gbUserInfo.Enabled = true;
             btnSave.Enabled = true;
-            txtCreatedBy.Text = clsUser.GetUsernameByID(1); // Change
+            txtCreatedBy.Text = clsGlobal.CurrentUser.Username;
         }
         private void frmAddEditUser_Load(object sender, EventArgs e)
         {
@@ -118,7 +119,7 @@ namespace UI.Users
             _User.Username = txtUsername.Text.Trim();
             _User.Password = txtPassowrd.Text.Trim();
             _User.IsActive = rdActive.Checked;
-            _User.CreatedByUserID = 1; // Change
+            _User.CreatedByUserID = (short)clsGlobal.CurrentUser.UserID;
             _User.CreatedAt = DateTime.Now;
             switch(cbRole.Text)
             {

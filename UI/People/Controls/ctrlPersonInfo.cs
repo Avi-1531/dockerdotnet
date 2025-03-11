@@ -55,9 +55,12 @@ namespace UI.People.Controls
             lblPhone.Text = _Person.Phone;
             lblCountry.Text = _Person.CountryName;
             lblAddress.Text = _Person.Address ?? "[????]";
-            // change
-            lblCreatedByAt.Text = "Created By [??] At [??]";
-            lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
+
+            lblCreatedByAt.Text = $"Created By {clsUser.GetUsernameByID(_Person.CreatedByUserID)} At {_Person.CreatedAt.ToString("d MMM yyyy")}";
+            if(_Person.UpdatedByUserID != null && _Person.UpdatedAt != null)
+                lblUpdatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(_Person.UpdatedByUserID)} At {_Person.UpdatedAt.Value.ToString("d MMM yyyy")}";
+            else
+                lblUpdatedByAt.Visible = false;
         }
     }
 }

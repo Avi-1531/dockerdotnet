@@ -63,9 +63,13 @@ namespace UI.Receptionist.Controls
                 lblEndDate.Text = "N/A";
             }
 
-            // change
-            lblCreatedByAt.Text = "Created By [??] At [??]";
-            lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
+            lblCreatedByAt.Text = $"Created By {clsUser.GetUsernameByID(_Receptionist.CreatedByUserID)} At {_Receptionist.CreatedAt.ToString("d MMM yyyy")}";
+            if(_Receptionist.UpdatedByUserID != null && _Receptionist.UpdatedAt != null)
+                lblUpdatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(_Receptionist.UpdatedByUserID)} At {_Receptionist.UpdatedAt.Value.ToString("d MMM yyyy")}";
+            else
+                lblUpdatedByAt.Visible = false;
+
+
         }
         private void lblReceptionistUsername_Click(object sender, EventArgs e)
         {

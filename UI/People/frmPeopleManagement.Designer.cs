@@ -119,7 +119,7 @@
             this.tsmPersonalInformation,
             this.tsmEditPersonalInformation});
             this.cmsPerson.Name = "cmsPerson";
-            this.cmsPerson.Size = new System.Drawing.Size(293, 86);
+            this.cmsPerson.Size = new System.Drawing.Size(293, 64);
             // 
             // tsmPersonalInformation
             // 
@@ -278,7 +278,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPeopleManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPeopleManagement";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPeopleManagement_Load);

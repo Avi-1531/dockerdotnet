@@ -82,9 +82,11 @@ namespace UI.Doctor.Controls
                 lblEndDate.Text = "N/A";
             }
 
-            // change
-            lblCreatedByAt.Text = "Created By [??] At [??]";
-            lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
+            lblCreatedByAt.Text = $"Created By {clsUser.GetUsernameByID(_Doctor.CreatedByUserID)} At {_Doctor.CreatedAt.ToString("d MMM yyyy")}";
+            if(_Doctor.UpdatedByUserID != null && _Doctor.UpdatedAt != null)
+                lblUpdatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(_Doctor.UpdatedByUserID)} At {_Doctor.UpdatedAt.Value.ToString("d MMM yyyy")}";
+            else
+                lblUpdatedByAt.Visible = false;
         }
         private void lblDoctorUsername_Click(object sender, EventArgs e)
         {

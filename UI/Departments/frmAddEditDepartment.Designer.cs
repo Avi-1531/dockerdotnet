@@ -34,14 +34,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDepartmentDescription = new System.Windows.Forms.TextBox();
             this.gbDepartmentInformation = new System.Windows.Forms.GroupBox();
+            this.txtDepartmentLocation = new System.Windows.Forms.TextBox();
+            this.txtDepartmentID = new System.Windows.Forms.TextBox();
             this.txtDepartmentName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDepartmentLocation = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDepartmentID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbDepartmentInformation.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,33 @@
             this.gbDepartmentInformation.TabStop = false;
             this.gbDepartmentInformation.Text = "Department Information";
             // 
+            // txtDepartmentLocation
+            // 
+            this.txtDepartmentLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtDepartmentLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDepartmentLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartmentLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtDepartmentLocation.Location = new System.Drawing.Point(24, 330);
+            this.txtDepartmentLocation.Multiline = true;
+            this.txtDepartmentLocation.Name = "txtDepartmentLocation";
+            this.txtDepartmentLocation.Size = new System.Drawing.Size(295, 55);
+            this.txtDepartmentLocation.TabIndex = 11;
+            this.txtDepartmentLocation.Tag = "0";
+            this.txtDepartmentLocation.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateTextbox);
+            // 
+            // txtDepartmentID
+            // 
+            this.txtDepartmentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtDepartmentID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDepartmentID.Enabled = false;
+            this.txtDepartmentID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartmentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtDepartmentID.Location = new System.Drawing.Point(24, 60);
+            this.txtDepartmentID.Name = "txtDepartmentID";
+            this.txtDepartmentID.Size = new System.Drawing.Size(295, 33);
+            this.txtDepartmentID.TabIndex = 0;
+            this.txtDepartmentID.Tag = "3";
+            // 
             // txtDepartmentName
             // 
             this.txtDepartmentName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -128,6 +155,36 @@
             this.txtDepartmentName.Tag = "3";
             this.txtDepartmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreventNonLetterInput);
             this.txtDepartmentName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateTextbox);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Department Description:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(193, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Department Location:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 25);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Department ID:";
             // 
             // label1
             // 
@@ -149,63 +206,6 @@
             this.lblHeader.TabIndex = 4;
             this.lblHeader.Text = "ADD DEPARTMENT";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 302);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Department Location:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Department Description:";
-            // 
-            // txtDepartmentLocation
-            // 
-            this.txtDepartmentLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtDepartmentLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDepartmentLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartmentLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDepartmentLocation.Location = new System.Drawing.Point(24, 330);
-            this.txtDepartmentLocation.Multiline = true;
-            this.txtDepartmentLocation.Name = "txtDepartmentLocation";
-            this.txtDepartmentLocation.Size = new System.Drawing.Size(295, 55);
-            this.txtDepartmentLocation.TabIndex = 11;
-            this.txtDepartmentLocation.Tag = "0";
-            this.txtDepartmentLocation.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateTextbox);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Department ID:";
-            // 
-            // txtDepartmentID
-            // 
-            this.txtDepartmentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtDepartmentID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDepartmentID.Enabled = false;
-            this.txtDepartmentID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartmentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDepartmentID.Location = new System.Drawing.Point(24, 60);
-            this.txtDepartmentID.Name = "txtDepartmentID";
-            this.txtDepartmentID.Size = new System.Drawing.Size(295, 33);
-            this.txtDepartmentID.TabIndex = 0;
-            this.txtDepartmentID.Tag = "3";
-            // 
             // frmAddEditDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -218,6 +218,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAddEditDepartment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit Department";
             this.Load += new System.EventHandler(this.frmAddEditDepartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

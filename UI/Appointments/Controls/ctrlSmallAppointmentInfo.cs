@@ -51,10 +51,16 @@ namespace UI.Appointments.Controls
             lblIsPaid.Text = _Appointment.IsPaid ? "Yes" : "No";
             lblPaymentID.Text = _Appointment.PaymentID?.ToString() ?? "Not Paid";
 
-            // change
-            lblMedicalRecord.Text = "######";
-            lblCreatedByAt.Text = "Created By [??] At [??]";
-            lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
+            if(_Appointment.HasMedicalRecord())
+                lblMedicalRecord.Text = _Appointment.GetMedicalRecordID().Value.ToString();
+            else
+                lblMedicalRecord.Text = "N/A";
+
+            lblCreatedByAt.Text = $"Created By {clsUser.GetUsernameByID(_Appointment.CreatedByUserID)} At {_Appointment.CreatedAt.ToString("d MMM yyyy")}";
+            if(_Appointment.UpdatedByUserID != null && _Appointment.UpdatedAt != null)
+                lblUpdatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(_Appointment.UpdatedByUserID)} At {_Appointment.UpdatedAt.Value.ToString("d MMM yyyy")}";
+            else
+                lblUpdatedByAt.Visible = false;
         }
     }
 }

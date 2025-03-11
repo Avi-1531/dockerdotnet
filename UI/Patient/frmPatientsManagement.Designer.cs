@@ -110,7 +110,7 @@
             this.tsmiPatientMedicalRecords,
             this.tsmiShowPatientInfo});
             this.cmsPatient.Name = "cmsPerson";
-            this.cmsPatient.Size = new System.Drawing.Size(281, 116);
+            this.cmsPatient.Size = new System.Drawing.Size(281, 94);
             // 
             // tsmiEditPatientInfo
             // 
@@ -268,6 +268,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPatientsManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPatientsManagement";
             this.Load += new System.EventHandler(this.frmPatientsManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
