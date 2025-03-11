@@ -338,5 +338,38 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+
+        public static int GetTotalDepartments()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetTotalDepartments", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int TotalDepartments = (int)reader["TotalDepartments"];
+                            return TotalDepartments;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+
     }
 }

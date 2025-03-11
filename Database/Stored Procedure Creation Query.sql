@@ -1494,3 +1494,90 @@ WHERE Appointments.PatientID = @PatientID
 ORDER BY MedicalRecordID DESC
 END
 GO
+
+CREATE PROCEDURE GetTodayAppointmentsCount
+AS
+BEGIN
+    SELECT COUNT(*) AS TodayAppointmentsCount
+    FROM Appointments WHERE CAST(AppointmentDate AS DATE) = CAST(GETDATE() AS DATE);
+END
+GO
+
+CREATE PROCEDURE GetWeeklyAppointmentsCount
+AS
+BEGIN
+
+    SELECT COUNT(*) AS WeeklyAppointmentsCount
+    FROM Appointments
+    WHERE DATEPART(WEEK, AppointmentDate) = DATEPART(WEEK, GETDATE())
+      AND DATEPART(YEAR, AppointmentDate) = DATEPART(YEAR, GETDATE());
+END
+GO
+
+CREATE PROCEDURE GetCreatedAppointmentsThisWeekCount
+AS
+BEGIN
+ SELECT COUNT(*) AS CreatedAppointmentsThisWeekCount
+    FROM Appointments 
+	WHERE DATEPART(week, CreatedAt) = DATEPART(week, GETDATE())
+	AND DATEPART(year, CreatedAt) = DATEPART(year, GETDATE())
+END
+GO
+
+
+
+CREATE PROCEDURE GetTotalPatients 
+AS
+BEGIN
+SELECT COUNT(*) AS TotalPatients FROM Patients;
+END
+GO
+
+CREATE PROCEDURE GetNewPatientsThisWeek 
+AS
+BEGIN
+SELECT COUNT(*) AS NewPatientsThisWeek FROM Patients
+WHERE 
+	DATEPART(week, CreatedAt) = DATEPART(week, GETDATE())
+	AND
+	DATEPART(year,CreatedAt) = DATEPART(year, GETDATE());
+END
+GO
+
+CREATE PROCEDURE GetAveragePatientAge
+AS
+BEGIN
+SELECT AVG(DATEDIFF(Year, People.BirthDate, GETDATE())) AS AveragePatientAge FROM Patients
+INNER JOIN People ON People.PersonID = Patients.PersonID;
+END
+GO
+
+
+CREATE PROCEDURE GetTotalAvailableDoctors
+AS
+BEGIN
+SELECT COUNT(*) AS TotalAvailableDoctors FROM Doctors
+WHERE DoctorStatus = 1
+END
+GO
+
+CREATE PROCEDURE GetAverageConsultationFee
+AS
+BEGIN
+SELECT AVG(ConsultationFee) AS AverageConsultationFee FROM Doctors
+WHERE DoctorStatus = 1
+END
+GO
+
+
+CREATE PROCEDURE GetTotalDepartments
+AS
+BEGIN
+SELECT COUNT(*) AS TotalDepartments FROM Departments
+END
+GO
+
+
+
+
+

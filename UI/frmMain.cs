@@ -16,6 +16,7 @@ using UI.People;
 using UI.Receptionist;
 using UI.Users;
 using UI.Payment;
+using UI.Dashboard;
 
 namespace UI
 {
@@ -42,9 +43,7 @@ namespace UI
 
         private void _ShowNotImplementedFeatureMessage(object sender, EventArgs e)
         {
-            MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
-                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
+
         }
 
         private void btnPeople_Click(object sender, EventArgs e)
@@ -96,6 +95,11 @@ namespace UI
         private void btnPayments_Click(object sender, EventArgs e)
         {
             LoadForm(new frmPaymentsManagement());
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            LoadForm(new frmDashboard());
         }
     }
 }

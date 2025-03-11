@@ -182,5 +182,10 @@ namespace ClinicManagementDB_Business
         public bool IsDoctorAvailable(DateTime appointmentDate) 
             => clsDoctorData.IsDoctorAvailable(this.DoctorID, appointmentDate);
 
+        public static decimal GetAverageConsultationFee() 
+            => clsDoctorData.GetAverageConsultationFee();
+        public static int GetTotalAvailableDoctors()
+            => clsDoctorData.GetTotalAvailableDoctors();
+
     }
 }

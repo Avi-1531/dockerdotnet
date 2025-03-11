@@ -97,5 +97,7 @@ namespace ClinicManagementDB_Business
             => clsDepartmentData.TotalRevenueByDepartmentID(DepartmentID);
         public static DataTable GetDepartments()
             => clsDepartmentData.GetAllDepartments();
+        public static int GetTotalDepartments() 
+            => clsDepartmentData.GetTotalDepartments();
     }
 }

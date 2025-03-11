@@ -127,5 +127,11 @@ namespace ClinicManagementDB_Business
         public int? GetMedicalRecordID()
             => clsAppointmentData.GetMedicalRecordID(this.AppointmentID);
 
+        public static int GetTodayAppointmentsCount() 
+            => clsAppointmentData.GetTodayAppointmentsCount();
+        public static int GetCreatedAppointmentsThisWeekCount() 
+            => clsAppointmentData.GetCreatedAppointmentsThisWeekCount();
+        public static int GetWeeklyAppointmentsCount() 
+            => clsAppointmentData.GetWeeklyAppointmentsCount();
     }
 }

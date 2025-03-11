@@ -244,5 +244,99 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+        public static int GetTotalPatients()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetTotalPatients", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int GetTotalPatients = (int)reader["TotalPatients"];
+                            return GetTotalPatients;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+        public static int GetNewPatientsThisWeek()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetNewPatientsThisWeek", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int NewPatientsThisWeek = (int)reader["NewPatientsThisWeek"];
+                            return NewPatientsThisWeek;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+        public static int GetAveragePatientAge()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetAveragePatientAge", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int AveragePatientAge = (int)reader["AveragePatientAge"];
+                            return AveragePatientAge;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+
     }
 }

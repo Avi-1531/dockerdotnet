@@ -277,6 +277,99 @@ namespace ClinicManagementDB_DataAccess
 
             return null;
         }
+        public static int GetTodayAppointmentsCount()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetTodayAppointmentsCount", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int TodayAppointmentsCount = (int)reader["TodayAppointmentsCount"];
+                            return TodayAppointmentsCount;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+        public static int GetWeeklyAppointmentsCount()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetWeeklyAppointmentsCount", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int WeeklyAppointmentsCount = (int)reader["WeeklyAppointmentsCount"];
+                            return WeeklyAppointmentsCount;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+        public static int GetCreatedAppointmentsThisWeekCount()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetCreatedAppointmentsThisWeekCount", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int CreatedAppointmentsThisWeekCount = (int)reader["CreatedAppointmentsThisWeekCount"];
+                            return CreatedAppointmentsThisWeekCount;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
 
 
     }

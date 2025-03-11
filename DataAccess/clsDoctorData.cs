@@ -340,5 +340,68 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+        public static decimal GetAverageConsultationFee()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetAverageConsultationFee", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            decimal AverageConsultationFee = (decimal)reader["AverageConsultationFee"];
+                            return AverageConsultationFee;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+        public static int GetTotalAvailableDoctors()
+        {
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetTotalAvailableDoctors", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.Read())
+                        {
+                            int TotalAvailableDoctors = (int)reader["TotalAvailableDoctors"];
+                            return TotalAvailableDoctors;
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return -1;
+        }
+
     }
 }
