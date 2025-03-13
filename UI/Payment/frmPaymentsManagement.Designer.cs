@@ -216,7 +216,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.people;
+            this.pictureBox1.Image = global::UI.Properties.Resources.Payments;
             this.pictureBox1.Location = new System.Drawing.Point(598, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 103);

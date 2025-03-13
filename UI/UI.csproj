@@ -480,6 +480,29 @@
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Appointments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Departments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doctors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patients.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PeopleV2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receptionist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersV2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
