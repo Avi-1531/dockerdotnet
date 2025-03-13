@@ -158,7 +158,7 @@
             // btnAddPatient
             // 
             this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddPatient.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddPatient.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPatient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddPatient.FlatAppearance.BorderSize = 0;

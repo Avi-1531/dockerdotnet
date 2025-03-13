@@ -386,7 +386,7 @@
             // btnAddUser
             // 
             this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddUser.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddUser.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddUser.FlatAppearance.BorderSize = 0;

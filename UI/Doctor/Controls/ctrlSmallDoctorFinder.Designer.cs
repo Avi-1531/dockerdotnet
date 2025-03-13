@@ -37,7 +37,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnSearch.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnSearch.BackgroundImage = global::UI.Properties.Resources.SearchV2;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
@@ -84,7 +84,7 @@
             this.ctrlSmallDoctorInfo1.Size = new System.Drawing.Size(433, 422);
             this.ctrlSmallDoctorInfo1.TabIndex = 23;
             // 
-            // ctrlctrlSmallDoctorFinder
+            // ctrlSmallDoctorFinder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +96,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ctrlctrlSmallDoctorFinder";
+            this.Name = "ctrlSmallDoctorFinder";
             this.Size = new System.Drawing.Size(444, 468);
             this.ResumeLayout(false);
             this.PerformLayout();

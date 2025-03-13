@@ -67,7 +67,7 @@
             // btnAddPerson
             // 
             this.btnAddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPerson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddPerson.FlatAppearance.BorderSize = 0;
@@ -78,11 +78,12 @@
             this.btnAddPerson.Size = new System.Drawing.Size(57, 50);
             this.btnAddPerson.TabIndex = 27;
             this.btnAddPerson.UseVisualStyleBackColor = false;
+            this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
             // 
             // btnFindPerson
             // 
             this.btnFindPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnFindPerson.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnFindPerson.BackgroundImage = global::UI.Properties.Resources.SearchV2;
             this.btnFindPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnFindPerson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFindPerson.FlatAppearance.BorderSize = 0;

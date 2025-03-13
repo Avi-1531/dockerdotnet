@@ -64,5 +64,6 @@ namespace UI.Users.Controls
                 lblUpdatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(_User.UpdatedByUserID)} At {_User.UpdatedAt.ToString()} ";
             }
         }
+
     }
 }

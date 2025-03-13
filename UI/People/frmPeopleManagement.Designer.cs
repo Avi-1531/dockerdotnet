@@ -55,7 +55,7 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(504, 136);
+            this.lblHeader.Location = new System.Drawing.Point(504, 124);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(321, 40);
             this.lblHeader.TabIndex = 0;
@@ -94,7 +94,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPeople.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPeople.EnableHeadersVisualStyles = false;
-            this.dgvPeople.Location = new System.Drawing.Point(24, 266);
+            this.dgvPeople.Location = new System.Drawing.Point(24, 254);
             this.dgvPeople.MultiSelect = false;
             this.dgvPeople.Name = "dgvPeople";
             this.dgvPeople.ReadOnly = true;
@@ -147,7 +147,7 @@
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterBy.Location = new System.Drawing.Point(24, 226);
+            this.lblFilterBy.Location = new System.Drawing.Point(24, 214);
             this.lblFilterBy.Name = "lblFilterBy";
             this.lblFilterBy.Size = new System.Drawing.Size(91, 30);
             this.lblFilterBy.TabIndex = 0;
@@ -171,7 +171,7 @@
             "Gender",
             "Phone",
             "Email"});
-            this.cbFilter.Location = new System.Drawing.Point(121, 225);
+            this.cbFilter.Location = new System.Drawing.Point(121, 213);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(245, 33);
             this.cbFilter.TabIndex = 3;
@@ -180,7 +180,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UI.Properties.Resources.PeopleV2;
-            this.pictureBox1.Location = new System.Drawing.Point(598, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(598, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 103);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -190,13 +190,13 @@
             // btnAddPerson
             // 
             this.btnAddPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddPerson.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPerson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddPerson.FlatAppearance.BorderSize = 0;
             this.btnAddPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPerson.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPerson.Location = new System.Drawing.Point(1248, 212);
+            this.btnAddPerson.Location = new System.Drawing.Point(1248, 199);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(57, 50);
             this.btnAddPerson.TabIndex = 4;
@@ -209,7 +209,7 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtSearch.Location = new System.Drawing.Point(372, 224);
+            this.txtSearch.Location = new System.Drawing.Point(372, 212);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(245, 34);
@@ -222,7 +222,7 @@
             // 
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(26, 831);
+            this.lblRecords.Location = new System.Drawing.Point(26, 819);
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(69, 21);
             this.lblRecords.TabIndex = 0;
@@ -232,7 +232,7 @@
             // 
             this.lblRecordsValue.AutoSize = true;
             this.lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsValue.Location = new System.Drawing.Point(92, 831);
+            this.lblRecordsValue.Location = new System.Drawing.Point(92, 819);
             this.lblRecordsValue.Name = "lblRecordsValue";
             this.lblRecordsValue.Size = new System.Drawing.Size(48, 21);
             this.lblRecordsValue.TabIndex = 0;
@@ -251,7 +251,7 @@
             this.cbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbGender.Location = new System.Drawing.Point(372, 225);
+            this.cbGender.Location = new System.Drawing.Point(372, 213);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(245, 33);
             this.cbGender.TabIndex = 3;

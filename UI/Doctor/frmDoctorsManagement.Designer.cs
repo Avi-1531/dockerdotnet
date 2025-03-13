@@ -146,7 +146,7 @@
             // btnAddDoctor
             // 
             this.btnAddDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddDoctor.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddDoctor.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddDoctor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddDoctor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddDoctor.FlatAppearance.BorderSize = 0;

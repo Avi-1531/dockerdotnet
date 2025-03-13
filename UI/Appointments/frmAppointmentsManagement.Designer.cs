@@ -159,7 +159,7 @@
             // btnAddAppointment
             // 
             this.btnAddAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddAppointment.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddAppointment.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAppointment.FlatAppearance.BorderSize = 0;

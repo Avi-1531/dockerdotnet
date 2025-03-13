@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbAppointmentInformation = new System.Windows.Forms.GroupBox();
+            this.lblCreatedByAt = new System.Windows.Forms.Label();
+            this.lblUpdatedByAt = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,14 +43,30 @@
             this.lblAppintmentID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblCreatedByAt = new System.Windows.Forms.Label();
-            this.lblUpdatedByAt = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbAppointmentInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbAppointmentInformation
             // 
             this.gbAppointmentInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.gbAppointmentInformation.Controls.Add(this.pictureBox6);
+            this.gbAppointmentInformation.Controls.Add(this.pictureBox5);
+            this.gbAppointmentInformation.Controls.Add(this.pictureBox4);
+            this.gbAppointmentInformation.Controls.Add(this.pictureBox3);
+            this.gbAppointmentInformation.Controls.Add(this.pictureBox2);
+            this.gbAppointmentInformation.Controls.Add(this.pictureBox1);
             this.gbAppointmentInformation.Controls.Add(this.lblCreatedByAt);
             this.gbAppointmentInformation.Controls.Add(this.lblUpdatedByAt);
             this.gbAppointmentInformation.Controls.Add(this.label9);
@@ -70,6 +88,28 @@
             this.gbAppointmentInformation.TabIndex = 6;
             this.gbAppointmentInformation.TabStop = false;
             this.gbAppointmentInformation.Text = "Appointment Information";
+            // 
+            // lblCreatedByAt
+            // 
+            this.lblCreatedByAt.AutoSize = true;
+            this.lblCreatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedByAt.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblCreatedByAt.Location = new System.Drawing.Point(13, 344);
+            this.lblCreatedByAt.Name = "lblCreatedByAt";
+            this.lblCreatedByAt.Size = new System.Drawing.Size(160, 20);
+            this.lblCreatedByAt.TabIndex = 1;
+            this.lblCreatedByAt.Text = "Created By [??] At [??] ";
+            // 
+            // lblUpdatedByAt
+            // 
+            this.lblUpdatedByAt.AutoSize = true;
+            this.lblUpdatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdatedByAt.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblUpdatedByAt.Location = new System.Drawing.Point(13, 364);
+            this.lblUpdatedByAt.Name = "lblUpdatedByAt";
+            this.lblUpdatedByAt.Size = new System.Drawing.Size(187, 20);
+            this.lblUpdatedByAt.TabIndex = 2;
+            this.lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
             // 
             // label9
             // 
@@ -191,27 +231,65 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "App. ID:";
             // 
-            // lblCreatedByAt
+            // pictureBox6
             // 
-            this.lblCreatedByAt.AutoSize = true;
-            this.lblCreatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedByAt.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblCreatedByAt.Location = new System.Drawing.Point(13, 344);
-            this.lblCreatedByAt.Name = "lblCreatedByAt";
-            this.lblCreatedByAt.Size = new System.Drawing.Size(160, 20);
-            this.lblCreatedByAt.TabIndex = 1;
-            this.lblCreatedByAt.Text = "Created By [??] At [??] ";
+            this.pictureBox6.Image = global::UI.Properties.Resources.history;
+            this.pictureBox6.Location = new System.Drawing.Point(133, 303);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 23;
+            this.pictureBox6.TabStop = false;
             // 
-            // lblUpdatedByAt
+            // pictureBox5
             // 
-            this.lblUpdatedByAt.AutoSize = true;
-            this.lblUpdatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedByAt.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblUpdatedByAt.Location = new System.Drawing.Point(13, 364);
-            this.lblUpdatedByAt.Name = "lblUpdatedByAt";
-            this.lblUpdatedByAt.Size = new System.Drawing.Size(187, 20);
-            this.lblUpdatedByAt.TabIndex = 2;
-            this.lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
+            this.pictureBox5.Image = global::UI.Properties.Resources.Hashtag;
+            this.pictureBox5.Location = new System.Drawing.Point(133, 251);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 23;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::UI.Properties.Resources.fees;
+            this.pictureBox4.Location = new System.Drawing.Point(133, 199);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::UI.Properties.Resources.Status;
+            this.pictureBox3.Location = new System.Drawing.Point(133, 146);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UI.Properties.Resources.Date;
+            this.pictureBox2.Location = new System.Drawing.Point(133, 94);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.Hashtag;
+            this.pictureBox1.Location = new System.Drawing.Point(133, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // ctrlSmallAppointmentInfo
             // 
@@ -226,6 +304,12 @@
             this.Size = new System.Drawing.Size(433, 422);
             this.gbAppointmentInformation.ResumeLayout(false);
             this.gbAppointmentInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +331,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCreatedByAt;
         private System.Windows.Forms.Label lblUpdatedByAt;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

@@ -146,7 +146,7 @@
             // btnAddReceptionist
             // 
             this.btnAddReceptionist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddReceptionist.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddReceptionist.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddReceptionist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddReceptionist.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddReceptionist.FlatAppearance.BorderSize = 0;

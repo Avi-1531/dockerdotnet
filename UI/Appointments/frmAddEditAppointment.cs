@@ -24,8 +24,8 @@ namespace UI.Appointments
         {
             InitializeComponent();
             _FormMode = enMode.Add;
-            this.Text = "Add New Appointment";
-            lblHeader.Text = "ADD Appointment";
+            this.Text = "Add New APPOINTMENT";
+            lblHeader.Text = "ADD APPOINTMENT";
             _Appointment = new clsAppointment();
             dtpAppointmentDate.MinDate = DateTime.Now;
         }
@@ -33,8 +33,8 @@ namespace UI.Appointments
         {
             InitializeComponent();
             _FormMode = enMode.Edit;
-            this.Text = "Edit Appointment";
-            lblHeader.Text = "EDIT Appointment";
+            this.Text = "Edit APPOINTMENT";
+            lblHeader.Text = "EDIT APPOINTMENT";
             _Appointment = clsAppointment.Find(AppointmentID);
         }
         private void frmAddOrUpdateAppointment_Load(object sender, EventArgs e)
@@ -205,5 +205,6 @@ namespace UI.Appointments
             }
 
         }
+
     }
 }

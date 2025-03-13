@@ -101,5 +101,10 @@ namespace UI
         {
             LoadForm(new frmDashboard());
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            LoadForm(new frmDashboard());
+        }
     }
 }

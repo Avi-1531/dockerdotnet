@@ -71,7 +71,11 @@ namespace UI.People.Controls
 
         }
 
-
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frmAddEditPerson = new frmAddEditPerson();
+            frmAddEditPerson.ShowDialog();
+        }
     }
 }
 

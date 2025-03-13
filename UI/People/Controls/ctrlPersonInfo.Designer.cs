@@ -29,32 +29,59 @@
         private void InitializeComponent()
         {
             this.gbPersonalInformation = new System.Windows.Forms.GroupBox();
+            this.lblCreatedByAt = new System.Windows.Forms.Label();
             this.lblUpdatedByAt = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNationalID = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblPersonID = new System.Windows.Forms.Label();
+            this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblBirthDate = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
-            this.lblPersonID = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblCreatedByAt = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbPersonalInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPersonalInformation
             // 
             this.gbPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.gbPersonalInformation.Controls.Add(this.pictureBox9);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox8);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox7);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox6);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox5);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox4);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox3);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox2);
+            this.gbPersonalInformation.Controls.Add(this.pictureBox1);
             this.gbPersonalInformation.Controls.Add(this.lblCreatedByAt);
             this.gbPersonalInformation.Controls.Add(this.lblUpdatedByAt);
             this.gbPersonalInformation.Controls.Add(this.label9);
@@ -82,6 +109,17 @@
             this.gbPersonalInformation.TabIndex = 2;
             this.gbPersonalInformation.TabStop = false;
             this.gbPersonalInformation.Text = "Personal Information";
+            // 
+            // lblCreatedByAt
+            // 
+            this.lblCreatedByAt.AutoSize = true;
+            this.lblCreatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedByAt.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblCreatedByAt.Location = new System.Drawing.Point(509, 270);
+            this.lblCreatedByAt.Name = "lblCreatedByAt";
+            this.lblCreatedByAt.Size = new System.Drawing.Size(160, 20);
+            this.lblCreatedByAt.TabIndex = 0;
+            this.lblCreatedByAt.Text = "Created By [??] At [??] ";
             // 
             // lblUpdatedByAt
             // 
@@ -124,6 +162,16 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Address:";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(508, 45);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(96, 25);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Pesron ID:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -164,6 +212,16 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "National ID:";
             // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(186, 285);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(60, 25);
+            this.lblAddress.TabIndex = 0;
+            this.lblAddress.Text = "[????]";
+            // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
@@ -194,6 +252,46 @@
             this.lblNationalID.TabIndex = 0;
             this.lblNationalID.Text = "[????]";
             // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Location = new System.Drawing.Point(650, 225);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(60, 25);
+            this.lblCountry.TabIndex = 0;
+            this.lblCountry.Text = "[????]";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(650, 165);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(60, 25);
+            this.lblGender.TabIndex = 0;
+            this.lblGender.Text = "[????]";
+            // 
+            // lblPersonID
+            // 
+            this.lblPersonID.AutoSize = true;
+            this.lblPersonID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonID.Location = new System.Drawing.Point(650, 45);
+            this.lblPersonID.Name = "lblPersonID";
+            this.lblPersonID.Size = new System.Drawing.Size(60, 25);
+            this.lblPersonID.TabIndex = 0;
+            this.lblPersonID.Text = "[????]";
+            // 
+            // lblBirthDate
+            // 
+            this.lblBirthDate.AutoSize = true;
+            this.lblBirthDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDate.Location = new System.Drawing.Point(650, 105);
+            this.lblBirthDate.Name = "lblBirthDate";
+            this.lblBirthDate.Size = new System.Drawing.Size(60, 25);
+            this.lblBirthDate.TabIndex = 0;
+            this.lblBirthDate.Text = "[????]";
+            // 
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
@@ -214,76 +312,95 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Full Name:";
             // 
-            // lblAddress
+            // pictureBox9
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(186, 285);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(60, 25);
-            this.lblAddress.TabIndex = 0;
-            this.lblAddress.Text = "[????]";
+            this.pictureBox9.Image = global::UI.Properties.Resources.Country;
+            this.pictureBox9.Location = new System.Drawing.Point(620, 225);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 17;
+            this.pictureBox9.TabStop = false;
             // 
-            // lblBirthDate
+            // pictureBox8
             // 
-            this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthDate.Location = new System.Drawing.Point(650, 105);
-            this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(60, 25);
-            this.lblBirthDate.TabIndex = 0;
-            this.lblBirthDate.Text = "[????]";
+            this.pictureBox8.Image = global::UI.Properties.Resources.Gender;
+            this.pictureBox8.Location = new System.Drawing.Point(620, 165);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 17;
+            this.pictureBox8.TabStop = false;
             // 
-            // lblGender
+            // pictureBox7
             // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(650, 165);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(60, 25);
-            this.lblGender.TabIndex = 0;
-            this.lblGender.Text = "[????]";
+            this.pictureBox7.Image = global::UI.Properties.Resources.Date;
+            this.pictureBox7.Location = new System.Drawing.Point(620, 105);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 17;
+            this.pictureBox7.TabStop = false;
             // 
-            // lblCountry
+            // pictureBox6
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(650, 225);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(60, 25);
-            this.lblCountry.TabIndex = 0;
-            this.lblCountry.Text = "[????]";
+            this.pictureBox6.Image = global::UI.Properties.Resources.Hashtag;
+            this.pictureBox6.Location = new System.Drawing.Point(620, 45);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
             // 
-            // lblPersonID
+            // pictureBox5
             // 
-            this.lblPersonID.AutoSize = true;
-            this.lblPersonID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(650, 45);
-            this.lblPersonID.Name = "lblPersonID";
-            this.lblPersonID.Size = new System.Drawing.Size(60, 25);
-            this.lblPersonID.TabIndex = 0;
-            this.lblPersonID.Text = "[????]";
+            this.pictureBox5.Image = global::UI.Properties.Resources.Address;
+            this.pictureBox5.Location = new System.Drawing.Point(156, 285);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
             // 
-            // label20
+            // pictureBox4
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(508, 45);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 25);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Pesron ID:";
+            this.pictureBox4.Image = global::UI.Properties.Resources.Phone;
+            this.pictureBox4.Location = new System.Drawing.Point(156, 225);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabStop = false;
             // 
-            // lblCreatedByAt
+            // pictureBox3
             // 
-            this.lblCreatedByAt.AutoSize = true;
-            this.lblCreatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedByAt.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblCreatedByAt.Location = new System.Drawing.Point(509, 270);
-            this.lblCreatedByAt.Name = "lblCreatedByAt";
-            this.lblCreatedByAt.Size = new System.Drawing.Size(160, 20);
-            this.lblCreatedByAt.TabIndex = 0;
-            this.lblCreatedByAt.Text = "Created By [??] At [??] ";
+            this.pictureBox3.Image = global::UI.Properties.Resources.email;
+            this.pictureBox3.Location = new System.Drawing.Point(156, 165);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UI.Properties.Resources.NationalID;
+            this.pictureBox2.Location = new System.Drawing.Point(156, 105);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.Fullname;
+            this.pictureBox1.Location = new System.Drawing.Point(156, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // ctrlPersonInfo
             // 
@@ -298,6 +415,15 @@
             this.Size = new System.Drawing.Size(873, 359);
             this.gbPersonalInformation.ResumeLayout(false);
             this.gbPersonalInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +451,14 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblPersonID;
         private System.Windows.Forms.Label lblCreatedByAt;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

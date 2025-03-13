@@ -40,12 +40,22 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbAppointmentDetails = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPaymentID = new System.Windows.Forms.Label();
             this.lblMedicalRecordID = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.ctrlSmallPatientFinder1 = new UI.Patient.Controls.ctrlSmallPatientFinder();
             this.ctrlctrlSmallDoctorFinder1 = new UI.Doctor.Controls.ctrlSmallDoctorFinder();
             this.gbAppointmentDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -178,6 +188,11 @@
             // gbAppointmentDetails
             // 
             this.gbAppointmentDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.gbAppointmentDetails.Controls.Add(this.pictureBox6);
+            this.gbAppointmentDetails.Controls.Add(this.pictureBox5);
+            this.gbAppointmentDetails.Controls.Add(this.pictureBox3);
+            this.gbAppointmentDetails.Controls.Add(this.pictureBox2);
+            this.gbAppointmentDetails.Controls.Add(this.pictureBox1);
             this.gbAppointmentDetails.Controls.Add(this.lblPaymentID);
             this.gbAppointmentDetails.Controls.Add(this.lblMedicalRecordID);
             this.gbAppointmentDetails.Controls.Add(this.label9);
@@ -197,6 +212,56 @@
             this.gbAppointmentDetails.TabIndex = 35;
             this.gbAppointmentDetails.TabStop = false;
             this.gbAppointmentDetails.Text = "Appointment Details";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::UI.Properties.Resources.history;
+            this.pictureBox6.Location = new System.Drawing.Point(142, 346);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 36;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::UI.Properties.Resources.Hashtag;
+            this.pictureBox5.Location = new System.Drawing.Point(142, 271);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 37;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::UI.Properties.Resources.Status;
+            this.pictureBox3.Location = new System.Drawing.Point(142, 196);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UI.Properties.Resources.Time;
+            this.pictureBox2.Location = new System.Drawing.Point(142, 124);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 40;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.Date;
+            this.pictureBox1.Location = new System.Drawing.Point(142, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
             // 
             // lblPaymentID
             // 
@@ -279,6 +344,11 @@
             this.Load += new System.EventHandler(this.frmAddOrUpdateAppointment_Load);
             this.gbAppointmentDetails.ResumeLayout(false);
             this.gbAppointmentDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +373,10 @@
         private System.Windows.Forms.Label lblMedicalRecordID;
         private System.Windows.Forms.Label lblPaymentID;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

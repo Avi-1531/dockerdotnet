@@ -35,7 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbMethod = new System.Windows.Forms.ComboBox();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gbPaymentInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPay
@@ -55,6 +57,7 @@
             // gbPaymentInformation
             // 
             this.gbPaymentInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.gbPaymentInformation.Controls.Add(this.pictureBox4);
             this.gbPaymentInformation.Controls.Add(this.btnPay);
             this.gbPaymentInformation.Controls.Add(this.txtFees);
             this.gbPaymentInformation.Controls.Add(this.label4);
@@ -131,6 +134,16 @@
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = "PAY FEES";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::UI.Properties.Resources.fees;
+            this.pictureBox4.Location = new System.Drawing.Point(284, 64);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            // 
             // frmPayfees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -148,6 +161,7 @@
             this.Load += new System.EventHandler(this.frmPayfees_Load);
             this.gbPaymentInformation.ResumeLayout(false);
             this.gbPaymentInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +175,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.ComboBox cbMethod;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

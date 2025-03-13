@@ -296,7 +296,7 @@
             // btnAddDepartment
             // 
             this.btnAddDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddDepartment.BackgroundImage = global::UI.Properties.Resources.add_person;
+            this.btnAddDepartment.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
             this.btnAddDepartment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddDepartment.FlatAppearance.BorderSize = 0;
