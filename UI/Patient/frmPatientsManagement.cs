@@ -15,8 +15,8 @@ namespace UI.Patient
 {
     public partial class frmPatientsManagement : Form
     {
-        enum enPagingBy { Original, Name }
-        enPagingBy _CurrentPagingUsing;
+        enum enPagingStyle { Original, WithName }
+        enPagingStyle _CurrentPagingStyle;
         DataTable dtPatients = null;
         short _PageSize;
         short _PageNumber;
@@ -24,7 +24,7 @@ namespace UI.Patient
         public frmPatientsManagement()
         {
             InitializeComponent();
-            _CurrentPagingUsing = enPagingBy.Original;
+            _CurrentPagingStyle = enPagingStyle.Original;
             _PageNumber = 1;
             _PageSize = 14;
         }
@@ -134,12 +134,12 @@ namespace UI.Patient
             _PageNumber++;
             txtPageNumber.Text = _PageNumber.ToString();
 
-            if(_CurrentPagingUsing == enPagingBy.Original)
+            if(_CurrentPagingStyle == enPagingStyle.Original)
             {
                 _LoadDataTable();
                 _LoadToDataGridView();
             }
-            if(_CurrentPagingUsing == enPagingBy.Name)
+            if(_CurrentPagingStyle == enPagingStyle.WithName)
             {
                 dtPatients = clsPatient.GetPatientWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
                 _LoadToDataGridView();
@@ -154,12 +154,12 @@ namespace UI.Patient
             _PageNumber--;
             txtPageNumber.Text = _PageNumber.ToString();
 
-            if(_CurrentPagingUsing == enPagingBy.Original)
+            if(_CurrentPagingStyle == enPagingStyle.Original)
             {
                 _LoadDataTable();
                 _LoadToDataGridView();
             }
-            if(_CurrentPagingUsing == enPagingBy.Name)
+            if(_CurrentPagingStyle == enPagingStyle.WithName)
             {
                 dtPatients = clsPatient.GetPatientWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
                 _LoadToDataGridView();
@@ -171,7 +171,7 @@ namespace UI.Patient
             if(string.IsNullOrWhiteSpace(txtSearch.Text))
                 return;
 
-            _CurrentPagingUsing = enPagingBy.Original;
+            _CurrentPagingStyle = enPagingStyle.Original;
 
             switch(cbFilter.Text)
             {
@@ -197,7 +197,7 @@ namespace UI.Patient
                     _CancelPagination();
                     break;
                 case "Full Name":
-                    _CurrentPagingUsing = enPagingBy.Name;
+                    _CurrentPagingStyle = enPagingStyle.WithName;
                     string Name = txtSearch.Text.Trim();
                     dtPatients = clsPatient.GetPatientWithName(_PageNumber, _PageSize, ref _Records, Name);
                     lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patient)";

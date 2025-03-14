@@ -16,6 +16,8 @@ namespace UI.People
 {
     public partial class frmPeopleManagement : Form
     {
+        enum enPagingStyle { Original, WithName }
+        enPagingStyle _CurrentPagingStyle;
         DataTable dtPeople = null;
         short _PageSize;
         short _PageNumber;
@@ -64,7 +66,8 @@ namespace UI.People
                 dgvPeople.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             }
-            lblOfTotalPagesAndRows.Text = $"of {_Records / _PageSize} pages ({_Records} Person)";
+
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Person)";
         }
         private void frmPeopleManagement_Load(object sender, EventArgs e)
         {
@@ -117,13 +120,25 @@ namespace UI.People
         }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
-            if(dtPeople.Rows.Count == 0)
+            if(dtPeople.Rows.Count < _PageSize)
                 return;
 
             _PageNumber++;
-            _LoadDataTable();
-            _LoadToDataGridView();
             txtPageNumber.Text = _PageNumber.ToString();
+
+
+            if(_CurrentPagingStyle == enPagingStyle.Original)
+            {
+                _LoadDataTable();
+                _LoadToDataGridView();
+            }
+            if(_CurrentPagingStyle == enPagingStyle.WithName)
+            {
+                dtPeople = clsPerson.GetPeopleWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
+                _LoadToDataGridView();
+            }
+
+
         }
         private void btnPreviousPage_Click(object sender, EventArgs e)
         {
@@ -131,14 +146,25 @@ namespace UI.People
                 return;
 
             _PageNumber--;
-            _LoadDataTable();
-            _LoadToDataGridView();
             txtPageNumber.Text = _PageNumber.ToString();
+
+            if(_CurrentPagingStyle == enPagingStyle.Original)
+            {
+                _LoadDataTable();
+                _LoadToDataGridView();
+            }
+            if(_CurrentPagingStyle == enPagingStyle.WithName)
+            {
+                dtPeople = clsPerson.GetPeopleWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
+                _LoadToDataGridView();
+            }
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(txtSearch.Text))
                 return;
+
+            _CurrentPagingStyle = enPagingStyle.Original;
 
             switch(cbFilter.Text)
             {
@@ -156,9 +182,10 @@ namespace UI.People
                     _CancelPagination();
                     break;
                 case "Full Name":
+                    _CurrentPagingStyle = enPagingStyle.WithName;
                     string Name = txtSearch.Text.Trim();
                     dtPeople = clsPerson.GetPeopleWithName(_PageNumber, _PageSize, ref _Records, Name);
-                    lblOfTotalPagesAndRows.Text = $"of {_Records / _PageSize} pages ({_Records} Person)";
+                    lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Person)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
                     btnFind.Visible = false;
@@ -166,7 +193,7 @@ namespace UI.People
                 case "National ID":
                     string NationalID = txtSearch.Text.Trim();
                     dtPeople = clsPerson.GetPersonWithNationalID(NationalID);
-                    lblOfTotalPagesAndRows.Text = $"of {_Records / _PageSize} pages ({_Records} Person)";
+                    lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Person)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
                     btnFind.Visible = false;
