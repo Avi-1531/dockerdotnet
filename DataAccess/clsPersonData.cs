@@ -229,7 +229,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static DataTable GetAllPeople()
+        public static DataTable GetAllPeople(short PageNumber, int PageSize, ref int Records)
         {
             DataTable dt = new DataTable();
 
@@ -240,7 +240,47 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand("GetAllPeople", connection))
                     {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
                         command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+        public static DataTable GetPersonWithPersonID(int PersonID)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetPersonWithPersonID", connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+                        command.CommandType = CommandType.StoredProcedure;
+
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 
@@ -256,5 +296,75 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+        public static DataTable GetPersonWithNationalID(string NationalID)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetPersonWithNationalID", connection))
+                    {
+                        command.Parameters.AddWithValue("@NationalID", NationalID);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+        public static DataTable GetPeopleWithName(short PageNumber, int PageSize, ref int Records, string Name)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetPeopleWithName", connection))
+                    {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+                        command.Parameters.AddWithValue("@Name", Name);
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+
+
     }
 }

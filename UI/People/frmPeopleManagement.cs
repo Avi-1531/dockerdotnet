@@ -17,13 +17,21 @@ namespace UI.People
     public partial class frmPeopleManagement : Form
     {
         DataTable dtPeople = null;
+        short _PageSize;
+        short _PageNumber;
+        int _Records;
         public frmPeopleManagement()
         {
             InitializeComponent();
+            _PageNumber = 1;
+            _PageSize = 14;
         }
-        private void _LoadData()
+        private void _LoadDataTable()
         {
-            dtPeople = clsPerson.GetPeople();
+            dtPeople = clsPerson.GetPeople(_PageNumber, _PageSize, ref _Records);
+        }
+        private void _LoadToDataGridView()
+        {
             dgvPeople.DataSource = dtPeople;
 
             if(dgvPeople.Rows.Count > 0)
@@ -56,12 +64,12 @@ namespace UI.People
                 dgvPeople.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             }
-
-            lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
+            lblOfTotalPagesAndRows.Text = $"of {_Records / _PageSize} pages ({_Records} Person)";
         }
         private void frmPeopleManagement_Load(object sender, EventArgs e)
         {
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
             cbFilter.SelectedIndex = 0;
         }
         private void frmPeopleManagement_Shown(object sender, EventArgs e)
@@ -71,59 +79,29 @@ namespace UI.People
         }
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(dtPeople != null)
-                dtPeople.DefaultView.RowFilter = "";
-            lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
 
-            txtSearch.Visible = (cbFilter.Text != "None") && (cbFilter.Text != "Gender");
-            cbGender.Visible = (cbFilter.Text == "Gender");
+            txtSearch.Visible = (cbFilter.Text != "None");
 
+            btnFind.Visible = (cbFilter.Text != "None");
             if(txtSearch.Visible)
             {
                 txtSearch.Text = "";
                 txtSearch.Focus();
             }
         }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if(txtSearch.Text == "")
-            {
-                dtPeople.DefaultView.RowFilter = "";
-                lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
-                return;
-            }
-
-            string Column = cbFilter.Text.Replace(" ", "");
-
-            if(cbFilter.Text == "Person ID")
-            {
-                dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
-            }
-            else
-            {
-                dtPeople.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
-            }
-
-            lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
-        }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(cbFilter.Text == "Person ID" || cbFilter.Text == "National ID"
-              || cbFilter.Text == "Phone")
+            if(cbFilter.Text == "Person ID" || cbFilter.Text == "National ID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
-        }
-        private void cbGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dtPeople.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", "Gender", cbGender.Text);
-            lblRecordsValue.Text = dgvPeople.Rows.Count.ToString();
         }
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
             frmAddEditPerson frm = new frmAddEditPerson();
             frm.ShowDialog();
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
         private void tsmPersonalInformation_Click(object sender, EventArgs e)
         {
@@ -134,7 +112,91 @@ namespace UI.People
         {
             frmAddEditPerson frmAddEditPerson = new frmAddEditPerson((int)dgvPeople.CurrentRow.Cells[0].Value);
             frmAddEditPerson.ShowDialog();
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if(dtPeople.Rows.Count == 0)
+                return;
+
+            _PageNumber++;
+            _LoadDataTable();
+            _LoadToDataGridView();
+            txtPageNumber.Text = _PageNumber.ToString();
+        }
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if(_PageNumber <= 1)
+                return;
+
+            _PageNumber--;
+            _LoadDataTable();
+            _LoadToDataGridView();
+            txtPageNumber.Text = _PageNumber.ToString();
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtSearch.Text))
+                return;
+
+            switch(cbFilter.Text)
+            {
+                case "None":
+                    _LoadDataTable();
+                    _LoadToDataGridView();
+                    _AllowPagination();
+                    break;
+                case "Person ID":
+                    int PersonID = Int32.Parse(txtSearch.Text.Trim());
+                    dtPeople = clsPerson.GetPersonWithPersonID(PersonID);
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    _CancelPagination();
+                    break;
+                case "Full Name":
+                    string Name = txtSearch.Text.Trim();
+                    dtPeople = clsPerson.GetPeopleWithName(_PageNumber, _PageSize, ref _Records, Name);
+                    lblOfTotalPagesAndRows.Text = $"of {_Records / _PageSize} pages ({_Records} Person)";
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    break;
+                case "National ID":
+                    string NationalID = txtSearch.Text.Trim();
+                    dtPeople = clsPerson.GetPersonWithNationalID(NationalID);
+                    lblOfTotalPagesAndRows.Text = $"of {_Records / _PageSize} pages ({_Records} Person)";
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    _CancelPagination();
+                    break;
+            }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            _LoadDataTable();
+            _LoadToDataGridView();
+            _AllowPagination();
+            txtSearch.Text = string.Empty;
+            btnCancel.Visible = false;
+            btnFind.Visible = true;
+        }
+        private void _CancelPagination()
+        {
+            btnPreviousPage.Visible = false;
+            btnNextPage.Visible = false;
+            txtPageNumber.Visible = false;
+            lblOfTotalPagesAndRows.Visible = false;
+        }
+        private void _AllowPagination()
+        {
+            btnPreviousPage.Visible = true;
+            btnNextPage.Visible = true;
+            txtPageNumber.Visible = true;
+            lblOfTotalPagesAndRows.Visible = true;
+        }
+
     }
 }

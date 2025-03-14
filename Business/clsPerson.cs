@@ -29,7 +29,7 @@ namespace ClinicManagementDB_Business
             get
             {
                 string FullName = "";
-                FullName = FirstName + " "; 
+                FullName = FirstName + " ";
                 FullName += SecondName + " ";
                 if(ThirdName != null)
                     FullName += ThirdName + " ";
@@ -112,7 +112,7 @@ namespace ClinicManagementDB_Business
         {
             return clsPersonData.UpdatePerson(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.NationalID, this.BirthDate, this.Gender, this.Address, this.Phone, this.Email, this.CountryID, this.CreatedByUserID, this.CreatedAt, this.UpdatedByUserID, this.UpdatedAt);
         }
-        public static  clsPerson Find(int? PersonID)
+        public static clsPerson Find(int? PersonID)
         {
             string FirstName = "";
             string SecondName = "";
@@ -162,7 +162,15 @@ namespace ClinicManagementDB_Business
         public static bool DoesPersonExist(int? PersonID)
             => clsPersonData.DoesPersonExist(PersonID);
 
-        public static DataTable GetPeople()
-        => clsPersonData.GetAllPeople();
+        public static DataTable GetPeople(short PageNumber, int PageSize, ref int Records)
+        => clsPersonData.GetAllPeople(PageNumber, PageSize, ref Records);
+        public static DataTable GetPersonWithPersonID(int PersonID)
+            => clsPersonData.GetPersonWithPersonID(PersonID);
+        public static DataTable GetPersonWithNationalID(string NationalID)
+            => clsPersonData.GetPersonWithNationalID(NationalID);
+        public static DataTable GetPeopleWithName(short PageNumber, int PageSize, ref int Records, string Name)
+            => clsPersonData.GetPeopleWithName(PageNumber, PageSize, ref Records, Name);
+    
+    
     }
 }
