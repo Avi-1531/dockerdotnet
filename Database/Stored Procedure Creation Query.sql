@@ -519,6 +519,9 @@ GO
 
 -- Stored Procedure to Get All People
 CREATE PROCEDURE GetAllPeople
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT
 AS
 BEGIN
     SELECT People.PersonID, 
@@ -534,7 +537,11 @@ BEGIN
     FROM People 
     INNER JOIN Countries ON People.CountryID = Countries.CountryID
     INNER JOIN Users ON People.CreatedByUserID = Users.UserID
-    ORDER BY People.CreatedAt DESC;
+    ORDER BY People.CreatedAt DESC
+
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+	SELECT @Records = COUNT(*) FROM People 
 END
 GO
 
@@ -1581,3 +1588,89 @@ GO
 
 
 
+CREATE PROCEDURE [dbo].[GetPersonWithPersonID]
+@PersonID INT
+AS
+BEGIN
+    SELECT People.PersonID, 
+           People.FirstName + ' ' + People.SecondName + ' ' + 
+           CASE WHEN People.ThirdName IS NULL THEN '' ELSE People.ThirdName + ' ' END + People.LastName AS FullName, 
+           People.NationalID, 
+           People.BirthDate, 
+           CASE WHEN People.Gender = 0 THEN 'Male' ELSE 'Female' END AS Gender,
+           People.Phone, 
+           People.Email, 
+           Countries.CountryName, 
+           Users.Username AS CreatedBy
+    FROM People
+    INNER JOIN Countries ON People.CountryID = Countries.CountryID
+    INNER JOIN Users ON People.CreatedByUserID = Users.UserID
+	WHERE People.PersonID = @PersonID
+    ORDER BY People.CreatedAt DESC
+END
+GO
+
+-- Get Person As DataTable By Name
+CREATE PROCEDURE [dbo].[GetPeopleWithName]
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT,
+@Name VARCHAR(60)
+AS
+BEGIN
+SELECT People.PersonID, 
+           People.FirstName + ' ' + People.SecondName + ' ' + 
+           CASE WHEN People.ThirdName IS NULL THEN '' ELSE People.ThirdName + ' ' END + People.LastName AS FullName, 
+           People.NationalID, 
+           People.BirthDate, 
+           CASE WHEN People.Gender = 0 THEN 'Male' ELSE 'Female' END AS Gender,
+           People.Phone, 
+           People.Email, 
+           Countries.CountryName, 
+           Users.Username AS CreatedBy
+    FROM People
+    INNER JOIN Countries ON People.CountryID = Countries.CountryID
+    INNER JOIN Users ON People.CreatedByUserID = Users.UserID
+
+	WHERE People.FirstName + ' ' + People.SecondName + ' ' + 
+	CASE 
+		WHEN People.ThirdName IS NULL THEN '' 
+		ELSE People.ThirdName + ' ' 
+	END + People.LastName 
+	LIKE @Name + '%'
+	ORDER BY PersonID
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+
+	SELECT @Records = Count(*) FROM People
+	WHERE People.FirstName + ' ' + People.SecondName + ' ' + 
+	CASE 
+		WHEN People.ThirdName IS NULL THEN '' 
+		ELSE People.ThirdName + ' ' 
+	END + People.LastName 
+	LIKE @Name + '%'
+END
+GO
+
+-- Get Person As DataTable By NationalID
+CREATE PROCEDURE [dbo].[GetPersonWithNationalID]
+@NationalID VARCHAR(10)
+AS
+BEGIN
+    SELECT People.PersonID, 
+           People.FirstName + ' ' + People.SecondName + ' ' + 
+           CASE WHEN People.ThirdName IS NULL THEN '' ELSE People.ThirdName + ' ' END + People.LastName AS FullName, 
+           People.NationalID, 
+           People.BirthDate, 
+           CASE WHEN People.Gender = 0 THEN 'Male' ELSE 'Female' END AS Gender,
+           People.Phone, 
+           People.Email, 
+           Countries.CountryName, 
+           Users.Username AS CreatedBy
+    FROM People
+    INNER JOIN Countries ON People.CountryID = Countries.CountryID
+    INNER JOIN Users ON People.CreatedByUserID = Users.UserID
+	WHERE People.NationalID = @NationalID
+    ORDER BY People.CreatedAt DESC
+END
+GO

@@ -256,7 +256,6 @@ namespace ClinicManagementDB_DataAccess
                             return dt;
 
                         Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
-
                     }
                 }
             }

@@ -135,10 +135,17 @@ namespace ClinicManagementDB_Business
             => clsPatientData.DoesPatientExist(PatientID);
         public static bool DoesPatientExistByPersonID(int PersonID)
             => clsPatientData.DoesPatientExistByPersonID(PersonID);
-        public static DataTable GetPatients()
-            => clsPatientData.GetAllPatients();
-
-        public static int GetTotalPatients() 
+        public static DataTable GetAllPatients(short PageNumber, int PageSize, ref int Records)
+            => clsPatientData.GetAllPatients(PageNumber, PageSize, ref Records);
+        public static DataTable GetPatientWithPatientID(int PatientID)
+            => clsPatientData.GetPatientWithPatientID(PatientID);
+        public static DataTable GetPatientWithPersonID(int PersonID)
+            => clsPatientData.GetPatientWithPersonID(PersonID);
+        public static DataTable GetPatientWithNationalID(string NationalID)
+           => clsPatientData.GetPatientWithNationalID(NationalID);
+        public static DataTable GetPatientWithName(short PageNumber, int PageSize, ref int Records, string Name)
+            => clsPatientData.GetPatientWithName(PageNumber, PageSize, ref Records, Name);
+        public static int GetTotalPatients()
             => clsPatientData.GetTotalPatients();
         public static int GetAveragePatientAge()
            => clsPatientData.GetAveragePatientAge();

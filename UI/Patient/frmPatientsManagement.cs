@@ -15,14 +15,25 @@ namespace UI.Patient
 {
     public partial class frmPatientsManagement : Form
     {
+        enum enPagingBy { Original, Name }
+        enPagingBy _CurrentPagingUsing;
         DataTable dtPatients = null;
+        short _PageSize;
+        short _PageNumber;
+        int _Records;
         public frmPatientsManagement()
         {
             InitializeComponent();
+            _CurrentPagingUsing = enPagingBy.Original;
+            _PageNumber = 1;
+            _PageSize = 14;
         }
-        private void _LoadData()
+        private void _LoadDataTable()
         {
-            dtPatients = clsPatient.GetPatients();
+            dtPatients = clsPatient.GetAllPatients(_PageNumber, _PageSize, ref _Records);
+        }
+        private void _LoadToDataGridView()
+        {
             dgvPatients.DataSource = dtPatients;
 
             if(dgvPatients.Rows.Count > 0)
@@ -55,12 +66,12 @@ namespace UI.Patient
                 dgvPatients.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             }
-
-            lblRecordsValue.Text = dgvPatients.Rows.Count.ToString();
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patient)";
         }
         private void frmPatientsManagement_Load(object sender, EventArgs e)
         {
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
             cbFilter.SelectedIndex = 0;
         }
         private void frmPatientsManagement_Shown(object sender, EventArgs e)
@@ -70,34 +81,15 @@ namespace UI.Patient
         }
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(dtPatients != null)
-                dtPatients.DefaultView.RowFilter = "";
-            lblRecordsValue.Text = dgvPatients.Rows.Count.ToString();
-
+            btnFind.Visible = (cbFilter.Text != "None");
             txtSearch.Visible = (cbFilter.Text != "None");
 
-        }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if(txtSearch.Text == "")
+            if(txtSearch.Visible)
             {
-                dtPatients.DefaultView.RowFilter = "";
-                lblRecordsValue.Text = dgvPatients.Rows.Count.ToString();
-                return;
+                txtSearch.Text = "";
+                txtSearch.Focus();
             }
 
-            string Column = cbFilter.Text.Replace(" ", "");
-
-            if(cbFilter.Text == "Person ID" || cbFilter.Text == "Patient ID")
-            {
-                dtPatients.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
-            }
-            else
-            {
-                dtPatients.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
-            }
-
-            lblRecordsValue.Text = dgvPatients.Rows.Count.ToString();
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -111,14 +103,16 @@ namespace UI.Patient
         {
             frmAddEditPatient frmAddEditPatient = new frmAddEditPatient();
             frmAddEditPatient.ShowDialog();
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
         private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
         {
             int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
             frmAddEditPatient frmAddEditPatient = new frmAddEditPatient(PatientID);
             frmAddEditPatient.ShowDialog();
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
         private void tsmiShowPatientInfo_Click(object sender, EventArgs e)
         {
@@ -126,12 +120,127 @@ namespace UI.Patient
             frmPatientInfo frmPatientInfo = new frmPatientInfo(PatientID);
             frmPatientInfo.ShowDialog();
         }
-
         private void tsmiPatientMedicalRecords_Click(object sender, EventArgs e)
         {
             int PatientID = (int)dgvPatients.CurrentRow.Cells[0].Value;
             frmPatientMedicalRecords frm = new frmPatientMedicalRecords(PatientID);
             frm.ShowDialog();
         }
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if(dtPatients.Rows.Count < _PageSize)
+                return;
+
+            _PageNumber++;
+            txtPageNumber.Text = _PageNumber.ToString();
+
+            if(_CurrentPagingUsing == enPagingBy.Original)
+            {
+                _LoadDataTable();
+                _LoadToDataGridView();
+            }
+            if(_CurrentPagingUsing == enPagingBy.Name)
+            {
+                dtPatients = clsPatient.GetPatientWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
+                _LoadToDataGridView();
+            }
+
+        }
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if(_PageNumber <= 1)
+                return;
+
+            _PageNumber--;
+            txtPageNumber.Text = _PageNumber.ToString();
+
+            if(_CurrentPagingUsing == enPagingBy.Original)
+            {
+                _LoadDataTable();
+                _LoadToDataGridView();
+            }
+            if(_CurrentPagingUsing == enPagingBy.Name)
+            {
+                dtPatients = clsPatient.GetPatientWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
+                _LoadToDataGridView();
+            }
+
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtSearch.Text))
+                return;
+
+            _CurrentPagingUsing = enPagingBy.Original;
+
+            switch(cbFilter.Text)
+            {
+                case "None":
+                    _LoadDataTable();
+                    _LoadToDataGridView();
+                    _AllowPagination();
+                    break;
+                case "Person ID":
+                    int PersonID = Int32.Parse(txtSearch.Text.Trim());
+                    dtPatients = clsPatient.GetPatientWithPersonID(PersonID);
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    _CancelPagination();
+                    break;
+                case "Patient ID":
+                    int PatientID = Int32.Parse(txtSearch.Text.Trim());
+                    dtPatients = clsPatient.GetPatientWithPatientID(PatientID);
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    _CancelPagination();
+                    break;
+                case "Full Name":
+                    _CurrentPagingUsing = enPagingBy.Name;
+                    string Name = txtSearch.Text.Trim();
+                    dtPatients = clsPatient.GetPatientWithName(_PageNumber, _PageSize, ref _Records, Name);
+                    lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patient)";
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    break;
+                case "National ID":
+                    string NationalID = txtSearch.Text.Trim();
+                    dtPatients = clsPatient.GetPatientWithNationalID(NationalID);
+                    lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patient)";
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    _CancelPagination();
+                    break;
+            }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            _LoadDataTable();
+            _LoadToDataGridView();
+            _AllowPagination();
+            _PageNumber = 1;
+            txtPageNumber.Text = _PageNumber.ToString();
+            txtSearch.Text = string.Empty;
+            btnCancel.Visible = false;
+            btnFind.Visible = true;
+        }
+        private void _CancelPagination()
+        {
+            btnPreviousPage.Visible = false;
+            btnNextPage.Visible = false;
+            txtPageNumber.Visible = false;
+            lblOfTotalPagesAndRows.Visible = false;
+        }
+        private void _AllowPagination()
+        {
+            btnPreviousPage.Visible = true;
+            btnNextPage.Visible = true;
+            txtPageNumber.Visible = true;
+            lblOfTotalPagesAndRows.Visible = true;
+        }
+
     }
 }
