@@ -112,7 +112,7 @@
             this.dgvPeople.ShowCellToolTips = false;
             this.dgvPeople.ShowEditingIcon = false;
             this.dgvPeople.ShowRowErrors = false;
-            this.dgvPeople.Size = new System.Drawing.Size(1281, 548);
+            this.dgvPeople.Size = new System.Drawing.Size(1281, 532);
             this.dgvPeople.TabIndex = 2;
             // 
             // cmsPerson

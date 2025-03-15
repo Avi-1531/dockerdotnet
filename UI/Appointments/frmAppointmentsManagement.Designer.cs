@@ -103,7 +103,7 @@
             this.dgvAppointments.ShowCellToolTips = false;
             this.dgvAppointments.ShowEditingIcon = false;
             this.dgvAppointments.ShowRowErrors = false;
-            this.dgvAppointments.Size = new System.Drawing.Size(1281, 548);
+            this.dgvAppointments.Size = new System.Drawing.Size(1281, 532);
             this.dgvAppointments.TabIndex = 31;
             // 
             // cmsAppointments
