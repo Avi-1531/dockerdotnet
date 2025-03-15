@@ -635,6 +635,9 @@ GO
 
 -- Stored Procedure to Get All Patients
 CREATE PROCEDURE GetAllPatients
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT
 AS
 BEGIN
     SELECT PatientID, Patients.PersonID, 
@@ -647,7 +650,12 @@ BEGIN
         CASE WHEN EmergencyContactPhone IS NULL THEN 'Not Available' ELSE EmergencyContactPhone END AS EmergencyContactPhone
     FROM Patients
     INNER JOIN People ON People.PersonID = Patients.PersonID
-    ORDER BY Patients.CreatedAt DESC;
+    ORDER BY Patients.CreatedAt DESC
+
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+	SELECT @Records = COUNT(*) FROM Patients 
+
 END
 GO
 -----------------------------
@@ -1269,11 +1277,14 @@ GO
 
 -- GetAllAppointments
 CREATE PROCEDURE GetAllAppointments
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT
 AS
 BEGIN
     SELECT AppointmentID, Appointments.PatientID,
            CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
-           DoctorID, AppointmentDate, 
+           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
            CASE 
                WHEN AppointmentStatus = 1 THEN 'Scheduled'
                WHEN AppointmentStatus = 2 THEN 'Completed'
@@ -1290,9 +1301,12 @@ BEGIN
            END AS PaymentID
     FROM Appointments
     INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
-    INNER JOIN People ON People.PersonID = Patients.PersonID;
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	ORDER BY Appointments.CreatedAt DESC
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+	SELECT @Records = COUNT(*) FROM Appointments 
 END;
-GO
 GO
 
 -- HasMedicalRecord
@@ -1672,5 +1686,242 @@ BEGIN
     INNER JOIN Users ON People.CreatedByUserID = Users.UserID
 	WHERE People.NationalID = @NationalID
     ORDER BY People.CreatedAt DESC
+END
+GO
+
+
+
+CREATE PROCEDURE [dbo].[GetPatientWithPatientID]
+@PatientID INT
+AS
+BEGIN
+    SELECT PatientID, Patients.PersonID, 
+        CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.LastName) AS FullName,
+        People.NationalID, 
+        BloodType, 
+        CASE WHEN Allergies IS NULL THEN 'No Known Allergies' ELSE Allergies END AS Allergies,
+        CASE WHEN MedicalHistory IS NULL THEN 'No Known Medical History' ELSE MedicalHistory END AS MedicalHistory,
+        CASE WHEN EmergencyContactName IS NULL THEN 'Not Available' ELSE EmergencyContactName END AS EmergencyContactName,
+        CASE WHEN EmergencyContactPhone IS NULL THEN 'Not Available' ELSE EmergencyContactPhone END AS EmergencyContactPhone
+    FROM Patients
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE Patients.PatientID = @PatientID
+    ORDER BY Patients.CreatedAt DESC
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetPatientWithPersonID]
+@PersonID INT
+AS
+BEGIN
+    SELECT PatientID, Patients.PersonID, 
+        CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.LastName) AS FullName,
+        People.NationalID, 
+        BloodType, 
+        CASE WHEN Allergies IS NULL THEN 'No Known Allergies' ELSE Allergies END AS Allergies,
+        CASE WHEN MedicalHistory IS NULL THEN 'No Known Medical History' ELSE MedicalHistory END AS MedicalHistory,
+        CASE WHEN EmergencyContactName IS NULL THEN 'Not Available' ELSE EmergencyContactName END AS EmergencyContactName,
+        CASE WHEN EmergencyContactPhone IS NULL THEN 'Not Available' ELSE EmergencyContactPhone END AS EmergencyContactPhone
+    FROM Patients
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE Patients.PersonID = @PersonID
+    ORDER BY Patients.CreatedAt DESC
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetPatientWithName]
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT,
+@Name VARCHAR(120)
+AS
+BEGIN
+    SELECT PatientID, Patients.PersonID, 
+        CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.LastName) AS FullName,
+        People.NationalID, 
+        BloodType, 
+        CASE WHEN Allergies IS NULL THEN 'No Known Allergies' ELSE Allergies END AS Allergies,
+        CASE WHEN MedicalHistory IS NULL THEN 'No Known Medical History' ELSE MedicalHistory END AS MedicalHistory,
+        CASE WHEN EmergencyContactName IS NULL THEN 'Not Available' ELSE EmergencyContactName END AS EmergencyContactName,
+        CASE WHEN EmergencyContactPhone IS NULL THEN 'Not Available' ELSE EmergencyContactPhone END AS EmergencyContactPhone
+    FROM Patients
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.LastName) LIKE @Name + '%'
+    ORDER BY Patients.CreatedAt DESC
+
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+
+	SELECT @Records = Count(*) FROM Patients 
+	INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.LastName) LIKE @Name + '%'
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetPatientWithNationalID]
+@NationalID VARCHAR(10)
+AS
+BEGIN
+    SELECT PatientID, Patients.PersonID, 
+        CONCAT(People.FirstName, ' ', People.SecondName, ' ', People.LastName) AS FullName,
+        People.NationalID, 
+        BloodType, 
+        CASE WHEN Allergies IS NULL THEN 'No Known Allergies' ELSE Allergies END AS Allergies,
+        CASE WHEN MedicalHistory IS NULL THEN 'No Known Medical History' ELSE MedicalHistory END AS MedicalHistory,
+        CASE WHEN EmergencyContactName IS NULL THEN 'Not Available' ELSE EmergencyContactName END AS EmergencyContactName,
+        CASE WHEN EmergencyContactPhone IS NULL THEN 'Not Available' ELSE EmergencyContactPhone END AS EmergencyContactPhone
+    FROM Patients
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE People.NationalID = @NationalID
+    ORDER BY Patients.CreatedAt DESC
+END
+GO
+
+
+
+CREATE PROCEDURE [dbo].[GetAppointmentWithPatientName]
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT,
+@Name VARCHAR(120)
+AS
+BEGIN
+        SELECT AppointmentID, Appointments.PatientID,
+           CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
+           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           CASE 
+               WHEN AppointmentStatus = 1 THEN 'Scheduled'
+               WHEN AppointmentStatus = 2 THEN 'Completed'
+               WHEN AppointmentStatus = 3 THEN 'Cancelled'
+               WHEN AppointmentStatus = 4 THEN 'No-Show'
+           END AS Status,
+           CASE 
+               WHEN IsPaid = 1 THEN 'Yes'
+               WHEN IsPaid = 0 THEN 'No'
+           END AS IsPaid,
+           CASE 
+               WHEN PaymentID IS NULL THEN 'N/A'
+               ELSE CAST(PaymentID AS VARCHAR)
+           END AS PaymentID
+    FROM Appointments
+    INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE  CONCAT(People.FirstName, ' ', People.LastName) LIKE @Name + '%'
+	ORDER BY Appointments.CreatedAt DESC
+
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+
+	SELECT @Records = COUNT(*) FROM Appointments 
+	INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE  CONCAT(People.FirstName, ' ', People.LastName) LIKE @Name + '%'
+
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetAppointmentWithAppointmentID]
+@AppointmentID INT
+AS
+BEGIN
+        SELECT AppointmentID, Appointments.PatientID,
+           CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
+           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           CASE 
+               WHEN AppointmentStatus = 1 THEN 'Scheduled'
+               WHEN AppointmentStatus = 2 THEN 'Completed'
+               WHEN AppointmentStatus = 3 THEN 'Cancelled'
+               WHEN AppointmentStatus = 4 THEN 'No-Show'
+           END AS Status,
+           CASE 
+               WHEN IsPaid = 1 THEN 'Yes'
+               WHEN IsPaid = 0 THEN 'No'
+           END AS IsPaid,
+           CASE 
+               WHEN PaymentID IS NULL THEN 'N/A'
+               ELSE CAST(PaymentID AS VARCHAR)
+           END AS PaymentID
+    FROM Appointments
+    INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE Appointments.AppointmentID = @AppointmentID
+	ORDER BY Appointments.CreatedAt DESC
+END
+GO
+
+
+CREATE PROCEDURE [dbo].[GetAppointmentsWithPatientID]
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT,
+@PatientID INT
+AS
+BEGIN
+        SELECT AppointmentID, Appointments.PatientID,
+           CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
+           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           CASE 
+               WHEN AppointmentStatus = 1 THEN 'Scheduled'
+               WHEN AppointmentStatus = 2 THEN 'Completed'
+               WHEN AppointmentStatus = 3 THEN 'Cancelled'
+               WHEN AppointmentStatus = 4 THEN 'No-Show'
+           END AS Status,
+           CASE 
+               WHEN IsPaid = 1 THEN 'Yes'
+               WHEN IsPaid = 0 THEN 'No'
+           END AS IsPaid,
+           CASE 
+               WHEN PaymentID IS NULL THEN 'N/A'
+               ELSE CAST(PaymentID AS VARCHAR)
+           END AS PaymentID
+    FROM Appointments
+    INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE Appointments.PatientID = @PatientID
+	ORDER BY Appointments.CreatedAt DESC
+
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+
+	SELECT @Records = Count(*) FROM Appointments
+	WHERE PatientID = @PatientID
+END
+GO
+
+CREATE PROCEDURE [dbo].[GetAppointmentsWithDoctorID]
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT,
+@DoctorID INT
+AS
+BEGIN
+        SELECT AppointmentID, Appointments.PatientID,
+           CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
+           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           CASE 
+               WHEN AppointmentStatus = 1 THEN 'Scheduled'
+               WHEN AppointmentStatus = 2 THEN 'Completed'
+               WHEN AppointmentStatus = 3 THEN 'Cancelled'
+               WHEN AppointmentStatus = 4 THEN 'No-Show'
+           END AS Status,
+           CASE 
+               WHEN IsPaid = 1 THEN 'Yes'
+               WHEN IsPaid = 0 THEN 'No'
+           END AS IsPaid,
+           CASE 
+               WHEN PaymentID IS NULL THEN 'N/A'
+               ELSE CAST(PaymentID AS VARCHAR)
+           END AS PaymentID
+    FROM Appointments
+    INNER JOIN Patients ON Patients.PatientID = Appointments.PatientID
+    INNER JOIN People ON People.PersonID = Patients.PersonID
+	WHERE Appointments.DoctorID = @DoctorID
+	ORDER BY Appointments.CreatedAt DESC
+
+	OFFSET (@PageNumber - 1) * @PageSize ROWS
+	FETCH NEXT @PageSize ROWS ONLY
+
+	SELECT @Records = Count(*) FROM Appointments
+	WHERE DoctorID = @DoctorID
 END
 GO

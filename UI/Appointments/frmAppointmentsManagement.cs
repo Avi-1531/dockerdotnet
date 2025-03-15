@@ -14,15 +14,25 @@ namespace UI.Appointments
 {
     public partial class frmAppointmentsManagement : Form
     {
+        enum enPagingStyle { Original, WithName }
+        enPagingStyle _CurrentPagingStyle;
+        DataTable dtAppointments = null;
+        short _PageSize;
+        short _PageNumber;
+        int _Records;
         public frmAppointmentsManagement()
         {
             InitializeComponent();
+            _CurrentPagingStyle = enPagingStyle.Original;
+            _PageNumber = 1;
+            _PageSize = 14;
         }
-
-        DataTable dtAppointments = null;
-        private void _LoadData()
+        private void _LoadDataTable()
         {
-            dtAppointments = clsAppointment.GetAppointments();
+            dtAppointments = clsAppointment.GetAllAppointments(_PageNumber, _PageSize, ref _Records);
+        }
+        private void _LoadToDataGridView()
+        {
             dgvAppointments.DataSource = dtAppointments;
 
             if(dgvAppointments.Rows.Count > 0)
@@ -53,12 +63,13 @@ namespace UI.Appointments
                 dgvAppointments.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
             }
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointment)";
 
-            lblRecordsValue.Text = dgvAppointments.Rows.Count.ToString();
         }
         private void frmAppointmentsManagement_Load(object sender, EventArgs e)
         {
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
             cbFilter.SelectedIndex = 0;
         }
         private void frmAppointmentsManagement_Shown(object sender, EventArgs e)
@@ -68,51 +79,17 @@ namespace UI.Appointments
         }
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(dtAppointments != null)
-                dtAppointments.DefaultView.RowFilter = "";
 
-            lblRecordsValue.Text = dgvAppointments.Rows.Count.ToString();
+            btnFind.Visible = (cbFilter.Text != "None");
+            txtSearch.Visible = (cbFilter.Text != "None");
 
-            if(cbFilter.Text == "None")
+            if(txtSearch.Visible)
             {
-                txtSearch.Visible = false;
-                cbStatus.Visible = false;
-                return;
-            }
-            if(cbFilter.Text == "Status")
-            {
-                txtSearch.Visible = false;
-                cbStatus.Visible = true;
-            }
-            else
-            {
-                txtSearch.Visible = true;
-                cbStatus.Visible = false;
+                txtSearch.Text = "";
+                txtSearch.Focus();
             }
 
 
-        }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if(txtSearch.Text == "")
-            {
-                dtAppointments.DefaultView.RowFilter = "";
-                lblRecordsValue.Text = dgvAppointments.Rows.Count.ToString();
-                return;
-            }
-
-            string Column = cbFilter.Text.Replace(" ", "");
-
-            if(cbFilter.Text == "Appointment ID" || cbFilter.Text == "Patient ID" || cbFilter.Text == "Doctor ID")
-            {
-                dtAppointments.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
-            }
-            else
-            {
-                dtAppointments.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
-            }
-
-            lblRecordsValue.Text = dgvAppointments.Rows.Count.ToString();
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -121,38 +98,144 @@ namespace UI.Appointments
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
-        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dtAppointments.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", "Status", cbStatus.Text);
-            lblRecordsValue.Text = dgvAppointments.Rows.Count.ToString();
-        }
         private void btnAddAppointment_Click(object sender, EventArgs e)
         {
             frmAddEditAppointment frmAddEditAppointment = new frmAddEditAppointment();
             frmAddEditAppointment.ShowDialog();
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
-
         private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
         {
             int AppointmentId = (int)dgvAppointments.CurrentRow.Cells[0].Value;
             frmAddEditAppointment frmAddEditAppointment = new frmAddEditAppointment(AppointmentId);
             frmAddEditAppointment.ShowDialog();
-            _LoadData();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
-
         private void tsmiShowDoctorInfo_Click(object sender, EventArgs e)
         {
             int AppointmentId = (int)dgvAppointments.CurrentRow.Cells[0].Value;
             frmAppointmentInfo frmAppointmentInfo = new frmAppointmentInfo(AppointmentId);
             frmAppointmentInfo.ShowDialog();
         }
-
         private void tsmiPatientMedicalRecords_Click(object sender, EventArgs e)
         {
             int PatientID = (int)dgvAppointments.CurrentRow.Cells[1].Value;
             frmPatientMedicalRecords frm = new frmPatientMedicalRecords(PatientID);
             frm.ShowDialog();
+        }
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if(dtAppointments.Rows.Count < _PageSize)
+                return;
+
+            _PageNumber++;
+            txtPageNumber.Text = _PageNumber.ToString();
+
+            if(_CurrentPagingStyle == enPagingStyle.Original)
+            {
+                _LoadDataTable();
+                _LoadToDataGridView();
+            }
+            if(_CurrentPagingStyle == enPagingStyle.WithName)
+            {
+                dtAppointments = clsAppointment.GetAppointmentWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
+                _LoadToDataGridView();
+            }
+
+        }
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if(_PageNumber <= 1)
+                return;
+
+            _PageNumber--;
+            txtPageNumber.Text = _PageNumber.ToString();
+
+            if(_CurrentPagingStyle == enPagingStyle.Original)
+            {
+                _LoadDataTable();
+                _LoadToDataGridView();
+            }
+            if(_CurrentPagingStyle == enPagingStyle.WithName)
+            {
+                dtAppointments = clsAppointment.GetAppointmentWithName(_PageNumber, _PageSize, ref _Records, txtSearch.Text.Trim());
+                _LoadToDataGridView();
+            }
+
+        }
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtSearch.Text))
+                return;
+
+            _CurrentPagingStyle = enPagingStyle.Original;
+
+            switch(cbFilter.Text)
+            {
+                case "None":
+                    _LoadDataTable();
+                    _LoadToDataGridView();
+                    _AllowPagination();
+                    break;
+                case "Patient ID":
+                    int PatientID = Int32.Parse(txtSearch.Text.Trim());
+                    dtAppointments = clsAppointment.GetAppointmentsWithPatientID(_PageNumber, _PageSize, ref _Records, PatientID);
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    break;
+                case "Appointment ID":
+                    int AppointmentID = Int32.Parse(txtSearch.Text.Trim());
+                    dtAppointments = clsAppointment.GetAppointmentWithAppointmentID(AppointmentID);
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    _CancelPagination();
+                    break;
+                case "Patient Name":
+                    _CurrentPagingStyle = enPagingStyle.WithName;
+                    string Name = txtSearch.Text.Trim();
+                    dtAppointments = clsAppointment.GetAppointmentWithName(_PageNumber, _PageSize, ref _Records, Name);
+                    lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointment)";
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    break;
+                case "Doctor ID":
+                    int DoctorID = Int32.Parse(txtSearch.Text.Trim());
+                    dtAppointments = clsAppointment.GetAppointmentsWithDoctorID(_PageNumber, _PageSize, ref _Records, DoctorID);
+                    _LoadToDataGridView();
+                    btnCancel.Visible = true;
+                    btnFind.Visible = false;
+                    break;
+            }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            _LoadDataTable();
+            _LoadToDataGridView();
+            _AllowPagination();
+            _PageNumber = 1;
+            txtPageNumber.Text = _PageNumber.ToString();
+            txtSearch.Text = string.Empty;
+            btnCancel.Visible = false;
+            btnFind.Visible = true;
+        }
+        private void _CancelPagination()
+        {
+            btnPreviousPage.Visible = false;
+            btnNextPage.Visible = false;
+            txtPageNumber.Visible = false;
+            lblOfTotalPagesAndRows.Visible = false;
+        }
+        private void _AllowPagination()
+        {
+            btnPreviousPage.Visible = true;
+            btnNextPage.Visible = true;
+            txtPageNumber.Visible = true;
+            lblOfTotalPagesAndRows.Visible = true;
         }
     }
 }

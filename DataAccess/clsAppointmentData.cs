@@ -187,7 +187,7 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static DataTable GetAllAppointments()
+        public static DataTable GetAllAppointments(short PageNumber, int PageSize, ref int Records)
         {
             DataTable dt = new DataTable();
 
@@ -198,6 +198,47 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand("GetAllAppointments", connection))
                     {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+        public static DataTable GetAppointmentWithAppointmentID(int AppointmentID)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetAppointmentWithAppointmentID", connection))
+                    {
+                        command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
+
                         command.CommandType = CommandType.StoredProcedure;
 
                         connection.Open();
@@ -205,6 +246,129 @@ namespace ClinicManagementDB_DataAccess
 
                         if(reader.HasRows)
                             dt.Load(reader);
+                        else
+                            return dt;
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+        public static DataTable GetAppointmentsWithPatientID(short PageNumber, int PageSize, ref int Records, int PatientID)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetAppointmentsWithPatientID", connection))
+                    {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+                        command.Parameters.AddWithValue("@PatientID", PatientID);
+
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+        public static DataTable GetAppointmentsWithDoctorID(short PageNumber, int PageSize, ref int Records, int DoctorID)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetAppointmentsWithDoctorID", connection))
+                    {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+                        command.Parameters.AddWithValue("@DoctorID", DoctorID);
+
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return dt;
+        }
+        public static DataTable GetAppointmentWithName(short PageNumber, int PageSize, ref int Records, string Name)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("GetAppointmentWithPatientName", connection))
+                    {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+                        command.Parameters.AddWithValue("@Name", Name);
+
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if(reader.HasRows)
+                            dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
+
                     }
                 }
             }
@@ -370,7 +534,6 @@ namespace ClinicManagementDB_DataAccess
 
             return -1;
         }
-
 
     }
 }

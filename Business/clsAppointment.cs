@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -120,18 +121,26 @@ namespace ClinicManagementDB_Business
             => clsAppointmentData.DeleteAppointment(AppointmentID);
         public static bool DoesAppointmentExist(int? AppointmentID)
             => clsAppointmentData.DoesAppointmentExist(AppointmentID);
-        public static DataTable GetAppointments()
-            => clsAppointmentData.GetAllAppointments();
         public bool HasMedicalRecord()
             => clsAppointmentData.HasMedicalRecord(this.AppointmentID);
         public int? GetMedicalRecordID()
             => clsAppointmentData.GetMedicalRecordID(this.AppointmentID);
-
-        public static int GetTodayAppointmentsCount() 
+        public static int GetTodayAppointmentsCount()
             => clsAppointmentData.GetTodayAppointmentsCount();
-        public static int GetCreatedAppointmentsThisWeekCount() 
+        public static int GetCreatedAppointmentsThisWeekCount()
             => clsAppointmentData.GetCreatedAppointmentsThisWeekCount();
-        public static int GetWeeklyAppointmentsCount() 
+        public static int GetWeeklyAppointmentsCount()
             => clsAppointmentData.GetWeeklyAppointmentsCount();
+
+        public static DataTable GetAllAppointments(short PageNumber, int PageSize, ref int Records)
+            => clsAppointmentData.GetAllAppointments(PageNumber, PageSize, ref Records);
+        public static DataTable GetAppointmentWithAppointmentID(int AppointmentID)
+            => clsAppointmentData.GetAppointmentWithAppointmentID(AppointmentID);
+        public static DataTable GetAppointmentsWithPatientID(short PageNumber, int PageSize, ref int Records, int PatientID)
+            => clsAppointmentData.GetAppointmentsWithPatientID(PageNumber, PageSize, ref Records, PatientID);
+        public static DataTable GetAppointmentsWithDoctorID(short PageNumber, int PageSize, ref int Records, int DoctorID)
+            => clsAppointmentData.GetAppointmentsWithDoctorID(PageNumber, PageSize, ref Records, DoctorID);
+        public static DataTable GetAppointmentWithName(short PageNumber, int PageSize, ref int Records, string Name)
+            => clsAppointmentData.GetAppointmentWithName(PageNumber, PageSize, ref Records, Name);
     }
 }

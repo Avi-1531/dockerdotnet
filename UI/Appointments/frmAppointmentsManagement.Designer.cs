@@ -41,12 +41,15 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddAppointment = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblRecordsValue = new System.Windows.Forms.Label();
-            this.lblRecords = new System.Windows.Forms.Label();
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtPageNumber = new System.Windows.Forms.TextBox();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.cmsAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,7 +103,7 @@
             this.dgvAppointments.ShowCellToolTips = false;
             this.dgvAppointments.ShowEditingIcon = false;
             this.dgvAppointments.ShowRowErrors = false;
-            this.dgvAppointments.Size = new System.Drawing.Size(1281, 560);
+            this.dgvAppointments.Size = new System.Drawing.Size(1281, 548);
             this.dgvAppointments.TabIndex = 31;
             // 
             // cmsAppointments
@@ -187,33 +190,12 @@
             "Appointment ID",
             "Patient Name",
             "Patient ID",
-            "Doctor ID",
-            "Status"});
+            "Doctor ID"});
             this.cbFilter.Location = new System.Drawing.Point(121, 213);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(245, 33);
             this.cbFilter.TabIndex = 32;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
-            // 
-            // lblRecordsValue
-            // 
-            this.lblRecordsValue.AutoSize = true;
-            this.lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsValue.Location = new System.Drawing.Point(92, 819);
-            this.lblRecordsValue.Name = "lblRecordsValue";
-            this.lblRecordsValue.Size = new System.Drawing.Size(48, 21);
-            this.lblRecordsValue.TabIndex = 27;
-            this.lblRecordsValue.Text = "[????]";
-            // 
-            // lblRecords
-            // 
-            this.lblRecords.AutoSize = true;
-            this.lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(26, 819);
-            this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(69, 21);
-            this.lblRecords.TabIndex = 28;
-            this.lblRecords.Text = "Records:";
             // 
             // lblFilterBy
             // 
@@ -235,28 +217,6 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // cbStatus
-            // 
-            this.cbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatus.DropDownWidth = 245;
-            this.cbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.IntegralHeight = false;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Scheduled",
-            "Completed",
-            "Cancelled",
-            "No-Show"});
-            this.cbStatus.Location = new System.Drawing.Point(372, 213);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(245, 33);
-            this.cbStatus.TabIndex = 35;
-            this.cbStatus.Visible = false;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
-            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -269,8 +229,97 @@
             this.txtSearch.Size = new System.Drawing.Size(245, 34);
             this.txtSearch.TabIndex = 34;
             this.txtSearch.Visible = false;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnFind.BackgroundImage = global::UI.Properties.Resources.SearchV2;
+            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFind.FlatAppearance.BorderSize = 0;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.Location = new System.Drawing.Point(623, 212);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(34, 34);
+            this.btnFind.TabIndex = 36;
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Visible = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnCancel.BackgroundImage = global::UI.Properties.Resources.cancel;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(623, 212);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(34, 34);
+            this.btnCancel.TabIndex = 35;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // txtPageNumber
+            // 
+            this.txtPageNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPageNumber.Enabled = false;
+            this.txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtPageNumber.Location = new System.Drawing.Point(98, 811);
+            this.txtPageNumber.Multiline = true;
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(41, 25);
+            this.txtPageNumber.TabIndex = 40;
+            this.txtPageNumber.Text = "1";
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnNextPage.BackgroundImage = global::UI.Properties.Resources.right;
+            this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNextPage.FlatAppearance.BorderSize = 0;
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPage.Location = new System.Drawing.Point(61, 806);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(31, 34);
+            this.btnNextPage.TabIndex = 38;
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnPreviousPage
+            // 
+            this.btnPreviousPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnPreviousPage.BackgroundImage = global::UI.Properties.Resources.left;
+            this.btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
+            this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviousPage.Location = new System.Drawing.Point(24, 806);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(31, 34);
+            this.btnPreviousPage.TabIndex = 39;
+            this.btnPreviousPage.UseVisualStyleBackColor = false;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            // 
+            // lblOfTotalPagesAndRows
+            // 
+            this.lblOfTotalPagesAndRows.AutoSize = true;
+            this.lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOfTotalPagesAndRows.Location = new System.Drawing.Point(145, 813);
+            this.lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
+            this.lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
+            this.lblOfTotalPagesAndRows.TabIndex = 37;
+            this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
             // frmAppointmentsManagement
             // 
@@ -278,16 +327,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1329, 861);
+            this.Controls.Add(this.txtPageNumber);
+            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.btnPreviousPage);
+            this.Controls.Add(this.lblOfTotalPagesAndRows);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dgvAppointments);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.btnAddAppointment);
             this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblRecordsValue);
-            this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.lblFilterBy);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnFind);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -314,12 +366,15 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnAddAppointment;
         private System.Windows.Forms.ComboBox cbFilter;
-        private System.Windows.Forms.Label lblRecordsValue;
-        private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.Label lblFilterBy;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ToolStripMenuItem tsmiPatientMedicalRecords;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtPageNumber;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Label lblOfTotalPagesAndRows;
     }
 }
