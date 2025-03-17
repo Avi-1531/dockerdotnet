@@ -663,7 +663,15 @@ CREATE PROCEDURE GetDoctorByID
     @DoctorID SMALLINT
 AS
 BEGIN
-    SELECT * FROM Doctors WHERE DoctorID = @DoctorID;
+    SELECT PersonID FROM Doctors WHERE DoctorID = @DoctorID;
+END;
+GO
+
+ CREATE PROCEDURE [dbo].[GetDoctorPersonID]
+    @PersonID INT
+AS
+BEGIN
+    SELECT * FROM Doctors WHERE PersonID = @PersonID;
 END;
 GO
 
