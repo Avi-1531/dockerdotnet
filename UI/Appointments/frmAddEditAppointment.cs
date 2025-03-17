@@ -27,7 +27,6 @@ namespace UI.Appointments
             this.Text = "Add New APPOINTMENT";
             lblHeader.Text = "ADD APPOINTMENT";
             _Appointment = new clsAppointment();
-            dtpAppointmentDate.MinDate = DateTime.Now;
         }
         public frmAddEditAppointment(int AppointmentID)
         {
@@ -161,7 +160,7 @@ namespace UI.Appointments
         }
         private void _SetConstraints()
         {
-            dtpAppointmentDate.MaxDate = DateTime.Now.AddMonths(6);
+            dtpAppointmentDate.MaxDate = DateTime.Now.AddMonths(14);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
