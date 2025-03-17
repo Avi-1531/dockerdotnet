@@ -14,14 +14,19 @@ namespace UI.Payment
 {
     public partial class frmPaymentsManagement : Form
     {
+        DataTable dtPayments = null;
+        short _PageSize;
+        short _PageNumber;
+        int _Records;
         public frmPaymentsManagement()
         {
             InitializeComponent();
+            _PageNumber = 1;
+            _PageSize = 14;
         }
-        DataTable dtPayments;
         private void _LoadData()
         {
-            dtPayments = clsPayment.GetPayments();
+            dtPayments = clsPayment.GetPayments(_PageNumber, _PageSize, ref _Records);
             dgvPayments.DataSource = dtPayments;
 
             if(dgvPayments.Rows.Count > 0)
@@ -47,16 +52,8 @@ namespace UI.Payment
                 dgvPayments.Columns[6].HeaderText = "Created By";
                 dgvPayments.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-                dgvPayments.Columns[7].HeaderText = "Created At";
-                dgvPayments.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-
-                dgvPayments.Rows[0].Selected = true;
             }
-
-            lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
-            lblTotalPaymentsValue.Text = dgvPayments.Rows.Count.ToString();
-            _LoadStatistics();
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Payments)";
         }
         private void _LoadStatistics()
         {
@@ -67,47 +64,31 @@ namespace UI.Payment
         }
         private void frmPaymentsManagement_Load(object sender, EventArgs e)
         {
+            _LoadStatistics();
             _LoadData();
+            dgvPayments.ClearSelection();
         }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void btnNextPage_Click(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "")
-            {
-                dtPayments.DefaultView.RowFilter = "";
-                lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
+            if(dtPayments.Rows.Count < _PageSize)
                 return;
-            }
 
-            string Column = cbFilter.Text.Replace(" ", "");
-            if(cbFilter.Text == "Full Name")
-                dtPayments.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", Column, txtSearch.Text.Trim());
-            else
-                dtPayments.DefaultView.RowFilter = string.Format("[{0}] = {1}", Column, txtSearch.Text.Trim());
+            _PageNumber++;
+            txtPageNumber.Text = _PageNumber.ToString();
 
+            _LoadData();
 
-            lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
         }
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnPreviousPage_Click(object sender, EventArgs e)
         {
-            if(cbFilter.Text == "Patient ID")
-            {
-                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            }
-        }
-        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(dtPayments != null)
-                dtPayments.DefaultView.RowFilter = "";
+            if(_PageNumber <= 1)
+                return;
 
-            lblRecordsValue.Text = dgvPayments.Rows.Count.ToString();
+            _PageNumber--;
+            txtPageNumber.Text = _PageNumber.ToString();
 
-            txtSearch.Visible = (cbFilter.Text != "None");
+            _LoadData();
 
-            if(txtSearch.Visible)
-            {
-                txtSearch.Text = "";
-                txtSearch.Focus();
-            }
         }
 
     }

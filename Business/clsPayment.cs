@@ -75,8 +75,8 @@ namespace ClinicManagementDB_Business
         }
         public static bool DoesPaymentExist(int? PaymentID)
             => clsPaymentData.DoesPaymentExist(PaymentID);
-        public static DataTable GetPayments()
-            => clsPaymentData.GetAllPayments();
+        public static DataTable GetPayments(short PageNumber, int PageSize, ref int Records)
+            => clsPaymentData.GetAllPayments(PageNumber, PageSize, ref Records);
 
         public static decimal GetTotalPaymentsAmount() => clsPaymentData.GetTotalPaymentsAmount();
         public static decimal GetAverageAmountPerPayment() => clsPaymentData.GetAverageAmountPerPayment();

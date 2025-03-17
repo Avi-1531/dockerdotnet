@@ -234,7 +234,7 @@ namespace ClinicManagementDB_DataAccess
             return isFound;
         }
 
-        public static DataTable GetAllPayments()
+        public static DataTable GetAllPayments(short PageNumber, int PageSize, ref int Records)
         {
             DataTable dt = new DataTable();
 
@@ -245,12 +245,23 @@ namespace ClinicManagementDB_DataAccess
 
                     using(SqlCommand command = new SqlCommand("GetAllPayments", connection))
                     {
+                        command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                        command.Parameters.AddWithValue("@PageSize", PageSize);
+
                         command.CommandType = CommandType.StoredProcedure;
+
+                        var recordsParam = command.Parameters.Add("@Records", SqlDbType.Int);
+                        recordsParam.Direction = ParameterDirection.Output;
+
                         connection.Open();
                         SqlDataReader reader = command.ExecuteReader();
 
                         if(reader.HasRows)
                             dt.Load(reader);
+                        else
+                            return dt;
+
+                        Records = recordsParam.Value != DBNull.Value ? (int)recordsParam.Value : 0;
                     }
                 }
             }

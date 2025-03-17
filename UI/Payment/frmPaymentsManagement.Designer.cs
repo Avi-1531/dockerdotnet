@@ -45,13 +45,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.lblRecordsValue = new System.Windows.Forms.Label();
-            this.lblRecords = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvPayments = new System.Windows.Forms.DataGridView();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblFilterBy = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtPageNumber = new System.Windows.Forms.TextBox();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,10 +62,10 @@
             // lblMostUsedPaymentMethodValue
             // 
             this.lblMostUsedPaymentMethodValue.AutoSize = true;
-            this.lblMostUsedPaymentMethodValue.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostUsedPaymentMethodValue.Location = new System.Drawing.Point(7, 12);
+            this.lblMostUsedPaymentMethodValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostUsedPaymentMethodValue.Location = new System.Drawing.Point(9, 22);
             this.lblMostUsedPaymentMethodValue.Name = "lblMostUsedPaymentMethodValue";
-            this.lblMostUsedPaymentMethodValue.Size = new System.Drawing.Size(148, 65);
+            this.lblMostUsedPaymentMethodValue.Size = new System.Drawing.Size(100, 45);
             this.lblMostUsedPaymentMethodValue.TabIndex = 16;
             this.lblMostUsedPaymentMethodValue.Text = "[????]";
             // 
@@ -93,10 +92,10 @@
             // lblTotalPaymentsValue
             // 
             this.lblTotalPaymentsValue.AutoSize = true;
-            this.lblTotalPaymentsValue.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentsValue.Location = new System.Drawing.Point(7, 12);
+            this.lblTotalPaymentsValue.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPaymentsValue.Location = new System.Drawing.Point(7, 17);
             this.lblTotalPaymentsValue.Name = "lblTotalPaymentsValue";
-            this.lblTotalPaymentsValue.Size = new System.Drawing.Size(148, 65);
+            this.lblTotalPaymentsValue.Size = new System.Drawing.Size(114, 50);
             this.lblTotalPaymentsValue.TabIndex = 16;
             this.lblTotalPaymentsValue.Text = "[????]";
             // 
@@ -123,10 +122,10 @@
             // lblAverageAmountPerPaymentValue
             // 
             this.lblAverageAmountPerPaymentValue.AutoSize = true;
-            this.lblAverageAmountPerPaymentValue.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAverageAmountPerPaymentValue.Location = new System.Drawing.Point(7, 12);
+            this.lblAverageAmountPerPaymentValue.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAverageAmountPerPaymentValue.Location = new System.Drawing.Point(7, 18);
             this.lblAverageAmountPerPaymentValue.Name = "lblAverageAmountPerPaymentValue";
-            this.lblAverageAmountPerPaymentValue.Size = new System.Drawing.Size(148, 65);
+            this.lblAverageAmountPerPaymentValue.Size = new System.Drawing.Size(114, 50);
             this.lblAverageAmountPerPaymentValue.TabIndex = 16;
             this.lblAverageAmountPerPaymentValue.Text = "[????]";
             // 
@@ -143,10 +142,10 @@
             // lblTotalPaymentsAmountValue
             // 
             this.lblTotalPaymentsAmountValue.AutoSize = true;
-            this.lblTotalPaymentsAmountValue.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentsAmountValue.Location = new System.Drawing.Point(7, 12);
+            this.lblTotalPaymentsAmountValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPaymentsAmountValue.Location = new System.Drawing.Point(9, 23);
             this.lblTotalPaymentsAmountValue.Name = "lblTotalPaymentsAmountValue";
-            this.lblTotalPaymentsAmountValue.Size = new System.Drawing.Size(148, 65);
+            this.lblTotalPaymentsAmountValue.Size = new System.Drawing.Size(100, 45);
             this.lblTotalPaymentsAmountValue.TabIndex = 16;
             this.lblTotalPaymentsAmountValue.Text = "[????]";
             // 
@@ -189,26 +188,6 @@
             this.lblHeader.Size = new System.Drawing.Size(348, 40);
             this.lblHeader.TabIndex = 17;
             this.lblHeader.Text = "PAYMENT MANAGEMENT";
-            // 
-            // lblRecordsValue
-            // 
-            this.lblRecordsValue.AutoSize = true;
-            this.lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsValue.Location = new System.Drawing.Point(106, 803);
-            this.lblRecordsValue.Name = "lblRecordsValue";
-            this.lblRecordsValue.Size = new System.Drawing.Size(48, 21);
-            this.lblRecordsValue.TabIndex = 18;
-            this.lblRecordsValue.Text = "[????]";
-            // 
-            // lblRecords
-            // 
-            this.lblRecords.AutoSize = true;
-            this.lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(42, 802);
-            this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(69, 21);
-            this.lblRecords.TabIndex = 19;
-            this.lblRecords.Text = "Records:";
             // 
             // pictureBox1
             // 
@@ -270,50 +249,61 @@
             this.dgvPayments.Size = new System.Drawing.Size(937, 560);
             this.dgvPayments.TabIndex = 21;
             // 
-            // cbFilter
+            // txtPageNumber
             // 
-            this.cbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.DropDownWidth = 245;
-            this.cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.IntegralHeight = false;
-            this.cbFilter.Items.AddRange(new object[] {
-            "None",
-            "Patient ID",
-            "Full Name"});
-            this.cbFilter.Location = new System.Drawing.Point(139, 199);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(245, 33);
-            this.cbFilter.TabIndex = 35;
-            this.cbFilter.TextChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            this.txtPageNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.txtPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPageNumber.Enabled = false;
+            this.txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtPageNumber.Location = new System.Drawing.Point(115, 812);
+            this.txtPageNumber.Multiline = true;
+            this.txtPageNumber.Name = "txtPageNumber";
+            this.txtPageNumber.Size = new System.Drawing.Size(41, 25);
+            this.txtPageNumber.TabIndex = 29;
+            this.txtPageNumber.Text = "1";
             // 
-            // lblFilterBy
+            // btnNextPage
             // 
-            this.lblFilterBy.AutoSize = true;
-            this.lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterBy.Location = new System.Drawing.Point(42, 200);
-            this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(91, 30);
-            this.lblFilterBy.TabIndex = 34;
-            this.lblFilterBy.Text = "Filter By:";
+            this.btnNextPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnNextPage.BackgroundImage = global::UI.Properties.Resources.right;
+            this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNextPage.FlatAppearance.BorderSize = 0;
+            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPage.Location = new System.Drawing.Point(78, 807);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(31, 34);
+            this.btnNextPage.TabIndex = 27;
+            this.btnNextPage.UseVisualStyleBackColor = false;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
-            // txtSearch
+            // btnPreviousPage
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtSearch.Location = new System.Drawing.Point(390, 198);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(245, 34);
-            this.txtSearch.TabIndex = 37;
-            this.txtSearch.Visible = false;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            this.btnPreviousPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnPreviousPage.BackgroundImage = global::UI.Properties.Resources.left;
+            this.btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
+            this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviousPage.Location = new System.Drawing.Point(41, 807);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(31, 34);
+            this.btnPreviousPage.TabIndex = 28;
+            this.btnPreviousPage.UseVisualStyleBackColor = false;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            // 
+            // lblOfTotalPagesAndRows
+            // 
+            this.lblOfTotalPagesAndRows.AutoSize = true;
+            this.lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOfTotalPagesAndRows.Location = new System.Drawing.Point(162, 814);
+            this.lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
+            this.lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
+            this.lblOfTotalPagesAndRows.TabIndex = 26;
+            this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
             // frmPaymentsManagement
             // 
@@ -321,18 +311,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblFilterBy);
+            this.Controls.Add(this.txtPageNumber);
+            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.btnPreviousPage);
+            this.Controls.Add(this.lblOfTotalPagesAndRows);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.lblRecordsValue);
-            this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvPayments);
-            this.Controls.Add(this.txtSearch);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -371,12 +360,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label lblRecordsValue;
-        private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvPayments;
-        private System.Windows.Forms.ComboBox cbFilter;
-        private System.Windows.Forms.Label lblFilterBy;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtPageNumber;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Label lblOfTotalPagesAndRows;
     }
 }

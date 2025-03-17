@@ -1104,7 +1104,7 @@ AS
 BEGIN
     SELECT AppointmentID, Appointments.PatientID,
            CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
-           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           DoctorID, CONVERT(VARCHAR(20), AppointmentDate) AS AppointmentDate, 
            CASE 
                WHEN AppointmentStatus = 1 THEN 'Scheduled'
                WHEN AppointmentStatus = 2 THEN 'Completed'
@@ -1262,25 +1262,36 @@ GO
 
 -- Get All Payments
 CREATE PROCEDURE GetAllPayments
+@PageNumber INT,
+@Records INT OUTPUT,
+@PageSize INT
 AS
 BEGIN
-      SELECT Payments.PaymentID, Patients.PatientID AS PatientID,
-	  People.FirstName + ' ' + People.LastName AS FullName,
-	  FORMAT(Amount, 'C', 'en-US') AS Amount,
-	  CASE
-	  WHEN PaymentMethod = 1 THEN 'Cash'
-	  WHEN PaymentMethod = 2 THEN 'Debit Card'
-	  WHEN PaymentMethod = 3 THEN 'Bank Transfer'
-	  WHEN PaymentMethod = 4 THEN 'Mobile Payment'
-	  ELSE 'Cash'
-	  END AS PaymentMethod,
-	  FORMAT(PaymentDate, 'yyyy-MM-dd HH:mm:ss') AS PaymentDate,
-	  Users.Username, Payments.CreatedAt FROM Payments
-	  INNER JOIN Users ON Payments.CreatedByUserID = Users.UserID
-	  INNER JOIN Appointments ON Appointments.PaymentID = Payments.PaymentID
-	  INNER JOIN Patients ON Appointments.PatientID = Patients.PatientID
-	  INNER JOIN People ON Patients.PersonID = People.PersonID
-	  ORDER BY PaymentDate DESC
+ SELECT 
+        p.PaymentID, 
+        pa.PatientID,
+        pe.FirstName + ' ' + pe.LastName AS FullName,
+        CAST(p.Amount AS VARCHAR(20)) + ' SAR' AS Amount,
+        CASE p.PaymentMethod
+            WHEN 1 THEN 'Cash'
+            WHEN 2 THEN 'Debit Card'
+            WHEN 3 THEN 'Bank Transfer'
+            WHEN 4 THEN 'Mobile Payment'
+            ELSE 'Cash'
+        END AS PaymentMethod,
+        CONVERT(VARCHAR(20), p.PaymentDate) AS PaymentDate,
+        u.Username
+    FROM Payments p
+    INNER JOIN Users u ON p.CreatedByUserID = u.UserID
+    INNER JOIN Appointments a ON a.PaymentID = p.PaymentID
+    INNER JOIN Patients pa ON a.PatientID = pa.PatientID
+    INNER JOIN People pe ON pa.PersonID = pe.PersonID
+    ORDER BY p.PaymentDate DESC
+    OFFSET (@PageNumber - 1) * @PageSize ROWS
+    FETCH NEXT @PageSize ROWS ONLY;
+    
+    SELECT @Records = COUNT(*) FROM Payments;
+
 END
 GO
 
@@ -1608,7 +1619,7 @@ AS
 BEGIN
         SELECT AppointmentID, Appointments.PatientID,
            CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
-           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           DoctorID, CONVERT(VARCHAR(20), AppointmentDate) AS AppointmentDate, 
            CASE 
                WHEN AppointmentStatus = 1 THEN 'Scheduled'
                WHEN AppointmentStatus = 2 THEN 'Completed'
@@ -1646,7 +1657,7 @@ AS
 BEGIN
         SELECT AppointmentID, Appointments.PatientID,
            CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
-           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           DoctorID, CONVERT(VARCHAR(20), AppointmentDate) AS AppointmentDate, 
            CASE 
                WHEN AppointmentStatus = 1 THEN 'Scheduled'
                WHEN AppointmentStatus = 2 THEN 'Completed'
@@ -1679,7 +1690,7 @@ AS
 BEGIN
         SELECT AppointmentID, Appointments.PatientID,
            CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
-           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           DoctorID, CONVERT(VARCHAR(20), AppointmentDate) AS AppointmentDate, 
            CASE 
                WHEN AppointmentStatus = 1 THEN 'Scheduled'
                WHEN AppointmentStatus = 2 THEN 'Completed'
@@ -1717,7 +1728,7 @@ AS
 BEGIN
         SELECT AppointmentID, Appointments.PatientID,
            CONCAT(People.FirstName, ' ', People.LastName) AS PatientName,
-           DoctorID, FORMAT(AppointmentDate, 'dd/MM/yyyy h:mm tt') AS AppointmentDate, 
+           DoctorID, CONVERT(VARCHAR(20), AppointmentDate) AS AppointmentDate, 
            CASE 
                WHEN AppointmentStatus = 1 THEN 'Scheduled'
                WHEN AppointmentStatus = 2 THEN 'Completed'
