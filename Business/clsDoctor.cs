@@ -176,7 +176,7 @@ namespace ClinicManagementDB_Business
         public static bool DoesUsernameUsedByAnotherDoctor(short? DoctorID, string Username)
             => clsDoctorData.DoesUsernameUsedByAnotherDoctor(DoctorID, Username);
         public static int? GetPersonID(short DoctorID)
-            => clsDoctorData.GetPersonID(DoctorID);
+            => clsDoctorData.GetDoctorPersonID(DoctorID);
         public static DataTable GetDoctors()
             => clsDoctorData.GetAllDoctors();
         public bool IsDoctorAvailable(DateTime appointmentDate) 

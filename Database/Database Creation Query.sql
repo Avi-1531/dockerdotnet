@@ -1,7 +1,7 @@
-CREATE DATABASE ClinicManagementDB;
+CREATE DATABASE ClinicManagement;
 GO
 
-USE ClinicManagementDB;
+USE ClinicManagement;
 GO
 
 CREATE TABLE Countries (
@@ -218,15 +218,15 @@ CREATE TABLE People (
 	SecondName NVARCHAR(30) CHECK(LEN(SecondName) >= 3 AND SecondName NOT LIKE '%[0-9]%') NOT NULL,
 	ThirdName NVARCHAR(30) CHECK(ThirdName NOT LIKE '%[0-9]%') NULL,
 	LastName NVARCHAR(30) CHECK(LEN(LastName) >= 3 AND LastName NOT LIKE '%[0-9]%') NOT NULL,
-	NationalID NVARCHAR(30) CHECK(LEN(NationalID) = 10) UNIQUE NOT NULL,
-	BirthDate DATE CHECK(BirthDate > '1900-01-01') NOT NULL,
-	Gender BIT NOT NULL,
-	Address NVARCHAR(100) NULL,
-	Phone VARCHAR(10) CHECK(LEN(Phone) = 10 AND Phone NOT LIKE '%[^0-9]%') NOT NULL,
+	NationalID NVARCHAR(30) CHECK(LEN(NationalID) = 10) UNIQUE NOT NULL, -- Should start with 110
+	BirthDate DATE CHECK(BirthDate > '1900-01-01') NOT NULL, -- from 12 years to 90 years
+	Gender BIT NOT NULL, -- mix 
+	Address NVARCHAR(100) NULL, -- random real-like addresses in riyadh saudi arabia
+	Phone VARCHAR(10) CHECK(LEN(Phone) = 10 AND Phone NOT LIKE '%[^0-9]%') NOT NULL, -- should start with 05...
 	Email VARCHAR(80) CHECK (Email LIKE '%_@__%.__%') NOT NULL,
-	CountryID TINYINT FOREIGN KEY REFERENCES Countries(CountryID) NOT NULL,
-	CreatedByUserID SMALLINT NOT NULL,
-	CreatedAt DATETIME NOT NULL,
+	CountryID TINYINT FOREIGN KEY REFERENCES Countries(CountryID) NOT NULL, -- always should be 150
+	CreatedByUserID SMALLINT NOT NULL, -- always 1
+	CreatedAt DATETIME NOT NULL, -- always GETDATE()
 	UpdatedByUserID SMALLINT NULL,
 	UpdatedAt DATETIME NULL
 );
@@ -354,17 +354,6 @@ CREATE TABLE Doctors (
 );
 
 
-CREATE TABLE DoctorAvailabilities(
-	DoctorAvailabilityID SMALLINT PRIMARY KEY IDENTITY(1,1),
-	DoctorID SMALLINT FOREIGN KEY REFERENCES Doctors(DoctorID) NOT NULL,
-	DayOfWeek TINYINT CHECK(DayOfWeek BETWEEN 1 AND 7) NOT NULL, --(1 = Sunday, 2 = Monday, 3 = Tuesday, 4 = Wednesday, 5 = Thursday, 6 = Friday, 7 = Saturday)
-	StartTime TIME NOT NULL,
-	EndTime TIME NOT NULL,
-	CreatedByUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NOT NULL,
-	CreatedAt DATETIME NOT NULL,
-	UpdatedByUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NULL,
-	UpdatedAt DATETIME NULL
-);
 
 CREATE TABLE Receptionists(
 	ReceptionistID SMALLINT PRIMARY KEY IDENTITY(1,1),
@@ -405,7 +394,7 @@ CREATE TABLE Appointments (
 
 CREATE TABLE MedicalRecords(
 	MedicalRecordID INT PRIMARY KEY IDENTITY(1,1),
-	AppointmentID INT NOT NULL  FOREIGN KEY REFERENCES Appointments(AppointmentID)
+	AppointmentID INT NOT NULL  FOREIGN KEY REFERENCES Appointments(AppointmentID),
 	Diagnosis NVARCHAR(600) NOT NULL,
 	Prescription NVARCHAR(600) NULL,
 	Notes NVARCHAR(600) NULL,

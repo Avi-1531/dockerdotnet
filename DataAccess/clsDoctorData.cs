@@ -256,7 +256,7 @@ namespace ClinicManagementDB_DataAccess
 
             return IsAvailable;
         }
-        public static int? GetPersonID(short? DoctorID)
+        public static int? GetDoctorPersonID(short? DoctorID)
         {
             int? PersonID = null;
             try
@@ -264,7 +264,7 @@ namespace ClinicManagementDB_DataAccess
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    using(SqlCommand command = new SqlCommand("GetPersonID", connection))
+                    using(SqlCommand command = new SqlCommand("GetDoctorPersonID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
