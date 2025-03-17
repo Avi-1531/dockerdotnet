@@ -57,10 +57,10 @@ namespace UI.Patient
                 dgvPatients.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
                 dgvPatients.Columns[6].HeaderText = "Medical History";
-                dgvPatients.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 dgvPatients.Columns[7].HeaderText = "E. Contact Name";
-                dgvPatients.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPatients.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 dgvPatients.Columns[8].HeaderText = "E. Contact Phone";
                 dgvPatients.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

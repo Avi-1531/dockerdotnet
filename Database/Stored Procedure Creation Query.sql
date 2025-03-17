@@ -837,7 +837,7 @@ BEGIN
                WHEN DoctorStatus = 4 THEN 'Retired'
                WHEN DoctorStatus = 5 THEN 'Terminated'
            END AS Status,
-           FORMAT(ConsultationFee, 'C', 'en-US') AS ConsultationFees
+		    CAST(ConsultationFee AS VARCHAR(20)) + ' SAR' AS ConsultationFees
     FROM Doctors
     INNER JOIN People ON People.PersonID = Doctors.PersonID
     INNER JOIN Departments ON Departments.DepartmentID = Doctors.DepartmentID;

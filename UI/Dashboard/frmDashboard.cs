@@ -27,7 +27,7 @@ namespace UI.Dashboard
             lblNewPatientsThisWeek.Text = clsPatient.GetNewPatientsThisWeek().ToString();
             lblAveragePatientAge.Text = clsPatient.GetAveragePatientAge().ToString();
             lblTotalAvailableDoctors.Text = clsDoctor.GetTotalAvailableDoctors().ToString();
-            lblAverageConsultationFee.Text = clsDoctor.GetAverageConsultationFee().ToString("C");
+            lblAverageConsultationFee.Text = clsDoctor.GetAverageConsultationFee().ToString("F2");
             lblTotalDepartments.Text = clsDepartment.GetTotalDepartments().ToString();
             lblWelcomeName.Text = $"Welcome {clsGlobal.CurrentUser.Person.FirstName}...";
             lblUsername.Text = $"@{clsGlobal.CurrentUser.Username}";

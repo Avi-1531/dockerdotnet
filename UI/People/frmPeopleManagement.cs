@@ -57,7 +57,7 @@ namespace UI.People
                 dgvPeople.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvPeople.Columns[6].HeaderText = "Email";
-                dgvPeople.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPeople.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 dgvPeople.Columns[7].HeaderText = "Country Name";
                 dgvPeople.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

@@ -53,7 +53,7 @@ namespace UI.Doctor.Controls
             if(_Doctor.ConsultationFee != null)
             {
                 decimal ConsultationFee = (decimal)_Doctor.ConsultationFee;
-                lblConsultFee.Text = ConsultationFee.ToString("C");
+                lblConsultFee.Text = ConsultationFee.ToString("F2");
             }
             else
             {

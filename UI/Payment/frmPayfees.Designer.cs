@@ -30,12 +30,12 @@
         {
             this.btnPay = new System.Windows.Forms.Button();
             this.gbPaymentInformation = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.txtFees = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbMethod = new System.Windows.Forms.ComboBox();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gbPaymentInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -71,11 +71,21 @@
             this.gbPaymentInformation.TabStop = false;
             this.gbPaymentInformation.Text = "Payment Information";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pictureBox4.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
+            this.pictureBox4.Location = new System.Drawing.Point(284, 64);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabStop = false;
+            // 
             // txtFees
             // 
             this.txtFees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.txtFees.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFees.Enabled = false;
             this.txtFees.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.txtFees.Location = new System.Drawing.Point(24, 60);
@@ -133,16 +143,6 @@
             this.lblHeader.Size = new System.Drawing.Size(131, 40);
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = "PAY FEES";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::UI.Properties.Resources.fees;
-            this.pictureBox4.Location = new System.Drawing.Point(284, 64);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 37;
-            this.pictureBox4.TabStop = false;
             // 
             // frmPayfees
             // 

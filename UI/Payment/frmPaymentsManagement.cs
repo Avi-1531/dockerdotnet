@@ -38,7 +38,7 @@ namespace UI.Payment
                 dgvPayments.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvPayments.Columns[2].HeaderText = "Full Name";
-                dgvPayments.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPayments.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 dgvPayments.Columns[3].HeaderText = "Amount";
                 dgvPayments.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -47,18 +47,18 @@ namespace UI.Payment
                 dgvPayments.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvPayments.Columns[5].HeaderText = "Payment Date";
-                dgvPayments.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvPayments.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvPayments.Columns[6].HeaderText = "Created By";
-                dgvPayments.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvPayments.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             }
             lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Payments)";
         }
         private void _LoadStatistics()
         {
-            lblTotalPaymentsAmountValue.Text = clsPayment.GetTotalPaymentsAmount().ToString("C");
-            lblAverageAmountPerPaymentValue.Text = clsPayment.GetAverageAmountPerPayment().ToString("C");
+            lblTotalPaymentsAmountValue.Text = clsPayment.GetTotalPaymentsAmount().ToString("N0");
+            lblAverageAmountPerPaymentValue.Text = clsPayment.GetAverageAmountPerPayment().ToString("F2");
             lblTotalPaymentsValue.Text = clsPayment.GetTotalPayments().ToString();
             lblMostUsedPaymentMethodValue.Text = clsPayment.GetMostUsedPaymentMethod();
         }

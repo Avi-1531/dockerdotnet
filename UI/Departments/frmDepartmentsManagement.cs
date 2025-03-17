@@ -51,7 +51,7 @@ namespace UI.Departments
             lblTotalVisitsValue.Text = clsDepartment.TotalVisitsByDepartmentID(DepartmentID).ToString();
             TotalVisitOfDepartment.Text = $"Total Visits of {DepartmentName} Department";
 
-            lblTotalRevenueValue.Text = clsDepartment.TotalRevenueByDepartmentID(DepartmentID).ToString("C");
+            lblTotalRevenueValue.Text = clsDepartment.TotalRevenueByDepartmentID(DepartmentID).ToString("N0");
             lblTotalRevenueOfDepartment.Text = $"Total Revenue of {DepartmentName} Department";
 
         }

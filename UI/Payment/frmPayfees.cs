@@ -32,7 +32,7 @@ namespace UI.Payment
             if(_Appointment.AppointmentID == null)
                 return;
 
-            txtFees.Text = _fees.ToString("C");
+            txtFees.Text = _fees.ToString("F2");
             cbMethod.SelectedIndex = 0;
         }
         private void _Save()
@@ -60,7 +60,7 @@ namespace UI.Payment
 
 
 
-            if(MessageBox.Show($"Are you sure you want to pay {_Payment.Amount.ToString("C")}?", "Confirm",
+            if(MessageBox.Show($"Are you sure you want to pay {_Payment.Amount.ToString("F2")} SAR?", "Confirm",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if(_Payment.Save())
