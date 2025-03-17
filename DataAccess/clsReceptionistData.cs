@@ -187,7 +187,7 @@ namespace ClinicManagementDB_DataAccess
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    using(SqlCommand command = new SqlCommand("GetPersonID", connection))
+                    using(SqlCommand command = new SqlCommand("GetReceptionistPersonID", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ReceptionistID", (object)ReceptionistID ?? DBNull.Value);

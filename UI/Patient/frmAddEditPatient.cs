@@ -131,7 +131,7 @@ namespace UI.Patient
         {
             TextBox textbox = (TextBox)sender;
             if(textbox.Text.Length >= 40 ||
-                !(char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar)))
+                !(char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)))
             {
                 e.Handled = true;
             }
@@ -139,21 +139,13 @@ namespace UI.Patient
         private void PreventNonDigitInput(object sender, KeyPressEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
-            if(textbox.Text.Length >= 40 ||
-                !(char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-        }
-        private void PreventNonDigitAndNonLetterAndNonPunctuationInput(object sender, KeyPressEventArgs e)
-        {
-            TextBox textbox = (TextBox)sender;
-            if(textbox.Text.Length >= 40 ||
-                !(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar)) || char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+            if(char.IsControl(e.KeyChar))
+                return;
 
+            if((textbox.Text.Length >= 10 || !(char.IsDigit(e.KeyChar))))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

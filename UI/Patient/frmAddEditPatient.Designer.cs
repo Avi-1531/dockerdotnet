@@ -250,7 +250,6 @@
             this.txtMedicalHistory.TabIndex = 18;
             this.txtMedicalHistory.Tag = "0";
             this.txtMedicalHistory.UseSystemPasswordChar = true;
-            this.txtMedicalHistory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreventNonDigitAndNonLetterAndNonPunctuationInput);
             // 
             // txtEmergencyContactPhone
             // 
@@ -291,7 +290,6 @@
             this.txtAllergies.TabIndex = 18;
             this.txtAllergies.Tag = "0";
             this.txtAllergies.UseSystemPasswordChar = true;
-            this.txtAllergies.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PreventNonDigitAndNonLetterAndNonPunctuationInput);
             // 
             // btnNext
             // 

@@ -909,7 +909,7 @@ CREATE PROCEDURE TotalDoctorsByDepartmentID
     @DepartmentID TINYINT
 AS
 BEGIN
-    SELECT COUNT(*) AS TotalDoctors FROM Doctors WHERE DepartmentID = @DepartmentID;
+    SELECT CAST(COUNT(*)  AS SMALLINT) AS TotalDoctors FROM Doctors WHERE DepartmentID = @DepartmentID;
 END;
 GO
 GO

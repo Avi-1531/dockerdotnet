@@ -34,22 +34,22 @@ namespace UI.MedicalRecord
                 dgvMedicalRecords.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvMedicalRecords.Columns[1].HeaderText = "App. ID";
-                dgvMedicalRecords.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvMedicalRecords.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvMedicalRecords.Columns[2].HeaderText = "Diagnosis";
-                dgvMedicalRecords.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvMedicalRecords.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvMedicalRecords.Columns[3].HeaderText = "Prescription";
                 dgvMedicalRecords.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 dgvMedicalRecords.Columns[4].HeaderText = "Notes";
-                dgvMedicalRecords.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvMedicalRecords.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 dgvMedicalRecords.Columns[5].HeaderText = "Created By";
-                dgvMedicalRecords.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvMedicalRecords.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvMedicalRecords.Columns[6].HeaderText = "Created At";
-                dgvMedicalRecords.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvMedicalRecords.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
 
             lblRecordsValue.Text = dgvMedicalRecords.Rows.Count.ToString();

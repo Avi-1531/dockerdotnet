@@ -83,7 +83,7 @@ namespace UI.Receptionist
                     cbStatus.SelectedItem = "Resigned";
                     break;
                 case 4:
-                    cbStatus.SelectedItem = "Retired";
+                    cbStatus.SelectedItem = "Terminated";
                     break;
             }
             dtpHireDate.Value = _Receptionist.HireDate;

@@ -156,8 +156,11 @@ namespace UI.People
         private void PreventNonDigitInput(object sender, KeyPressEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
+            if(char.IsControl(e.KeyChar))
+                return;
+
             //// 10 to limit Phone and National ID inupts in this form.
-            if((textbox.Text.Length >= 10 || !(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))))
+            if((textbox.Text.Length >= 10 || !(char.IsDigit(e.KeyChar))))
             {
                 e.Handled = true;
             }
