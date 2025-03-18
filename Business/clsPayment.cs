@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -77,10 +78,13 @@ namespace ClinicManagementDB_Business
             => clsPaymentData.DoesPaymentExist(PaymentID);
         public static DataTable GetPayments(short PageNumber, int PageSize, ref int Records)
             => clsPaymentData.GetAllPayments(PageNumber, PageSize, ref Records);
-
-        public static decimal GetTotalPaymentsAmount() => clsPaymentData.GetTotalPaymentsAmount();
-        public static decimal GetAverageAmountPerPayment() => clsPaymentData.GetAverageAmountPerPayment();
-        public static int GetTotalPayments() => clsPaymentData.GetTotalPayments();
-        public static string GetMostUsedPaymentMethod() => clsPaymentData.GetMostUsedPaymentMethod();
+        public static async Task<decimal> GetTotalPaymentsAmountAsync() 
+            => await clsPaymentData.GetTotalPaymentsAmountAsync();
+        public static async Task<decimal> GetAverageAmountPerPaymentAsync() 
+            => await clsPaymentData.GetAverageAmountPerPaymentAsync();
+        public static async Task<int> GetTotalPaymentsAsync() 
+            => await clsPaymentData.GetTotalPaymentsAsync();
+        public static async Task<string> GetMostUsedPaymentMethodAsync() 
+            => await clsPaymentData.GetMostUsedPaymentMethodAsync();
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace ClinicManagementDB_DataAccess
 {
@@ -395,99 +396,91 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
-        public static int GetTotalPatients()
+        public static async Task<int> GetTotalPatientsAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetTotalPatients", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            int GetTotalPatients = (int)reader["TotalPatients"];
-                            return GetTotalPatients;
+                            if(await reader.ReadAsync())
+                            {
+                                int totalPatients = (int)reader["TotalPatients"];
+                                return totalPatients;
+                            }
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
 
             return -1;
         }
-        public static int GetNewPatientsThisWeek()
+        public static async Task<int> GetNewPatientsThisWeekAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetNewPatientsThisWeek", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            int NewPatientsThisWeek = (int)reader["NewPatientsThisWeek"];
-                            return NewPatientsThisWeek;
+                            if(await reader.ReadAsync())
+                            {
+                                int newPatientsThisWeek = (int)reader["NewPatientsThisWeek"];
+                                return newPatientsThisWeek;
+                            }
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
 
             return -1;
         }
-        public static int GetAveragePatientAge()
+        public static async Task<int> GetAveragePatientAgeAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetAveragePatientAge", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            int AveragePatientAge = (int)reader["AveragePatientAge"];
-                            return AveragePatientAge;
+                            if(await reader.ReadAsync())
+                            {
+                                int averagePatientAge = (int)reader["AveragePatientAge"];
+                                return averagePatientAge;
+                            }
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
 
             return -1;
         }
+
 
     }
 }

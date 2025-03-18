@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace ClinicManagementDB_DataAccess
 {
@@ -83,127 +84,6 @@ namespace ClinicManagementDB_DataAccess
 
             return PaymentID;
         }
-        public static decimal GetTotalPaymentsAmount()
-        {
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("GetTotalPaymentsAmount", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-                                return (decimal)reader["TotalPaymentsAmount"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return 0;
-        }
-        public static decimal GetAverageAmountPerPayment()
-        {
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("GetAverageAmountPerPayment", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-                                return (decimal)reader["AverageAmountPerPayment"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return 0;
-        }
-        public static int GetTotalPayments()
-        {
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("GetTotalPayments", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-                                return (int)reader["TotalPayments"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return 0;
-        }
-        public static string GetMostUsedPaymentMethod()
-        {
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("GetMostUsedPaymentMethod", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-                                return (string)reader["MostUsedPaymentMethod"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return "Not Known";
-        }
-
         public static bool DoesPaymentExist(int? PaymentID)
         {
             bool isFound = false;
@@ -233,7 +113,6 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-
         public static DataTable GetAllPayments(short PageNumber, int PageSize, ref int Records)
         {
             DataTable dt = new DataTable();
@@ -271,6 +150,106 @@ namespace ClinicManagementDB_DataAccess
             }
 
             return dt;
+        }
+        public static async Task<decimal> GetTotalPaymentsAmountAsync()
+        {
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using(SqlCommand command = new SqlCommand("GetTotalPaymentsAmount", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+                                return (decimal)reader["TotalPaymentsAmount"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+            return 0;
+        }
+        public static async Task<decimal> GetAverageAmountPerPaymentAsync()
+        {
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using(SqlCommand command = new SqlCommand("GetAverageAmountPerPayment", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+                                return (decimal)reader["AverageAmountPerPayment"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+            return 0;
+        }
+        public static async Task<int> GetTotalPaymentsAsync()
+        {
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using(SqlCommand command = new SqlCommand("GetTotalPayments", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+                                return (int)reader["TotalPayments"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+            return 0;
+        }
+        public static async Task<string> GetMostUsedPaymentMethodAsync()
+        {
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    using(SqlCommand command = new SqlCommand("GetMostUsedPaymentMethod", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+                                return (string)reader["MostUsedPaymentMethod"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+            return "Not Known";
         }
     }
 }

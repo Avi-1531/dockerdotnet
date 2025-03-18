@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace ClinicManagementDB_DataAccess
 {
@@ -441,97 +442,76 @@ namespace ClinicManagementDB_DataAccess
 
             return null;
         }
-        public static int GetTodayAppointmentsCount()
+        public static async Task<int> GetTodayAppointmentsCountAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetTodayAppointmentsCount", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        SqlDataReader reader = await command.ExecuteReaderAsync();
+                        if(await reader.ReadAsync())
                         {
-                            int TodayAppointmentsCount = (int)reader["TodayAppointmentsCount"];
-                            return TodayAppointmentsCount;
+                            int todayAppointmentsCount = (int)reader["TodayAppointmentsCount"];
+                            return todayAppointmentsCount;
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
-
             return -1;
         }
-        public static int GetWeeklyAppointmentsCount()
+        public static async Task<int> GetWeeklyAppointmentsCountAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetWeeklyAppointmentsCount", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        SqlDataReader reader = await command.ExecuteReaderAsync();
+                        if(await reader.ReadAsync())
                         {
-                            int WeeklyAppointmentsCount = (int)reader["WeeklyAppointmentsCount"];
-                            return WeeklyAppointmentsCount;
+                            int weeklyAppointmentsCount = (int)reader["WeeklyAppointmentsCount"];
+                            return weeklyAppointmentsCount;
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
-
             return -1;
         }
-        public static int GetCreatedAppointmentsThisWeekCount()
+        public static async Task<int> GetCreatedAppointmentsThisWeekCountAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetCreatedAppointmentsThisWeekCount", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        SqlDataReader reader = await command.ExecuteReaderAsync();
+                        if(await reader.ReadAsync())
                         {
-                            int CreatedAppointmentsThisWeekCount = (int)reader["CreatedAppointmentsThisWeekCount"];
-                            return CreatedAppointmentsThisWeekCount;
+                            int createdAppointmentsThisWeekCount = (int)reader["CreatedAppointmentsThisWeekCount"];
+                            return createdAppointmentsThisWeekCount;
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
-
             return -1;
         }
 

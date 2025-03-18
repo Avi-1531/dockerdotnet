@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Threading.Tasks;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -89,15 +90,15 @@ namespace ClinicManagementDB_Business
             => clsDepartmentData.DeleteDepartment(DepartmentID);
         public static bool DoesDepartmentExist(byte? DepartmentID)
             => clsDepartmentData.DoesDepartmentExist(DepartmentID);
-        public static short TotalDoctorsByDepartmentID(byte? DepartmentID)
-            => clsDepartmentData.TotalDoctorsByDepartmentID(DepartmentID);
-        public static int TotalVisitsByDepartmentID(byte? DepartmentID)
-            => clsDepartmentData.TotalVisitsByDepartmentID(DepartmentID);
-        public static decimal TotalRevenueByDepartmentID(byte? DepartmentID)
-            => clsDepartmentData.TotalRevenueByDepartmentID(DepartmentID);
+        public async static Task<short> TotalDoctorsByDepartmentIDAsync(byte? DepartmentID)
+            => await clsDepartmentData.TotalDoctorsByDepartmentIDAsync(DepartmentID);
+        public async static Task<int> TotalVisitsByDepartmentIDAsync(byte? DepartmentID)
+            => await clsDepartmentData.TotalVisitsByDepartmentIDAsync(DepartmentID);
+        public async static Task<decimal> TotalRevenueByDepartmentIDAsync(byte? DepartmentID)
+            => await clsDepartmentData.TotalRevenueByDepartmentIDAsync(DepartmentID);
         public static DataTable GetDepartments()
             => clsDepartmentData.GetAllDepartments();
-        public static int GetTotalDepartments() 
-            => clsDepartmentData.GetTotalDepartments();
+        public async static Task<int> GetTotalDepartmentsAsync() 
+            => await clsDepartmentData.GetTotalDepartmentsAsync();
     }
 }

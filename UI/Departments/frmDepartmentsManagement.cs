@@ -41,19 +41,32 @@ namespace UI.Departments
 
             lblRecordsValue.Text = dgvDepartments.Rows.Count.ToString();
             lblTotalDepartmentsValue.Text = dgvDepartments.Rows.Count.ToString();
-
+            lblTotalDepartments.Visible = true;
+            lblTotalDepartmentsValue.Visible = true;
         }
-        private void _LoadStatistics(byte DepartmentID, string DepartmentName)
+        private async void _LoadStatistics(byte DepartmentID, string DepartmentName)
         {
-            lblTotalDoctorsValue.Text = clsDepartment.TotalDoctorsByDepartmentID(DepartmentID).ToString();
+            var totalDoctorsTask = clsDepartment.TotalDoctorsByDepartmentIDAsync(DepartmentID);
+            var totalVisitsTask = clsDepartment.TotalVisitsByDepartmentIDAsync(DepartmentID);
+            var totalRevenueTask = clsDepartment.TotalRevenueByDepartmentIDAsync(DepartmentID);
+
+            await Task.WhenAll(totalDoctorsTask, totalVisitsTask, totalRevenueTask);
+
+            lblTotalDoctorsValue.Text = totalDoctorsTask.Result.ToString();
             lblTotalDoctorsInDepartment.Text = $"Total Doctors in {DepartmentName} Department";
+            lblTotalDoctorsInDepartment.Visible = true;
+            lblTotalDoctorsValue.Visible = true;
 
-            lblTotalVisitsValue.Text = clsDepartment.TotalVisitsByDepartmentID(DepartmentID).ToString();
-            TotalVisitOfDepartment.Text = $"Total Visits of {DepartmentName} Department";
+            lblTotalVisitsValue.Text = totalVisitsTask.Result.ToString();
+            lblTotalVisitOfDepartment.Text = $"Total Visits of {DepartmentName} Department";
+            lblTotalVisitOfDepartment.Visible = true;
+            lblTotalVisitsValue.Visible = true;
 
-            lblTotalRevenueValue.Text = clsDepartment.TotalRevenueByDepartmentID(DepartmentID).ToString("N0");
+            lblTotalRevenueValue.Text = totalRevenueTask.Result.ToString("N0");
             lblTotalRevenueOfDepartment.Text = $"Total Revenue of {DepartmentName} Department";
-
+            pbRiyalSymbol.Visible = true;
+            lblTotalRevenueOfDepartment.Visible = true;
+            lblTotalRevenueValue.Visible = true;
         }
         private void frmDepartmentsManagement_Load(object sender, EventArgs e)
         {
@@ -79,5 +92,6 @@ namespace UI.Departments
             frmAdd.ShowDialog();
             _LoadData();
         }
+
     }
 }

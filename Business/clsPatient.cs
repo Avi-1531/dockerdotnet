@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Threading.Tasks;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -145,12 +146,15 @@ namespace ClinicManagementDB_Business
            => clsPatientData.GetPatientWithNationalID(NationalID);
         public static DataTable GetPatientWithName(short PageNumber, int PageSize, ref int Records, string Name)
             => clsPatientData.GetPatientWithName(PageNumber, PageSize, ref Records, Name);
-        public static int GetTotalPatients()
-            => clsPatientData.GetTotalPatients();
-        public static int GetAveragePatientAge()
-           => clsPatientData.GetAveragePatientAge();
-        public static int GetNewPatientsThisWeek()
-           => clsPatientData.GetNewPatientsThisWeek();
+        public static async Task<int> GetTotalPatientsAsync()
+            => await clsPatientData.GetTotalPatientsAsync();
+
+        public static async Task<int> GetAveragePatientAgeAsync()
+            => await clsPatientData.GetAveragePatientAgeAsync();
+
+        public static async Task<int> GetNewPatientsThisWeekAsync()
+            => await clsPatientData.GetNewPatientsThisWeekAsync();
+
 
     }
 }

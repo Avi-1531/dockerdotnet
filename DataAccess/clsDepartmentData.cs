@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace ClinicManagementDB_DataAccess
 {
@@ -206,111 +207,6 @@ namespace ClinicManagementDB_DataAccess
 
             return isFound;
         }
-        public static short TotalDoctorsByDepartmentID(byte? DepartmentID)
-        {
-            short TotalDoctors = 0;
-
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("TotalDoctorsByDepartmentID", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-
-                                TotalDoctors = (short)reader["TotalDoctors"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return TotalDoctors;
-        }
-        public static int TotalVisitsByDepartmentID(byte? DepartmentID)
-        {
-            int TotalVisits = 0;
-
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("TotalVisitsByDepartmentID", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-
-                                TotalVisits = (int)reader["TotalVisits"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return TotalVisits;
-        }
-        public static decimal TotalRevenueByDepartmentID(byte? DepartmentID)
-        {
-            decimal TotalRevenue = 0;
-
-            try
-            {
-                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                {
-
-                    using(SqlCommand command = new SqlCommand("TotalRevenueByDepartmentID", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
-
-                        connection.Open();
-
-                        using(SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if(reader.Read())
-                            {
-
-
-                                TotalRevenue = (decimal)reader["TotalRevenue"];
-                            }
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-            }
-
-            return TotalRevenue;
-        }
         public static DataTable GetAllDepartments()
         {
             DataTable dt = new DataTable();
@@ -338,8 +234,112 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
+        public async static Task<short> TotalDoctorsByDepartmentIDAsync(byte? DepartmentID)
+        {
+            short TotalDoctors = 0;
 
-        public static int GetTotalDepartments()
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("TotalDoctorsByDepartmentID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
+
+                        await connection.OpenAsync();
+
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+
+
+                                TotalDoctors = (short)reader["TotalDoctors"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+
+            return TotalDoctors;
+        }
+        public async static Task<int> TotalVisitsByDepartmentIDAsync(byte? DepartmentID)
+        {
+            int TotalVisits = 0;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("TotalVisitsByDepartmentID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
+
+                        await connection.OpenAsync();
+
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+
+
+                                TotalVisits = (int)reader["TotalVisits"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+
+            return TotalVisits;
+        }
+        public async static Task<decimal> TotalRevenueByDepartmentIDAsync(byte? DepartmentID)
+        {
+            decimal TotalRevenue = 0;
+
+            try
+            {
+                using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+
+                    using(SqlCommand command = new SqlCommand("TotalRevenueByDepartmentID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@DepartmentID", (object)DepartmentID ?? DBNull.Value);
+
+                        await connection.OpenAsync();
+
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if(await reader.ReadAsync())
+                            {
+
+
+                                TotalRevenue = (decimal)reader["TotalRevenue"];
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+            }
+
+            return TotalRevenue;
+        }
+        public async static Task<int> GetTotalDepartmentsAsync()
         {
 
             try
@@ -351,10 +351,10 @@ namespace ClinicManagementDB_DataAccess
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
+                        await connection.OpenAsync();
+                        SqlDataReader reader = await command.ExecuteReaderAsync();
 
-                        if(reader.Read())
+                        if(await reader.ReadAsync())
                         {
                             int TotalDepartments = (int)reader["TotalDepartments"];
                             return TotalDepartments;
@@ -370,6 +370,5 @@ namespace ClinicManagementDB_DataAccess
 
             return -1;
         }
-
     }
 }

@@ -55,16 +55,36 @@ namespace UI.Payment
             }
             lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Payments)";
         }
-        private void _LoadStatistics()
+        private async Task _LoadStatisticsAsync()
         {
-            lblTotalPaymentsAmountValue.Text = clsPayment.GetTotalPaymentsAmount().ToString("N0");
-            lblAverageAmountPerPaymentValue.Text = clsPayment.GetAverageAmountPerPayment().ToString("F2");
-            lblTotalPaymentsValue.Text = clsPayment.GetTotalPayments().ToString();
-            lblMostUsedPaymentMethodValue.Text = clsPayment.GetMostUsedPaymentMethod();
+            var totalPaymentsAmountTask = clsPayment.GetTotalPaymentsAmountAsync();
+            var averageAmountPerPaymentTask = clsPayment.GetAverageAmountPerPaymentAsync();
+            var totalPaymentsTask = clsPayment.GetTotalPaymentsAsync();
+            var mostUsedPaymentMethodTask = clsPayment.GetMostUsedPaymentMethodAsync();
+
+            await Task.WhenAll(totalPaymentsAmountTask, averageAmountPerPaymentTask, totalPaymentsTask, mostUsedPaymentMethodTask);
+
+            lblTotalPaymentsAmountValue.Text = totalPaymentsAmountTask.Result.ToString("N0");
+            lblTotalPaymentsAmountValue.Visible = true;
+            pbRiyalSymbol1.Visible = true;
+            lblTotalPaymentsAmount.Visible = true;
+
+            lblAverageAmountPerPaymentValue.Text = averageAmountPerPaymentTask.Result.ToString("F2");
+            lblAverageAmountPerPaymentValue.Visible = true;
+            pbRiyalSymbol2.Visible = true;
+            lblAverageAmountPerPayment.Visible = true;
+
+            lblTotalPaymentsValue.Text = totalPaymentsTask.Result.ToString();
+            lblTotalPaymentsValue.Visible = true;
+            lblTotalPayments.Visible = true;
+
+            lblMostUsedPaymentMethodValue.Text = mostUsedPaymentMethodTask.Result;
+            lblMostUsedPaymentMethodValue.Visible = true;
+            lblIsMostUsedPaymentMethod.Visible = true;
         }
         private void frmPaymentsManagement_Load(object sender, EventArgs e)
         {
-            _LoadStatistics();
+            _LoadStatisticsAsync();
             _LoadData();
             dgvPayments.ClearSelection();
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -125,12 +126,12 @@ namespace ClinicManagementDB_Business
             => clsAppointmentData.HasMedicalRecord(this.AppointmentID);
         public int? GetMedicalRecordID()
             => clsAppointmentData.GetMedicalRecordID(this.AppointmentID);
-        public static int GetTodayAppointmentsCount()
-            => clsAppointmentData.GetTodayAppointmentsCount();
-        public static int GetCreatedAppointmentsThisWeekCount()
-            => clsAppointmentData.GetCreatedAppointmentsThisWeekCount();
-        public static int GetWeeklyAppointmentsCount()
-            => clsAppointmentData.GetWeeklyAppointmentsCount();
+        public async static Task<int> GetTodayAppointmentsCountAsync()
+            => await clsAppointmentData.GetTodayAppointmentsCountAsync();
+        public async static Task<int> GetCreatedAppointmentsThisWeekCountAsync()
+            => await clsAppointmentData.GetCreatedAppointmentsThisWeekCountAsync();
+        public async static Task<int> GetWeeklyAppointmentsCountAsync()
+            => await clsAppointmentData.GetWeeklyAppointmentsCountAsync();
 
         public static DataTable GetAllAppointments(short PageNumber, int PageSize, ref int Records)
             => clsAppointmentData.GetAllAppointments(PageNumber, PageSize, ref Records);

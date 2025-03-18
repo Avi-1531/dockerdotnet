@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace ClinicManagementDB_DataAccess
 {
@@ -340,68 +341,63 @@ namespace ClinicManagementDB_DataAccess
 
             return dt;
         }
-        public static decimal GetAverageConsultationFee()
+        public static async Task<decimal> GetAverageConsultationFeeAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetAverageConsultationFee", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            decimal AverageConsultationFee = (decimal)reader["AverageConsultationFee"];
-                            return AverageConsultationFee;
+                            if(await reader.ReadAsync())
+                            {
+                                decimal averageConsultationFee = (decimal)reader["AverageConsultationFee"];
+                                return averageConsultationFee;
+                            }
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
 
             return -1;
         }
-        public static int GetTotalAvailableDoctors()
+        public static async Task<int> GetTotalAvailableDoctorsAsync()
         {
-
             try
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-
                     using(SqlCommand command = new SqlCommand("GetTotalAvailableDoctors", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        connection.Open();
-                        SqlDataReader reader = command.ExecuteReader();
-
-                        if(reader.Read())
+                        await connection.OpenAsync();
+                        using(SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            int TotalAvailableDoctors = (int)reader["TotalAvailableDoctors"];
-                            return TotalAvailableDoctors;
+                            if(await reader.ReadAsync())
+                            {
+                                int totalAvailableDoctors = (int)reader["TotalAvailableDoctors"];
+                                return totalAvailableDoctors;
+                            }
                         }
-
                     }
                 }
             }
             catch(Exception ex)
             {
-
             }
 
             return -1;
         }
+
 
     }
 }

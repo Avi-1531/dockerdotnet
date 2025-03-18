@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using ClinicManagementDB_DataAccess;
 
 namespace ClinicManagementDB_Business
@@ -181,11 +182,12 @@ namespace ClinicManagementDB_Business
             => clsDoctorData.GetAllDoctors();
         public bool IsDoctorAvailable(DateTime appointmentDate) 
             => clsDoctorData.IsDoctorAvailable(this.DoctorID, appointmentDate);
+        public static async Task<decimal> GetAverageConsultationFeeAsync()
+            => await clsDoctorData.GetAverageConsultationFeeAsync();
 
-        public static decimal GetAverageConsultationFee() 
-            => clsDoctorData.GetAverageConsultationFee();
-        public static int GetTotalAvailableDoctors()
-            => clsDoctorData.GetTotalAvailableDoctors();
+        public static async Task<int> GetTotalAvailableDoctorsAsync()
+            => await clsDoctorData.GetTotalAvailableDoctorsAsync();
+
 
     }
 }

@@ -34,18 +34,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMostUsedPaymentMethodValue = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lblIsMostUsedPaymentMethod = new System.Windows.Forms.Label();
             this.lblTotalPaymentsValue = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblTotalPayments = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblAverageAmountPerPaymentValue = new System.Windows.Forms.Label();
             this.lblAverageAmountPerPayment = new System.Windows.Forms.Label();
             this.lblTotalPaymentsAmountValue = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pbRiyalSymbol2 = new System.Windows.Forms.PictureBox();
+            this.lblTotalPaymentsAmount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pbRiyalSymbol1 = new System.Windows.Forms.PictureBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvPayments = new System.Windows.Forms.DataGridView();
@@ -56,9 +56,9 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).BeginInit();
             this.SuspendLayout();
@@ -72,26 +72,28 @@
             this.lblMostUsedPaymentMethodValue.Size = new System.Drawing.Size(100, 45);
             this.lblMostUsedPaymentMethodValue.TabIndex = 16;
             this.lblMostUsedPaymentMethodValue.Text = "[????]";
+            this.lblMostUsedPaymentMethodValue.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
             this.panel4.Controls.Add(this.lblMostUsedPaymentMethodValue);
-            this.panel4.Controls.Add(this.label33);
+            this.panel4.Controls.Add(this.lblIsMostUsedPaymentMethod);
             this.panel4.Location = new System.Drawing.Point(1023, 652);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(289, 121);
             this.panel4.TabIndex = 22;
             // 
-            // label33
+            // lblIsMostUsedPaymentMethod
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(12, 77);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(275, 25);
-            this.label33.TabIndex = 16;
-            this.label33.Text = "Is Most Used Payment Method";
+            this.lblIsMostUsedPaymentMethod.AutoSize = true;
+            this.lblIsMostUsedPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsMostUsedPaymentMethod.Location = new System.Drawing.Point(12, 77);
+            this.lblIsMostUsedPaymentMethod.Name = "lblIsMostUsedPaymentMethod";
+            this.lblIsMostUsedPaymentMethod.Size = new System.Drawing.Size(275, 25);
+            this.lblIsMostUsedPaymentMethod.TabIndex = 16;
+            this.lblIsMostUsedPaymentMethod.Text = "Is Most Used Payment Method";
+            this.lblIsMostUsedPaymentMethod.Visible = false;
             // 
             // lblTotalPaymentsValue
             // 
@@ -102,22 +104,24 @@
             this.lblTotalPaymentsValue.Size = new System.Drawing.Size(114, 50);
             this.lblTotalPaymentsValue.TabIndex = 16;
             this.lblTotalPaymentsValue.Text = "[????]";
+            this.lblTotalPaymentsValue.Visible = false;
             // 
-            // label22
+            // lblTotalPayments
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(12, 77);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(141, 25);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Total Payments";
+            this.lblTotalPayments.AutoSize = true;
+            this.lblTotalPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPayments.Location = new System.Drawing.Point(12, 77);
+            this.lblTotalPayments.Name = "lblTotalPayments";
+            this.lblTotalPayments.Size = new System.Drawing.Size(141, 25);
+            this.lblTotalPayments.TabIndex = 16;
+            this.lblTotalPayments.Text = "Total Payments";
+            this.lblTotalPayments.Visible = false;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(117)))));
             this.panel3.Controls.Add(this.lblTotalPaymentsValue);
-            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.lblTotalPayments);
             this.panel3.Location = new System.Drawing.Point(1023, 515);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(289, 121);
@@ -132,6 +136,7 @@
             this.lblAverageAmountPerPaymentValue.Size = new System.Drawing.Size(114, 50);
             this.lblAverageAmountPerPaymentValue.TabIndex = 16;
             this.lblAverageAmountPerPaymentValue.Text = "[????]";
+            this.lblAverageAmountPerPaymentValue.Visible = false;
             // 
             // lblAverageAmountPerPayment
             // 
@@ -142,6 +147,7 @@
             this.lblAverageAmountPerPayment.Size = new System.Drawing.Size(270, 25);
             this.lblAverageAmountPerPayment.TabIndex = 16;
             this.lblAverageAmountPerPayment.Text = "Average Amount Per Payment";
+            this.lblAverageAmountPerPayment.Visible = false;
             // 
             // lblTotalPaymentsAmountValue
             // 
@@ -152,11 +158,12 @@
             this.lblTotalPaymentsAmountValue.Size = new System.Drawing.Size(100, 45);
             this.lblTotalPaymentsAmountValue.TabIndex = 16;
             this.lblTotalPaymentsAmountValue.Text = "[????]";
+            this.lblTotalPaymentsAmountValue.Visible = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(117)))));
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pbRiyalSymbol2);
             this.panel2.Controls.Add(this.lblAverageAmountPerPaymentValue);
             this.panel2.Controls.Add(this.lblAverageAmountPerPayment);
             this.panel2.Location = new System.Drawing.Point(1023, 378);
@@ -164,46 +171,49 @@
             this.panel2.Size = new System.Drawing.Size(289, 121);
             this.panel2.TabIndex = 24;
             // 
-            // pictureBox2
+            // pbRiyalSymbol2
             // 
-            this.pictureBox2.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 41;
-            this.pictureBox2.TabStop = false;
+            this.pbRiyalSymbol2.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
+            this.pbRiyalSymbol2.Location = new System.Drawing.Point(7, 28);
+            this.pbRiyalSymbol2.Name = "pbRiyalSymbol2";
+            this.pbRiyalSymbol2.Size = new System.Drawing.Size(42, 38);
+            this.pbRiyalSymbol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRiyalSymbol2.TabIndex = 41;
+            this.pbRiyalSymbol2.TabStop = false;
+            this.pbRiyalSymbol2.Visible = false;
             // 
-            // label1
+            // lblTotalPaymentsAmount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 32);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Total Payments Amount";
+            this.lblTotalPaymentsAmount.AutoSize = true;
+            this.lblTotalPaymentsAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPaymentsAmount.Location = new System.Drawing.Point(12, 77);
+            this.lblTotalPaymentsAmount.Name = "lblTotalPaymentsAmount";
+            this.lblTotalPaymentsAmount.Size = new System.Drawing.Size(274, 32);
+            this.lblTotalPaymentsAmount.TabIndex = 16;
+            this.lblTotalPaymentsAmount.Text = "Total Payments Amount";
+            this.lblTotalPaymentsAmount.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
-            this.panel1.Controls.Add(this.pictureBox14);
+            this.panel1.Controls.Add(this.pbRiyalSymbol1);
             this.panel1.Controls.Add(this.lblTotalPaymentsAmountValue);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblTotalPaymentsAmount);
             this.panel1.Location = new System.Drawing.Point(1023, 241);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(289, 121);
             this.panel1.TabIndex = 25;
             // 
-            // pictureBox14
+            // pbRiyalSymbol1
             // 
-            this.pictureBox14.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
-            this.pictureBox14.Location = new System.Drawing.Point(8, 31);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(40, 35);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 41;
-            this.pictureBox14.TabStop = false;
+            this.pbRiyalSymbol1.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
+            this.pbRiyalSymbol1.Location = new System.Drawing.Point(8, 31);
+            this.pbRiyalSymbol1.Name = "pbRiyalSymbol1";
+            this.pbRiyalSymbol1.Size = new System.Drawing.Size(40, 35);
+            this.pbRiyalSymbol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRiyalSymbol1.TabIndex = 41;
+            this.pbRiyalSymbol1.TabStop = false;
+            this.pbRiyalSymbol1.Visible = false;
             // 
             // lblHeader
             // 
@@ -363,10 +373,10 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).EndInit();
             this.ResumeLayout(false);
@@ -377,15 +387,15 @@
         #endregion
         private System.Windows.Forms.Label lblMostUsedPaymentMethodValue;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblIsMostUsedPaymentMethod;
         private System.Windows.Forms.Label lblTotalPaymentsValue;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblTotalPayments;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblAverageAmountPerPaymentValue;
         private System.Windows.Forms.Label lblAverageAmountPerPayment;
         private System.Windows.Forms.Label lblTotalPaymentsAmountValue;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotalPaymentsAmount;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -394,7 +404,7 @@
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
         private System.Windows.Forms.Label lblOfTotalPagesAndRows;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pbRiyalSymbol2;
+        private System.Windows.Forms.PictureBox pbRiyalSymbol1;
     }
 }
