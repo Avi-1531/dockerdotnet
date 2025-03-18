@@ -401,3 +401,29 @@ CREATE TABLE MedicalRecords(
 	CreatedByUserID SMALLINT FOREIGN KEY REFERENCES Users(UserID) NOT NULL,
 	CreatedAt DATETIME NOT NULL
 );
+
+
+CREATE INDEX IX_Payments_PaymentDate
+ON Payments(PaymentDate);
+
+CREATE INDEX IX_Appointments_PaymentID
+ON Appointments(PaymentID);
+
+CREATE INDEX IX_People_CreatedAt
+ON People(CreatedAt);
+
+CREATE INDEX IX_People_FirstName
+ON People(FirstName);
+
+CREATE INDEX IX_Patients_CreatedAt
+ON Patients(CreatedAt);
+
+CREATE INDEX IX_Appointments_CreatedAt
+ON Appointments(CreatedAt);
+
+CREATE INDEX IX_Patients_PersonID
+ON Patients(PersonID);
+
+CREATE INDEX IX_Doctors_DoctorStatus_Equal_One_Filtered
+ON Doctors(DoctorStatus)
+WHERE DoctorStatus = 1;

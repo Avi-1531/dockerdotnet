@@ -1358,29 +1358,42 @@ GO
 CREATE PROCEDURE GetTodayAppointmentsCount
 AS
 BEGIN
+	DECLARE @TodayStart DATETIME = CAST(GETDATE() AS DATE);
+	DECLARE @TodayEnd DATETIME = DATEADD(DAY,1,@TodayStart);
+
     SELECT COUNT(*) AS TodayAppointmentsCount
-    FROM Appointments WHERE CAST(AppointmentDate AS DATE) = CAST(GETDATE() AS DATE);
+    FROM Appointments 
+	WHERE AppointmentDate >= @TodayStart AND AppointmentDate < @TodayEnd
 END
 GO
 
 CREATE PROCEDURE GetWeeklyAppointmentsCount
 AS
 BEGIN
+	DECLARE @StartOfWeek DATE;
+	DECLARE @EndOfWeek DATE;
 
-    SELECT COUNT(*) AS WeeklyAppointmentsCount
+	SET @StartOfWeek = DATEADD(DAY, -DATEPART(WEEKDAY,GETDATE()) + 1 ,GETDATE());
+	SET @EndOfWeek = DATEADD(DAY, 7, @StartOfWeek);
+
+	SELECT COUNT(*) AS WeeklyAppointmentsCount
     FROM Appointments
-    WHERE DATEPART(WEEK, AppointmentDate) = DATEPART(WEEK, GETDATE())
-      AND DATEPART(YEAR, AppointmentDate) = DATEPART(YEAR, GETDATE());
+    WHERE AppointmentDate >= @StartOfWeek AND AppointmentDate < @EndOfWeek;
 END
 GO
 
 CREATE PROCEDURE GetCreatedAppointmentsThisWeekCount
 AS
 BEGIN
+	DECLARE @StartOfWeek DATE;
+	DECLARE @EndOfWeek DATE;
+
+	SET @StartOfWeek = DATEADD(DAY, -DATEPART(WEEKDAY,GETDATE()) + 1 ,GETDATE());
+	SET @EndOfWeek = DATEADD(DAY, 7, @StartOfWeek);
+
  SELECT COUNT(*) AS CreatedAppointmentsThisWeekCount
     FROM Appointments 
-	WHERE DATEPART(week, CreatedAt) = DATEPART(week, GETDATE())
-	AND DATEPART(year, CreatedAt) = DATEPART(year, GETDATE())
+	WHERE CreatedAt >= @StartOfWeek AND CreatedAt < @EndOfWeek
 END
 GO
 
@@ -1396,19 +1409,25 @@ GO
 CREATE PROCEDURE GetNewPatientsThisWeek 
 AS
 BEGIN
-SELECT COUNT(*) AS NewPatientsThisWeek FROM Patients
-WHERE 
-	DATEPART(week, CreatedAt) = DATEPART(week, GETDATE())
-	AND
-	DATEPART(year,CreatedAt) = DATEPART(year, GETDATE());
+	DECLARE @StartOfWeek DATE;
+	DECLARE @EndOfWeek DATE;
+
+	SET @StartOfWeek = DATEADD(DAY, -DATEPART(WEEKDAY,GETDATE()) + 1 ,GETDATE());
+	SET @EndOfWeek = DATEADD(DAY, 7, @StartOfWeek);
+
+	SELECT COUNT(*) AS NewPatientsThisWeek FROM Patients
+	WHERE CreatedAt >= @StartOfWeek AND CreatedAt < @EndOfWeek;
 END
 GO
 
 CREATE PROCEDURE GetAveragePatientAge
 AS
 BEGIN
-SELECT AVG(DATEDIFF(Year, People.BirthDate, GETDATE())) AS AveragePatientAge FROM Patients
-INNER JOIN People ON People.PersonID = Patients.PersonID;
+WITH PatientsAge AS (
+SELECT DATEDIFF(Year, People.BirthDate, GETDATE()) AS Age
+FROM Patients
+INNER JOIN People ON People.PersonID = Patients.PersonID)
+SELECT AVG(Age) AS AveragePatientAge FROM PatientsAge
 END
 GO
 
@@ -1764,3 +1783,4 @@ BEGIN
 	WHERE DoctorID = @DoctorID
 END
 GO
+
