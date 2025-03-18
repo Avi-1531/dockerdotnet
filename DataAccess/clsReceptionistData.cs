@@ -48,6 +48,7 @@ namespace ClinicManagementDB_DataAccess
             catch (Exception ex)
             {
                 isFound = false;
+                clsLogger.LogError(ex);
             }
 
             return isFound;
@@ -86,6 +87,7 @@ namespace ClinicManagementDB_DataAccess
             catch(Exception ex)
             {
 
+                clsLogger.LogError(ex);
             }
 
             return ReceptionistID;
@@ -120,6 +122,7 @@ namespace ClinicManagementDB_DataAccess
             }
             catch(Exception ex)
             {
+                clsLogger.LogError(ex);
                 return false;
             }
 
@@ -148,6 +151,7 @@ namespace ClinicManagementDB_DataAccess
             catch(Exception ex)
             {
 
+                clsLogger.LogError(ex);
             }
 
             return (rowsAffected > 0);
@@ -175,6 +179,7 @@ namespace ClinicManagementDB_DataAccess
             catch(Exception ex)
             {
                 isFound = false;
+                clsLogger.LogError(ex);
             }
 
             return isFound;
@@ -203,6 +208,7 @@ namespace ClinicManagementDB_DataAccess
             }
             catch(Exception ex)
             {
+                clsLogger.LogError(ex);
             }
 
             return PersonID;
@@ -231,6 +237,7 @@ namespace ClinicManagementDB_DataAccess
             catch(Exception ex)
             {
                 isFound = false;
+                clsLogger.LogError(ex);
             }
 
             return isFound;
@@ -257,6 +264,7 @@ namespace ClinicManagementDB_DataAccess
             }
             catch(Exception ex)
             {
+                clsLogger.LogError(ex);
 
             }
 

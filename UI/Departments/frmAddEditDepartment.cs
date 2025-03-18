@@ -13,13 +13,10 @@ namespace UI.Departments
 {
     public partial class frmAddEditDepartment : Form
     {
-        enum enMode { Add, Edit }
-        enMode _FormMode;
         clsDepartment _Department;
         public frmAddEditDepartment()
         {
             InitializeComponent();
-            _FormMode = enMode.Add;
             this.Text = "Add New Department";
             lblHeader.Text = "ADD DEPARTMENT";
             _Department = new clsDepartment();
@@ -27,7 +24,6 @@ namespace UI.Departments
         public frmAddEditDepartment(byte DepartmentID)
         {
             InitializeComponent();
-            _FormMode = enMode.Edit;
             this.Text = "Edit Department";
             lblHeader.Text = "EDIT DEPARTMENT";
             _Department = new clsDepartment();
@@ -96,7 +92,6 @@ namespace UI.Departments
                     txtDepartmentID.Text = _Department.DepartmentID.ToString();
                     MessageBox.Show("department saved successfully.", "Save Successful",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _FormMode = enMode.Edit;
                     this.Text = "Edit Department";
                     lblHeader.Text = "EDIT DEPARTMENT";
                 }

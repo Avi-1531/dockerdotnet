@@ -84,7 +84,7 @@ namespace UI.Payment
         }
         private void frmPaymentsManagement_Load(object sender, EventArgs e)
         {
-            _LoadStatisticsAsync();
+            _ = _LoadStatisticsAsync();
             _LoadData();
             dgvPayments.ClearSelection();
         }
