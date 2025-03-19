@@ -65,7 +65,7 @@ namespace UI.Appointments
                 dgvAppointments.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
             }
-            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointment)";
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointments)";
 
         }
         private void frmAppointmentsManagement_Load(object sender, EventArgs e)
