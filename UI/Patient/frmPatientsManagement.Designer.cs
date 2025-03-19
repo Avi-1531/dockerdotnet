@@ -36,8 +36,9 @@
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             this.cmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCallPatientEmergencyPhone = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddPatient = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -50,6 +51,7 @@
             this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
+            this.tsmiAddNewPatient = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
             this.cmsPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -110,11 +112,13 @@
             // 
             this.cmsPatient.BackColor = System.Drawing.SystemColors.Control;
             this.cmsPatient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddNewPatient,
             this.tsmiEditPatientInfo,
+            this.tsmiShowPatientInfo,
             this.tsmiPatientMedicalRecords,
-            this.tsmiShowPatientInfo});
+            this.tsmiCallPatientEmergencyPhone});
             this.cmsPatient.Name = "cmsPerson";
-            this.cmsPatient.Size = new System.Drawing.Size(281, 94);
+            this.cmsPatient.Size = new System.Drawing.Size(332, 176);
             // 
             // tsmiEditPatientInfo
             // 
@@ -122,21 +126,10 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(280, 30);
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(331, 30);
             this.tsmiEditPatientInfo.Text = "Edit Patient";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
-            // 
-            // tsmiPatientMedicalRecords
-            // 
-            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
-            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(280, 30);
-            this.tsmiPatientMedicalRecords.Text = "Patient Medical Records";
-            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
             // 
             // tsmiShowPatientInfo
             // 
@@ -144,10 +137,32 @@
             this.tsmiShowPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowPatientInfo.Name = "tsmiShowPatientInfo";
-            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(280, 30);
-            this.tsmiShowPatientInfo.Text = "Show Patient Info";
+            this.tsmiShowPatientInfo.Size = new System.Drawing.Size(331, 30);
+            this.tsmiShowPatientInfo.Text = "Patient Information";
             this.tsmiShowPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowPatientInfo.Click += new System.EventHandler(this.tsmiShowPatientInfo_Click);
+            // 
+            // tsmiPatientMedicalRecords
+            // 
+            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
+            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(331, 30);
+            this.tsmiPatientMedicalRecords.Text = "Patient\'s Medical Records";
+            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
+            // 
+            // tsmiCallPatientEmergencyPhone
+            // 
+            this.tsmiCallPatientEmergencyPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiCallPatientEmergencyPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiCallPatientEmergencyPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiCallPatientEmergencyPhone.Name = "tsmiCallPatientEmergencyPhone";
+            this.tsmiCallPatientEmergencyPhone.Size = new System.Drawing.Size(331, 30);
+            this.tsmiCallPatientEmergencyPhone.Text = "Call Patient Emergency Phone";
+            this.tsmiCallPatientEmergencyPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiCallPatientEmergencyPhone.Click += new System.EventHandler(this.tsmiCallPatientEmergencyPhone_Click);
             // 
             // lblHeader
             // 
@@ -321,6 +336,17 @@
             this.btnFind.Visible = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
+            // tsmiAddNewPatient
+            // 
+            this.tsmiAddNewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewPatient.Name = "tsmiAddNewPatient";
+            this.tsmiAddNewPatient.Size = new System.Drawing.Size(331, 30);
+            this.tsmiAddNewPatient.Text = "Add New Patient";
+            this.tsmiAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewPatient.Click += new System.EventHandler(this.tsmiAddNewPatient_Click);
+            // 
             // frmPatientsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -375,5 +401,7 @@
         private System.Windows.Forms.Label lblOfTotalPagesAndRows;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCallPatientEmergencyPhone;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddNewPatient;
     }
 }

@@ -54,6 +54,7 @@
             this.lblTotalRevenueValue = new System.Windows.Forms.Label();
             this.lblTotalRevenueOfDepartment = new System.Windows.Forms.Label();
             this.btnAddDepartment = new System.Windows.Forms.Button();
+            this.tsmiAddNewDepartment = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.cmsDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,9 +121,10 @@
             // 
             this.cmsDepartments.BackColor = System.Drawing.SystemColors.Control;
             this.cmsDepartments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddNewDepartment,
             this.toolStripMenuItem1});
             this.cmsDepartments.Name = "cmsPerson";
-            this.cmsDepartments.Size = new System.Drawing.Size(217, 34);
+            this.cmsDepartments.Size = new System.Drawing.Size(262, 86);
             // 
             // toolStripMenuItem1
             // 
@@ -130,7 +132,7 @@
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(216, 30);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(261, 30);
             this.toolStripMenuItem1.Text = "Edit Department";
             this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
@@ -331,6 +333,17 @@
             this.btnAddDepartment.UseVisualStyleBackColor = false;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
             // 
+            // tsmiAddNewDepartment
+            // 
+            this.tsmiAddNewDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewDepartment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewDepartment.Name = "tsmiAddNewDepartment";
+            this.tsmiAddNewDepartment.Size = new System.Drawing.Size(261, 30);
+            this.tsmiAddNewDepartment.Text = "Add New Department";
+            this.tsmiAddNewDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewDepartment.Click += new System.EventHandler(this.tsmiAddNewDepartment_Click);
+            // 
             // frmDepartmentsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -395,5 +408,6 @@
         private System.Windows.Forms.Label lblTotalRevenueOfDepartment;
         private System.Windows.Forms.Button btnAddDepartment;
         private System.Windows.Forms.PictureBox pbRiyalSymbol;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddNewDepartment;
     }
 }

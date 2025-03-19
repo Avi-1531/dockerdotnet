@@ -37,6 +37,8 @@
             this.cmsReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShowReceptionistInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReceptionistUserInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddReceptionist = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -46,6 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.tsmiAddNewReceptionist = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionists)).BeginInit();
             this.cmsReceptionist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,10 +109,13 @@
             // 
             this.cmsReceptionist.BackColor = System.Drawing.SystemColors.Control;
             this.cmsReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddNewReceptionist,
             this.tsmPersonalInformation,
-            this.tsmShowReceptionistInfo});
+            this.tsmShowReceptionistInfo,
+            this.tsmiPersonalInformation,
+            this.tsmiReceptionistUserInfo});
             this.cmsReceptionist.Name = "cmsPerson";
-            this.cmsReceptionist.Size = new System.Drawing.Size(271, 64);
+            this.cmsReceptionist.Size = new System.Drawing.Size(329, 176);
             // 
             // tsmPersonalInformation
             // 
@@ -117,7 +123,7 @@
             this.tsmPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmPersonalInformation.Name = "tsmPersonalInformation";
-            this.tsmPersonalInformation.Size = new System.Drawing.Size(270, 30);
+            this.tsmPersonalInformation.Size = new System.Drawing.Size(328, 30);
             this.tsmPersonalInformation.Text = "Edit Receptionist";
             this.tsmPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmPersonalInformation.Click += new System.EventHandler(this.tsmPersonalInformation_Click);
@@ -128,10 +134,32 @@
             this.tsmShowReceptionistInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmShowReceptionistInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmShowReceptionistInfo.Name = "tsmShowReceptionistInfo";
-            this.tsmShowReceptionistInfo.Size = new System.Drawing.Size(270, 30);
-            this.tsmShowReceptionistInfo.Text = "Show Receptionist Info";
+            this.tsmShowReceptionistInfo.Size = new System.Drawing.Size(328, 30);
+            this.tsmShowReceptionistInfo.Text = "Receptionist Information";
             this.tsmShowReceptionistInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmShowReceptionistInfo.Click += new System.EventHandler(this.tsmShowReceptionistInfo_Click);
+            // 
+            // tsmiPersonalInformation
+            // 
+            this.tsmiPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiPersonalInformation.Name = "tsmiPersonalInformation";
+            this.tsmiPersonalInformation.Size = new System.Drawing.Size(328, 30);
+            this.tsmiPersonalInformation.Text = "Personal Information";
+            this.tsmiPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiPersonalInformation.Click += new System.EventHandler(this.tsmiPersonalInformation_Click);
+            // 
+            // tsmiReceptionistUserInfo
+            // 
+            this.tsmiReceptionistUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiReceptionistUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiReceptionistUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiReceptionistUserInfo.Name = "tsmiReceptionistUserInfo";
+            this.tsmiReceptionistUserInfo.Size = new System.Drawing.Size(328, 30);
+            this.tsmiReceptionistUserInfo.Text = "Receptionist User Information";
+            this.tsmiReceptionistUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiReceptionistUserInfo.Click += new System.EventHandler(this.tsmiReceptionistUserInfo_Click);
             // 
             // lblHeader
             // 
@@ -257,6 +285,17 @@
             this.cbStatus.TabIndex = 13;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
+            // tsmiAddNewReceptionist
+            // 
+            this.tsmiAddNewReceptionist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewReceptionist.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewReceptionist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewReceptionist.Name = "tsmiAddNewReceptionist";
+            this.tsmiAddNewReceptionist.Size = new System.Drawing.Size(328, 30);
+            this.tsmiAddNewReceptionist.Text = "Add New Receptionist";
+            this.tsmiAddNewReceptionist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewReceptionist.Click += new System.EventHandler(this.tsmiAddNewReceptionist_Click);
+            // 
             // frmReceptionistManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -305,5 +344,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReceptionistUserInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPersonalInformation;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddNewReceptionist;
     }
 }

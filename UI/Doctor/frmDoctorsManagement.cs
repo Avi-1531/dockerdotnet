@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.People;
+using UI.Users;
 
 namespace UI.Doctor
 {
@@ -148,6 +150,29 @@ namespace UI.Doctor
             short DoctorID = (short)dgvDoctors.CurrentRow.Cells[0].Value;
             frmDoctorInfo frmDoctorInfo = new frmDoctorInfo(DoctorID);
             frmDoctorInfo.ShowDialog();
+        }
+
+        private void tsmiShowDoctorUserInfo_Click(object sender, EventArgs e)
+        {
+            short DoctorID = (short)dgvDoctors.CurrentRow.Cells[0].Value;
+            clsDoctor Doctor = clsDoctor.Find(DoctorID);
+            frmUserInfo frmUserInfo = new frmUserInfo(Doctor.DoctorUserID);
+            frmUserInfo.ShowDialog();
+        }
+
+        private void tsmiShowDoctorPersonalInfo_Click(object sender, EventArgs e)
+        {
+            short DoctorID = (short)dgvDoctors.CurrentRow.Cells[0].Value;
+            clsDoctor Doctor = clsDoctor.Find(DoctorID);
+            frmPersonInfo frmPersonInfo = new frmPersonInfo((int)Doctor.PersonID);
+            frmPersonInfo.ShowDialog();
+        }
+
+        private void tsmiAddNewDoctor_Click(object sender, EventArgs e)
+        {
+            frmAddEditDoctor frmAddEditDoctor = new frmAddEditDoctor();
+            frmAddEditDoctor.ShowDialog();
+            _LoadData();
         }
     }
 }

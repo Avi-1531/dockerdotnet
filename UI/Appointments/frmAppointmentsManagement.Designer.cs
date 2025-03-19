@@ -36,8 +36,11 @@
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.cmsAppointments = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmkDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCallPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddAppointment = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -50,6 +53,7 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
+            this.tsmiAddNewAppointment = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.cmsAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -110,11 +114,15 @@
             // 
             this.cmsAppointments.BackColor = System.Drawing.SystemColors.Control;
             this.cmsAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddNewAppointment,
             this.tsmiEditPatientInfo,
+            this.tsmiShowDoctorInfo,
             this.tsmiPatientMedicalRecords,
-            this.tsmiShowDoctorInfo});
+            this.tsmiPatientInfo,
+            this.tsmkDoctorInfo,
+            this.tsmiCallPatient});
             this.cmsAppointments.Name = "cmsPerson";
-            this.cmsAppointments.Size = new System.Drawing.Size(281, 94);
+            this.cmsAppointments.Size = new System.Drawing.Size(294, 236);
             // 
             // tsmiEditPatientInfo
             // 
@@ -122,21 +130,10 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(280, 30);
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(293, 30);
             this.tsmiEditPatientInfo.Text = "Edit Appointment";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
-            // 
-            // tsmiPatientMedicalRecords
-            // 
-            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
-            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(280, 30);
-            this.tsmiPatientMedicalRecords.Text = "Patient Medical Records";
-            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
             // 
             // tsmiShowDoctorInfo
             // 
@@ -144,10 +141,54 @@
             this.tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
-            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(280, 30);
-            this.tsmiShowDoctorInfo.Text = "Appointment Info";
+            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(293, 30);
+            this.tsmiShowDoctorInfo.Text = "Appointment Information";
             this.tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowDoctorInfo.Click += new System.EventHandler(this.tsmiShowDoctorInfo_Click);
+            // 
+            // tsmiPatientMedicalRecords
+            // 
+            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
+            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(293, 30);
+            this.tsmiPatientMedicalRecords.Text = "Patient\'s Medical Records";
+            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
+            // 
+            // tsmiPatientInfo
+            // 
+            this.tsmiPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiPatientInfo.Name = "tsmiPatientInfo";
+            this.tsmiPatientInfo.Size = new System.Drawing.Size(293, 30);
+            this.tsmiPatientInfo.Text = "Patient Information";
+            this.tsmiPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiPatientInfo.Click += new System.EventHandler(this.tsmiPatientInfo_Click);
+            // 
+            // tsmkDoctorInfo
+            // 
+            this.tsmkDoctorInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmkDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmkDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmkDoctorInfo.Name = "tsmkDoctorInfo";
+            this.tsmkDoctorInfo.Size = new System.Drawing.Size(293, 30);
+            this.tsmkDoctorInfo.Text = "Doctor Information";
+            this.tsmkDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmkDoctorInfo.Click += new System.EventHandler(this.tsmkDoctorInfo_Click);
+            // 
+            // tsmiCallPatient
+            // 
+            this.tsmiCallPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiCallPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiCallPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiCallPatient.Name = "tsmiCallPatient";
+            this.tsmiCallPatient.Size = new System.Drawing.Size(293, 30);
+            this.tsmiCallPatient.Text = "Call Patient";
+            this.tsmiCallPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiCallPatient.Click += new System.EventHandler(this.tsmiCallPatient_Click);
             // 
             // lblHeader
             // 
@@ -321,6 +362,17 @@
             this.lblOfTotalPagesAndRows.TabIndex = 37;
             this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
+            // tsmiAddNewAppointment
+            // 
+            this.tsmiAddNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewAppointment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewAppointment.Name = "tsmiAddNewAppointment";
+            this.tsmiAddNewAppointment.Size = new System.Drawing.Size(293, 30);
+            this.tsmiAddNewAppointment.Text = "Add New Appointment";
+            this.tsmiAddNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewAppointment.Click += new System.EventHandler(this.tsmiAddNewAppointment_Click);
+            // 
             // frmAppointmentsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -376,5 +428,9 @@
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
         private System.Windows.Forms.Label lblOfTotalPagesAndRows;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPatientInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmkDoctorInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCallPatient;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddNewAppointment;
     }
 }

@@ -37,6 +37,8 @@
             this.cmsDoctor = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowDoctorPersonalInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiShowDoctorUserInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAddDoctor = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
@@ -46,6 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.tsmiAddNewDoctor = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).BeginInit();
             this.cmsDoctor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,10 +109,13 @@
             // 
             this.cmsDoctor.BackColor = System.Drawing.SystemColors.Control;
             this.cmsDoctor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddNewDoctor,
             this.tsmiEditPatientInfo,
-            this.tsmiShowDoctorInfo});
+            this.tsmiShowDoctorInfo,
+            this.tsmiShowDoctorPersonalInfo,
+            this.tsmiShowDoctorUserInfo});
             this.cmsDoctor.Name = "cmsPerson";
-            this.cmsDoctor.Size = new System.Drawing.Size(226, 64);
+            this.cmsDoctor.Size = new System.Drawing.Size(284, 176);
             // 
             // tsmiEditPatientInfo
             // 
@@ -117,7 +123,7 @@
             this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(225, 30);
+            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(283, 30);
             this.tsmiEditPatientInfo.Text = "Edit Doctor";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
@@ -128,10 +134,32 @@
             this.tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
-            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(225, 30);
-            this.tsmiShowDoctorInfo.Text = "Show Doctor Info";
+            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(283, 30);
+            this.tsmiShowDoctorInfo.Text = "Doctor Information";
             this.tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowDoctorInfo.Click += new System.EventHandler(this.tsmiShowDoctorInfo_Click);
+            // 
+            // tsmiShowDoctorPersonalInfo
+            // 
+            this.tsmiShowDoctorPersonalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiShowDoctorPersonalInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiShowDoctorPersonalInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiShowDoctorPersonalInfo.Name = "tsmiShowDoctorPersonalInfo";
+            this.tsmiShowDoctorPersonalInfo.Size = new System.Drawing.Size(283, 30);
+            this.tsmiShowDoctorPersonalInfo.Text = "Personal Information";
+            this.tsmiShowDoctorPersonalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiShowDoctorPersonalInfo.Click += new System.EventHandler(this.tsmiShowDoctorPersonalInfo_Click);
+            // 
+            // tsmiShowDoctorUserInfo
+            // 
+            this.tsmiShowDoctorUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiShowDoctorUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiShowDoctorUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiShowDoctorUserInfo.Name = "tsmiShowDoctorUserInfo";
+            this.tsmiShowDoctorUserInfo.Size = new System.Drawing.Size(283, 30);
+            this.tsmiShowDoctorUserInfo.Text = "Doctor User Information";
+            this.tsmiShowDoctorUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiShowDoctorUserInfo.Click += new System.EventHandler(this.tsmiShowDoctorUserInfo_Click);
             // 
             // lblHeader
             // 
@@ -260,6 +288,17 @@
             this.cbStatus.Visible = false;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
+            // tsmiAddNewDoctor
+            // 
+            this.tsmiAddNewDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewDoctor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewDoctor.Name = "tsmiAddNewDoctor";
+            this.tsmiAddNewDoctor.Size = new System.Drawing.Size(283, 30);
+            this.tsmiAddNewDoctor.Text = "Add New Doctor";
+            this.tsmiAddNewDoctor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewDoctor.Click += new System.EventHandler(this.tsmiAddNewDoctor_Click);
+            // 
             // frmDoctorsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -308,5 +347,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowDoctorUserInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiShowDoctorPersonalInfo;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddNewDoctor;
     }
 }

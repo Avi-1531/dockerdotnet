@@ -49,6 +49,7 @@
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tsmiAddNewPerson = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.cmsPerson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,10 +120,11 @@
             // 
             this.cmsPerson.BackColor = System.Drawing.SystemColors.Control;
             this.cmsPerson.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddNewPerson,
             this.tsmPersonalInformation,
             this.tsmEditPersonalInformation});
             this.cmsPerson.Name = "cmsPerson";
-            this.cmsPerson.Size = new System.Drawing.Size(293, 64);
+            this.cmsPerson.Size = new System.Drawing.Size(293, 116);
             // 
             // tsmPersonalInformation
             // 
@@ -307,6 +309,17 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // tsmiAddNewPerson
+            // 
+            this.tsmiAddNewPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewPerson.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewPerson.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewPerson.Name = "tsmiAddNewPerson";
+            this.tsmiAddNewPerson.Size = new System.Drawing.Size(292, 30);
+            this.tsmiAddNewPerson.Text = "Add New Person";
+            this.tsmiAddNewPerson.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewPerson.Click += new System.EventHandler(this.tsmiAddNewPerson_Click);
+            // 
             // frmPeopleManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -362,5 +375,6 @@
         private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddNewPerson;
     }
 }

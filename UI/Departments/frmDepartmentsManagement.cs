@@ -93,5 +93,11 @@ namespace UI.Departments
             _LoadData();
         }
 
+        private void tsmiAddNewDepartment_Click(object sender, EventArgs e)
+        {
+            frmAddEditDepartment frmAdd = new frmAddEditDepartment();
+            frmAdd.ShowDialog();
+            _LoadData();
+        }
     }
 }

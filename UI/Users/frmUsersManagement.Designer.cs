@@ -95,7 +95,7 @@
             this.tsmiChangeUserRole,
             this.tsmiActivateOrDeactivate});
             this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(242, 244);
+            this.cmsUsers.Size = new System.Drawing.Size(256, 266);
             // 
             // tsmiAddNewUser
             // 
@@ -103,7 +103,7 @@
             this.tsmiAddNewUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiAddNewUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiAddNewUser.Name = "tsmiAddNewUser";
-            this.tsmiAddNewUser.Size = new System.Drawing.Size(241, 30);
+            this.tsmiAddNewUser.Size = new System.Drawing.Size(255, 30);
             this.tsmiAddNewUser.Text = "Add New User";
             this.tsmiAddNewUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiAddNewUser.Click += new System.EventHandler(this.tsmiAddNewUser_Click);
@@ -114,7 +114,7 @@
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(241, 30);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(255, 30);
             this.toolStripMenuItem2.Text = "Edit User";
             this.toolStripMenuItem2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripMenuItem2.Click += new System.EventHandler(this.tsmiEditUser_Click);
@@ -125,8 +125,8 @@
             this.tsmiShowUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowUserInfo.Name = "tsmiShowUserInfo";
-            this.tsmiShowUserInfo.Size = new System.Drawing.Size(241, 30);
-            this.tsmiShowUserInfo.Text = "Show User Info";
+            this.tsmiShowUserInfo.Size = new System.Drawing.Size(255, 30);
+            this.tsmiShowUserInfo.Text = "User Information";
             this.tsmiShowUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowUserInfo.Click += new System.EventHandler(this.tsmiShowUserInfo_Click);
             // 
@@ -136,8 +136,8 @@
             this.tsmiShowPersonInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowPersonInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowPersonInfo.Name = "tsmiShowPersonInfo";
-            this.tsmiShowPersonInfo.Size = new System.Drawing.Size(241, 30);
-            this.tsmiShowPersonInfo.Text = "Show Person Info";
+            this.tsmiShowPersonInfo.Size = new System.Drawing.Size(255, 30);
+            this.tsmiShowPersonInfo.Text = "Personal Information";
             this.tsmiShowPersonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowPersonInfo.Click += new System.EventHandler(this.tsmiShowPersonInfo_Click);
             // 
@@ -147,8 +147,8 @@
             this.tsmiShowLoginHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiShowLoginHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiShowLoginHistory.Name = "tsmiShowLoginHistory";
-            this.tsmiShowLoginHistory.Size = new System.Drawing.Size(241, 30);
-            this.tsmiShowLoginHistory.Text = "Show Login History";
+            this.tsmiShowLoginHistory.Size = new System.Drawing.Size(255, 30);
+            this.tsmiShowLoginHistory.Text = "Login History";
             this.tsmiShowLoginHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiShowLoginHistory.Click += new System.EventHandler(this.tsmiShowLoginHistory_Click);
             // 
@@ -158,7 +158,7 @@
             this.tsmiChangePassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiChangePassword.Name = "tsmiChangePassword";
-            this.tsmiChangePassword.Size = new System.Drawing.Size(241, 30);
+            this.tsmiChangePassword.Size = new System.Drawing.Size(255, 30);
             this.tsmiChangePassword.Text = "Change Password";
             this.tsmiChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiChangePassword.Click += new System.EventHandler(this.tsmiChangePassword_Click);
@@ -173,7 +173,7 @@
             this.tsmiChangeUserRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiChangeUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiChangeUserRole.Name = "tsmiChangeUserRole";
-            this.tsmiChangeUserRole.Size = new System.Drawing.Size(241, 30);
+            this.tsmiChangeUserRole.Size = new System.Drawing.Size(255, 30);
             this.tsmiChangeUserRole.Text = "Change User Role";
             this.tsmiChangeUserRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiChangeUserRole.Click += new System.EventHandler(this.tsmiChangeUserRole_Click);
@@ -217,7 +217,7 @@
             this.tsmiActivateOrDeactivate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmiActivateOrDeactivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.tsmiActivateOrDeactivate.Name = "tsmiActivateOrDeactivate";
-            this.tsmiActivateOrDeactivate.Size = new System.Drawing.Size(241, 30);
+            this.tsmiActivateOrDeactivate.Size = new System.Drawing.Size(255, 30);
             this.tsmiActivateOrDeactivate.Text = "Activate User";
             this.tsmiActivateOrDeactivate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiActivateOrDeactivate.Click += new System.EventHandler(this.tsmiActivateOrDeactivate_Click);

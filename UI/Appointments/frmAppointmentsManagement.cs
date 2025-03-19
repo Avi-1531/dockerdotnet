@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Doctor;
 using UI.MedicalRecord;
+using UI.Patient;
 
 namespace UI.Appointments
 {
@@ -236,6 +238,35 @@ namespace UI.Appointments
             btnNextPage.Visible = true;
             txtPageNumber.Visible = true;
             lblOfTotalPagesAndRows.Visible = true;
+        }
+
+        private void tsmiPatientInfo_Click(object sender, EventArgs e)
+        {
+            int PatinetID = (int)dgvAppointments.CurrentRow.Cells[1].Value;
+            frmPatientInfo frmPatientInfo = new frmPatientInfo(PatinetID);
+            frmPatientInfo.ShowDialog();
+        }
+
+        private void tsmkDoctorInfo_Click(object sender, EventArgs e)
+        {
+            short DoctorID = (short)dgvAppointments.CurrentRow.Cells[3].Value;
+            frmDoctorInfo frmDoctorInfo = new frmDoctorInfo(DoctorID);
+            frmDoctorInfo.ShowDialog();
+        }
+
+        private void tsmiCallPatient_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        private void tsmiAddNewAppointment_Click(object sender, EventArgs e)
+        {
+            frmAddEditAppointment frmAddEditAppointment = new frmAddEditAppointment();
+            frmAddEditAppointment.ShowDialog();
+            _LoadDataTable();
+            _LoadToDataGridView();
         }
     }
 }

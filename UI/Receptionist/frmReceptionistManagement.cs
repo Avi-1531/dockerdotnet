@@ -9,6 +9,8 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.People;
+using UI.Users;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI.Receptionist
@@ -129,6 +131,27 @@ namespace UI.Receptionist
             short ReceptionistID = (short)dgvReceptionists.CurrentRow.Cells[0].Value;
             frmReceptionistInfo frmReceptionistInfo = new frmReceptionistInfo(ReceptionistID);
             frmReceptionistInfo.ShowDialog();
+        }
+
+        private void tsmiReceptionistUserInfo_Click(object sender, EventArgs e)
+        {
+            string ReceptionistUsername = (string)dgvReceptionists.CurrentRow.Cells[5].Value;
+            frmUserInfo frmUserInfo = new frmUserInfo((short)clsUser.Find(ReceptionistUsername).UserID);
+            frmUserInfo.ShowDialog();
+        }
+
+        private void tsmiPersonalInformation_Click(object sender, EventArgs e)
+        {
+            short ReceptionistID = (short)dgvReceptionists.CurrentRow.Cells[0].Value;
+            frmPersonInfo frmPersonInfo = new frmPersonInfo(clsReceptionist.Find(ReceptionistID).PersonID);
+            frmPersonInfo.ShowDialog();
+        }
+
+        private void tsmiAddNewReceptionist_Click(object sender, EventArgs e)
+        {
+            frmAddEditReceptionist frmAddEditReceptionist = new frmAddEditReceptionist();
+            frmAddEditReceptionist.ShowDialog();
+            _LoadData();
         }
     }
 }

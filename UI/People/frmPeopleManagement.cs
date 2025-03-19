@@ -224,6 +224,12 @@ namespace UI.People
             txtPageNumber.Visible = true;
             lblOfTotalPagesAndRows.Visible = true;
         }
-
+        private void tsmiAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frm = new frmAddEditPerson();
+            frm.ShowDialog();
+            _LoadDataTable();
+            _LoadToDataGridView();
+        }
     }
 }

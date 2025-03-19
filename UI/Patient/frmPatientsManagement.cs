@@ -242,5 +242,19 @@ namespace UI.Patient
             lblOfTotalPagesAndRows.Visible = true;
         }
 
+        private void tsmiCallPatientEmergencyPhone_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not implemented yet.", "Feature Not Available",
+              MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        private void tsmiAddNewPatient_Click(object sender, EventArgs e)
+        {
+            frmAddEditPatient frmAddEditPatient = new frmAddEditPatient();
+            frmAddEditPatient.ShowDialog();
+            _LoadDataTable();
+            _LoadToDataGridView();
+        }
     }
 }
