@@ -63,6 +63,10 @@ namespace UI.Patient.Controls
                 lblUpdatedByAt.Visible = true;
                 lblUpdatedByAt.Text = $"Last Update By {clsUser.GetUsernameByID(_Patient.UpdatedByUserID)} At {_Patient.UpdatedAt.ToString()} ";
             }
+            else
+            {
+                lblUpdatedByAt.Visible = false;
+            }
         }
     }
 }

@@ -43,7 +43,10 @@ namespace UI.People
         private void _LoadData()
         {
             if(_Person.PersonID == null)
+            {
+                txtByUser.Text = clsGlobal.CurrentUser.Username;
                 return;
+            }
 
             txtFirstName.Text = _Person.FirstName;
             txtSecondName.Text = _Person.SecondName;
@@ -61,6 +64,7 @@ namespace UI.People
             txtEmail.Text = _Person.Email;
             txtPhone.Text = _Person.Phone;
             txtAddress.Text = _Person.Address ?? string.Empty;
+            txtByUser.Text = clsUser.GetUsernameByID(_Person.CreatedByUserID);
         }
         private void _Save()
         {
@@ -86,12 +90,12 @@ namespace UI.People
 
             if(_FormMode == enMode.Add)
             {
-                _Person.CreatedByUserID = 1; //change
+                _Person.CreatedByUserID = (short)clsGlobal.CurrentUser.UserID;
                 _Person.CreatedAt = DateTime.Now;
             }
             else
             {
-                _Person.UpdatedByUserID = 1; //change
+                _Person.UpdatedByUserID = (short)clsGlobal.CurrentUser.UserID;
                 _Person.UpdatedAt = DateTime.Now;
             }
 

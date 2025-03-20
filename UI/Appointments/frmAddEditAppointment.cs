@@ -99,12 +99,12 @@ namespace UI.Appointments
 
             if(_FormMode == enMode.Add)
             {
-                _Appointment.CreatedByUserID = 1; //change
+                _Appointment.CreatedByUserID = (short)clsGlobal.CurrentUser.UserID;
                 _Appointment.CreatedAt = DateTime.Now;
             }
             else
             {
-                _Appointment.UpdatedByUserID = 1; //change
+                _Appointment.UpdatedByUserID = (short)clsGlobal.CurrentUser.UserID;
                 _Appointment.UpdatedAt = DateTime.Now;
             }
 
