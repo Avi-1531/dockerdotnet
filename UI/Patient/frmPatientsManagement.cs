@@ -67,7 +67,7 @@ namespace UI.Patient
 
                 dgvPatients.ClearSelection();
             }
-            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patients)";
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize).ToString("N0")} pages ({_Records.ToString("N0")} Patients)";
         }
         private void frmPatientsManagement_Load(object sender, EventArgs e)
         {

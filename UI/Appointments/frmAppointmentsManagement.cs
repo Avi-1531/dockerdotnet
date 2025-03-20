@@ -66,7 +66,7 @@ namespace UI.Appointments
 
                 dgvAppointments.ClearSelection();
             }
-            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointments)";
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize).ToString("N0")} pages ({_Records.ToString("N0")} Appointments)";
 
         }
         private void frmAppointmentsManagement_Load(object sender, EventArgs e)

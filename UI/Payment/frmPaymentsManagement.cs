@@ -54,7 +54,7 @@ namespace UI.Payment
                 
                 dgvPayments.ClearSelection();
             }
-            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Payments)";
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize).ToString("N0")} pages ({_Records.ToString("N0")} Payments)";
         }
         private async Task _LoadStatisticsAsync()
         {

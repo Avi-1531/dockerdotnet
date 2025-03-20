@@ -67,7 +67,7 @@ namespace UI.People
 
                 dgvPeople.ClearSelection();
             }
-            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} People)";
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize).ToString("N0")} pages ({_Records.ToString("N0")} People)";
         }
         private void frmPeopleManagement_Load(object sender, EventArgs e)
         {
