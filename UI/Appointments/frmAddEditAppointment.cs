@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Global;
 using UI.MedicalRecord;
+using UI.Patient.Controls;
 using UI.Payment;
 
 namespace UI.Appointments
@@ -47,7 +48,10 @@ namespace UI.Appointments
                 return;
 
             ctrlctrlSmallDoctorFinder1.SetDoctorID(_Appointment.DoctorID);
+            ctrlctrlSmallDoctorFinder1.DisableSearch = true;
+
             ctrlSmallPatientFinder1.SetPatientID(_Appointment.PatientID);
+            ctrlSmallPatientFinder1.DisableSearch = true;
 
             dtpAppointmentDate.Value = _Appointment.AppointmentDate;
             dtpAppointmentTime.Value = _Appointment.AppointmentDate;

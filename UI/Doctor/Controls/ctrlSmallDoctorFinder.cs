@@ -17,7 +17,14 @@ namespace UI.Doctor.Controls
         {
             InitializeComponent();
         }
-
+        public bool DisableSearch
+        {
+            set
+            {
+                txtSearchByDoctorID.Enabled = !value;
+                btnSearch.Enabled = !value;
+            }
+        }
         public clsDoctor SelectedDoctor { get { return ctrlSmallDoctorInfo1.SelectedDoctor; } }
         private void PreventNonDigitInput(object sender, KeyPressEventArgs e)
         {
@@ -45,6 +52,7 @@ namespace UI.Doctor.Controls
 
         public void SetDoctorID(short DoctorID)
         {
+            txtSearchByDoctorID.Text = DoctorID.ToString();
             ctrlSmallDoctorInfo1.SetDoctorID(DoctorID);
         }
 

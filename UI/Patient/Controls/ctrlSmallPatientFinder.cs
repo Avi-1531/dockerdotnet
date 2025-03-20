@@ -18,6 +18,14 @@ namespace UI.Patient.Controls
             InitializeComponent();
         }
         public clsPatient SelectedPatient { get { return ctrlSmallPatientInfo1.SelectedPatient; } }
+        public bool DisableSearch
+        {
+            set
+            {
+                txtSearchByPatienID.Enabled = !value;
+                btnSearch.Enabled = !value;
+            }
+        }
         private void PreventNonDigitInput(object sender, KeyPressEventArgs e)
         {
             TextBox textbox = (TextBox)sender;
@@ -43,6 +51,7 @@ namespace UI.Patient.Controls
         }
         public void SetPatientID(int PatientID)
         {
+            txtSearchByPatienID.Text = PatientID.ToString();
             ctrlSmallPatientInfo1.SetPatientID(PatientID);
 
         }
