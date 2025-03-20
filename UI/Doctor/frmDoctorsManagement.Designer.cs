@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDoctors = new System.Windows.Forms.DataGridView();
             this.cmsDoctor = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAddNewDoctor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDoctorPersonalInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.tsmiAddNewDoctor = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).BeginInit();
             this.cmsDoctor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +104,7 @@
             this.dgvDoctors.ShowRowErrors = false;
             this.dgvDoctors.Size = new System.Drawing.Size(1281, 560);
             this.dgvDoctors.TabIndex = 21;
+            this.dgvDoctors.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDoctors_CellMouseDoubleClick);
             // 
             // cmsDoctor
             // 
@@ -115,7 +116,18 @@
             this.tsmiShowDoctorPersonalInfo,
             this.tsmiShowDoctorUserInfo});
             this.cmsDoctor.Name = "cmsPerson";
-            this.cmsDoctor.Size = new System.Drawing.Size(284, 176);
+            this.cmsDoctor.Size = new System.Drawing.Size(284, 154);
+            // 
+            // tsmiAddNewDoctor
+            // 
+            this.tsmiAddNewDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewDoctor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewDoctor.Name = "tsmiAddNewDoctor";
+            this.tsmiAddNewDoctor.Size = new System.Drawing.Size(283, 30);
+            this.tsmiAddNewDoctor.Text = "Add New Doctor";
+            this.tsmiAddNewDoctor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewDoctor.Click += new System.EventHandler(this.tsmiAddNewDoctor_Click);
             // 
             // tsmiEditPatientInfo
             // 
@@ -126,7 +138,7 @@
             this.tsmiEditPatientInfo.Size = new System.Drawing.Size(283, 30);
             this.tsmiEditPatientInfo.Text = "Edit Doctor";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
+            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditDoctorInfo_Click);
             // 
             // tsmiShowDoctorInfo
             // 
@@ -287,17 +299,6 @@
             this.cbStatus.TabIndex = 25;
             this.cbStatus.Visible = false;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
-            // 
-            // tsmiAddNewDoctor
-            // 
-            this.tsmiAddNewDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewDoctor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewDoctor.Name = "tsmiAddNewDoctor";
-            this.tsmiAddNewDoctor.Size = new System.Drawing.Size(283, 30);
-            this.tsmiAddNewDoctor.Text = "Add New Doctor";
-            this.tsmiAddNewDoctor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewDoctor.Click += new System.EventHandler(this.tsmiAddNewDoctor_Click);
             // 
             // frmDoctorsManagement
             // 

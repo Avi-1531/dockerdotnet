@@ -86,7 +86,7 @@ namespace UI.Departments
             _LoadData();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tsmiEditDepartment_Click(object sender, EventArgs e)
         {
             frmAddEditDepartment frmAdd = new frmAddEditDepartment(Convert.ToByte(dgvDepartments.CurrentRow.Cells[0].Value));
             frmAdd.ShowDialog();
@@ -98,6 +98,11 @@ namespace UI.Departments
             frmAddEditDepartment frmAdd = new frmAddEditDepartment();
             frmAdd.ShowDialog();
             _LoadData();
+        }
+
+        private void dgvDepartments_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tsmiEditDepartment_Click(sender, e);
         }
     }
 }

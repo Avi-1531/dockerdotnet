@@ -118,7 +118,7 @@ namespace UI.Receptionist
             _LoadData();
         }
 
-        private void tsmPersonalInformation_Click(object sender, EventArgs e)
+        private void tsmEditReceptionist_Click(object sender, EventArgs e)
         {
             short ReceptionistID = (short)dgvReceptionists.CurrentRow.Cells[0].Value;
             frmAddEditReceptionist frmAddEditReceptionist = new frmAddEditReceptionist(ReceptionistID);
@@ -152,6 +152,11 @@ namespace UI.Receptionist
             frmAddEditReceptionist frmAddEditReceptionist = new frmAddEditReceptionist();
             frmAddEditReceptionist.ShowDialog();
             _LoadData();
+        }
+
+        private void dgvReceptionists_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tsmEditReceptionist_Click(sender, e);
         }
     }
 }

@@ -242,5 +242,10 @@ namespace UI.Users
             frmUserLoginHistory frmUserLoginHistory = new frmUserLoginHistory(UserID);
             frmUserLoginHistory.ShowDialog();
         }
+
+        private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tsmiEditUser_Click(sender, e);
+        }
     }
 }

@@ -139,7 +139,7 @@ namespace UI.Doctor
             _LoadData();
         }
 
-        private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
+        private void tsmiEditDoctorInfo_Click(object sender, EventArgs e)
         {
             short DoctorID = (short)dgvDoctors.CurrentRow.Cells[0].Value;
             frmAddEditDoctor frmAddEditDoctor = new frmAddEditDoctor(DoctorID);
@@ -175,6 +175,11 @@ namespace UI.Doctor
             frmAddEditDoctor frmAddEditDoctor = new frmAddEditDoctor();
             frmAddEditDoctor.ShowDialog();
             _LoadData();
+        }
+
+        private void dgvDoctors_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tsmiEditDoctorInfo_Click(sender, e);
         }
     }
 }

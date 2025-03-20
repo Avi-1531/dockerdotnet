@@ -253,5 +253,10 @@ namespace UI.Patient
             _LoadDataTable();
             _LoadToDataGridView();
         }
+
+        private void dgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tsmiEditPatientInfo_Click(sender, e);
+        }
     }
 }

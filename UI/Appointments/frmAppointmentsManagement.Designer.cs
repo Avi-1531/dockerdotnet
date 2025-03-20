@@ -109,6 +109,7 @@
             this.dgvAppointments.ShowRowErrors = false;
             this.dgvAppointments.Size = new System.Drawing.Size(1281, 532);
             this.dgvAppointments.TabIndex = 31;
+            this.dgvAppointments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAppointments_CellMouseDoubleClick);
             // 
             // cmsAppointments
             // 
@@ -144,7 +145,7 @@
             this.tsmiEditPatientInfo.Size = new System.Drawing.Size(293, 30);
             this.tsmiEditPatientInfo.Text = "Edit Appointment";
             this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditPatientInfo_Click);
+            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditAppointmentInfo_Click);
             // 
             // tsmiShowDoctorInfo
             // 

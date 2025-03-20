@@ -107,6 +107,7 @@
             this.dgvPatients.ShowRowErrors = false;
             this.dgvPatients.Size = new System.Drawing.Size(1281, 532);
             this.dgvPatients.TabIndex = 11;
+            this.dgvPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPatients_CellContentClick);
             // 
             // cmsPatient
             // 

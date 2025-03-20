@@ -95,7 +95,7 @@
             this.tsmiChangeUserRole,
             this.tsmiActivateOrDeactivate});
             this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(256, 266);
+            this.cmsUsers.Size = new System.Drawing.Size(256, 244);
             // 
             // tsmiAddNewUser
             // 
@@ -272,6 +272,7 @@
             this.dgvUsers.ShowRowErrors = false;
             this.dgvUsers.Size = new System.Drawing.Size(767, 560);
             this.dgvUsers.TabIndex = 21;
+            this.dgvUsers.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_CellMouseDoubleClick);
             this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
             // cbFilter

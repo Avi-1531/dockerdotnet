@@ -108,7 +108,7 @@ namespace UI.Appointments
             _LoadDataTable();
             _LoadToDataGridView();
         }
-        private void tsmiEditPatientInfo_Click(object sender, EventArgs e)
+        private void tsmiEditAppointmentInfo_Click(object sender, EventArgs e)
         {
             int AppointmentId = (int)dgvAppointments.CurrentRow.Cells[0].Value;
             frmAddEditAppointment frmAddEditAppointment = new frmAddEditAppointment(AppointmentId);
@@ -264,6 +264,11 @@ namespace UI.Appointments
             frmAddEditAppointment.ShowDialog();
             _LoadDataTable();
             _LoadToDataGridView();
+        }
+
+        private void dgvAppointments_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tsmiEditAppointmentInfo_Click(sender, e);
         }
     }
 }

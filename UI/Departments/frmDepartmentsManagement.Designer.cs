@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDepartments = new System.Windows.Forms.DataGridView();
             this.cmsDepartments = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAddNewDepartment = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblHeader = new System.Windows.Forms.Label();
             this.lblRecordsValue = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.lblTotalRevenueValue = new System.Windows.Forms.Label();
             this.lblTotalRevenueOfDepartment = new System.Windows.Forms.Label();
             this.btnAddDepartment = new System.Windows.Forms.Button();
-            this.tsmiAddNewDepartment = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.cmsDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -115,6 +115,7 @@
             this.dgvDepartments.ShowRowErrors = false;
             this.dgvDepartments.Size = new System.Drawing.Size(767, 560);
             this.dgvDepartments.TabIndex = 11;
+            this.dgvDepartments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDepartments_CellMouseDoubleClick);
             this.dgvDepartments.SelectionChanged += new System.EventHandler(this.dgvDepartments_SelectionChanged);
             // 
             // cmsDepartments
@@ -124,7 +125,18 @@
             this.tsmiAddNewDepartment,
             this.toolStripMenuItem1});
             this.cmsDepartments.Name = "cmsPerson";
-            this.cmsDepartments.Size = new System.Drawing.Size(262, 86);
+            this.cmsDepartments.Size = new System.Drawing.Size(262, 64);
+            // 
+            // tsmiAddNewDepartment
+            // 
+            this.tsmiAddNewDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewDepartment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewDepartment.Name = "tsmiAddNewDepartment";
+            this.tsmiAddNewDepartment.Size = new System.Drawing.Size(261, 30);
+            this.tsmiAddNewDepartment.Text = "Add New Department";
+            this.tsmiAddNewDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewDepartment.Click += new System.EventHandler(this.tsmiAddNewDepartment_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -135,7 +147,7 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(261, 30);
             this.toolStripMenuItem1.Text = "Edit Department";
             this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.tsmiEditDepartment_Click);
             // 
             // lblHeader
             // 
@@ -332,17 +344,6 @@
             this.btnAddDepartment.TabIndex = 16;
             this.btnAddDepartment.UseVisualStyleBackColor = false;
             this.btnAddDepartment.Click += new System.EventHandler(this.btnAddDepartment_Click);
-            // 
-            // tsmiAddNewDepartment
-            // 
-            this.tsmiAddNewDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewDepartment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewDepartment.Name = "tsmiAddNewDepartment";
-            this.tsmiAddNewDepartment.Size = new System.Drawing.Size(261, 30);
-            this.tsmiAddNewDepartment.Text = "Add New Department";
-            this.tsmiAddNewDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewDepartment.Click += new System.EventHandler(this.tsmiAddNewDepartment_Click);
             // 
             // frmDepartmentsManagement
             // 
