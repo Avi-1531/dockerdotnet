@@ -1784,3 +1784,70 @@ BEGIN
 END
 GO
 
+
+
+CREATE PROCEDURE dbo.GetMedicalRecordByID
+    @MedicalRecordID INT
+AS
+BEGIN
+	SELECT * FROM MedicalRecords WHERE MedicalRecordID = @MedicalRecordID;
+END
+GO
+
+
+CREATE PROCEDURE dbo.AddNewMedicalRecord
+    @Diagnosis NVARCHAR(600),
+    @Prescription NVARCHAR(600),
+    @Notes NVARCHAR(600),
+    @AppointmentID INT,
+    @CreatedByUserID SMALLINT,
+    @CreatedAt DATETIME
+AS
+BEGIN
+	INSERT INTO MedicalRecords (Diagnosis, Prescription, Notes, AppointmentID, CreatedByUserID, CreatedAt)
+	VALUES (@Diagnosis, @Prescription, @Notes, @AppointmentID, @CreatedByUserID, @CreatedAt)
+	SELECT SCOPE_IDENTITY();
+END
+GO
+
+
+CREATE PROCEDURE UpdateMedicalRecord
+    @MedicalRecordID INT,
+    @Diagnosis NVARCHAR(600),
+    @Prescription NVARCHAR(600),
+    @Notes NVARCHAR(600),
+    @AppointmentID INT,
+    @CreatedByUserID SMALLINT,
+    @CreatedAt DATETIME
+AS
+BEGIN
+
+    UPDATE MedicalRecords  
+    SET 
+        Diagnosis = @Diagnosis, 
+        Prescription = @Prescription, 
+        Notes = @Notes, 
+        CreatedByUserID = @CreatedByUserID, 
+        CreatedAt = @CreatedAt
+    WHERE MedicalRecordID = @MedicalRecordID;
+END;
+GO
+
+CREATE PROCEDURE DeleteMedicalRecord
+    @MedicalRecordID INT
+AS
+BEGIN
+
+    DELETE FROM MedicalRecords 
+    WHERE MedicalRecordID = @MedicalRecordID;
+END;
+GO
+
+CREATE PROCEDURE DoesMedicalRecordExist
+    @MedicalRecordID INT
+AS
+BEGIN
+
+    SELECT Found = 1 FROM MedicalRecords WHERE MedicalRecordID = @MedicalRecordID;
+END;
+GO

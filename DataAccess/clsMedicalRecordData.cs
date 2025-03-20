@@ -14,12 +14,12 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT * FROM MedicalRecords WHERE MedicalRecordID = @MedicalRecordID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("GetMedicalRecordByID", connection))
                     {
                         command.Parameters.AddWithValue("@MedicalRecordID", (object)MedicalRecordID ?? DBNull.Value);
 
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
 
                         using(SqlDataReader reader = command.ExecuteReader())
@@ -58,11 +58,8 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"INSERT INTO MedicalRecords (Diagnosis, Prescription, Notes, AppointmentID, CreatedByUserID, CreatedAt)
-                            VALUES (@Diagnosis, @Prescription, @Notes, @AppointmentID, @CreatedByUserID, @CreatedAt)
-                            SELECT SCOPE_IDENTITY();";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("AddNewMedicalRecord", connection))
                     {
 
                         command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
@@ -72,6 +69,7 @@ namespace ClinicManagementDB_DataAccess
                         command.Parameters.AddWithValue("@CreatedAt", CreatedAt);
                         command.Parameters.AddWithValue("@AppointmentID", AppointmentID);
 
+                        command.CommandType = CommandType.StoredProcedure;
                         connection.Open();
 
                         object result = command.ExecuteScalar();
@@ -97,18 +95,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"UPDATE MedicalRecords  
-                            SET 
-                            Diagnosis = @Diagnosis, 
-                            Prescription = @Prescription, 
-                            Notes = @Notes, 
-                            CreatedByUserID = @CreatedByUserID, 
-                            CreatedAt = @CreatedAt
-                            WHERE MedicalRecordID = @MedicalRecordID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("UpdateMedicalRecord", connection))
                     {
-
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@MedicalRecordID", MedicalRecordID);
                         command.Parameters.AddWithValue("@Diagnosis", Diagnosis);
                         command.Parameters.AddWithValue("@Prescription", (object)Prescription ?? DBNull.Value);
@@ -138,11 +128,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = @"Delete MedicalRecords 
-                                where MedicalRecordID = @MedicalRecordID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DeleteMedicalRecord", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@MedicalRecordID", (object)MedicalRecordID ?? DBNull.Value);
 
                         connection.Open();
@@ -167,10 +156,10 @@ namespace ClinicManagementDB_DataAccess
             {
                 using(SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    string query = "SELECT Found = 1 FROM MedicalRecords WHERE MedicalRecordID = @MedicalRecordID";
 
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using(SqlCommand command = new SqlCommand("DoesMedicalRecordExist", connection))
                     {
+                        command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@MedicalRecordID", (object)MedicalRecordID ?? DBNull.Value);
 
                         connection.Open();
