@@ -67,7 +67,7 @@ namespace UI.People
 
             }
 
-            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Person)";
+            lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} People)";
         }
         private void frmPeopleManagement_Load(object sender, EventArgs e)
         {
