@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.cmsAppointments = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAddNewAppointment = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,12 +49,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.txtPageNumber = new System.Windows.Forms.TextBox();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
-            this.tsmiAddNewAppointment = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.cmsAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,7 +122,18 @@
             this.tsmkDoctorInfo,
             this.tsmiCallPatient});
             this.cmsAppointments.Name = "cmsPerson";
-            this.cmsAppointments.Size = new System.Drawing.Size(294, 236);
+            this.cmsAppointments.Size = new System.Drawing.Size(294, 214);
+            // 
+            // tsmiAddNewAppointment
+            // 
+            this.tsmiAddNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewAppointment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewAppointment.Name = "tsmiAddNewAppointment";
+            this.tsmiAddNewAppointment.Size = new System.Drawing.Size(293, 30);
+            this.tsmiAddNewAppointment.Text = "Add New Appointment";
+            this.tsmiAddNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewAppointment.Click += new System.EventHandler(this.tsmiAddNewAppointment_Click);
             // 
             // tsmiEditPatientInfo
             // 
@@ -289,23 +300,6 @@
             this.btnFind.Visible = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnCancel.BackgroundImage = global::UI.Properties.Resources.cancel;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(623, 212);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(34, 34);
-            this.btnCancel.TabIndex = 35;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // txtPageNumber
             // 
             this.txtPageNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -362,16 +356,22 @@
             this.lblOfTotalPagesAndRows.TabIndex = 37;
             this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
-            // tsmiAddNewAppointment
+            // btnCancel
             // 
-            this.tsmiAddNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewAppointment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewAppointment.Name = "tsmiAddNewAppointment";
-            this.tsmiAddNewAppointment.Size = new System.Drawing.Size(293, 30);
-            this.tsmiAddNewAppointment.Text = "Add New Appointment";
-            this.tsmiAddNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewAppointment.Click += new System.EventHandler(this.tsmiAddNewAppointment_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnCancel.BackgroundImage = global::UI.Properties.Resources.cancel;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(661, 211);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(41, 37);
+            this.btnCancel.TabIndex = 41;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmAppointmentsManagement
             // 
@@ -379,11 +379,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1329, 861);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtPageNumber);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.lblOfTotalPagesAndRows);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dgvAppointments);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.btnAddAppointment);
@@ -423,7 +423,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ToolStripMenuItem tsmiPatientMedicalRecords;
         private System.Windows.Forms.Button btnFind;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtPageNumber;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
@@ -432,5 +431,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmkDoctorInfo;
         private System.Windows.Forms.ToolStripMenuItem tsmiCallPatient;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddNewAppointment;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

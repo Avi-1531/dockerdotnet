@@ -82,9 +82,7 @@ namespace UI.People
         }
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             txtSearch.Visible = (cbFilter.Text != "None");
-
             btnFind.Visible = (cbFilter.Text != "None");
             if(txtSearch.Visible)
             {
@@ -178,7 +176,6 @@ namespace UI.People
                     dtPeople = clsPerson.GetPersonWithPersonID(PersonID);
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     _CancelPagination();
                     break;
                 case "Full Name":
@@ -188,7 +185,6 @@ namespace UI.People
                     lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Person)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     break;
                 case "National ID":
                     string NationalID = txtSearch.Text.Trim();
@@ -196,7 +192,6 @@ namespace UI.People
                     lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Person)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     _CancelPagination();
                     break;
             }
@@ -208,7 +203,6 @@ namespace UI.People
             _AllowPagination();
             txtSearch.Text = string.Empty;
             btnCancel.Visible = false;
-            btnFind.Visible = true;
         }
         private void _CancelPagination()
         {

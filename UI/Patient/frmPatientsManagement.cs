@@ -185,7 +185,6 @@ namespace UI.Patient
                     dtPatients = clsPatient.GetPatientWithPersonID(PersonID);
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     _CancelPagination();
                     break;
                 case "Patient ID":
@@ -193,7 +192,6 @@ namespace UI.Patient
                     dtPatients = clsPatient.GetPatientWithPatientID(PatientID);
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     _CancelPagination();
                     break;
                 case "Full Name":
@@ -203,7 +201,6 @@ namespace UI.Patient
                     lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patient)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     break;
                 case "National ID":
                     string NationalID = txtSearch.Text.Trim();
@@ -211,7 +208,6 @@ namespace UI.Patient
                     lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patient)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     _CancelPagination();
                     break;
             }

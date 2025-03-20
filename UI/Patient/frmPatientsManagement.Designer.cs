@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             this.cmsPatient = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAddNewPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +50,8 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
-            this.tsmiAddNewPatient = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
             this.cmsPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,7 +118,18 @@
             this.tsmiPatientMedicalRecords,
             this.tsmiCallPatientEmergencyPhone});
             this.cmsPatient.Name = "cmsPerson";
-            this.cmsPatient.Size = new System.Drawing.Size(332, 176);
+            this.cmsPatient.Size = new System.Drawing.Size(332, 154);
+            // 
+            // tsmiAddNewPatient
+            // 
+            this.tsmiAddNewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tsmiAddNewPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmiAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.tsmiAddNewPatient.Name = "tsmiAddNewPatient";
+            this.tsmiAddNewPatient.Size = new System.Drawing.Size(331, 30);
+            this.tsmiAddNewPatient.Text = "Add New Patient";
+            this.tsmiAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsmiAddNewPatient.Click += new System.EventHandler(this.tsmiAddNewPatient_Click);
             // 
             // tsmiEditPatientInfo
             // 
@@ -302,23 +313,6 @@
             this.lblOfTotalPagesAndRows.TabIndex = 16;
             this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnCancel.BackgroundImage = global::UI.Properties.Resources.cancel;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(623, 212);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(34, 34);
-            this.btnCancel.TabIndex = 29;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnFind
             // 
             this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -336,16 +330,22 @@
             this.btnFind.Visible = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // tsmiAddNewPatient
+            // btnCancel
             // 
-            this.tsmiAddNewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewPatient.Name = "tsmiAddNewPatient";
-            this.tsmiAddNewPatient.Size = new System.Drawing.Size(331, 30);
-            this.tsmiAddNewPatient.Text = "Add New Patient";
-            this.tsmiAddNewPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewPatient.Click += new System.EventHandler(this.tsmiAddNewPatient_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnCancel.BackgroundImage = global::UI.Properties.Resources.cancel;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(661, 211);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(41, 37);
+            this.btnCancel.TabIndex = 31;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmPatientsManagement
             // 
@@ -353,7 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtPageNumber);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.btnPreviousPage);
@@ -365,7 +365,7 @@
             this.Controls.Add(this.lblFilterBy);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnFind);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -399,9 +399,9 @@
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
         private System.Windows.Forms.Label lblOfTotalPagesAndRows;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.ToolStripMenuItem tsmiCallPatientEmergencyPhone;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddNewPatient;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

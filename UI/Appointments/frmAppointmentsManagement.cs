@@ -186,14 +186,12 @@ namespace UI.Appointments
                     dtAppointments = clsAppointment.GetAppointmentsWithPatientID(_PageNumber, _PageSize, ref _Records, PatientID);
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     break;
                 case "Appointment ID":
                     int AppointmentID = Int32.Parse(txtSearch.Text.Trim());
                     dtAppointments = clsAppointment.GetAppointmentWithAppointmentID(AppointmentID);
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     _CancelPagination();
                     break;
                 case "Patient Name":
@@ -203,14 +201,12 @@ namespace UI.Appointments
                     lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointment)";
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     break;
                 case "Doctor ID":
                     int DoctorID = Int32.Parse(txtSearch.Text.Trim());
                     dtAppointments = clsAppointment.GetAppointmentsWithDoctorID(_PageNumber, _PageSize, ref _Records, DoctorID);
                     _LoadToDataGridView();
                     btnCancel.Visible = true;
-                    btnFind.Visible = false;
                     break;
             }
         }
