@@ -64,6 +64,7 @@ namespace UI.Appointments
                 dgvAppointments.Columns[7].HeaderText = "Payment ID";
                 dgvAppointments.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
+                dgvAppointments.ClearSelection();
             }
             lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Appointments)";
 

@@ -56,6 +56,8 @@ namespace UI.Doctor
 
                 dgvDoctors.Columns[9].HeaderText = "Consultation Fee";
                 dgvDoctors.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                dgvDoctors.ClearSelection();
             }
 
             lblRecordsValue.Text = dgvDoctors.Rows.Count.ToString();

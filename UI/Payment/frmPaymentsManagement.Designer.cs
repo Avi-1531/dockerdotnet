@@ -367,6 +367,7 @@
             this.Text = "frmPaymentManagement";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPaymentsManagement_Load);
+            this.Shown += new System.EventHandler(this.frmPaymentsManagement_Shown);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -374,6 +374,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPatientsManagement";
             this.Load += new System.EventHandler(this.frmPatientsManagement_Load);
+            this.Shown += new System.EventHandler(this.frmPatientsManagement_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
             this.cmsPatient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

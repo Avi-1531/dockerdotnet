@@ -51,7 +51,8 @@ namespace UI.Payment
 
                 dgvPayments.Columns[6].HeaderText = "Created By";
                 dgvPayments.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                
+                dgvPayments.ClearSelection();
             }
             lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Payments)";
         }
@@ -86,7 +87,6 @@ namespace UI.Payment
         {
             _ = _LoadStatisticsAsync();
             _LoadData();
-            dgvPayments.ClearSelection();
         }
         private void btnNextPage_Click(object sender, EventArgs e)
         {
@@ -111,5 +111,9 @@ namespace UI.Payment
 
         }
 
+        private void frmPaymentsManagement_Shown(object sender, EventArgs e)
+        {
+            dgvPayments.ClearSelection();
+        }
     }
 }

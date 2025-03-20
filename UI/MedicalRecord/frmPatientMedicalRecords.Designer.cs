@@ -184,6 +184,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPatientMedicalRecords";
             this.Load += new System.EventHandler(this.frmPatientMedicalRecords_Load);
+            this.Shown += new System.EventHandler(this.frmPatientMedicalRecords_Shown);
             this.cmsMedicalRecords.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicalRecords)).EndInit();
             this.ResumeLayout(false);

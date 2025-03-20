@@ -66,5 +66,10 @@ namespace UI.MedicalRecord
             frmMedicalRecordInfo frm = new frmMedicalRecordInfo(_MedicalRecordID);
             frm.ShowDialog();
         }
+
+        private void frmPatientMedicalRecords_Shown(object sender, EventArgs e)
+        {
+            dgvMedicalRecords.ClearSelection();
+        }
     }
 }

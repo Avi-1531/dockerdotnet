@@ -65,8 +65,8 @@ namespace UI.People
                 dgvPeople.Columns[8].HeaderText = "Created By";
                 dgvPeople.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
+                dgvPeople.ClearSelection();
             }
-
             lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} People)";
         }
         private void frmPeopleManagement_Load(object sender, EventArgs e)

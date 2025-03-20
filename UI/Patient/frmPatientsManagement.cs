@@ -65,6 +65,7 @@ namespace UI.Patient
                 dgvPatients.Columns[8].HeaderText = "E. Contact Phone";
                 dgvPatients.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
+                dgvPatients.ClearSelection();
             }
             lblOfTotalPagesAndRows.Text = $"of {Math.Ceiling((decimal)_Records / _PageSize)} pages ({_Records} Patients)";
         }
