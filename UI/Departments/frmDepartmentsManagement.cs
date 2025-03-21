@@ -99,10 +99,6 @@ namespace UI.Departments
             frmAdd.ShowDialog();
             _LoadData();
         }
-
-        private void dgvDepartments_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tsmiEditDepartment_Click(sender, e);
-        }
+ 
     }
 }

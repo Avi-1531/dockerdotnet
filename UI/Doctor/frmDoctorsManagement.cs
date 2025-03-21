@@ -177,9 +177,5 @@ namespace UI.Doctor
             _LoadData();
         }
 
-        private void dgvDoctors_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tsmiEditDoctorInfo_Click(sender, e);
-        }
     }
 }

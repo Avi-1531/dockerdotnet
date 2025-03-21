@@ -225,9 +225,5 @@ namespace UI.People
             _LoadDataTable();
             _LoadToDataGridView();
         }
-        private void dgvPeople_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tsmEditPersonalInformation_Click(sender, e);
-        }
     }
 }

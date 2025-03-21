@@ -20,6 +20,7 @@ using UI.Dashboard;
 
 namespace UI
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public partial class frmMain : Form
     {
         public delegate void FormClose();

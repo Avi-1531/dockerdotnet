@@ -42,6 +42,7 @@ namespace UI.Appointments
             _SetConstraints();
             _LoadData();
         }
+
         private void _LoadData()
         {
             if(_Appointment.AppointmentID == null)

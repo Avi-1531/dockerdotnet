@@ -104,7 +104,6 @@
             this.dgvReceptionists.ShowRowErrors = false;
             this.dgvReceptionists.Size = new System.Drawing.Size(1281, 560);
             this.dgvReceptionists.TabIndex = 11;
-            this.dgvReceptionists.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvReceptionists_CellMouseDoubleClick);
             // 
             // cmsReceptionist
             // 

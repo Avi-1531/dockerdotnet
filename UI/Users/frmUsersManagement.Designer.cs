@@ -272,7 +272,6 @@
             this.dgvUsers.ShowRowErrors = false;
             this.dgvUsers.Size = new System.Drawing.Size(767, 560);
             this.dgvUsers.TabIndex = 21;
-            this.dgvUsers.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_CellMouseDoubleClick);
             this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
             // cbFilter

@@ -28,386 +28,372 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.cmsAppointments = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiAddNewAppointment = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmkDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCallPatient = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.btnAddAppointment = new System.Windows.Forms.Button();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblFilterBy = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.txtPageNumber = new System.Windows.Forms.TextBox();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
-            this.cmsAppointments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            dgvAppointments = new System.Windows.Forms.DataGridView();
+            cmsAppointments = new System.Windows.Forms.ContextMenuStrip(components);
+            tsmiAddNewAppointment = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiEditPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiShowDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiPatientMedicalRecords = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiPatientInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmkDoctorInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiCallPatient = new System.Windows.Forms.ToolStripMenuItem();
+            lblHeader = new System.Windows.Forms.Label();
+            btnAddAppointment = new System.Windows.Forms.Button();
+            cbFilter = new System.Windows.Forms.ComboBox();
+            lblFilterBy = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            txtSearch = new System.Windows.Forms.TextBox();
+            btnFind = new System.Windows.Forms.Button();
+            txtPageNumber = new System.Windows.Forms.TextBox();
+            btnNextPage = new System.Windows.Forms.Button();
+            btnPreviousPage = new System.Windows.Forms.Button();
+            lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
+            btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)dgvAppointments).BeginInit();
+            cmsAppointments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // dgvAppointments
             // 
-            this.dgvAppointments.AllowUserToAddRows = false;
-            this.dgvAppointments.AllowUserToDeleteRows = false;
-            this.dgvAppointments.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.dgvAppointments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAppointments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.dgvAppointments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvAppointments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dgvAppointments.AllowUserToAddRows = false;
+            dgvAppointments.AllowUserToDeleteRows = false;
+            dgvAppointments.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            dgvAppointments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvAppointments.BackgroundColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dgvAppointments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dgvAppointments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAppointments.ColumnHeadersHeight = 40;
-            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvAppointments.ContextMenuStrip = this.cmsAppointments;
+            dgvAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvAppointments.ColumnHeadersHeight = 40;
+            dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvAppointments.ContextMenuStrip = cmsAppointments;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointments.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAppointments.EnableHeadersVisualStyles = false;
-            this.dgvAppointments.Location = new System.Drawing.Point(24, 252);
-            this.dgvAppointments.MultiSelect = false;
-            this.dgvAppointments.Name = "dgvAppointments";
-            this.dgvAppointments.ReadOnly = true;
-            this.dgvAppointments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvAppointments.RowHeadersVisible = false;
-            this.dgvAppointments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvAppointments.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvAppointments.EnableHeadersVisualStyles = false;
+            dgvAppointments.Location = new System.Drawing.Point(24, 252);
+            dgvAppointments.MultiSelect = false;
+            dgvAppointments.Name = "dgvAppointments";
+            dgvAppointments.ReadOnly = true;
+            dgvAppointments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dgvAppointments.RowHeadersVisible = false;
+            dgvAppointments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointments.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvAppointments.RowTemplate.Height = 35;
-            this.dgvAppointments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAppointments.ShowCellErrors = false;
-            this.dgvAppointments.ShowCellToolTips = false;
-            this.dgvAppointments.ShowEditingIcon = false;
-            this.dgvAppointments.ShowRowErrors = false;
-            this.dgvAppointments.Size = new System.Drawing.Size(1281, 532);
-            this.dgvAppointments.TabIndex = 31;
-            this.dgvAppointments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAppointments_CellMouseDoubleClick);
+            dgvAppointments.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvAppointments.RowTemplate.Height = 35;
+            dgvAppointments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvAppointments.ShowCellErrors = false;
+            dgvAppointments.ShowCellToolTips = false;
+            dgvAppointments.ShowEditingIcon = false;
+            dgvAppointments.ShowRowErrors = false;
+            dgvAppointments.Size = new System.Drawing.Size(1281, 532);
+            dgvAppointments.TabIndex = 31;
             // 
             // cmsAppointments
             // 
-            this.cmsAppointments.BackColor = System.Drawing.SystemColors.Control;
-            this.cmsAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAddNewAppointment,
-            this.tsmiEditPatientInfo,
-            this.tsmiShowDoctorInfo,
-            this.tsmiPatientMedicalRecords,
-            this.tsmiPatientInfo,
-            this.tsmkDoctorInfo,
-            this.tsmiCallPatient});
-            this.cmsAppointments.Name = "cmsPerson";
-            this.cmsAppointments.Size = new System.Drawing.Size(294, 214);
+            cmsAppointments.BackColor = System.Drawing.SystemColors.Control;
+            cmsAppointments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiAddNewAppointment, tsmiEditPatientInfo, tsmiShowDoctorInfo, tsmiPatientMedicalRecords, tsmiPatientInfo, tsmkDoctorInfo, tsmiCallPatient });
+            cmsAppointments.Name = "cmsPerson";
+            cmsAppointments.Size = new System.Drawing.Size(294, 214);
             // 
             // tsmiAddNewAppointment
             // 
-            this.tsmiAddNewAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewAppointment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewAppointment.Name = "tsmiAddNewAppointment";
-            this.tsmiAddNewAppointment.Size = new System.Drawing.Size(293, 30);
-            this.tsmiAddNewAppointment.Text = "Add New Appointment";
-            this.tsmiAddNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewAppointment.Click += new System.EventHandler(this.tsmiAddNewAppointment_Click);
+            tsmiAddNewAppointment.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiAddNewAppointment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiAddNewAppointment.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiAddNewAppointment.Name = "tsmiAddNewAppointment";
+            tsmiAddNewAppointment.Size = new System.Drawing.Size(293, 30);
+            tsmiAddNewAppointment.Text = "Add New Appointment";
+            tsmiAddNewAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiAddNewAppointment.Click += tsmiAddNewAppointment_Click;
             // 
             // tsmiEditPatientInfo
             // 
-            this.tsmiEditPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
-            this.tsmiEditPatientInfo.Size = new System.Drawing.Size(293, 30);
-            this.tsmiEditPatientInfo.Text = "Edit Appointment";
-            this.tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiEditPatientInfo.Click += new System.EventHandler(this.tsmiEditAppointmentInfo_Click);
+            tsmiEditPatientInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiEditPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiEditPatientInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiEditPatientInfo.Name = "tsmiEditPatientInfo";
+            tsmiEditPatientInfo.Size = new System.Drawing.Size(293, 30);
+            tsmiEditPatientInfo.Text = "Edit Appointment";
+            tsmiEditPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiEditPatientInfo.Click += tsmiEditAppointmentInfo_Click;
             // 
             // tsmiShowDoctorInfo
             // 
-            this.tsmiShowDoctorInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
-            this.tsmiShowDoctorInfo.Size = new System.Drawing.Size(293, 30);
-            this.tsmiShowDoctorInfo.Text = "Appointment Information";
-            this.tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiShowDoctorInfo.Click += new System.EventHandler(this.tsmiShowDoctorInfo_Click);
+            tsmiShowDoctorInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiShowDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiShowDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiShowDoctorInfo.Name = "tsmiShowDoctorInfo";
+            tsmiShowDoctorInfo.Size = new System.Drawing.Size(293, 30);
+            tsmiShowDoctorInfo.Text = "Appointment Information";
+            tsmiShowDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiShowDoctorInfo.Click += tsmiShowDoctorInfo_Click;
             // 
             // tsmiPatientMedicalRecords
             // 
-            this.tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
-            this.tsmiPatientMedicalRecords.Size = new System.Drawing.Size(293, 30);
-            this.tsmiPatientMedicalRecords.Text = "Patient\'s Medical Records";
-            this.tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiPatientMedicalRecords.Click += new System.EventHandler(this.tsmiPatientMedicalRecords_Click);
+            tsmiPatientMedicalRecords.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiPatientMedicalRecords.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiPatientMedicalRecords.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiPatientMedicalRecords.Name = "tsmiPatientMedicalRecords";
+            tsmiPatientMedicalRecords.Size = new System.Drawing.Size(293, 30);
+            tsmiPatientMedicalRecords.Text = "Patient's Medical Records";
+            tsmiPatientMedicalRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiPatientMedicalRecords.Click += tsmiPatientMedicalRecords_Click;
             // 
             // tsmiPatientInfo
             // 
-            this.tsmiPatientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiPatientInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiPatientInfo.Name = "tsmiPatientInfo";
-            this.tsmiPatientInfo.Size = new System.Drawing.Size(293, 30);
-            this.tsmiPatientInfo.Text = "Patient Information";
-            this.tsmiPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiPatientInfo.Click += new System.EventHandler(this.tsmiPatientInfo_Click);
+            tsmiPatientInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiPatientInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiPatientInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiPatientInfo.Name = "tsmiPatientInfo";
+            tsmiPatientInfo.Size = new System.Drawing.Size(293, 30);
+            tsmiPatientInfo.Text = "Patient Information";
+            tsmiPatientInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiPatientInfo.Click += tsmiPatientInfo_Click;
             // 
             // tsmkDoctorInfo
             // 
-            this.tsmkDoctorInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmkDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmkDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmkDoctorInfo.Name = "tsmkDoctorInfo";
-            this.tsmkDoctorInfo.Size = new System.Drawing.Size(293, 30);
-            this.tsmkDoctorInfo.Text = "Doctor Information";
-            this.tsmkDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmkDoctorInfo.Click += new System.EventHandler(this.tsmkDoctorInfo_Click);
+            tsmkDoctorInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmkDoctorInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmkDoctorInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmkDoctorInfo.Name = "tsmkDoctorInfo";
+            tsmkDoctorInfo.Size = new System.Drawing.Size(293, 30);
+            tsmkDoctorInfo.Text = "Doctor Information";
+            tsmkDoctorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmkDoctorInfo.Click += tsmkDoctorInfo_Click;
             // 
             // tsmiCallPatient
             // 
-            this.tsmiCallPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiCallPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiCallPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiCallPatient.Name = "tsmiCallPatient";
-            this.tsmiCallPatient.Size = new System.Drawing.Size(293, 30);
-            this.tsmiCallPatient.Text = "Call Patient";
-            this.tsmiCallPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiCallPatient.Click += new System.EventHandler(this.tsmiCallPatient_Click);
+            tsmiCallPatient.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiCallPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiCallPatient.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiCallPatient.Name = "tsmiCallPatient";
+            tsmiCallPatient.Size = new System.Drawing.Size(293, 30);
+            tsmiCallPatient.Text = "Call Patient";
+            tsmiCallPatient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiCallPatient.Click += tsmiCallPatient_Click;
             // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(448, 124);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(433, 40);
-            this.lblHeader.TabIndex = 26;
-            this.lblHeader.Text = "APPOINTMENTS MANAGEMENT";
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblHeader.Location = new System.Drawing.Point(448, 124);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new System.Drawing.Size(433, 40);
+            lblHeader.TabIndex = 26;
+            lblHeader.Text = "APPOINTMENTS MANAGEMENT";
             // 
             // btnAddAppointment
             // 
-            this.btnAddAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddAppointment.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
-            this.btnAddAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAppointment.FlatAppearance.BorderSize = 0;
-            this.btnAddAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAppointment.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAppointment.Location = new System.Drawing.Point(1248, 200);
-            this.btnAddAppointment.Name = "btnAddAppointment";
-            this.btnAddAppointment.Size = new System.Drawing.Size(57, 50);
-            this.btnAddAppointment.TabIndex = 33;
-            this.btnAddAppointment.UseVisualStyleBackColor = false;
-            this.btnAddAppointment.Click += new System.EventHandler(this.btnAddAppointment_Click);
+            btnAddAppointment.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnAddAppointment.BackgroundImage = Properties.Resources.Add_NewV2;
+            btnAddAppointment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnAddAppointment.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnAddAppointment.FlatAppearance.BorderSize = 0;
+            btnAddAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAddAppointment.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnAddAppointment.Location = new System.Drawing.Point(1248, 200);
+            btnAddAppointment.Name = "btnAddAppointment";
+            btnAddAppointment.Size = new System.Drawing.Size(57, 50);
+            btnAddAppointment.TabIndex = 33;
+            btnAddAppointment.UseVisualStyleBackColor = false;
+            btnAddAppointment.Click += btnAddAppointment_Click;
             // 
             // cbFilter
             // 
-            this.cbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.DropDownWidth = 245;
-            this.cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.IntegralHeight = false;
-            this.cbFilter.Items.AddRange(new object[] {
-            "None",
-            "Appointment ID",
-            "Patient Name",
-            "Patient ID",
-            "Doctor ID"});
-            this.cbFilter.Location = new System.Drawing.Point(121, 213);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(245, 33);
-            this.cbFilter.TabIndex = 32;
-            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
+            cbFilter.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbFilter.DropDownWidth = 245;
+            cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cbFilter.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            cbFilter.FormattingEnabled = true;
+            cbFilter.IntegralHeight = false;
+            cbFilter.Items.AddRange(new object[] { "None", "Appointment ID", "Patient Name", "Patient ID", "Doctor ID" });
+            cbFilter.Location = new System.Drawing.Point(121, 213);
+            cbFilter.Name = "cbFilter";
+            cbFilter.Size = new System.Drawing.Size(245, 33);
+            cbFilter.TabIndex = 32;
+            cbFilter.SelectedIndexChanged += cbFilters_SelectedIndexChanged;
             // 
             // lblFilterBy
             // 
-            this.lblFilterBy.AutoSize = true;
-            this.lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterBy.Location = new System.Drawing.Point(24, 214);
-            this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(91, 30);
-            this.lblFilterBy.TabIndex = 29;
-            this.lblFilterBy.Text = "Filter By:";
+            lblFilterBy.AutoSize = true;
+            lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblFilterBy.Location = new System.Drawing.Point(24, 214);
+            lblFilterBy.Name = "lblFilterBy";
+            lblFilterBy.Size = new System.Drawing.Size(91, 30);
+            lblFilterBy.TabIndex = 29;
+            lblFilterBy.Text = "Filter By:";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.Appointments;
-            this.pictureBox1.Location = new System.Drawing.Point(598, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.Appointments;
+            pictureBox1.Location = new System.Drawing.Point(598, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(133, 103);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtSearch.Location = new System.Drawing.Point(372, 213);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(245, 34);
-            this.txtSearch.TabIndex = 34;
-            this.txtSearch.Visible = false;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            txtSearch.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            txtSearch.Location = new System.Drawing.Point(372, 213);
+            txtSearch.Multiline = true;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new System.Drawing.Size(245, 34);
+            txtSearch.TabIndex = 34;
+            txtSearch.Visible = false;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // btnFind
             // 
-            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnFind.BackgroundImage = global::UI.Properties.Resources.SearchV2;
-            this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFind.FlatAppearance.BorderSize = 0;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(623, 212);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(34, 34);
-            this.btnFind.TabIndex = 36;
-            this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Visible = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            btnFind.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnFind.BackgroundImage = Properties.Resources.SearchV2;
+            btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnFind.FlatAppearance.BorderSize = 0;
+            btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnFind.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnFind.Location = new System.Drawing.Point(623, 212);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new System.Drawing.Size(34, 34);
+            btnFind.TabIndex = 36;
+            btnFind.UseVisualStyleBackColor = false;
+            btnFind.Visible = false;
+            btnFind.Click += btnFind_Click;
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPageNumber.Enabled = false;
-            this.txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtPageNumber.Location = new System.Drawing.Point(98, 811);
-            this.txtPageNumber.Multiline = true;
-            this.txtPageNumber.Name = "txtPageNumber";
-            this.txtPageNumber.Size = new System.Drawing.Size(41, 25);
-            this.txtPageNumber.TabIndex = 40;
-            this.txtPageNumber.Text = "1";
+            txtPageNumber.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            txtPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtPageNumber.Enabled = false;
+            txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            txtPageNumber.Location = new System.Drawing.Point(98, 811);
+            txtPageNumber.Multiline = true;
+            txtPageNumber.Name = "txtPageNumber";
+            txtPageNumber.Size = new System.Drawing.Size(41, 25);
+            txtPageNumber.TabIndex = 40;
+            txtPageNumber.Text = "1";
             // 
             // btnNextPage
             // 
-            this.btnNextPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnNextPage.BackgroundImage = global::UI.Properties.Resources.right;
-            this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNextPage.FlatAppearance.BorderSize = 0;
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextPage.Location = new System.Drawing.Point(61, 806);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(31, 34);
-            this.btnNextPage.TabIndex = 38;
-            this.btnNextPage.UseVisualStyleBackColor = false;
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            btnNextPage.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnNextPage.BackgroundImage = Properties.Resources.right;
+            btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnNextPage.FlatAppearance.BorderSize = 0;
+            btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnNextPage.Location = new System.Drawing.Point(61, 806);
+            btnNextPage.Name = "btnNextPage";
+            btnNextPage.Size = new System.Drawing.Size(31, 34);
+            btnNextPage.TabIndex = 38;
+            btnNextPage.UseVisualStyleBackColor = false;
+            btnNextPage.Click += btnNextPage_Click;
             // 
             // btnPreviousPage
             // 
-            this.btnPreviousPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnPreviousPage.BackgroundImage = global::UI.Properties.Resources.left;
-            this.btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
-            this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousPage.Location = new System.Drawing.Point(24, 806);
-            this.btnPreviousPage.Name = "btnPreviousPage";
-            this.btnPreviousPage.Size = new System.Drawing.Size(31, 34);
-            this.btnPreviousPage.TabIndex = 39;
-            this.btnPreviousPage.UseVisualStyleBackColor = false;
-            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            btnPreviousPage.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnPreviousPage.BackgroundImage = Properties.Resources.left;
+            btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnPreviousPage.FlatAppearance.BorderSize = 0;
+            btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnPreviousPage.Location = new System.Drawing.Point(24, 806);
+            btnPreviousPage.Name = "btnPreviousPage";
+            btnPreviousPage.Size = new System.Drawing.Size(31, 34);
+            btnPreviousPage.TabIndex = 39;
+            btnPreviousPage.UseVisualStyleBackColor = false;
+            btnPreviousPage.Click += btnPreviousPage_Click;
             // 
             // lblOfTotalPagesAndRows
             // 
-            this.lblOfTotalPagesAndRows.AutoSize = true;
-            this.lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOfTotalPagesAndRows.Location = new System.Drawing.Point(145, 813);
-            this.lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
-            this.lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
-            this.lblOfTotalPagesAndRows.TabIndex = 37;
-            this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
+            lblOfTotalPagesAndRows.AutoSize = true;
+            lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblOfTotalPagesAndRows.Location = new System.Drawing.Point(145, 813);
+            lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
+            lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
+            lblOfTotalPagesAndRows.TabIndex = 37;
+            lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnCancel.BackgroundImage = global::UI.Properties.Resources.cancel;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(661, 211);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(41, 37);
-            this.btnCancel.TabIndex = 41;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnCancel.BackgroundImage = Properties.Resources.cancel;
+            btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnCancel.Location = new System.Drawing.Point(661, 211);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(41, 37);
+            btnCancel.TabIndex = 41;
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Visible = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // frmAppointmentsManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtPageNumber);
-            this.Controls.Add(this.btnNextPage);
-            this.Controls.Add(this.btnPreviousPage);
-            this.Controls.Add(this.lblOfTotalPagesAndRows);
-            this.Controls.Add(this.dgvAppointments);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.btnAddAppointment);
-            this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblFilterBy);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnFind);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmAppointmentsManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmAppointmentsManagement";
-            this.Load += new System.EventHandler(this.frmAppointmentsManagement_Load);
-            this.Shown += new System.EventHandler(this.frmAppointmentsManagement_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
-            this.cmsAppointments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            ClientSize = new System.Drawing.Size(1329, 861);
+            Controls.Add(btnCancel);
+            Controls.Add(txtPageNumber);
+            Controls.Add(btnNextPage);
+            Controls.Add(btnPreviousPage);
+            Controls.Add(lblOfTotalPagesAndRows);
+            Controls.Add(dgvAppointments);
+            Controls.Add(lblHeader);
+            Controls.Add(btnAddAppointment);
+            Controls.Add(cbFilter);
+            Controls.Add(lblFilterBy);
+            Controls.Add(pictureBox1);
+            Controls.Add(txtSearch);
+            Controls.Add(btnFind);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "frmAppointmentsManagement";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "frmAppointmentsManagement";
+            Load += frmAppointmentsManagement_Load;
+            Shown += frmAppointmentsManagement_Shown;
+            ((System.ComponentModel.ISupportInitialize)dgvAppointments).EndInit();
+            cmsAppointments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

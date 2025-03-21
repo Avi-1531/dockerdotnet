@@ -243,9 +243,5 @@ namespace UI.Users
             frmUserLoginHistory.ShowDialog();
         }
 
-        private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tsmiEditUser_Click(sender, e);
-        }
     }
 }

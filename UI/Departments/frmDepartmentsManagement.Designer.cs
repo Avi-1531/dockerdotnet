@@ -115,7 +115,6 @@
             this.dgvDepartments.ShowRowErrors = false;
             this.dgvDepartments.Size = new System.Drawing.Size(767, 560);
             this.dgvDepartments.TabIndex = 11;
-            this.dgvDepartments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDepartments_CellMouseDoubleClick);
             this.dgvDepartments.SelectionChanged += new System.EventHandler(this.dgvDepartments_SelectionChanged);
             // 
             // cmsDepartments

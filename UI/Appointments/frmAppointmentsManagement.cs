@@ -266,9 +266,6 @@ namespace UI.Appointments
             _LoadToDataGridView();
         }
 
-        private void dgvAppointments_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tsmiEditAppointmentInfo_Click(sender, e);
-        }
+
     }
 }

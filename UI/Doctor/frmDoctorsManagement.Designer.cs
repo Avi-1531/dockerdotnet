@@ -104,7 +104,6 @@
             this.dgvDoctors.ShowRowErrors = false;
             this.dgvDoctors.Size = new System.Drawing.Size(1281, 560);
             this.dgvDoctors.TabIndex = 21;
-            this.dgvDoctors.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDoctors_CellMouseDoubleClick);
             // 
             // cmsDoctor
             // 

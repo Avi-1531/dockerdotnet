@@ -154,9 +154,5 @@ namespace UI.Receptionist
             _LoadData();
         }
 
-        private void dgvReceptionists_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tsmEditReceptionist_Click(sender, e);
-        }
     }
 }
