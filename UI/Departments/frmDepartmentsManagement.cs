@@ -40,17 +40,21 @@ namespace UI.Departments
             }
 
             lblRecordsValue.Text = dgvDepartments.Rows.Count.ToString();
-            lblTotalDepartmentsValue.Text = dgvDepartments.Rows.Count.ToString();
-            lblTotalDepartments.Visible = true;
-            lblTotalDepartmentsValue.Visible = true;
+
         }
         private async void _LoadStatistics(byte DepartmentID, string DepartmentName)
         {
+            var totalDepartments = clsDepartment.GetTotalDepartmentsAsync();
             var totalDoctorsTask = clsDepartment.TotalDoctorsByDepartmentIDAsync(DepartmentID);
             var totalVisitsTask = clsDepartment.TotalVisitsByDepartmentIDAsync(DepartmentID);
             var totalRevenueTask = clsDepartment.TotalRevenueByDepartmentIDAsync(DepartmentID);
 
-            await Task.WhenAll(totalDoctorsTask, totalVisitsTask, totalRevenueTask);
+            await Task.WhenAll(totalDepartments, totalDoctorsTask, totalVisitsTask, totalRevenueTask);
+
+            lblTotalDepartmentsValue.Text = totalDepartments.Result.ToString();
+            lblTotalDepartments.Visible = true;
+            lblTotalDepartmentsValue.Visible = true;
+
 
             lblTotalDoctorsValue.Text = totalDoctorsTask.Result.ToString();
             lblTotalDoctorsInDepartment.Text = $"Total Doctors in {DepartmentName} Department";
