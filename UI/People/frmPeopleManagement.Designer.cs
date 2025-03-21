@@ -77,6 +77,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(45, 45, 45);
             dgvPeople.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvPeople.BackgroundColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dgvPeople.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dgvPeople.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dgvPeople.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
@@ -201,7 +202,7 @@
             // 
             lblOfTotalPagesAndRows.AutoSize = true;
             lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblOfTotalPagesAndRows.Location = new System.Drawing.Point(145, 813);
+            lblOfTotalPagesAndRows.Location = new System.Drawing.Point(145, 797);
             lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
             lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
             lblOfTotalPagesAndRows.TabIndex = 0;
@@ -214,7 +215,7 @@
             txtPageNumber.Enabled = false;
             txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
-            txtPageNumber.Location = new System.Drawing.Point(98, 811);
+            txtPageNumber.Location = new System.Drawing.Point(98, 795);
             txtPageNumber.Multiline = true;
             txtPageNumber.Name = "txtPageNumber";
             txtPageNumber.Size = new System.Drawing.Size(41, 25);
@@ -264,7 +265,7 @@
             btnNextPage.FlatAppearance.BorderSize = 0;
             btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnNextPage.Location = new System.Drawing.Point(61, 806);
+            btnNextPage.Location = new System.Drawing.Point(61, 790);
             btnNextPage.Name = "btnNextPage";
             btnNextPage.Size = new System.Drawing.Size(31, 34);
             btnNextPage.TabIndex = 4;
@@ -280,7 +281,7 @@
             btnPreviousPage.FlatAppearance.BorderSize = 0;
             btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnPreviousPage.Location = new System.Drawing.Point(24, 806);
+            btnPreviousPage.Location = new System.Drawing.Point(24, 790);
             btnPreviousPage.Name = "btnPreviousPage";
             btnPreviousPage.Size = new System.Drawing.Size(31, 34);
             btnPreviousPage.TabIndex = 4;

@@ -28,390 +28,390 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.gbPersonalInformation = new System.Windows.Forms.GroupBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblUserID = new System.Windows.Forms.Label();
-            this.lblCreatedByAt = new System.Windows.Forms.Label();
-            this.lblUpdatedByAt = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblLastLogin = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.lblUserStatus = new System.Windows.Forms.Label();
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.panel5.SuspendLayout();
-            this.gbPersonalInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.SuspendLayout();
+            panel5 = new System.Windows.Forms.Panel();
+            gbPersonalInformation = new System.Windows.Forms.GroupBox();
+            pictureBox8 = new System.Windows.Forms.PictureBox();
+            pictureBox7 = new System.Windows.Forms.PictureBox();
+            pictureBox6 = new System.Windows.Forms.PictureBox();
+            pictureBox5 = new System.Windows.Forms.PictureBox();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            label20 = new System.Windows.Forms.Label();
+            lblUserID = new System.Windows.Forms.Label();
+            lblCreatedByAt = new System.Windows.Forms.Label();
+            lblUpdatedByAt = new System.Windows.Forms.Label();
+            label11 = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            lblLastLogin = new System.Windows.Forms.Label();
+            lblEmail = new System.Windows.Forms.Label();
+            lblPhone = new System.Windows.Forms.Label();
+            lblRole = new System.Windows.Forms.Label();
+            lblUserStatus = new System.Windows.Forms.Label();
+            lblFullName = new System.Windows.Forms.Label();
+            lblUserName = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            panel5.SuspendLayout();
+            gbPersonalInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel5.Controls.Add(this.gbPersonalInformation);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(5, -2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(460, 560);
-            this.panel5.TabIndex = 25;
+            panel5.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel5.Controls.Add(gbPersonalInformation);
+            panel5.Controls.Add(label1);
+            panel5.Location = new System.Drawing.Point(5, -2);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(460, 532);
+            panel5.TabIndex = 25;
             // 
             // gbPersonalInformation
             // 
-            this.gbPersonalInformation.BackColor = System.Drawing.Color.Transparent;
-            this.gbPersonalInformation.Controls.Add(this.pictureBox8);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox7);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox6);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox5);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox4);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox3);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox2);
-            this.gbPersonalInformation.Controls.Add(this.pictureBox1);
-            this.gbPersonalInformation.Controls.Add(this.label20);
-            this.gbPersonalInformation.Controls.Add(this.lblUserID);
-            this.gbPersonalInformation.Controls.Add(this.lblCreatedByAt);
-            this.gbPersonalInformation.Controls.Add(this.lblUpdatedByAt);
-            this.gbPersonalInformation.Controls.Add(this.label11);
-            this.gbPersonalInformation.Controls.Add(this.label12);
-            this.gbPersonalInformation.Controls.Add(this.label10);
-            this.gbPersonalInformation.Controls.Add(this.label8);
-            this.gbPersonalInformation.Controls.Add(this.label4);
-            this.gbPersonalInformation.Controls.Add(this.label6);
-            this.gbPersonalInformation.Controls.Add(this.lblLastLogin);
-            this.gbPersonalInformation.Controls.Add(this.lblEmail);
-            this.gbPersonalInformation.Controls.Add(this.lblPhone);
-            this.gbPersonalInformation.Controls.Add(this.lblRole);
-            this.gbPersonalInformation.Controls.Add(this.lblUserStatus);
-            this.gbPersonalInformation.Controls.Add(this.lblFullName);
-            this.gbPersonalInformation.Controls.Add(this.lblUserName);
-            this.gbPersonalInformation.Controls.Add(this.label2);
-            this.gbPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.gbPersonalInformation.Location = new System.Drawing.Point(8, 82);
-            this.gbPersonalInformation.Name = "gbPersonalInformation";
-            this.gbPersonalInformation.Size = new System.Drawing.Size(443, 470);
-            this.gbPersonalInformation.TabIndex = 33;
-            this.gbPersonalInformation.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::UI.Properties.Resources.Phone;
-            this.pictureBox6.Location = new System.Drawing.Point(136, 268);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 28;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::UI.Properties.Resources.Specialization;
-            this.pictureBox5.Location = new System.Drawing.Point(136, 222);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 29;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::UI.Properties.Resources.Fullname;
-            this.pictureBox4.Location = new System.Drawing.Point(136, 176);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::UI.Properties.Resources.Status;
-            this.pictureBox3.Location = new System.Drawing.Point(136, 130);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 31;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::UI.Properties.Resources.Username;
-            this.pictureBox2.Location = new System.Drawing.Point(136, 84);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.Hashtag;
-            this.pictureBox1.Location = new System.Drawing.Point(136, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(19, 38);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(77, 25);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "User ID:";
-            // 
-            // lblUserID
-            // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID.Location = new System.Drawing.Point(169, 38);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(60, 25);
-            this.lblUserID.TabIndex = 2;
-            this.lblUserID.Text = "[????]";
-            // 
-            // lblCreatedByAt
-            // 
-            this.lblCreatedByAt.AutoSize = true;
-            this.lblCreatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedByAt.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblCreatedByAt.Location = new System.Drawing.Point(20, 410);
-            this.lblCreatedByAt.Name = "lblCreatedByAt";
-            this.lblCreatedByAt.Size = new System.Drawing.Size(160, 20);
-            this.lblCreatedByAt.TabIndex = 0;
-            this.lblCreatedByAt.Text = "Created By [??] At [??] ";
-            // 
-            // lblUpdatedByAt
-            // 
-            this.lblUpdatedByAt.AutoSize = true;
-            this.lblUpdatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdatedByAt.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblUpdatedByAt.Location = new System.Drawing.Point(20, 430);
-            this.lblUpdatedByAt.Name = "lblUpdatedByAt";
-            this.lblUpdatedByAt.Size = new System.Drawing.Size(187, 20);
-            this.lblUpdatedByAt.TabIndex = 0;
-            this.lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
-            this.lblUpdatedByAt.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(19, 360);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 25);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Last Login:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 314);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 25);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Email:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 268);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 25);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Phone:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 222);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Role:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "User Status:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Full Name:";
-            // 
-            // lblLastLogin
-            // 
-            this.lblLastLogin.AutoSize = true;
-            this.lblLastLogin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastLogin.Location = new System.Drawing.Point(169, 360);
-            this.lblLastLogin.Name = "lblLastLogin";
-            this.lblLastLogin.Size = new System.Drawing.Size(60, 25);
-            this.lblLastLogin.TabIndex = 0;
-            this.lblLastLogin.Text = "[????]";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(169, 314);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 25);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "[????]";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(169, 268);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(60, 25);
-            this.lblPhone.TabIndex = 0;
-            this.lblPhone.Text = "[????]";
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(169, 222);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(60, 25);
-            this.lblRole.TabIndex = 0;
-            this.lblRole.Text = "[????]";
-            // 
-            // lblUserStatus
-            // 
-            this.lblUserStatus.AutoSize = true;
-            this.lblUserStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserStatus.Location = new System.Drawing.Point(169, 130);
-            this.lblUserStatus.Name = "lblUserStatus";
-            this.lblUserStatus.Size = new System.Drawing.Size(60, 25);
-            this.lblUserStatus.TabIndex = 0;
-            this.lblUserStatus.Text = "[????]";
-            // 
-            // lblFullName
-            // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(169, 176);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(60, 25);
-            this.lblFullName.TabIndex = 0;
-            this.lblFullName.Text = "[????]";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(169, 84);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(60, 25);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "[????]";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "User Name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 65);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "info";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::UI.Properties.Resources.email;
-            this.pictureBox7.Location = new System.Drawing.Point(136, 314);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 28;
-            this.pictureBox7.TabStop = false;
+            gbPersonalInformation.BackColor = System.Drawing.Color.Transparent;
+            gbPersonalInformation.Controls.Add(pictureBox8);
+            gbPersonalInformation.Controls.Add(pictureBox7);
+            gbPersonalInformation.Controls.Add(pictureBox6);
+            gbPersonalInformation.Controls.Add(pictureBox5);
+            gbPersonalInformation.Controls.Add(pictureBox4);
+            gbPersonalInformation.Controls.Add(pictureBox3);
+            gbPersonalInformation.Controls.Add(pictureBox2);
+            gbPersonalInformation.Controls.Add(pictureBox1);
+            gbPersonalInformation.Controls.Add(label20);
+            gbPersonalInformation.Controls.Add(lblUserID);
+            gbPersonalInformation.Controls.Add(lblCreatedByAt);
+            gbPersonalInformation.Controls.Add(lblUpdatedByAt);
+            gbPersonalInformation.Controls.Add(label11);
+            gbPersonalInformation.Controls.Add(label12);
+            gbPersonalInformation.Controls.Add(label10);
+            gbPersonalInformation.Controls.Add(label8);
+            gbPersonalInformation.Controls.Add(label4);
+            gbPersonalInformation.Controls.Add(label6);
+            gbPersonalInformation.Controls.Add(lblLastLogin);
+            gbPersonalInformation.Controls.Add(lblEmail);
+            gbPersonalInformation.Controls.Add(lblPhone);
+            gbPersonalInformation.Controls.Add(lblRole);
+            gbPersonalInformation.Controls.Add(lblUserStatus);
+            gbPersonalInformation.Controls.Add(lblFullName);
+            gbPersonalInformation.Controls.Add(lblUserName);
+            gbPersonalInformation.Controls.Add(label2);
+            gbPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            gbPersonalInformation.Location = new System.Drawing.Point(8, 57);
+            gbPersonalInformation.Name = "gbPersonalInformation";
+            gbPersonalInformation.Size = new System.Drawing.Size(443, 470);
+            gbPersonalInformation.TabIndex = 33;
+            gbPersonalInformation.TabStop = false;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::UI.Properties.Resources.history;
-            this.pictureBox8.Location = new System.Drawing.Point(136, 360);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 28;
-            this.pictureBox8.TabStop = false;
+            pictureBox8.Image = Properties.Resources.history;
+            pictureBox8.Location = new System.Drawing.Point(136, 360);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new System.Drawing.Size(27, 25);
+            pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 28;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = Properties.Resources.email;
+            pictureBox7.Location = new System.Drawing.Point(136, 314);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new System.Drawing.Size(27, 25);
+            pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 28;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.Phone;
+            pictureBox6.Location = new System.Drawing.Point(136, 268);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new System.Drawing.Size(27, 25);
+            pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 28;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.Specialization;
+            pictureBox5.Location = new System.Drawing.Point(136, 222);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new System.Drawing.Size(27, 25);
+            pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 29;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.Fullname;
+            pictureBox4.Location = new System.Drawing.Point(136, 176);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(27, 25);
+            pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 30;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.Status;
+            pictureBox3.Location = new System.Drawing.Point(136, 130);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(27, 25);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 31;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.Username;
+            pictureBox2.Location = new System.Drawing.Point(136, 84);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(27, 25);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 32;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Hashtag;
+            pictureBox1.Location = new System.Drawing.Point(136, 38);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(27, 25);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label20.Location = new System.Drawing.Point(19, 38);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(77, 25);
+            label20.TabIndex = 1;
+            label20.Text = "User ID:";
+            // 
+            // lblUserID
+            // 
+            lblUserID.AutoSize = true;
+            lblUserID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblUserID.Location = new System.Drawing.Point(169, 38);
+            lblUserID.Name = "lblUserID";
+            lblUserID.Size = new System.Drawing.Size(60, 25);
+            lblUserID.TabIndex = 2;
+            lblUserID.Text = "[????]";
+            // 
+            // lblCreatedByAt
+            // 
+            lblCreatedByAt.AutoSize = true;
+            lblCreatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblCreatedByAt.ForeColor = System.Drawing.Color.DarkGray;
+            lblCreatedByAt.Location = new System.Drawing.Point(20, 410);
+            lblCreatedByAt.Name = "lblCreatedByAt";
+            lblCreatedByAt.Size = new System.Drawing.Size(160, 20);
+            lblCreatedByAt.TabIndex = 0;
+            lblCreatedByAt.Text = "Created By [??] At [??] ";
+            // 
+            // lblUpdatedByAt
+            // 
+            lblUpdatedByAt.AutoSize = true;
+            lblUpdatedByAt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblUpdatedByAt.ForeColor = System.Drawing.Color.DarkGray;
+            lblUpdatedByAt.Location = new System.Drawing.Point(20, 430);
+            lblUpdatedByAt.Name = "lblUpdatedByAt";
+            lblUpdatedByAt.Size = new System.Drawing.Size(187, 20);
+            lblUpdatedByAt.TabIndex = 0;
+            lblUpdatedByAt.Text = "Last Update By [??] At [??] ";
+            lblUpdatedByAt.Visible = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label11.Location = new System.Drawing.Point(19, 360);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(101, 25);
+            label11.TabIndex = 0;
+            label11.Text = "Last Login:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label12.Location = new System.Drawing.Point(19, 314);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(62, 25);
+            label12.TabIndex = 0;
+            label12.Text = "Email:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label10.Location = new System.Drawing.Point(19, 268);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(70, 25);
+            label10.TabIndex = 0;
+            label10.Text = "Phone:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label8.Location = new System.Drawing.Point(19, 222);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(52, 25);
+            label8.TabIndex = 0;
+            label8.Text = "Role:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label4.Location = new System.Drawing.Point(19, 130);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(109, 25);
+            label4.TabIndex = 0;
+            label4.Text = "User Status:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label6.Location = new System.Drawing.Point(19, 176);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(101, 25);
+            label6.TabIndex = 0;
+            label6.Text = "Full Name:";
+            // 
+            // lblLastLogin
+            // 
+            lblLastLogin.AutoSize = true;
+            lblLastLogin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblLastLogin.Location = new System.Drawing.Point(169, 360);
+            lblLastLogin.Name = "lblLastLogin";
+            lblLastLogin.Size = new System.Drawing.Size(60, 25);
+            lblLastLogin.TabIndex = 0;
+            lblLastLogin.Text = "[????]";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblEmail.Location = new System.Drawing.Point(169, 314);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new System.Drawing.Size(60, 25);
+            lblEmail.TabIndex = 0;
+            lblEmail.Text = "[????]";
+            // 
+            // lblPhone
+            // 
+            lblPhone.AutoSize = true;
+            lblPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblPhone.Location = new System.Drawing.Point(169, 268);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new System.Drawing.Size(60, 25);
+            lblPhone.TabIndex = 0;
+            lblPhone.Text = "[????]";
+            // 
+            // lblRole
+            // 
+            lblRole.AutoSize = true;
+            lblRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblRole.Location = new System.Drawing.Point(169, 222);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new System.Drawing.Size(60, 25);
+            lblRole.TabIndex = 0;
+            lblRole.Text = "[????]";
+            // 
+            // lblUserStatus
+            // 
+            lblUserStatus.AutoSize = true;
+            lblUserStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblUserStatus.Location = new System.Drawing.Point(169, 130);
+            lblUserStatus.Name = "lblUserStatus";
+            lblUserStatus.Size = new System.Drawing.Size(60, 25);
+            lblUserStatus.TabIndex = 0;
+            lblUserStatus.Text = "[????]";
+            // 
+            // lblFullName
+            // 
+            lblFullName.AutoSize = true;
+            lblFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblFullName.Location = new System.Drawing.Point(169, 176);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new System.Drawing.Size(60, 25);
+            lblFullName.TabIndex = 0;
+            lblFullName.Text = "[????]";
+            // 
+            // lblUserName
+            // 
+            lblUserName.AutoSize = true;
+            lblUserName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblUserName.Location = new System.Drawing.Point(169, 84);
+            lblUserName.Name = "lblUserName";
+            lblUserName.Size = new System.Drawing.Size(60, 25);
+            lblUserName.TabIndex = 0;
+            lblUserName.Text = "[????]";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Location = new System.Drawing.Point(19, 84);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(109, 25);
+            label2.TabIndex = 0;
+            label2.Text = "User Name:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(7, -2);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(118, 65);
+            label1.TabIndex = 16;
+            label1.Text = "info";
             // 
             // ctrlUserInfoVertical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.Controls.Add(this.panel5);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ctrlUserInfoVertical";
-            this.Size = new System.Drawing.Size(471, 561);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.gbPersonalInformation.ResumeLayout(false);
-            this.gbPersonalInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            Controls.Add(panel5);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "ctrlUserInfoVertical";
+            Size = new System.Drawing.Size(471, 532);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            gbPersonalInformation.ResumeLayout(false);
+            gbPersonalInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
 
         }
 

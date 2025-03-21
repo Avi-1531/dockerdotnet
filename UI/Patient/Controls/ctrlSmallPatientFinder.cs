@@ -18,6 +18,7 @@ namespace UI.Patient.Controls
             InitializeComponent();
         }
         public clsPatient SelectedPatient { get { return ctrlSmallPatientInfo1.SelectedPatient; } }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool DisableSearch
         {
             set

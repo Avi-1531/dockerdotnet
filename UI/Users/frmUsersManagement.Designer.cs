@@ -28,419 +28,398 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblRecordsValue = new System.Windows.Forms.Label();
-            this.lblRecords = new System.Windows.Forms.Label();
-            this.cmsUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiAddNewUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowUserInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowPersonInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiShowLoginHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiChangeUserRole = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiChangeToAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiChangeToDoctor = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiChangeToReceptionist = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiActivateOrDeactivate = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblFilterBy = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.cbIsActive = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.ctrlUserInfoVertical1 = new UI.Users.Controls.ctrlUserInfoVertical();
-            this.cmsUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            lblRecordsValue = new System.Windows.Forms.Label();
+            lblRecords = new System.Windows.Forms.Label();
+            cmsUsers = new System.Windows.Forms.ContextMenuStrip(components);
+            tsmiAddNewUser = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiShowUserInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiShowPersonInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiShowLoginHistory = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiChangeUserRole = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiChangeToAdmin = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiChangeToDoctor = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiChangeToReceptionist = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiActivateOrDeactivate = new System.Windows.Forms.ToolStripMenuItem();
+            dgvUsers = new System.Windows.Forms.DataGridView();
+            cbFilter = new System.Windows.Forms.ComboBox();
+            lblFilterBy = new System.Windows.Forms.Label();
+            txtSearch = new System.Windows.Forms.TextBox();
+            cbRole = new System.Windows.Forms.ComboBox();
+            lblHeader = new System.Windows.Forms.Label();
+            cbIsActive = new System.Windows.Forms.ComboBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            btnAddUser = new System.Windows.Forms.Button();
+            ctrlUserInfoVertical1 = new UI.Users.Controls.ctrlUserInfoVertical();
+            cmsUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // lblRecordsValue
             // 
-            this.lblRecordsValue.AutoSize = true;
-            this.lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsValue.Location = new System.Drawing.Point(106, 803);
-            this.lblRecordsValue.Name = "lblRecordsValue";
-            this.lblRecordsValue.Size = new System.Drawing.Size(48, 21);
-            this.lblRecordsValue.TabIndex = 18;
-            this.lblRecordsValue.Text = "[????]";
+            lblRecordsValue.AutoSize = true;
+            lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblRecordsValue.Location = new System.Drawing.Point(106, 792);
+            lblRecordsValue.Name = "lblRecordsValue";
+            lblRecordsValue.Size = new System.Drawing.Size(48, 21);
+            lblRecordsValue.TabIndex = 18;
+            lblRecordsValue.Text = "[????]";
             // 
             // lblRecords
             // 
-            this.lblRecords.AutoSize = true;
-            this.lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(42, 802);
-            this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(69, 21);
-            this.lblRecords.TabIndex = 19;
-            this.lblRecords.Text = "Records:";
+            lblRecords.AutoSize = true;
+            lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblRecords.Location = new System.Drawing.Point(24, 792);
+            lblRecords.Name = "lblRecords";
+            lblRecords.Size = new System.Drawing.Size(69, 21);
+            lblRecords.TabIndex = 19;
+            lblRecords.Text = "Records:";
             // 
             // cmsUsers
             // 
-            this.cmsUsers.BackColor = System.Drawing.SystemColors.Control;
-            this.cmsUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAddNewUser,
-            this.toolStripMenuItem2,
-            this.tsmiShowUserInfo,
-            this.tsmiShowPersonInfo,
-            this.tsmiShowLoginHistory,
-            this.tsmiChangePassword,
-            this.tsmiChangeUserRole,
-            this.tsmiActivateOrDeactivate});
-            this.cmsUsers.Name = "cmsPerson";
-            this.cmsUsers.Size = new System.Drawing.Size(256, 244);
+            cmsUsers.BackColor = System.Drawing.SystemColors.Control;
+            cmsUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiAddNewUser, toolStripMenuItem2, tsmiShowUserInfo, tsmiShowPersonInfo, tsmiShowLoginHistory, tsmiChangePassword, tsmiChangeUserRole, tsmiActivateOrDeactivate });
+            cmsUsers.Name = "cmsPerson";
+            cmsUsers.Size = new System.Drawing.Size(256, 244);
             // 
             // tsmiAddNewUser
             // 
-            this.tsmiAddNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewUser.Name = "tsmiAddNewUser";
-            this.tsmiAddNewUser.Size = new System.Drawing.Size(255, 30);
-            this.tsmiAddNewUser.Text = "Add New User";
-            this.tsmiAddNewUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewUser.Click += new System.EventHandler(this.tsmiAddNewUser_Click);
+            tsmiAddNewUser.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiAddNewUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiAddNewUser.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiAddNewUser.Name = "tsmiAddNewUser";
+            tsmiAddNewUser.Size = new System.Drawing.Size(255, 30);
+            tsmiAddNewUser.Text = "Add New User";
+            tsmiAddNewUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiAddNewUser.Click += tsmiAddNewUser_Click;
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(255, 30);
-            this.toolStripMenuItem2.Text = "Edit User";
-            this.toolStripMenuItem2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.tsmiEditUser_Click);
+            toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new System.Drawing.Size(255, 30);
+            toolStripMenuItem2.Text = "Edit User";
+            toolStripMenuItem2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            toolStripMenuItem2.Click += tsmiEditUser_Click;
             // 
             // tsmiShowUserInfo
             // 
-            this.tsmiShowUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiShowUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiShowUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiShowUserInfo.Name = "tsmiShowUserInfo";
-            this.tsmiShowUserInfo.Size = new System.Drawing.Size(255, 30);
-            this.tsmiShowUserInfo.Text = "User Information";
-            this.tsmiShowUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiShowUserInfo.Click += new System.EventHandler(this.tsmiShowUserInfo_Click);
+            tsmiShowUserInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiShowUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiShowUserInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiShowUserInfo.Name = "tsmiShowUserInfo";
+            tsmiShowUserInfo.Size = new System.Drawing.Size(255, 30);
+            tsmiShowUserInfo.Text = "User Information";
+            tsmiShowUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiShowUserInfo.Click += tsmiShowUserInfo_Click;
             // 
             // tsmiShowPersonInfo
             // 
-            this.tsmiShowPersonInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiShowPersonInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiShowPersonInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiShowPersonInfo.Name = "tsmiShowPersonInfo";
-            this.tsmiShowPersonInfo.Size = new System.Drawing.Size(255, 30);
-            this.tsmiShowPersonInfo.Text = "Personal Information";
-            this.tsmiShowPersonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiShowPersonInfo.Click += new System.EventHandler(this.tsmiShowPersonInfo_Click);
+            tsmiShowPersonInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiShowPersonInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiShowPersonInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiShowPersonInfo.Name = "tsmiShowPersonInfo";
+            tsmiShowPersonInfo.Size = new System.Drawing.Size(255, 30);
+            tsmiShowPersonInfo.Text = "Personal Information";
+            tsmiShowPersonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiShowPersonInfo.Click += tsmiShowPersonInfo_Click;
             // 
             // tsmiShowLoginHistory
             // 
-            this.tsmiShowLoginHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiShowLoginHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiShowLoginHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiShowLoginHistory.Name = "tsmiShowLoginHistory";
-            this.tsmiShowLoginHistory.Size = new System.Drawing.Size(255, 30);
-            this.tsmiShowLoginHistory.Text = "Login History";
-            this.tsmiShowLoginHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiShowLoginHistory.Click += new System.EventHandler(this.tsmiShowLoginHistory_Click);
+            tsmiShowLoginHistory.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiShowLoginHistory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiShowLoginHistory.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiShowLoginHistory.Name = "tsmiShowLoginHistory";
+            tsmiShowLoginHistory.Size = new System.Drawing.Size(255, 30);
+            tsmiShowLoginHistory.Text = "Login History";
+            tsmiShowLoginHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiShowLoginHistory.Click += tsmiShowLoginHistory_Click;
             // 
             // tsmiChangePassword
             // 
-            this.tsmiChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiChangePassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiChangePassword.Name = "tsmiChangePassword";
-            this.tsmiChangePassword.Size = new System.Drawing.Size(255, 30);
-            this.tsmiChangePassword.Text = "Change Password";
-            this.tsmiChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiChangePassword.Click += new System.EventHandler(this.tsmiChangePassword_Click);
+            tsmiChangePassword.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiChangePassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiChangePassword.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiChangePassword.Name = "tsmiChangePassword";
+            tsmiChangePassword.Size = new System.Drawing.Size(255, 30);
+            tsmiChangePassword.Text = "Change Password";
+            tsmiChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiChangePassword.Click += tsmiChangePassword_Click;
             // 
             // tsmiChangeUserRole
             // 
-            this.tsmiChangeUserRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiChangeUserRole.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiChangeToAdmin,
-            this.tsmiChangeToDoctor,
-            this.tsmiChangeToReceptionist});
-            this.tsmiChangeUserRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiChangeUserRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiChangeUserRole.Name = "tsmiChangeUserRole";
-            this.tsmiChangeUserRole.Size = new System.Drawing.Size(255, 30);
-            this.tsmiChangeUserRole.Text = "Change User Role";
-            this.tsmiChangeUserRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiChangeUserRole.Click += new System.EventHandler(this.tsmiChangeUserRole_Click);
+            tsmiChangeUserRole.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiChangeUserRole.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiChangeToAdmin, tsmiChangeToDoctor, tsmiChangeToReceptionist });
+            tsmiChangeUserRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiChangeUserRole.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiChangeUserRole.Name = "tsmiChangeUserRole";
+            tsmiChangeUserRole.Size = new System.Drawing.Size(255, 30);
+            tsmiChangeUserRole.Text = "Change User Role";
+            tsmiChangeUserRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiChangeUserRole.Click += tsmiChangeUserRole_Click;
             // 
             // tsmiChangeToAdmin
             // 
-            this.tsmiChangeToAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiChangeToAdmin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiChangeToAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiChangeToAdmin.Name = "tsmiChangeToAdmin";
-            this.tsmiChangeToAdmin.Size = new System.Drawing.Size(321, 30);
-            this.tsmiChangeToAdmin.Text = "Change Role to Admin";
-            this.tsmiChangeToAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiChangeToAdmin.Click += new System.EventHandler(this.tsmiChangeToAdmin_Click);
+            tsmiChangeToAdmin.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiChangeToAdmin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiChangeToAdmin.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiChangeToAdmin.Name = "tsmiChangeToAdmin";
+            tsmiChangeToAdmin.Size = new System.Drawing.Size(321, 30);
+            tsmiChangeToAdmin.Text = "Change Role to Admin";
+            tsmiChangeToAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiChangeToAdmin.Click += tsmiChangeToAdmin_Click;
             // 
             // tsmiChangeToDoctor
             // 
-            this.tsmiChangeToDoctor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiChangeToDoctor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiChangeToDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiChangeToDoctor.Name = "tsmiChangeToDoctor";
-            this.tsmiChangeToDoctor.Size = new System.Drawing.Size(321, 30);
-            this.tsmiChangeToDoctor.Text = "Change Role to Doctor";
-            this.tsmiChangeToDoctor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiChangeToDoctor.Click += new System.EventHandler(this.tsmiChangeToDoctor_Click);
+            tsmiChangeToDoctor.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiChangeToDoctor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiChangeToDoctor.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiChangeToDoctor.Name = "tsmiChangeToDoctor";
+            tsmiChangeToDoctor.Size = new System.Drawing.Size(321, 30);
+            tsmiChangeToDoctor.Text = "Change Role to Doctor";
+            tsmiChangeToDoctor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiChangeToDoctor.Click += tsmiChangeToDoctor_Click;
             // 
             // tsmiChangeToReceptionist
             // 
-            this.tsmiChangeToReceptionist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiChangeToReceptionist.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiChangeToReceptionist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiChangeToReceptionist.Name = "tsmiChangeToReceptionist";
-            this.tsmiChangeToReceptionist.Size = new System.Drawing.Size(321, 30);
-            this.tsmiChangeToReceptionist.Text = "Change Role To Receptionist";
-            this.tsmiChangeToReceptionist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiChangeToReceptionist.Click += new System.EventHandler(this.tsmiChangeToReceptionist_Click);
+            tsmiChangeToReceptionist.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiChangeToReceptionist.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiChangeToReceptionist.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiChangeToReceptionist.Name = "tsmiChangeToReceptionist";
+            tsmiChangeToReceptionist.Size = new System.Drawing.Size(321, 30);
+            tsmiChangeToReceptionist.Text = "Change Role To Receptionist";
+            tsmiChangeToReceptionist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiChangeToReceptionist.Click += tsmiChangeToReceptionist_Click;
             // 
             // tsmiActivateOrDeactivate
             // 
-            this.tsmiActivateOrDeactivate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiActivateOrDeactivate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiActivateOrDeactivate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiActivateOrDeactivate.Name = "tsmiActivateOrDeactivate";
-            this.tsmiActivateOrDeactivate.Size = new System.Drawing.Size(255, 30);
-            this.tsmiActivateOrDeactivate.Text = "Activate User";
-            this.tsmiActivateOrDeactivate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiActivateOrDeactivate.Click += new System.EventHandler(this.tsmiActivateOrDeactivate_Click);
+            tsmiActivateOrDeactivate.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiActivateOrDeactivate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiActivateOrDeactivate.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiActivateOrDeactivate.Name = "tsmiActivateOrDeactivate";
+            tsmiActivateOrDeactivate.Size = new System.Drawing.Size(255, 30);
+            tsmiActivateOrDeactivate.Text = "Activate User";
+            tsmiActivateOrDeactivate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiActivateOrDeactivate.Click += tsmiActivateOrDeactivate_Click;
             // 
             // dgvUsers
             // 
-            this.dgvUsers.AllowUserToAddRows = false;
-            this.dgvUsers.AllowUserToDeleteRows = false;
-            this.dgvUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.dgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUsers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.dgvUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dgvUsers.AllowUserToAddRows = false;
+            dgvUsers.AllowUserToDeleteRows = false;
+            dgvUsers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            dgvUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvUsers.BackgroundColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dgvUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dgvUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUsers.ColumnHeadersHeight = 40;
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvUsers.ContextMenuStrip = this.cmsUsers;
+            dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvUsers.ColumnHeadersHeight = 40;
+            dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvUsers.ContextMenuStrip = cmsUsers;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUsers.EnableHeadersVisualStyles = false;
-            this.dgvUsers.Location = new System.Drawing.Point(42, 240);
-            this.dgvUsers.MultiSelect = false;
-            this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.ReadOnly = true;
-            this.dgvUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvUsers.RowHeadersVisible = false;
-            this.dgvUsers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvUsers.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvUsers.EnableHeadersVisualStyles = false;
+            dgvUsers.Location = new System.Drawing.Point(24, 252);
+            dgvUsers.MultiSelect = false;
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.ReadOnly = true;
+            dgvUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dgvUsers.RowHeadersVisible = false;
+            dgvUsers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUsers.RowTemplate.Height = 35;
-            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.ShowCellErrors = false;
-            this.dgvUsers.ShowCellToolTips = false;
-            this.dgvUsers.ShowEditingIcon = false;
-            this.dgvUsers.ShowRowErrors = false;
-            this.dgvUsers.Size = new System.Drawing.Size(767, 560);
-            this.dgvUsers.TabIndex = 21;
-            this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
+            dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvUsers.RowTemplate.Height = 35;
+            dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvUsers.ShowCellErrors = false;
+            dgvUsers.ShowCellToolTips = false;
+            dgvUsers.ShowEditingIcon = false;
+            dgvUsers.ShowRowErrors = false;
+            dgvUsers.Size = new System.Drawing.Size(785, 532);
+            dgvUsers.TabIndex = 21;
+            dgvUsers.SelectionChanged += dgvUsers_SelectionChanged;
             // 
             // cbFilter
             // 
-            this.cbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.DropDownWidth = 245;
-            this.cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.IntegralHeight = false;
-            this.cbFilter.Items.AddRange(new object[] {
-            "None",
-            "User ID",
-            "Person ID",
-            "User Name",
-            "Role",
-            "Is Active"});
-            this.cbFilter.Location = new System.Drawing.Point(140, 197);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(245, 33);
-            this.cbFilter.TabIndex = 28;
-            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
+            cbFilter.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbFilter.DropDownWidth = 245;
+            cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cbFilter.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            cbFilter.FormattingEnabled = true;
+            cbFilter.IntegralHeight = false;
+            cbFilter.Items.AddRange(new object[] { "None", "User ID", "Person ID", "User Name", "Role", "Is Active" });
+            cbFilter.Location = new System.Drawing.Point(121, 209);
+            cbFilter.Name = "cbFilter";
+            cbFilter.Size = new System.Drawing.Size(245, 33);
+            cbFilter.TabIndex = 28;
+            cbFilter.SelectedIndexChanged += cbFilter_SelectedIndexChanged;
             // 
             // lblFilterBy
             // 
-            this.lblFilterBy.AutoSize = true;
-            this.lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterBy.Location = new System.Drawing.Point(43, 198);
-            this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(91, 30);
-            this.lblFilterBy.TabIndex = 27;
-            this.lblFilterBy.Text = "Filter By:";
+            lblFilterBy.AutoSize = true;
+            lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblFilterBy.Location = new System.Drawing.Point(24, 210);
+            lblFilterBy.Name = "lblFilterBy";
+            lblFilterBy.Size = new System.Drawing.Size(91, 30);
+            lblFilterBy.TabIndex = 27;
+            lblFilterBy.Text = "Filter By:";
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtSearch.Location = new System.Drawing.Point(391, 196);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(245, 34);
-            this.txtSearch.TabIndex = 30;
-            this.txtSearch.Visible = false;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            txtSearch.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            txtSearch.Location = new System.Drawing.Point(372, 208);
+            txtSearch.Multiline = true;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new System.Drawing.Size(245, 34);
+            txtSearch.TabIndex = 30;
+            txtSearch.Visible = false;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // cbRole
             // 
-            this.cbRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRole.DropDownWidth = 245;
-            this.cbRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.IntegralHeight = false;
-            this.cbRole.Items.AddRange(new object[] {
-            "Admin",
-            "Doctor",
-            "Receptionist"});
-            this.cbRole.Location = new System.Drawing.Point(391, 197);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(245, 33);
-            this.cbRole.TabIndex = 29;
-            this.cbRole.Visible = false;
-            this.cbRole.SelectedIndexChanged += new System.EventHandler(this.cbRole_SelectedIndexChanged);
+            cbRole.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbRole.DropDownWidth = 245;
+            cbRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cbRole.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cbRole.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            cbRole.FormattingEnabled = true;
+            cbRole.IntegralHeight = false;
+            cbRole.Items.AddRange(new object[] { "Admin", "Doctor", "Receptionist" });
+            cbRole.Location = new System.Drawing.Point(372, 209);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new System.Drawing.Size(245, 33);
+            cbRole.TabIndex = 29;
+            cbRole.Visible = false;
+            cbRole.SelectedIndexChanged += cbRole_SelectedIndexChanged;
             // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(512, 124);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(305, 40);
-            this.lblHeader.TabIndex = 31;
-            this.lblHeader.Text = "USERS MANAGEMENT";
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblHeader.Location = new System.Drawing.Point(512, 124);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new System.Drawing.Size(305, 40);
+            lblHeader.TabIndex = 31;
+            lblHeader.Text = "USERS MANAGEMENT";
             // 
             // cbIsActive
             // 
-            this.cbIsActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbIsActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbIsActive.DropDownWidth = 245;
-            this.cbIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbIsActive.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIsActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbIsActive.FormattingEnabled = true;
-            this.cbIsActive.IntegralHeight = false;
-            this.cbIsActive.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.cbIsActive.Location = new System.Drawing.Point(391, 196);
-            this.cbIsActive.Name = "cbIsActive";
-            this.cbIsActive.Size = new System.Drawing.Size(245, 33);
-            this.cbIsActive.TabIndex = 33;
-            this.cbIsActive.Visible = false;
-            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
+            cbIsActive.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            cbIsActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbIsActive.DropDownWidth = 245;
+            cbIsActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cbIsActive.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cbIsActive.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            cbIsActive.FormattingEnabled = true;
+            cbIsActive.IntegralHeight = false;
+            cbIsActive.Items.AddRange(new object[] { "Yes", "No" });
+            cbIsActive.Location = new System.Drawing.Point(372, 208);
+            cbIsActive.Name = "cbIsActive";
+            cbIsActive.Size = new System.Drawing.Size(245, 33);
+            cbIsActive.TabIndex = 33;
+            cbIsActive.Visible = false;
+            cbIsActive.SelectedIndexChanged += cbIsActive_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.UsersV2;
-            this.pictureBox1.Location = new System.Drawing.Point(598, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.UsersV2;
+            pictureBox1.Location = new System.Drawing.Point(598, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(133, 103);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 32;
+            pictureBox1.TabStop = false;
             // 
             // btnAddUser
             // 
-            this.btnAddUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddUser.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
-            this.btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddUser.FlatAppearance.BorderSize = 0;
-            this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddUser.Location = new System.Drawing.Point(1230, 184);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(57, 50);
-            this.btnAddUser.TabIndex = 26;
-            this.btnAddUser.UseVisualStyleBackColor = false;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            btnAddUser.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnAddUser.BackgroundImage = Properties.Resources.Add_NewV2;
+            btnAddUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnAddUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnAddUser.FlatAppearance.BorderSize = 0;
+            btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAddUser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnAddUser.Location = new System.Drawing.Point(1230, 200);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.Size = new System.Drawing.Size(57, 50);
+            btnAddUser.TabIndex = 26;
+            btnAddUser.UseVisualStyleBackColor = false;
+            btnAddUser.Click += btnAddUser_Click;
             // 
             // ctrlUserInfoVertical1
             // 
-            this.ctrlUserInfoVertical1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ctrlUserInfoVertical1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlUserInfoVertical1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.ctrlUserInfoVertical1.Location = new System.Drawing.Point(816, 240);
-            this.ctrlUserInfoVertical1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlUserInfoVertical1.Name = "ctrlUserInfoVertical1";
-            this.ctrlUserInfoVertical1.Size = new System.Drawing.Size(471, 560);
-            this.ctrlUserInfoVertical1.TabIndex = 34;
+            ctrlUserInfoVertical1.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            ctrlUserInfoVertical1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ctrlUserInfoVertical1.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            ctrlUserInfoVertical1.Location = new System.Drawing.Point(816, 252);
+            ctrlUserInfoVertical1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ctrlUserInfoVertical1.Name = "ctrlUserInfoVertical1";
+            ctrlUserInfoVertical1.Size = new System.Drawing.Size(471, 532);
+            ctrlUserInfoVertical1.TabIndex = 34;
             // 
             // frmUsersManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.ctrlUserInfoVertical1);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblFilterBy);
-            this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.lblRecordsValue);
-            this.Controls.Add(this.lblRecords);
-            this.Controls.Add(this.dgvUsers);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.cbIsActive);
-            this.Controls.Add(this.cbRole);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmUsersManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmUsersManagement";
-            this.Load += new System.EventHandler(this.frmUsersManagement_Load);
-            this.cmsUsers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            ClientSize = new System.Drawing.Size(1329, 861);
+            Controls.Add(ctrlUserInfoVertical1);
+            Controls.Add(lblHeader);
+            Controls.Add(pictureBox1);
+            Controls.Add(cbFilter);
+            Controls.Add(lblFilterBy);
+            Controls.Add(btnAddUser);
+            Controls.Add(lblRecordsValue);
+            Controls.Add(lblRecords);
+            Controls.Add(dgvUsers);
+            Controls.Add(txtSearch);
+            Controls.Add(cbIsActive);
+            Controls.Add(cbRole);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "frmUsersManagement";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "frmUsersManagement";
+            Load += frmUsersManagement_Load;
+            cmsUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -458,7 +437,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.ComboBox cbIsActive;
-        private Controls.ctrlUserInfoVertical ctrlUserInfoVertical1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsmiActivateOrDeactivate;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangePassword;
@@ -470,5 +448,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeToDoctor;
         private System.Windows.Forms.ToolStripMenuItem tsmiChangeToReceptionist;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowLoginHistory;
+        private Controls.ctrlUserInfoVertical ctrlUserInfoVertical1;
     }
 }

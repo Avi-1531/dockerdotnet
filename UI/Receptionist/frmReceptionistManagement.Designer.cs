@@ -28,304 +28,291 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvReceptionists = new System.Windows.Forms.DataGridView();
-            this.cmsReceptionist = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiAddNewReceptionist = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmShowReceptionistInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiReceptionistUserInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.btnAddReceptionist = new System.Windows.Forms.Button();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblRecordsValue = new System.Windows.Forms.Label();
-            this.lblRecords = new System.Windows.Forms.Label();
-            this.lblFilterBy = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionists)).BeginInit();
-            this.cmsReceptionist.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            dgvReceptionists = new System.Windows.Forms.DataGridView();
+            cmsReceptionist = new System.Windows.Forms.ContextMenuStrip(components);
+            tsmiAddNewReceptionist = new System.Windows.Forms.ToolStripMenuItem();
+            tsmPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
+            tsmShowReceptionistInfo = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiPersonalInformation = new System.Windows.Forms.ToolStripMenuItem();
+            tsmiReceptionistUserInfo = new System.Windows.Forms.ToolStripMenuItem();
+            lblHeader = new System.Windows.Forms.Label();
+            btnAddReceptionist = new System.Windows.Forms.Button();
+            cbFilter = new System.Windows.Forms.ComboBox();
+            lblRecordsValue = new System.Windows.Forms.Label();
+            lblRecords = new System.Windows.Forms.Label();
+            lblFilterBy = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            txtSearch = new System.Windows.Forms.TextBox();
+            cbStatus = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvReceptionists).BeginInit();
+            cmsReceptionist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // dgvReceptionists
             // 
-            this.dgvReceptionists.AllowUserToAddRows = false;
-            this.dgvReceptionists.AllowUserToDeleteRows = false;
-            this.dgvReceptionists.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.dgvReceptionists.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvReceptionists.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.dgvReceptionists.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvReceptionists.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dgvReceptionists.AllowUserToAddRows = false;
+            dgvReceptionists.AllowUserToDeleteRows = false;
+            dgvReceptionists.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            dgvReceptionists.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvReceptionists.BackgroundColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dgvReceptionists.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dgvReceptionists.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dgvReceptionists.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReceptionists.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvReceptionists.ColumnHeadersHeight = 40;
-            this.dgvReceptionists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvReceptionists.ContextMenuStrip = this.cmsReceptionist;
+            dgvReceptionists.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvReceptionists.ColumnHeadersHeight = 40;
+            dgvReceptionists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvReceptionists.ContextMenuStrip = cmsReceptionist;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReceptionists.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvReceptionists.EnableHeadersVisualStyles = false;
-            this.dgvReceptionists.Location = new System.Drawing.Point(24, 254);
-            this.dgvReceptionists.MultiSelect = false;
-            this.dgvReceptionists.Name = "dgvReceptionists";
-            this.dgvReceptionists.ReadOnly = true;
-            this.dgvReceptionists.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvReceptionists.RowHeadersVisible = false;
-            this.dgvReceptionists.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvReceptionists.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvReceptionists.EnableHeadersVisualStyles = false;
+            dgvReceptionists.Location = new System.Drawing.Point(24, 252);
+            dgvReceptionists.MultiSelect = false;
+            dgvReceptionists.Name = "dgvReceptionists";
+            dgvReceptionists.ReadOnly = true;
+            dgvReceptionists.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dgvReceptionists.RowHeadersVisible = false;
+            dgvReceptionists.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReceptionists.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvReceptionists.RowTemplate.Height = 35;
-            this.dgvReceptionists.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReceptionists.ShowCellErrors = false;
-            this.dgvReceptionists.ShowCellToolTips = false;
-            this.dgvReceptionists.ShowEditingIcon = false;
-            this.dgvReceptionists.ShowRowErrors = false;
-            this.dgvReceptionists.Size = new System.Drawing.Size(1281, 560);
-            this.dgvReceptionists.TabIndex = 11;
+            dgvReceptionists.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvReceptionists.RowTemplate.Height = 35;
+            dgvReceptionists.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvReceptionists.ShowCellErrors = false;
+            dgvReceptionists.ShowCellToolTips = false;
+            dgvReceptionists.ShowEditingIcon = false;
+            dgvReceptionists.ShowRowErrors = false;
+            dgvReceptionists.Size = new System.Drawing.Size(1281, 532);
+            dgvReceptionists.TabIndex = 11;
             // 
             // cmsReceptionist
             // 
-            this.cmsReceptionist.BackColor = System.Drawing.SystemColors.Control;
-            this.cmsReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAddNewReceptionist,
-            this.tsmPersonalInformation,
-            this.tsmShowReceptionistInfo,
-            this.tsmiPersonalInformation,
-            this.tsmiReceptionistUserInfo});
-            this.cmsReceptionist.Name = "cmsPerson";
-            this.cmsReceptionist.Size = new System.Drawing.Size(329, 154);
+            cmsReceptionist.BackColor = System.Drawing.SystemColors.Control;
+            cmsReceptionist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsmiAddNewReceptionist, tsmPersonalInformation, tsmShowReceptionistInfo, tsmiPersonalInformation, tsmiReceptionistUserInfo });
+            cmsReceptionist.Name = "cmsPerson";
+            cmsReceptionist.Size = new System.Drawing.Size(329, 154);
             // 
             // tsmiAddNewReceptionist
             // 
-            this.tsmiAddNewReceptionist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiAddNewReceptionist.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiAddNewReceptionist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiAddNewReceptionist.Name = "tsmiAddNewReceptionist";
-            this.tsmiAddNewReceptionist.Size = new System.Drawing.Size(328, 30);
-            this.tsmiAddNewReceptionist.Text = "Add New Receptionist";
-            this.tsmiAddNewReceptionist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiAddNewReceptionist.Click += new System.EventHandler(this.tsmiAddNewReceptionist_Click);
+            tsmiAddNewReceptionist.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiAddNewReceptionist.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiAddNewReceptionist.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiAddNewReceptionist.Name = "tsmiAddNewReceptionist";
+            tsmiAddNewReceptionist.Size = new System.Drawing.Size(328, 30);
+            tsmiAddNewReceptionist.Text = "Add New Receptionist";
+            tsmiAddNewReceptionist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiAddNewReceptionist.Click += tsmiAddNewReceptionist_Click;
             // 
             // tsmPersonalInformation
             // 
-            this.tsmPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmPersonalInformation.Name = "tsmPersonalInformation";
-            this.tsmPersonalInformation.Size = new System.Drawing.Size(328, 30);
-            this.tsmPersonalInformation.Text = "Edit Receptionist";
-            this.tsmPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmPersonalInformation.Click += new System.EventHandler(this.tsmEditReceptionist_Click);
+            tsmPersonalInformation.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmPersonalInformation.Name = "tsmPersonalInformation";
+            tsmPersonalInformation.Size = new System.Drawing.Size(328, 30);
+            tsmPersonalInformation.Text = "Edit Receptionist";
+            tsmPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmPersonalInformation.Click += tsmEditReceptionist_Click;
             // 
             // tsmShowReceptionistInfo
             // 
-            this.tsmShowReceptionistInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmShowReceptionistInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmShowReceptionistInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmShowReceptionistInfo.Name = "tsmShowReceptionistInfo";
-            this.tsmShowReceptionistInfo.Size = new System.Drawing.Size(328, 30);
-            this.tsmShowReceptionistInfo.Text = "Receptionist Information";
-            this.tsmShowReceptionistInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmShowReceptionistInfo.Click += new System.EventHandler(this.tsmShowReceptionistInfo_Click);
+            tsmShowReceptionistInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmShowReceptionistInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmShowReceptionistInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmShowReceptionistInfo.Name = "tsmShowReceptionistInfo";
+            tsmShowReceptionistInfo.Size = new System.Drawing.Size(328, 30);
+            tsmShowReceptionistInfo.Text = "Receptionist Information";
+            tsmShowReceptionistInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmShowReceptionistInfo.Click += tsmShowReceptionistInfo_Click;
             // 
             // tsmiPersonalInformation
             // 
-            this.tsmiPersonalInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiPersonalInformation.Name = "tsmiPersonalInformation";
-            this.tsmiPersonalInformation.Size = new System.Drawing.Size(328, 30);
-            this.tsmiPersonalInformation.Text = "Personal Information";
-            this.tsmiPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiPersonalInformation.Click += new System.EventHandler(this.tsmiPersonalInformation_Click);
+            tsmiPersonalInformation.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiPersonalInformation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiPersonalInformation.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiPersonalInformation.Name = "tsmiPersonalInformation";
+            tsmiPersonalInformation.Size = new System.Drawing.Size(328, 30);
+            tsmiPersonalInformation.Text = "Personal Information";
+            tsmiPersonalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiPersonalInformation.Click += tsmiPersonalInformation_Click;
             // 
             // tsmiReceptionistUserInfo
             // 
-            this.tsmiReceptionistUserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.tsmiReceptionistUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmiReceptionistUserInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.tsmiReceptionistUserInfo.Name = "tsmiReceptionistUserInfo";
-            this.tsmiReceptionistUserInfo.Size = new System.Drawing.Size(328, 30);
-            this.tsmiReceptionistUserInfo.Text = "Receptionist User Information";
-            this.tsmiReceptionistUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tsmiReceptionistUserInfo.Click += new System.EventHandler(this.tsmiReceptionistUserInfo_Click);
+            tsmiReceptionistUserInfo.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            tsmiReceptionistUserInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tsmiReceptionistUserInfo.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            tsmiReceptionistUserInfo.Name = "tsmiReceptionistUserInfo";
+            tsmiReceptionistUserInfo.Size = new System.Drawing.Size(328, 30);
+            tsmiReceptionistUserInfo.Text = "Receptionist User Information";
+            tsmiReceptionistUserInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            tsmiReceptionistUserInfo.Click += tsmiReceptionistUserInfo_Click;
             // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(460, 124);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(409, 40);
-            this.lblHeader.TabIndex = 6;
-            this.lblHeader.Text = "RECEPTIONIST MANAGEMENT";
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblHeader.Location = new System.Drawing.Point(460, 124);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new System.Drawing.Size(409, 40);
+            lblHeader.TabIndex = 6;
+            lblHeader.Text = "RECEPTIONIST MANAGEMENT";
             // 
             // btnAddReceptionist
             // 
-            this.btnAddReceptionist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnAddReceptionist.BackgroundImage = global::UI.Properties.Resources.Add_NewV2;
-            this.btnAddReceptionist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddReceptionist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddReceptionist.FlatAppearance.BorderSize = 0;
-            this.btnAddReceptionist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddReceptionist.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddReceptionist.Location = new System.Drawing.Point(1248, 200);
-            this.btnAddReceptionist.Name = "btnAddReceptionist";
-            this.btnAddReceptionist.Size = new System.Drawing.Size(57, 50);
-            this.btnAddReceptionist.TabIndex = 14;
-            this.btnAddReceptionist.UseVisualStyleBackColor = false;
-            this.btnAddReceptionist.Click += new System.EventHandler(this.btnAddReceptionist_Click);
+            btnAddReceptionist.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnAddReceptionist.BackgroundImage = Properties.Resources.Add_NewV2;
+            btnAddReceptionist.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnAddReceptionist.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnAddReceptionist.FlatAppearance.BorderSize = 0;
+            btnAddReceptionist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAddReceptionist.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnAddReceptionist.Location = new System.Drawing.Point(1248, 200);
+            btnAddReceptionist.Name = "btnAddReceptionist";
+            btnAddReceptionist.Size = new System.Drawing.Size(57, 50);
+            btnAddReceptionist.TabIndex = 14;
+            btnAddReceptionist.UseVisualStyleBackColor = false;
+            btnAddReceptionist.Click += btnAddReceptionist_Click;
             // 
             // cbFilter
             // 
-            this.cbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFilter.DropDownWidth = 245;
-            this.cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.IntegralHeight = false;
-            this.cbFilter.Items.AddRange(new object[] {
-            "None",
-            "Receptionist ID",
-            "Full Name",
-            "Status",
-            "Receptionist User"});
-            this.cbFilter.Location = new System.Drawing.Point(121, 213);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(245, 33);
-            this.cbFilter.TabIndex = 12;
-            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
+            cbFilter.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbFilter.DropDownWidth = 245;
+            cbFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cbFilter.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cbFilter.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            cbFilter.FormattingEnabled = true;
+            cbFilter.IntegralHeight = false;
+            cbFilter.Items.AddRange(new object[] { "None", "Receptionist ID", "Full Name", "Status", "Receptionist User" });
+            cbFilter.Location = new System.Drawing.Point(121, 213);
+            cbFilter.Name = "cbFilter";
+            cbFilter.Size = new System.Drawing.Size(245, 33);
+            cbFilter.TabIndex = 12;
+            cbFilter.SelectedIndexChanged += cbFilters_SelectedIndexChanged;
             // 
             // lblRecordsValue
             // 
-            this.lblRecordsValue.AutoSize = true;
-            this.lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsValue.Location = new System.Drawing.Point(92, 819);
-            this.lblRecordsValue.Name = "lblRecordsValue";
-            this.lblRecordsValue.Size = new System.Drawing.Size(48, 21);
-            this.lblRecordsValue.TabIndex = 7;
-            this.lblRecordsValue.Text = "[????]";
+            lblRecordsValue.AutoSize = true;
+            lblRecordsValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblRecordsValue.Location = new System.Drawing.Point(92, 792);
+            lblRecordsValue.Name = "lblRecordsValue";
+            lblRecordsValue.Size = new System.Drawing.Size(48, 21);
+            lblRecordsValue.TabIndex = 7;
+            lblRecordsValue.Text = "[????]";
             // 
             // lblRecords
             // 
-            this.lblRecords.AutoSize = true;
-            this.lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(26, 819);
-            this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(69, 21);
-            this.lblRecords.TabIndex = 8;
-            this.lblRecords.Text = "Records:";
+            lblRecords.AutoSize = true;
+            lblRecords.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblRecords.Location = new System.Drawing.Point(24, 792);
+            lblRecords.Name = "lblRecords";
+            lblRecords.Size = new System.Drawing.Size(69, 21);
+            lblRecords.TabIndex = 8;
+            lblRecords.Text = "Records:";
             // 
             // lblFilterBy
             // 
-            this.lblFilterBy.AutoSize = true;
-            this.lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterBy.Location = new System.Drawing.Point(24, 214);
-            this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(91, 30);
-            this.lblFilterBy.TabIndex = 9;
-            this.lblFilterBy.Text = "Filter By:";
+            lblFilterBy.AutoSize = true;
+            lblFilterBy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblFilterBy.Location = new System.Drawing.Point(24, 214);
+            lblFilterBy.Name = "lblFilterBy";
+            lblFilterBy.Size = new System.Drawing.Size(91, 30);
+            lblFilterBy.TabIndex = 9;
+            lblFilterBy.Text = "Filter By:";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.Receptionist;
-            this.pictureBox1.Location = new System.Drawing.Point(598, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.Receptionist;
+            pictureBox1.Location = new System.Drawing.Point(598, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(133, 103);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtSearch.Location = new System.Drawing.Point(372, 212);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(245, 34);
-            this.txtSearch.TabIndex = 15;
-            this.txtSearch.Visible = false;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            txtSearch.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            txtSearch.Location = new System.Drawing.Point(372, 212);
+            txtSearch.Multiline = true;
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new System.Drawing.Size(245, 34);
+            txtSearch.TabIndex = 15;
+            txtSearch.Visible = false;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // cbStatus
             // 
-            this.cbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatus.DropDownWidth = 245;
-            this.cbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.IntegralHeight = false;
-            this.cbStatus.Items.AddRange(new object[] {
-            "Active",
-            "On Leave",
-            "Resigned",
-            "Terminated"});
-            this.cbStatus.Location = new System.Drawing.Point(372, 213);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(245, 33);
-            this.cbStatus.TabIndex = 13;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
+            cbStatus.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbStatus.DropDownWidth = 245;
+            cbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cbStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cbStatus.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            cbStatus.FormattingEnabled = true;
+            cbStatus.IntegralHeight = false;
+            cbStatus.Items.AddRange(new object[] { "Active", "On Leave", "Resigned", "Terminated" });
+            cbStatus.Location = new System.Drawing.Point(372, 213);
+            cbStatus.Name = "cbStatus";
+            cbStatus.Size = new System.Drawing.Size(245, 33);
+            cbStatus.TabIndex = 13;
+            cbStatus.SelectedIndexChanged += cbStatus_SelectedIndexChanged;
             // 
             // frmReceptionistManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.dgvReceptionists);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.btnAddReceptionist);
-            this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblRecordsValue);
-            this.Controls.Add(this.lblRecords);
-            this.Controls.Add(this.lblFilterBy);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbStatus);
-            this.Controls.Add(this.txtSearch);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmReceptionistManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmReceptionistManagement";
-            this.Load += new System.EventHandler(this.frmReceptionistManagement_Load);
-            this.Shown += new System.EventHandler(this.frmReceptionistManagement_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReceptionists)).EndInit();
-            this.cmsReceptionist.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            ClientSize = new System.Drawing.Size(1329, 861);
+            Controls.Add(dgvReceptionists);
+            Controls.Add(lblHeader);
+            Controls.Add(btnAddReceptionist);
+            Controls.Add(cbFilter);
+            Controls.Add(lblRecordsValue);
+            Controls.Add(lblRecords);
+            Controls.Add(lblFilterBy);
+            Controls.Add(pictureBox1);
+            Controls.Add(cbStatus);
+            Controls.Add(txtSearch);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "frmReceptionistManagement";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "frmReceptionistManagement";
+            Load += frmReceptionistManagement_Load;
+            Shown += frmReceptionistManagement_Shown;
+            ((System.ComponentModel.ISupportInitialize)dgvReceptionists).EndInit();
+            cmsReceptionist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

@@ -32,356 +32,357 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblMostUsedPaymentMethodValue = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblIsMostUsedPaymentMethod = new System.Windows.Forms.Label();
-            this.lblTotalPaymentsValue = new System.Windows.Forms.Label();
-            this.lblTotalPayments = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblAverageAmountPerPaymentValue = new System.Windows.Forms.Label();
-            this.lblAverageAmountPerPayment = new System.Windows.Forms.Label();
-            this.lblTotalPaymentsAmountValue = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pbRiyalSymbol2 = new System.Windows.Forms.PictureBox();
-            this.lblTotalPaymentsAmount = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pbRiyalSymbol1 = new System.Windows.Forms.PictureBox();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvPayments = new System.Windows.Forms.DataGridView();
-            this.txtPageNumber = new System.Windows.Forms.TextBox();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol2)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).BeginInit();
-            this.SuspendLayout();
+            lblMostUsedPaymentMethodValue = new System.Windows.Forms.Label();
+            panel4 = new System.Windows.Forms.Panel();
+            lblIsMostUsedPaymentMethod = new System.Windows.Forms.Label();
+            lblTotalPaymentsValue = new System.Windows.Forms.Label();
+            lblTotalPayments = new System.Windows.Forms.Label();
+            panel3 = new System.Windows.Forms.Panel();
+            lblAverageAmountPerPaymentValue = new System.Windows.Forms.Label();
+            lblAverageAmountPerPayment = new System.Windows.Forms.Label();
+            lblTotalPaymentsAmountValue = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
+            pbRiyalSymbol2 = new System.Windows.Forms.PictureBox();
+            lblTotalPaymentsAmount = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            pbRiyalSymbol1 = new System.Windows.Forms.PictureBox();
+            lblHeader = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            dgvPayments = new System.Windows.Forms.DataGridView();
+            txtPageNumber = new System.Windows.Forms.TextBox();
+            btnNextPage = new System.Windows.Forms.Button();
+            btnPreviousPage = new System.Windows.Forms.Button();
+            lblOfTotalPagesAndRows = new System.Windows.Forms.Label();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbRiyalSymbol2).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbRiyalSymbol1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPayments).BeginInit();
+            SuspendLayout();
             // 
             // lblMostUsedPaymentMethodValue
             // 
-            this.lblMostUsedPaymentMethodValue.AutoSize = true;
-            this.lblMostUsedPaymentMethodValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostUsedPaymentMethodValue.Location = new System.Drawing.Point(9, 22);
-            this.lblMostUsedPaymentMethodValue.Name = "lblMostUsedPaymentMethodValue";
-            this.lblMostUsedPaymentMethodValue.Size = new System.Drawing.Size(100, 45);
-            this.lblMostUsedPaymentMethodValue.TabIndex = 16;
-            this.lblMostUsedPaymentMethodValue.Text = "[????]";
-            this.lblMostUsedPaymentMethodValue.Visible = false;
+            lblMostUsedPaymentMethodValue.AutoSize = true;
+            lblMostUsedPaymentMethodValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblMostUsedPaymentMethodValue.Location = new System.Drawing.Point(9, 22);
+            lblMostUsedPaymentMethodValue.Name = "lblMostUsedPaymentMethodValue";
+            lblMostUsedPaymentMethodValue.Size = new System.Drawing.Size(100, 45);
+            lblMostUsedPaymentMethodValue.TabIndex = 16;
+            lblMostUsedPaymentMethodValue.Text = "[????]";
+            lblMostUsedPaymentMethodValue.Visible = false;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(117)))), ((int)(((byte)(91)))));
-            this.panel4.Controls.Add(this.lblMostUsedPaymentMethodValue);
-            this.panel4.Controls.Add(this.lblIsMostUsedPaymentMethod);
-            this.panel4.Location = new System.Drawing.Point(1023, 652);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(289, 121);
-            this.panel4.TabIndex = 22;
+            panel4.BackColor = System.Drawing.Color.FromArgb(82, 117, 91);
+            panel4.Controls.Add(lblMostUsedPaymentMethodValue);
+            panel4.Controls.Add(lblIsMostUsedPaymentMethod);
+            panel4.Location = new System.Drawing.Point(1023, 663);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(289, 121);
+            panel4.TabIndex = 22;
             // 
             // lblIsMostUsedPaymentMethod
             // 
-            this.lblIsMostUsedPaymentMethod.AutoSize = true;
-            this.lblIsMostUsedPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsMostUsedPaymentMethod.Location = new System.Drawing.Point(12, 77);
-            this.lblIsMostUsedPaymentMethod.Name = "lblIsMostUsedPaymentMethod";
-            this.lblIsMostUsedPaymentMethod.Size = new System.Drawing.Size(275, 25);
-            this.lblIsMostUsedPaymentMethod.TabIndex = 16;
-            this.lblIsMostUsedPaymentMethod.Text = "Is Most Used Payment Method";
-            this.lblIsMostUsedPaymentMethod.Visible = false;
+            lblIsMostUsedPaymentMethod.AutoSize = true;
+            lblIsMostUsedPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblIsMostUsedPaymentMethod.Location = new System.Drawing.Point(12, 77);
+            lblIsMostUsedPaymentMethod.Name = "lblIsMostUsedPaymentMethod";
+            lblIsMostUsedPaymentMethod.Size = new System.Drawing.Size(275, 25);
+            lblIsMostUsedPaymentMethod.TabIndex = 16;
+            lblIsMostUsedPaymentMethod.Text = "Is Most Used Payment Method";
+            lblIsMostUsedPaymentMethod.Visible = false;
             // 
             // lblTotalPaymentsValue
             // 
-            this.lblTotalPaymentsValue.AutoSize = true;
-            this.lblTotalPaymentsValue.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentsValue.Location = new System.Drawing.Point(7, 17);
-            this.lblTotalPaymentsValue.Name = "lblTotalPaymentsValue";
-            this.lblTotalPaymentsValue.Size = new System.Drawing.Size(114, 50);
-            this.lblTotalPaymentsValue.TabIndex = 16;
-            this.lblTotalPaymentsValue.Text = "[????]";
-            this.lblTotalPaymentsValue.Visible = false;
+            lblTotalPaymentsValue.AutoSize = true;
+            lblTotalPaymentsValue.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTotalPaymentsValue.Location = new System.Drawing.Point(7, 17);
+            lblTotalPaymentsValue.Name = "lblTotalPaymentsValue";
+            lblTotalPaymentsValue.Size = new System.Drawing.Size(114, 50);
+            lblTotalPaymentsValue.TabIndex = 16;
+            lblTotalPaymentsValue.Text = "[????]";
+            lblTotalPaymentsValue.Visible = false;
             // 
             // lblTotalPayments
             // 
-            this.lblTotalPayments.AutoSize = true;
-            this.lblTotalPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPayments.Location = new System.Drawing.Point(12, 77);
-            this.lblTotalPayments.Name = "lblTotalPayments";
-            this.lblTotalPayments.Size = new System.Drawing.Size(141, 25);
-            this.lblTotalPayments.TabIndex = 16;
-            this.lblTotalPayments.Text = "Total Payments";
-            this.lblTotalPayments.Visible = false;
+            lblTotalPayments.AutoSize = true;
+            lblTotalPayments.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTotalPayments.Location = new System.Drawing.Point(12, 77);
+            lblTotalPayments.Name = "lblTotalPayments";
+            lblTotalPayments.Size = new System.Drawing.Size(141, 25);
+            lblTotalPayments.TabIndex = 16;
+            lblTotalPayments.Text = "Total Payments";
+            lblTotalPayments.Visible = false;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(117)))));
-            this.panel3.Controls.Add(this.lblTotalPaymentsValue);
-            this.panel3.Controls.Add(this.lblTotalPayments);
-            this.panel3.Location = new System.Drawing.Point(1023, 515);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(289, 121);
-            this.panel3.TabIndex = 23;
+            panel3.BackColor = System.Drawing.Color.FromArgb(82, 91, 117);
+            panel3.Controls.Add(lblTotalPaymentsValue);
+            panel3.Controls.Add(lblTotalPayments);
+            panel3.Location = new System.Drawing.Point(1023, 526);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(289, 121);
+            panel3.TabIndex = 23;
             // 
             // lblAverageAmountPerPaymentValue
             // 
-            this.lblAverageAmountPerPaymentValue.AutoSize = true;
-            this.lblAverageAmountPerPaymentValue.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAverageAmountPerPaymentValue.Location = new System.Drawing.Point(42, 19);
-            this.lblAverageAmountPerPaymentValue.Name = "lblAverageAmountPerPaymentValue";
-            this.lblAverageAmountPerPaymentValue.Size = new System.Drawing.Size(114, 50);
-            this.lblAverageAmountPerPaymentValue.TabIndex = 16;
-            this.lblAverageAmountPerPaymentValue.Text = "[????]";
-            this.lblAverageAmountPerPaymentValue.Visible = false;
+            lblAverageAmountPerPaymentValue.AutoSize = true;
+            lblAverageAmountPerPaymentValue.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblAverageAmountPerPaymentValue.Location = new System.Drawing.Point(42, 19);
+            lblAverageAmountPerPaymentValue.Name = "lblAverageAmountPerPaymentValue";
+            lblAverageAmountPerPaymentValue.Size = new System.Drawing.Size(114, 50);
+            lblAverageAmountPerPaymentValue.TabIndex = 16;
+            lblAverageAmountPerPaymentValue.Text = "[????]";
+            lblAverageAmountPerPaymentValue.Visible = false;
             // 
             // lblAverageAmountPerPayment
             // 
-            this.lblAverageAmountPerPayment.AutoSize = true;
-            this.lblAverageAmountPerPayment.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAverageAmountPerPayment.Location = new System.Drawing.Point(12, 77);
-            this.lblAverageAmountPerPayment.Name = "lblAverageAmountPerPayment";
-            this.lblAverageAmountPerPayment.Size = new System.Drawing.Size(270, 25);
-            this.lblAverageAmountPerPayment.TabIndex = 16;
-            this.lblAverageAmountPerPayment.Text = "Average Amount Per Payment";
-            this.lblAverageAmountPerPayment.Visible = false;
+            lblAverageAmountPerPayment.AutoSize = true;
+            lblAverageAmountPerPayment.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblAverageAmountPerPayment.Location = new System.Drawing.Point(12, 77);
+            lblAverageAmountPerPayment.Name = "lblAverageAmountPerPayment";
+            lblAverageAmountPerPayment.Size = new System.Drawing.Size(270, 25);
+            lblAverageAmountPerPayment.TabIndex = 16;
+            lblAverageAmountPerPayment.Text = "Average Amount Per Payment";
+            lblAverageAmountPerPayment.Visible = false;
             // 
             // lblTotalPaymentsAmountValue
             // 
-            this.lblTotalPaymentsAmountValue.AutoSize = true;
-            this.lblTotalPaymentsAmountValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentsAmountValue.Location = new System.Drawing.Point(42, 23);
-            this.lblTotalPaymentsAmountValue.Name = "lblTotalPaymentsAmountValue";
-            this.lblTotalPaymentsAmountValue.Size = new System.Drawing.Size(100, 45);
-            this.lblTotalPaymentsAmountValue.TabIndex = 16;
-            this.lblTotalPaymentsAmountValue.Text = "[????]";
-            this.lblTotalPaymentsAmountValue.Visible = false;
+            lblTotalPaymentsAmountValue.AutoSize = true;
+            lblTotalPaymentsAmountValue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTotalPaymentsAmountValue.Location = new System.Drawing.Point(42, 23);
+            lblTotalPaymentsAmountValue.Name = "lblTotalPaymentsAmountValue";
+            lblTotalPaymentsAmountValue.Size = new System.Drawing.Size(100, 45);
+            lblTotalPaymentsAmountValue.TabIndex = 16;
+            lblTotalPaymentsAmountValue.Text = "[????]";
+            lblTotalPaymentsAmountValue.Visible = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(117)))));
-            this.panel2.Controls.Add(this.pbRiyalSymbol2);
-            this.panel2.Controls.Add(this.lblAverageAmountPerPaymentValue);
-            this.panel2.Controls.Add(this.lblAverageAmountPerPayment);
-            this.panel2.Location = new System.Drawing.Point(1023, 378);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(289, 121);
-            this.panel2.TabIndex = 24;
+            panel2.BackColor = System.Drawing.Color.FromArgb(82, 91, 117);
+            panel2.Controls.Add(pbRiyalSymbol2);
+            panel2.Controls.Add(lblAverageAmountPerPaymentValue);
+            panel2.Controls.Add(lblAverageAmountPerPayment);
+            panel2.Location = new System.Drawing.Point(1023, 389);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(289, 121);
+            panel2.TabIndex = 24;
             // 
             // pbRiyalSymbol2
             // 
-            this.pbRiyalSymbol2.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
-            this.pbRiyalSymbol2.Location = new System.Drawing.Point(7, 28);
-            this.pbRiyalSymbol2.Name = "pbRiyalSymbol2";
-            this.pbRiyalSymbol2.Size = new System.Drawing.Size(42, 38);
-            this.pbRiyalSymbol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRiyalSymbol2.TabIndex = 41;
-            this.pbRiyalSymbol2.TabStop = false;
-            this.pbRiyalSymbol2.Visible = false;
+            pbRiyalSymbol2.Image = Properties.Resources.Saudi_Riyal_Symbol;
+            pbRiyalSymbol2.Location = new System.Drawing.Point(7, 28);
+            pbRiyalSymbol2.Name = "pbRiyalSymbol2";
+            pbRiyalSymbol2.Size = new System.Drawing.Size(42, 38);
+            pbRiyalSymbol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pbRiyalSymbol2.TabIndex = 41;
+            pbRiyalSymbol2.TabStop = false;
+            pbRiyalSymbol2.Visible = false;
             // 
             // lblTotalPaymentsAmount
             // 
-            this.lblTotalPaymentsAmount.AutoSize = true;
-            this.lblTotalPaymentsAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPaymentsAmount.Location = new System.Drawing.Point(12, 77);
-            this.lblTotalPaymentsAmount.Name = "lblTotalPaymentsAmount";
-            this.lblTotalPaymentsAmount.Size = new System.Drawing.Size(274, 32);
-            this.lblTotalPaymentsAmount.TabIndex = 16;
-            this.lblTotalPaymentsAmount.Text = "Total Payments Amount";
-            this.lblTotalPaymentsAmount.Visible = false;
+            lblTotalPaymentsAmount.AutoSize = true;
+            lblTotalPaymentsAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblTotalPaymentsAmount.Location = new System.Drawing.Point(12, 77);
+            lblTotalPaymentsAmount.Name = "lblTotalPaymentsAmount";
+            lblTotalPaymentsAmount.Size = new System.Drawing.Size(274, 32);
+            lblTotalPaymentsAmount.TabIndex = 16;
+            lblTotalPaymentsAmount.Text = "Total Payments Amount";
+            lblTotalPaymentsAmount.Visible = false;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
-            this.panel1.Controls.Add(this.pbRiyalSymbol1);
-            this.panel1.Controls.Add(this.lblTotalPaymentsAmountValue);
-            this.panel1.Controls.Add(this.lblTotalPaymentsAmount);
-            this.panel1.Location = new System.Drawing.Point(1023, 241);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(289, 121);
-            this.panel1.TabIndex = 25;
+            panel1.BackColor = System.Drawing.Color.FromArgb(117, 82, 82);
+            panel1.Controls.Add(pbRiyalSymbol1);
+            panel1.Controls.Add(lblTotalPaymentsAmountValue);
+            panel1.Controls.Add(lblTotalPaymentsAmount);
+            panel1.Location = new System.Drawing.Point(1023, 252);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(289, 121);
+            panel1.TabIndex = 25;
             // 
             // pbRiyalSymbol1
             // 
-            this.pbRiyalSymbol1.Image = global::UI.Properties.Resources.Saudi_Riyal_Symbol;
-            this.pbRiyalSymbol1.Location = new System.Drawing.Point(8, 31);
-            this.pbRiyalSymbol1.Name = "pbRiyalSymbol1";
-            this.pbRiyalSymbol1.Size = new System.Drawing.Size(40, 35);
-            this.pbRiyalSymbol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRiyalSymbol1.TabIndex = 41;
-            this.pbRiyalSymbol1.TabStop = false;
-            this.pbRiyalSymbol1.Visible = false;
+            pbRiyalSymbol1.Image = Properties.Resources.Saudi_Riyal_Symbol;
+            pbRiyalSymbol1.Location = new System.Drawing.Point(8, 31);
+            pbRiyalSymbol1.Name = "pbRiyalSymbol1";
+            pbRiyalSymbol1.Size = new System.Drawing.Size(40, 35);
+            pbRiyalSymbol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pbRiyalSymbol1.TabIndex = 41;
+            pbRiyalSymbol1.TabStop = false;
+            pbRiyalSymbol1.Visible = false;
             // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(490, 141);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(348, 40);
-            this.lblHeader.TabIndex = 17;
-            this.lblHeader.Text = "PAYMENT MANAGEMENT";
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblHeader.Location = new System.Drawing.Point(490, 141);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new System.Drawing.Size(348, 40);
+            lblHeader.TabIndex = 17;
+            lblHeader.Text = "PAYMENT MANAGEMENT";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UI.Properties.Resources.Payments;
-            this.pictureBox1.Location = new System.Drawing.Point(598, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.Payments;
+            pictureBox1.Location = new System.Drawing.Point(598, 37);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(133, 103);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
             // 
             // dgvPayments
             // 
-            this.dgvPayments.AllowUserToAddRows = false;
-            this.dgvPayments.AllowUserToDeleteRows = false;
-            this.dgvPayments.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.dgvPayments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPayments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.dgvPayments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvPayments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dgvPayments.AllowUserToAddRows = false;
+            dgvPayments.AllowUserToDeleteRows = false;
+            dgvPayments.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            dgvPayments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPayments.BackgroundColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dgvPayments.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dgvPayments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dgvPayments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPayments.ColumnHeadersHeight = 40;
-            this.dgvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvPayments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvPayments.ColumnHeadersHeight = 40;
+            dgvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPayments.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPayments.EnableHeadersVisualStyles = false;
-            this.dgvPayments.Location = new System.Drawing.Point(16, 240);
-            this.dgvPayments.MultiSelect = false;
-            this.dgvPayments.Name = "dgvPayments";
-            this.dgvPayments.ReadOnly = true;
-            this.dgvPayments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPayments.RowHeadersVisible = false;
-            this.dgvPayments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvPayments.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvPayments.EnableHeadersVisualStyles = false;
+            dgvPayments.Location = new System.Drawing.Point(24, 252);
+            dgvPayments.MultiSelect = false;
+            dgvPayments.Name = "dgvPayments";
+            dgvPayments.ReadOnly = true;
+            dgvPayments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dgvPayments.RowHeadersVisible = false;
+            dgvPayments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPayments.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPayments.RowTemplate.Height = 35;
-            this.dgvPayments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayments.ShowCellErrors = false;
-            this.dgvPayments.ShowCellToolTips = false;
-            this.dgvPayments.ShowEditingIcon = false;
-            this.dgvPayments.ShowRowErrors = false;
-            this.dgvPayments.Size = new System.Drawing.Size(989, 533);
-            this.dgvPayments.TabIndex = 21;
+            dgvPayments.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvPayments.RowTemplate.Height = 35;
+            dgvPayments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvPayments.ShowCellErrors = false;
+            dgvPayments.ShowCellToolTips = false;
+            dgvPayments.ShowEditingIcon = false;
+            dgvPayments.ShowRowErrors = false;
+            dgvPayments.Size = new System.Drawing.Size(985, 532);
+            dgvPayments.TabIndex = 21;
             // 
             // txtPageNumber
             // 
-            this.txtPageNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.txtPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPageNumber.Enabled = false;
-            this.txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtPageNumber.Location = new System.Drawing.Point(90, 784);
-            this.txtPageNumber.Multiline = true;
-            this.txtPageNumber.Name = "txtPageNumber";
-            this.txtPageNumber.Size = new System.Drawing.Size(41, 25);
-            this.txtPageNumber.TabIndex = 29;
-            this.txtPageNumber.Text = "1";
+            txtPageNumber.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            txtPageNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtPageNumber.Enabled = false;
+            txtPageNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtPageNumber.ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            txtPageNumber.Location = new System.Drawing.Point(95, 794);
+            txtPageNumber.Multiline = true;
+            txtPageNumber.Name = "txtPageNumber";
+            txtPageNumber.Size = new System.Drawing.Size(41, 25);
+            txtPageNumber.TabIndex = 29;
+            txtPageNumber.Text = "1";
             // 
             // btnNextPage
             // 
-            this.btnNextPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnNextPage.BackgroundImage = global::UI.Properties.Resources.right;
-            this.btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNextPage.FlatAppearance.BorderSize = 0;
-            this.btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextPage.Location = new System.Drawing.Point(53, 779);
-            this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(31, 34);
-            this.btnNextPage.TabIndex = 27;
-            this.btnNextPage.UseVisualStyleBackColor = false;
-            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            btnNextPage.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnNextPage.BackgroundImage = Properties.Resources.right;
+            btnNextPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnNextPage.FlatAppearance.BorderSize = 0;
+            btnNextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnNextPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnNextPage.Location = new System.Drawing.Point(58, 789);
+            btnNextPage.Name = "btnNextPage";
+            btnNextPage.Size = new System.Drawing.Size(31, 34);
+            btnNextPage.TabIndex = 27;
+            btnNextPage.UseVisualStyleBackColor = false;
+            btnNextPage.Click += btnNextPage_Click;
             // 
             // btnPreviousPage
             // 
-            this.btnPreviousPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnPreviousPage.BackgroundImage = global::UI.Properties.Resources.left;
-            this.btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
-            this.btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousPage.Location = new System.Drawing.Point(16, 779);
-            this.btnPreviousPage.Name = "btnPreviousPage";
-            this.btnPreviousPage.Size = new System.Drawing.Size(31, 34);
-            this.btnPreviousPage.TabIndex = 28;
-            this.btnPreviousPage.UseVisualStyleBackColor = false;
-            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            btnPreviousPage.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            btnPreviousPage.BackgroundImage = Properties.Resources.left;
+            btnPreviousPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnPreviousPage.FlatAppearance.BorderSize = 0;
+            btnPreviousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPreviousPage.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnPreviousPage.Location = new System.Drawing.Point(21, 789);
+            btnPreviousPage.Name = "btnPreviousPage";
+            btnPreviousPage.Size = new System.Drawing.Size(31, 34);
+            btnPreviousPage.TabIndex = 28;
+            btnPreviousPage.UseVisualStyleBackColor = false;
+            btnPreviousPage.Click += btnPreviousPage_Click;
             // 
             // lblOfTotalPagesAndRows
             // 
-            this.lblOfTotalPagesAndRows.AutoSize = true;
-            this.lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOfTotalPagesAndRows.Location = new System.Drawing.Point(137, 786);
-            this.lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
-            this.lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
-            this.lblOfTotalPagesAndRows.TabIndex = 26;
-            this.lblOfTotalPagesAndRows.Text = "of [????] (???)";
+            lblOfTotalPagesAndRows.AutoSize = true;
+            lblOfTotalPagesAndRows.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblOfTotalPagesAndRows.Location = new System.Drawing.Point(142, 796);
+            lblOfTotalPagesAndRows.Name = "lblOfTotalPagesAndRows";
+            lblOfTotalPagesAndRows.Size = new System.Drawing.Size(101, 21);
+            lblOfTotalPagesAndRows.TabIndex = 26;
+            lblOfTotalPagesAndRows.Text = "of [????] (???)";
             // 
             // frmPaymentsManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1329, 861);
-            this.Controls.Add(this.txtPageNumber);
-            this.Controls.Add(this.btnNextPage);
-            this.Controls.Add(this.btnPreviousPage);
-            this.Controls.Add(this.lblOfTotalPagesAndRows);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dgvPayments);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmPaymentsManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmPaymentManagement";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmPaymentsManagement_Load);
-            this.Shown += new System.EventHandler(this.frmPaymentsManagement_Shown);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRiyalSymbol1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            ClientSize = new System.Drawing.Size(1329, 861);
+            Controls.Add(txtPageNumber);
+            Controls.Add(btnNextPage);
+            Controls.Add(btnPreviousPage);
+            Controls.Add(lblOfTotalPagesAndRows);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(lblHeader);
+            Controls.Add(pictureBox1);
+            Controls.Add(dgvPayments);
+            Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            ForeColor = System.Drawing.Color.FromArgb(235, 235, 235);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "frmPaymentsManagement";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "frmPaymentManagement";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            Load += frmPaymentsManagement_Load;
+            Shown += frmPaymentsManagement_Shown;
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbRiyalSymbol2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbRiyalSymbol1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPayments).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

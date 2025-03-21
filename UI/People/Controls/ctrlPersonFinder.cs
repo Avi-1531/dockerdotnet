@@ -15,6 +15,7 @@ namespace UI.People.Controls
     {
         public Action<clsPerson> OnPersonSelected;
         clsPerson _Person;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool SearchEnabled
         {
             get

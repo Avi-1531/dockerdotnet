@@ -17,6 +17,7 @@ namespace UI.Doctor.Controls
         {
             InitializeComponent();
         }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool DisableSearch
         {
             set
