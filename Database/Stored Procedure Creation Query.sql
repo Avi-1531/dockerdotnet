@@ -663,7 +663,7 @@ CREATE PROCEDURE GetDoctorByID
     @DoctorID SMALLINT
 AS
 BEGIN
-    SELECT PersonID FROM Doctors WHERE DoctorID = @DoctorID;
+    SELECT * FROM Doctors WHERE DoctorID = @DoctorID;
 END;
 GO
 
