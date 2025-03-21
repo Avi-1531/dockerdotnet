@@ -105,6 +105,7 @@ namespace UI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            lblUsername.Text = $"@{clsGlobal.CurrentUser.Username}";
             LoadForm(new frmDashboard());
         }
     }
