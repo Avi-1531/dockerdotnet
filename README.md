@@ -3,7 +3,7 @@ The **Clinic Management System** is a desktop application designed to streamline
 
 ## 🎥 Demo
 Watch the application demo video:
-[Demo Video](https://drive.google.com/file/d/1bHH8rtZaZ6Zp1Yi1SQmgVV189u41k0cy/view?usp=sharing)
+[Demo Video](https://drive.google.com/file/d/1xu1Tw0dh8JeeXJmi8pydaijAq7ih9Y8c/view?usp=sharing)
 
 ## 🗄️ Database Schema (ERD)
 ![ERD](https://github.com/user-attachments/assets/b7695c51-b1f0-4fc1-a23b-67c96915e4fc)
@@ -17,7 +17,7 @@ Watch the application demo video:
 ## ✨ Key Features
 - 📊 **Dashboard** – Provides an overview of clinic operations.
 - 👨‍⚕️ **Doctors** – Manage doctor details.
-- 🏥 **Departments** – Manage medical departments with statistics.
+- 🏪 **Departments** – Manage medical departments with statistics.
 - 👩‍⚕️ **Patients** – Register, update, and track patient records.
 - 📅 **Appointments** – Schedule, modify, and manage patient visits.
 - 📝 **Medical Records** – Maintain and retrieve patient history and treatment details.
