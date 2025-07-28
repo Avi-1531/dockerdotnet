@@ -1,4 +1,4 @@
-name: .NET CICD
+name: .NET CICD pipeline
 
 on:
   push:
