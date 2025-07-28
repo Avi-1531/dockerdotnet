@@ -47,7 +47,7 @@ jobs:
         run: |
           # Add VM to TrustedHosts
           Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Concatenate -Force
-          $user = "./${{ secrets.VM_USERNAME }}"
+          $user = "avi-rg\\${{ secrets.VM_USERNAME }}"
           $pass = ConvertTo-SecureString "${{ secrets.VM_PASSWORD }}" -AsPlainText -Force
           $cred = New-Object PSCredential ($user, $pass)
           $global:session = New-PSSession -ComputerName ${{ secrets.VM_IP }} -Port 5985 -Authentication Basic -Credential $cred
