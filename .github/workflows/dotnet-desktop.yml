@@ -20,7 +20,7 @@ jobs:
         dotnet-version: 9.0.x  # Ensure your project targets net9.0
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore UI/UI.sln
 
     - name: Publish
       run: dotnet publish --configuration Release --output ./publish
