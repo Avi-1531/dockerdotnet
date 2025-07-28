@@ -48,21 +48,21 @@ jobs:
           $user = "${{ secrets.VM_USERNAME }}"
           $pass = ConvertTo-SecureString "${{ secrets.VM_PASSWORD }}" -AsPlainText -Force
           $cred = New-Object PSCredential ($user, $pass)
-          $global:session = New-PSSession -ComputerName ${{ secrets.VM_HOST }} -Port 5985 -Authentication Basic -Credential $cred
+          $global:session = New-PSSession -ComputerName ${{ secrets.VM_IP }} -Port 5985 -Authentication Basic -Credential $cred
 
       - name: Ensure target directory exists
         shell: pwsh
         run: |
           Invoke-Command -Session $session -ScriptBlock {
-            if (-Not (Test-Path "C:\inetpub\wwwroot\myapp")) {
-              New-Item -Path "C:\inetpub\wwwroot\myapp" -ItemType Directory
+            if (-Not (Test-Path "C:\inetpub\wwwroot\aviapp")) {
+              New-Item -Path "C:\inetpub\wwwroot\aviapp" -ItemType Directory
             }
           }
 
       - name: Copy files to IIS folder on VM
         shell: pwsh
         run: |
-          Copy-Item -Path "./publish/*" -Destination "C:\inetpub\wwwroot\myapp" -ToSession $session -Recurse -Force
+          Copy-Item -Path "./publish/*" -Destination "C:\inetpub\wwwroot\aviapp" -ToSession $session -Recurse -Force
 
       - name: Bind IIS to port 92
         shell: pwsh
