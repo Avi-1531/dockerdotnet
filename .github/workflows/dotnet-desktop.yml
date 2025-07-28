@@ -45,6 +45,8 @@ jobs:
       - name: Create PowerShell session to Azure VM
         shell: pwsh
         run: |
+          # Add VM to TrustedHosts
+          Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Concatenate -Force
           $user = "${{ secrets.VM_USERNAME }}"
           $pass = ConvertTo-SecureString "${{ secrets.VM_PASSWORD }}" -AsPlainText -Force
           $cred = New-Object PSCredential ($user, $pass)
