@@ -1,8 +1,10 @@
 name: .NET CICD pipeline
+
 on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: windows-latest
@@ -38,18 +40,27 @@ jobs:
       - name: Download published artifacts
         uses: actions/download-artifact@v4
         with:
-            name: published-app
-            path: ./publish
+          name: published-app
+          path: ./publish
+
+      - name: Add VM to TrustedHosts on GitHub runner (required for WinRM over HTTP Basic Auth)
+        shell: pwsh
+        run: |
+          # Add VM IP to TrustedHosts to avoid trust issues
+          Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Concatenate -Force
 
       - name: Create PowerShell session to Azure VM
         shell: pwsh
         run: |
-          # Add VM to TrustedHosts
-          Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Concatenate -Force
-          $user = "avi-rg\\${{ secrets.VM_USERNAME }}"
+          $user = "${{ secrets.VM_USERNAME }}"  # e.g., "avi-rg\avi" or ".\avi" if local user
           $pass = ConvertTo-SecureString "${{ secrets.VM_PASSWORD }}" -AsPlainText -Force
-          $cred = New-Object PSCredential ($user, $pass)
-          $global:session = New-PSSession -ComputerName ${{ secrets.VM_IP }} -Port 5985 -Authentication Basic -Credential $cred
+          $cred = New-Object System.Management.Automation.PSCredential ($user, $pass)
+
+          # Create a new session using Basic authentication over HTTP port 5985
+          $global:session = New-PSSession -ComputerName "${{ secrets.VM_IP }}" `
+                                         -Credential $cred `
+                                         -Authentication Basic `
+                                         -Port 5985
 
       - name: Ensure target directory exists
         shell: pwsh
