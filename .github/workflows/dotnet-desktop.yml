@@ -70,25 +70,12 @@ jobs:
           Write-Error "❌ Failed to establish session or run commands: $_"
           exit 1
         }
-
-
-    - name: Ensure target directory exists
-      shell: pwsh
-      run: |
         Invoke-Command -Session $session -ScriptBlock {
           if (-Not (Test-Path "C:\inetpub\wwwroot\aviapp")) {
             New-Item -Path "C:\inetpub\wwwroot\aviapp" -ItemType Directory
           }
         }
-
-    - name: Copy files to IIS folder on VM
-      shell: pwsh
-      run: |
         Copy-Item -Path "./publish/*" -Destination "C:\inetpub\wwwroot\aviapp" -ToSession $session -Recurse -Force
-
-    - name: Bind IIS to port 92
-      shell: pwsh
-      run: |
         Invoke-Command -Session $session -ScriptBlock {
           Import-Module WebAdministration
           if (-Not (Get-WebBinding -Name "Default Web Site" | Where-Object {$_.bindingInformation -like "*:92:*"})) {
@@ -97,11 +84,10 @@ jobs:
           }
           Restart-WebAppPool -Name 'DefaultAppPool'
         }
-
-    - name: Remove remote PowerShell session
-      shell: pwsh
-      run: |
         if ($session) {
           Remove-PSSession -Session $session
         }
 
+
+    
+        
