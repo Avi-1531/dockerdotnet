@@ -1,5 +1,4 @@
 name: .NET CICD pipeline
-
 on:
   push:
     branches: [ "main" ]
