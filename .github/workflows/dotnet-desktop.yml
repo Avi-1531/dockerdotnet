@@ -70,23 +70,43 @@ jobs:
           Write-Error "❌ Failed to establish session or run commands: $_"
           exit 1
         }
+        
         Invoke-Command -Session $session -ScriptBlock {
           if (-Not (Test-Path "C:\inetpub\wwwroot\aviapp")) {
             New-Item -Path "C:\inetpub\wwwroot\aviapp" -ItemType Directory
           }
         }
+        
         Copy-Item -Path "./publish/*" -Destination "C:\inetpub\wwwroot\aviapp" -ToSession $session -Recurse -Force
+        
         Invoke-Command -Session $session -ScriptBlock {
           Import-Module WebAdministration
-          if (-Not (Get-WebBinding -Name "Default Web Site" | Where-Object {$_.bindingInformation -like "*:92:*"})) {
-            Remove-WebBinding -Name "Default Web Site" -Port 80 -Protocol "http"
-            New-WebBinding -Name "Default Web Site" -Protocol "http" -Port 92 -IPAddress "*"
+        
+          if (-Not (Test-Path IIS:\AppPools\aviapp-pool)) {
+            New-WebAppPool -Name "aviapp-pool"
           }
-          Restart-WebAppPool -Name 'DefaultAppPool'
+        
+          if (-Not (Test-Path IIS:\Sites\aviapp)) {
+            New-Website -Name "aviapp" -Port 92 -PhysicalPath "C:\inetpub\wwwroot\aviapp" -ApplicationPool "aviapp-pool"
+          } else {
+            Write-Host "Site 'aviapp' already exists. Updating bindings if needed..."
+            $bindingExists = Get-WebBinding -Name "aviapp" | Where-Object { $_.bindingInformation -like "*:92:*" }
+            if (-Not $bindingExists) {
+              New-WebBinding -Name "aviapp" -Protocol "http" -Port 92 -IPAddress "*"
+            }
+            Restart-WebAppPool -Name "aviapp-pool"
+          }
+        
+          # Open firewall for port 92
+          if (-Not (Get-NetFirewallRule | Where-Object { $_.DisplayName -eq "HTTP Port 92" })) {
+            New-NetFirewallRule -DisplayName "HTTP Port 92" -Direction Inbound -Protocol TCP -LocalPort 92 -Action Allow
+          }
         }
+        
         if ($session) {
           Remove-PSSession -Session $session
         }
+
 
 
     
