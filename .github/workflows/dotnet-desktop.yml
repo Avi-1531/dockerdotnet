@@ -51,14 +51,17 @@ jobs:
     - name: Establish PowerShell Session using ConnectionUri
       shell: pwsh
       run: |
+        Set-Item -Path WSMan:\localhost\Client\AllowUnencrypted -Value $true
+        Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Force
+        
         $user = "${{ secrets.VM_USERNAME }}"
         $pass = ConvertTo-SecureString "${{ secrets.VM_PASSWORD }}" -AsPlainText -Force
         $cred = New-Object System.Management.Automation.PSCredential ($user, $pass)
         $uri = "http://${{ secrets.VM_IP }}:5985/wsman"
-
+        
         try {
           $global:session = New-PSSession -ConnectionUri $uri -Credential $cred -Authentication Basic
-
+        
           Invoke-Command -Session $session -ScriptBlock {
             hostname
             Get-Process | Sort-Object CPU -Descending | Select-Object -First 5
@@ -67,6 +70,7 @@ jobs:
           Write-Error "❌ Failed to establish session or run commands: $_"
           exit 1
         }
+
 
     - name: Ensure target directory exists
       shell: pwsh
