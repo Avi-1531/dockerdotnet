@@ -31,7 +31,7 @@ jobs:
       # 4. Build and push Docker image
       - name: Build and Push Docker image
         run: |
-          IMAGE_NAME=avidockerdotnet
-          IMAGE_TAG=latest
-          docker build -t aviregistry123.azurecr.io/$IMAGE_NAME:$IMAGE_TAG .
-          docker push aviregistry123.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
+          $IMAGE_NAME = "avidockerdotnet"
+          $IMAGE_TAG  = "latest"
+          docker build -t "aviregistry123.azurecr.io/$($IMAGE_NAME):$($IMAGE_TAG)" .
+          docker push "aviregistry123.azurecr.io/$($IMAGE_NAME):$($IMAGE_TAG)"
