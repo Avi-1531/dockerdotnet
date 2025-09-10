@@ -1,112 +1,37 @@
-name: .NET CICD pipeline
+name: Build and Push to ACR
+
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches:
+      - main   # Trigger workflow only on pushes to main
 
 jobs:
-  build:
-    runs-on: windows-latest
+  build-and-push:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Install .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 9.0.x
+      # 2. Log in to Azure
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Restore dependencies
-      run: dotnet restore UI/UI.sln
+      # 3. Log in to Azure Container Registry (ACR)
+      - name: Azure Container Registry Login
+        uses: azure/docker-login@v2
+        with:
+          login-server: aviregistry123.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
 
-    - name: Publish
-      run: dotnet publish UI/UI.sln --configuration Release --output ./publish
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: published-app
-        path: ./publish
-
-  deploy:
-    runs-on: windows-latest
-    needs: build
-
-    steps:
-    - name: Download published artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: published-app
-        path: ./publish
-
-    - name: Add VM to TrustedHosts
-      shell: pwsh
-      run: |
-        Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Force
-
-    - name: Establish PowerShell Session using ConnectionUri
-      shell: pwsh
-      run: |
-        Set-Item -Path WSMan:\localhost\Client\AllowUnencrypted -Value $true
-        Set-Item WSMan:\localhost\Client\TrustedHosts -Value "${{ secrets.VM_IP }}" -Force
-        
-        $user = "${{ secrets.VM_USERNAME }}"
-        $pass = ConvertTo-SecureString "${{ secrets.VM_PASSWORD }}" -AsPlainText -Force
-        $cred = New-Object System.Management.Automation.PSCredential ($user, $pass)
-        $uri = "http://${{ secrets.VM_IP }}:5985/wsman"
-        
-        try {
-          $global:session = New-PSSession -ConnectionUri $uri -Credential $cred -Authentication Basic
-        
-          Invoke-Command -Session $session -ScriptBlock {
-            hostname
-            Get-Process | Sort-Object CPU -Descending | Select-Object -First 5
-          }
-        } catch {
-          Write-Error "❌ Failed to establish session or run commands: $_"
-          exit 1
-        }
-        
-        Invoke-Command -Session $session -ScriptBlock {
-          if (-Not (Test-Path "C:\inetpub\wwwroot\aviapp")) {
-            New-Item -Path "C:\inetpub\wwwroot\aviapp" -ItemType Directory
-          }
-        }
-        
-        Copy-Item -Path "./publish/*" -Destination "C:\inetpub\wwwroot\aviapp" -ToSession $session -Recurse -Force
-        
-        Invoke-Command -Session $session -ScriptBlock {
-          Import-Module WebAdministration
-        
-          if (-Not (Test-Path IIS:\AppPools\aviapp-pool)) {
-            New-WebAppPool -Name "aviapp-pool"
-          }
-        
-          if (-Not (Test-Path IIS:\Sites\aviapp)) {
-            New-Website -Name "aviapp" -Port 92 -PhysicalPath "C:\inetpub\wwwroot\aviapp" -ApplicationPool "aviapp-pool"
-          } else {
-            Write-Host "Site 'aviapp' already exists. Updating bindings if needed..."
-            $bindingExists = Get-WebBinding -Name "aviapp" | Where-Object { $_.bindingInformation -like "*:92:*" }
-            if (-Not $bindingExists) {
-              New-WebBinding -Name "aviapp" -Protocol "http" -Port 92 -IPAddress "*"
-            }
-            Restart-WebAppPool -Name "aviapp-pool"
-          }
-        
-          # Open firewall for port 92
-          if (-Not (Get-NetFirewallRule | Where-Object { $_.DisplayName -eq "HTTP Port 92" })) {
-            New-NetFirewallRule -DisplayName "HTTP Port 92" -Direction Inbound -Protocol TCP -LocalPort 92 -Action Allow
-          }
-        }
-        
-        if ($session) {
-          Remove-PSSession -Session $session
-        }
-
-
-
-    
-        
+      # 4. Build and push Docker image
+      - name: Build and Push Docker image
+        run: |
+          IMAGE_NAME=avidockerdotnet
+          IMAGE_TAG=latest
+          docker build -t aviregistry123.azurecr.io/$IMAGE_NAME:$IMAGE_TAG .
+          docker push aviregistry123.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
