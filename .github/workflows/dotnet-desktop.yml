@@ -42,7 +42,7 @@ jobs:
     steps:
       # 5. Deploy to Azure App Service
       - name: Deploy to App Service
-        uses: azure/webapps-container-deploy@v2
+        uses: azure/webapps-container-deploy@v1
         with:
           app-name: dockerdotnetwebapp
           images: aviregistry123.azurecr.io/avidockerdotnet:latest
