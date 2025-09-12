@@ -47,25 +47,68 @@ jobs:
 
       - name: Create App Service if not exists
         run: |
-          $APP_NAME="dockerdotnetwebapp"
-          $RG_NAME="example-resources"
-          $PLAN_NAME="myAppServicePlan"
-      
-          # Check if App Service exists
-          $exists = az webapp show --name $APP_NAME --resource-group $RG_NAME --query "name" -o tsv 2>$null
-      
-          if (-not $exists) {
-            Write-Host "App Service does not exist. Creating..."
-            az appservice plan create --name $PLAN_NAME --resource-group $RG_NAME --sku B1
-            az webapp create --name $APP_NAME --resource-group $RG_NAME --plan $PLAN_NAME
-          } else {
-            Write-Host "App Service already exists."
-          }
-
-      - name: Deploy latest Docker image
-        run: |
-            $APP_NAME="dockerdotnetwebapp"
-            $RG_NAME="example-resources"
+                APP_NAME="dockerdotnetwebapp"
+                RG_NAME="example-resources"
+                PLAN_NAME="myAppServicePlan"
         
-            az webapp config container set --name $APP_NAME --resource-group $RG_NAME --docker-custom-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
-            az webapp restart --name $APP_NAME --resource-group $RG_NAME
+                if ! az webapp show --name $APP_NAME --resource-group $RG_NAME >/dev/null 2>&1; then
+                  echo "App Service does not exist. Creating..."
+                  az appservice plan create \
+                    --name $PLAN_NAME \
+                    --resource-group $RG_NAME \
+                    --sku B1 \
+                    --is-linux \
+                    --location "EastUS"
+        
+                  az webapp create \
+                    --name $APP_NAME \
+                    --resource-group $RG_NAME \
+                    --plan $PLAN_NAME \
+                    --deployment-container-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
+                else
+                  echo "App Service already exists."
+                fi
+        
+      - name: Update to latest Docker image
+        run: |
+                APP_NAME="dockerdotnetwebapp"
+                RG_NAME="example-resources"
+        
+                az webapp config container set \
+                  --name $APP_NAME \
+                  --resource-group $RG_NAME \
+                  --docker-custom-image-name aviregistry123.azurecr.io/avidockerdotnet:latest \
+                  --docker-registry-server-url https://aviregistry123.azurecr.io \
+                  --docker-registry-server-user ${{ secrets.ACR_USERNAME }} \
+                  --docker-registry-server-password ${{ secrets.ACR_PASSWORD }}
+        
+                az webapp restart --name $APP_NAME --resource-group $RG_NAME
+
+  #     - name: Create App Service if not exists
+  #       run: |
+  #         $APP_NAME="dockerdotnetwebapp"
+  #         $RG_NAME="example-resources"
+  #         $PLAN_NAME="myAppServicePlan"
+      
+  #         # Check if App Service exists
+  #         $exists = az webapp show --name $APP_NAME --resource-group $RG_NAME --query "name" -o tsv 2>$null
+      
+  #         if (-not $exists) {
+  #           Write-Host "App Service does not exist. Creating..."
+  #           az appservice plan create --name $PLAN_NAME --resource-group $RG_NAME --sku B1
+  #           az webapp create --name $APP_NAME --resource-group $RG_NAME --plan $PLAN_NAME
+  #         } else {
+  #           Write-Host "App Service already exists."
+  #         }
+
+  #     - name: Deploy latest Docker image
+  #       run: |
+  #           $APP_NAME="dockerdotnetwebapp"
+  #           $RG_NAME="example-resources"
+        
+  #           az webapp config container set --name $APP_NAME --resource-group $RG_NAME --docker-custom-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
+  #           az webapp restart --name $APP_NAME --resource-group $RG_NAME
+
+        
+            
+        
