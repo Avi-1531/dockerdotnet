@@ -3,10 +3,12 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0-windowsservercore-ltsc2022 AS build
 WORKDIR /src
 
 # Copy solution and project files
+
+
 COPY UI/*.sln ./
-COPY UI/*.csproj UI/
-COPY Business/*.csproj Business/
-COPY DataAccess/*.csproj DataAccess/
+COPY UI/UI.csproj ./
+COPY DataAccess/DataAccess.csproj ../DataAccess/
+COPY Business/Business.csproj ../Business/
 
 
 # Restore dependencies
