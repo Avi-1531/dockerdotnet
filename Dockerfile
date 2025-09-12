@@ -7,7 +7,7 @@ COPY UI/*.sln ./
 COPY UI/*.csproj UI/
 COPY Business/*.csproj Business/
 COPY DataAccess/*.csproj DataAccess/
-COPY Database/*.csproj Database/
+
 
 # Restore dependencies
 RUN dotnet restore
