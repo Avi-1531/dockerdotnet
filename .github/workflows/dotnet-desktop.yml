@@ -41,11 +41,16 @@ jobs:
     needs: build-and-push     
     steps:
       # 5. Deploy to Azure App Service
+      # - name: Deploy to App Service
+      #   uses: azure/webapps-container-deploy@v2
+      #   with:
+      #     app-name: dockerdotnetwebapp
+      #     images: aviregistry123.azurecr.io/avidockerdotnet:latest
+      #     registry-url: aviregistry123.azurecr.io
+      #     registry-username: ${{ secrets.ACR_USERNAME }}
+      #     registry-password: ${{ secrets.ACR_PASSWORD }}
       - name: Deploy to App Service
-        uses: azure/webapps-container-deploy@v2
+        uses: azure/webapps-deploy@v2
         with:
           app-name: dockerdotnetwebapp
           images: aviregistry123.azurecr.io/avidockerdotnet:latest
-          registry-url: aviregistry123.azurecr.io
-          registry-username: ${{ secrets.ACR_USERNAME }}
-          registry-password: ${{ secrets.ACR_PASSWORD }}
