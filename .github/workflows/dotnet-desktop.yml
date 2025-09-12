@@ -36,22 +36,34 @@ jobs:
         env:
             IMAGE_NAME: avidockerdotnet
             IMAGE_TAG: latest
-      - name: Deploy to App Service
-        uses: azure/webapps-deploy@v2
+  deploy:
+    runs-on: windows-latest
+    needs: build-and-push
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
         with:
-          app-name: dockerdotnetwebapp
-          images: aviregistry123.azurecr.io/avidockerdotnet:latest
-  # deploy:
-  #   runs-on: windows-latest
-  #   needs: build-and-push     
-  #   steps:
-      # 5. Deploy to Azure App Service
-      # - name: Deploy to App Service
-      #   uses: azure/webapps-container-deploy@v2
-      #   with:
-      #     app-name: dockerdotnetwebapp
-      #     images: aviregistry123.azurecr.io/avidockerdotnet:latest
-      #     registry-url: aviregistry123.azurecr.io
-      #     registry-username: ${{ secrets.ACR_USERNAME }}
-      #     registry-password: ${{ secrets.ACR_PASSWORD }}
-      
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Create App Service if not exists
+        run: |
+          $APP_NAME="dockerdotnetwebapp"
+          $RG_NAME="example-resources"
+          $PLAN_NAME="myAppServicePlan"
+
+          # Check if App Service exists
+          $exists = az webapp show --name $APP_NAME --resource-group $RG_NAME --query "name" -o tsv 2>$null
+
+          if (-not $exists) {
+            Write-Host "App Service does not exist. Creating..."
+            az appservice plan create --name $PLAN_NAME --resource-group $RG_NAME --sku B1 --is-linux false
+            az webapp create --name $APP_NAME --resource-group $RG_NAME --plan $PLAN_NAME --deployment-container-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
+          } else {
+            Write-Host "App Service already exists."
+          }
+
+      - name: Deploy latest Docker image
+        run: |
+          $APP_NAME="dockerdotnetwebapp"
+          az webapp config container set --name $APP_NAME --resource-group $RG_NAME --docker-custom-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
+          az webapp restart --name $APP_NAME --resource-group $RG_NAME
