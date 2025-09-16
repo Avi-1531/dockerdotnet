@@ -71,18 +71,19 @@ jobs:
         
       - name: Update to latest Docker image
         run: |
-                APP_NAME="dockerdotnetwebapp"
-                RG_NAME="example-resources"
-        
-                az webapp config container set \
-                  --name $APP_NAME \
-                  --resource-group $RG_NAME \
-                  --docker-custom-image-name aviregistry123.azurecr.io/avidockerdotnet:latest \
-                  --docker-registry-server-url https://aviregistry123.azurecr.io \
-                  --docker-registry-server-user ${{ secrets.ACR_USERNAME }} \
-                  --docker-registry-server-password ${{ secrets.ACR_PASSWORD }}
-        
-                az webapp restart --name $APP_NAME --resource-group $RG_NAME
+          APP_NAME="dockerdotnetwebapp"
+          RG_NAME="example-resources"
+      
+          az webapp config container set \
+            --name $APP_NAME \
+            --resource-group $RG_NAME \
+            --container-image-name aviregistry123.azurecr.io/avidockerdotnet:latest \
+            --container-registry-url https://aviregistry123.azurecr.io \
+            --container-registry-user ${{ secrets.ACR_USERNAME }} \
+            --container-registry-password ${{ secrets.ACR_PASSWORD }}
+      
+          az webapp restart --name $APP_NAME --resource-group $RG_NAME
+
 
   #     - name: Create App Service if not exists
   #       run: |
