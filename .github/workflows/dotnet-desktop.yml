@@ -24,15 +24,15 @@ jobs:
       - name: Azure Container Registry Login
         uses: azure/docker-login@v2
         with:
-          login-server: aviregistry123.azurecr.io
+          login-server: aviregistry1234.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
       # 4. Build and push Docker image
       - name: Build and Push Docker image
         run: |
-            docker build -t "aviregistry123.azurecr.io/$($env:IMAGE_NAME):$($env:IMAGE_TAG)" .
-            docker push "aviregistry123.azurecr.io/$($env:IMAGE_NAME):$($env:IMAGE_TAG)"
+            docker build -t "aviregistry1234.azurecr.io/$($env:IMAGE_NAME):$($env:IMAGE_TAG)" .
+            docker push "aviregistry1234.azurecr.io/$($env:IMAGE_NAME):$($env:IMAGE_TAG)"
         env:
             IMAGE_NAME: avidockerdotnet
             IMAGE_TAG: latest
@@ -48,7 +48,7 @@ jobs:
       - name: Create App Service if not exists
         run: |
                 APP_NAME="dockerdotnetwebapp"
-                RG_NAME="example-resources"
+                RG_NAME="avi-rg"
                 PLAN_NAME="myAppServicePlan"
         
                 if ! az webapp show --name $APP_NAME --resource-group $RG_NAME >/dev/null 2>&1; then
@@ -64,7 +64,7 @@ jobs:
                     --name $APP_NAME \
                     --resource-group $RG_NAME \
                     --plan $PLAN_NAME \
-                    --deployment-container-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
+                    --deployment-container-image-name aviregistry1234.azurecr.io/avidockerdotnet:latest
                 else
                   echo "App Service already exists."
                 fi
@@ -72,13 +72,13 @@ jobs:
       - name: Update to latest Docker image
         run: |
           APP_NAME="dockerdotnetwebapp"
-          RG_NAME="example-resources"
+          RG_NAME="avi-rg"
       
           az webapp config container set \
             --name $APP_NAME \
             --resource-group $RG_NAME \
-            --container-image-name aviregistry123.azurecr.io/avidockerdotnet:latest \
-            --container-registry-url https://aviregistry123.azurecr.io \
+            --container-image-name aviregistry1234.azurecr.io/avidockerdotnet:latest \
+            --container-registry-url https://aviregistry1234.azurecr.io \
             --container-registry-user ${{ secrets.ACR_USERNAME }} \
             --container-registry-password ${{ secrets.ACR_PASSWORD }}
       
@@ -88,7 +88,7 @@ jobs:
   #     - name: Create App Service if not exists
   #       run: |
   #         $APP_NAME="dockerdotnetwebapp"
-  #         $RG_NAME="example-resources"
+  #         $RG_NAME="avi-rg"
   #         $PLAN_NAME="myAppServicePlan"
       
   #         # Check if App Service exists
@@ -105,7 +105,7 @@ jobs:
   #     - name: Deploy latest Docker image
   #       run: |
   #           $APP_NAME="dockerdotnetwebapp"
-  #           $RG_NAME="example-resources"
+  #           $RG_NAME="avi-rg"
         
   #           az webapp config container set --name $APP_NAME --resource-group $RG_NAME --docker-custom-image-name aviregistry123.azurecr.io/avidockerdotnet:latest
   #           az webapp restart --name $APP_NAME --resource-group $RG_NAME
