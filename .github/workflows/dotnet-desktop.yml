@@ -48,8 +48,8 @@ jobs:
       - name: Create App Service if not exists
         run: |
                 APP_NAME="dockerdotnetwebapp"
-                RG_NAME="avi-rg"
-                PLAN_NAME="myAppServicePlan"
+                RG_NAME="avirg"
+                PLAN_NAME="ASP-avirg-8cf1 (F1: 1)"
         
                 if ! az webapp show --name $APP_NAME --resource-group $RG_NAME >/dev/null 2>&1; then
                   echo "App Service does not exist. Creating..."
@@ -74,7 +74,7 @@ jobs:
       - name: Update to latest Docker image
         run: |
           APP_NAME="dockerdotnetwebapp"
-          RG_NAME="avi-rg"
+          RG_NAME="avirg"
       
           az webapp config container set \
             --name $APP_NAME \
