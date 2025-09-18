@@ -53,12 +53,14 @@ jobs:
         
                 if ! az webapp show --name $APP_NAME --resource-group $RG_NAME >/dev/null 2>&1; then
                   echo "App Service does not exist. Creating..."
-                  az appservice plan create \
+                 
+
+                    az appservice plan create \
                     --name $PLAN_NAME \
                     --resource-group $RG_NAME \
-                    --sku B1 \
+                    --sku F1 \
                     --is-linux \
-                    --location "EastUS"
+                    --location "canada central"
         
                   az webapp create \
                     --name $APP_NAME \
